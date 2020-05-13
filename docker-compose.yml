@@ -1,0 +1,130 @@
+version: '3.3'
+
+volumes:
+  share:
+  # postgis-data:
+  # postgis-backups:
+  # geoserver-data:
+  #shiny-apps:
+  #nginx-html:
+
+services:
+
+  nginx-proxy:
+    container_name: proxy
+    image: jwilder/nginx-proxy
+    env_file: .env
+    environment:
+      DEFAULT_HOST: www.$HOST
+      VIRTUAL_HOST_SPECIFIC_PORT: 'true'
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./nginx-proxy/nginx.tmpl:/app/nginx.tmpl:ro
+    restart: unless-stopped
+    ports:
+      - 80:80
+      # TODO: add https
+      #- 443:443
+    depends_on:
+      # - geoserver
+      # - rstudio-shiny
+      - nginx
+
+  # postgis:
+  #   container_name: postgis
+  #   image: kartoza/postgis:11.0-2.5
+  #   environment:
+  #     POSTGRES_DBNAME: gis
+  #     POSTGRES_USER: admin
+  #     POSTGRES_PASSWORD: $PASSWORD
+  #   volumes:
+  #     - postgis-data:/var/lib/postgresql
+  #     - share:/share
+  #   restart: unless-stopped
+  #   healthcheck:
+  #     test: 'exit 0'
+  #   ports:
+  #     - 5432:5432
+  #
+  # postgis-backup:
+  #   container_name: postgis-backup
+  #   image: kartoza/pg-backup:11.0
+  #   volumes:
+  #     - postgis-backups:/backups
+  #   environment:
+  #     POSTGRES_HOST: db
+  #     POSTGRES_PORT: 5432
+  #     POSTGRES_DBNAME: gis
+  #     POSTGRES_USER: admin
+  #     POSTGRES_PASS: $PASSWORD
+  #     DUMPPREFIX: PG_gis
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - postgis
+  #
+  # geoserver:
+  #   container_name: geoserver
+  #   image: kartoza/geoserver:2.15.2
+  #   environment:
+  #     VIRTUAL_HOST: gs.$HOST
+  #     USERNAME: admin
+  #     PASS: $PASSWORD
+  #     GEOSERVER_ADMIN_PASSWORD: $PASSWORD
+  #   volumes:
+  #     - geoserver-data:/opt/geoserver/data_dir
+  #     - share:/share
+  #   ports:
+  #     - 8888:8080
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - postgis
+  #   healthcheck:
+  #     test: curl --fail -s http://localhost:8888/ || exit 1
+  #     interval: 1m30s
+  #     timeout: 10s
+  #     retries: 3
+  #
+  # rstudio-shiny:
+  #   container_name: rstudio-shiny
+  #   build: ./rstudio-shiny
+  #   image: bdbest/rstudio-shiny:s4w
+  #   volumes:
+  #     - share:/share
+  #   #  - shiny-apps:/srv/shiny-server
+  #   restart: unless-stopped
+  #   environment:
+  #     # [Running virtual hosts on different ports of the same container · Issue #560 · jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy/issues/560)
+  #     VIRTUAL_HOST: "rstudio.$HOST:8787,shiny.$HOST:3838"
+  #     ROOT: 'true'
+  #     USER: admin
+  #     PASSWORD: $PASSWORD
+  #   ports:
+  #     - 8787:8787
+  #     - 3838:3838
+
+  nginx:
+    container_name: nginx
+    build: ./nginx
+    volumes:
+      - share:/share
+    # - nginx-html:/usr/share/nginx/html
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: www.$HOST
+    ports:
+      - 8088:80
+
+  # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
+  erddap:
+    container_name: erddap
+    build: ./erddap
+    volumes:
+     - share:/share
+     # - erddap-data:/erddapData
+     # - erddap-config:/usr/local/tomcat/content/erddap
+    restart: unless-stopped
+    environment:
+      VIRTUAL_HOST: erddap.$HOST
+    ports:
+      - 8080:8080
+ # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
