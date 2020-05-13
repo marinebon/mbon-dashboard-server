@@ -10,25 +10,25 @@ volumes:
 
 services:
 
-  nginx-proxy:
-    container_name: proxy
-    image: jwilder/nginx-proxy
-    env_file: .env
-    environment:
-      DEFAULT_HOST: www.$HOST
-      VIRTUAL_HOST_SPECIFIC_PORT: 'true'
-    volumes:
-      - /var/run/docker.sock:/tmp/docker.sock:ro
-      - ./nginx-proxy/nginx.tmpl:/app/nginx.tmpl:ro
-    restart: unless-stopped
-    ports:
-      - 80:80
-      # TODO: add https
-      #- 443:443
-    depends_on:
-      # - geoserver
-      # - rstudio-shiny
-      - nginx
+  # nginx-proxy:
+  #   container_name: proxy
+  #   image: jwilder/nginx-proxy
+  #   env_file: .env
+  #   environment:
+  #     DEFAULT_HOST: www.$HOST
+  #     VIRTUAL_HOST_SPECIFIC_PORT: 'true'
+  #   volumes:
+  #     - /var/run/docker.sock:/tmp/docker.sock:ro
+  #     - ./nginx-proxy/nginx.tmpl:/app/nginx.tmpl:ro
+  #   restart: unless-stopped
+  #   ports:
+  #     - 80:80
+  #     # TODO: add https
+  #     #- 443:443
+  #   depends_on:
+  #     # - geoserver
+  #     # - rstudio-shiny
+  #     - nginx
 
   # postgis:
   #   container_name: postgis
@@ -112,7 +112,8 @@ services:
     environment:
       VIRTUAL_HOST: www.$HOST
     ports:
-      - 8088:80
+      #- 8088:80
+      - 80:80
 
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
   erddap:

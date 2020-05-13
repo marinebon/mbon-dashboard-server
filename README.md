@@ -266,11 +266,12 @@ First, you will create the environment `.env` file to specify password and host:
 
 ```bash
 # get latest docker-compose files
-git clone https://github.com/marinebon/iea-server.git
-cd ~/iea-server
+git clone https://github.com/marinebon/mbon-dashboard-server.git
+cd ~/mbon-dashboard-server
 
 # set environment variables
 echo "PASSWORD=S3cr!tpw" > .env
+echo "PASSWORD=Mb0n!" > .env
 echo "HOST=mbon.marine.usf.edu" >> .env
 cat .env
 
