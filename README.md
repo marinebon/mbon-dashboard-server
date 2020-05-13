@@ -448,10 +448,14 @@ docker cp \
   /home/bbest/mbon-dashboard-server/erddap/setup.xml
   
 # (after git commit), refetch and run again
-git pull; docker-compose up -d
+git pull
+docker-compose up --build -d
 
+# check log files
+docker exec -it erddap more /erddapData/logs/log.txt
 ```
 
+Edits in `setup.xml`:
 - `baseUrl: from `localhost` to `mbon.marine.usf.edu`
 - `baseHttpsUrl: from `localhost` to `mbon.marine.usf.edu`
 
