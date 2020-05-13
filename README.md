@@ -28,32 +28,12 @@ Uses: https://github.com/ekalinin/github-markdown-toc
 
 ## Server software
 
-- Content management system:
-  - [WordPress](https://wordpress.com)<br>
-    **iea-ne.us**
-  - [MySQL](https://www.mysql.com/)<br>
-    iea-ne.us **:3306**
-- Analytical apps:
-  - [Shiny](https://shiny.rstudio.com)<br>
-    **shiny.** iea-ne.us
-  - [RStudio](https://rstudio.com/products/rstudio/#rstudio-server)<br>
-    **rstudio.** iea-ne.us
-- Spatial engine:
-  - [GeoServer](http://geoserver.org)<br>
-    **gs.** iea-ne.us
-  - [PostGIS](https://postgis.net)<br>
-    iea-ne.us **:5432**
-
 - Containerized using:
   - [docker](https://docs.docker.com/engine/installation/)
   - [docker-compose](https://docs.docker.com/compose/install/)
   - [nginx-proxy](https://github.com/jwilder/nginx-proxy)
 
-- Infographics
-  - [iea-ne_info](https://github.com/marinebon/iea-ne_info)
-    **info.** iea-ne.us
-  
-  
+
 ## Shell into server
 
 1. Connect to UCSB VPN via Secure Pulse
@@ -99,7 +79,7 @@ Email recieved with IP and temporary password:
 - _iea-demo.us_:
 
   > Your new Droplet is all set to go! You can access it using the following credentials:
-  > 
+  >
   > Droplet Name: docker-iea-demo.us
   > IP Address: 157.245.189.38
   > Username: root
@@ -134,7 +114,7 @@ sudo apt install apt-transport-https ca-certificates curl software-properties-co
 # add the GPG key for the official Docker repository to your system
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
-# add the Docker repository to APT sources 
+# add the Docker repository to APT sources
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 # update the package database with the Docker packages from the newly added repo
@@ -307,32 +287,6 @@ docker-compose restart
 docker-compose stop
 ```
 
-### rstudio-shiny
-
-Haven't figured out how to RUN these commands after user admin is created in rstudio-shiny container.
-
-1. Setup **permissions and shortcuts** for admin in rstudio.
-
-    After logging into rstudio.iea-ne.us, to go to Terminal window and run:
-
-    ```bash
-    sudo su -
-    ln -s /srv/shiny-server /home/admin/shiny-apps
-    ln -s /var/log/shiny-server /home/admin/shiny-logs
-    mkdir /srv/github
-    ln -s /srv/github /home/admin/github
-    
-    cd /srv/github
-    git clone https://github.com/marinebon/iea-ne_info.git
-    git clone https://github.com/marinebon/iea-uploader.git
-    
-    chown -R admin /srv/shiny-server
-    chown -R admin /srv/github
-    
-    ln -s /usr/share/nginx/html /home/admin/info-html
-    chown -R admin /home/admin/info-html
-    ```
-
 ## Docker maintenance
 
 ### Push docker image
@@ -402,23 +356,6 @@ docker-compose logs -f
 docker inspect rstudio-shiny
 ```
 
-## shiny app shuffle
-
-in rstudio.iea-demo.us terminal:
-
-```
-cd /srv
-mkdir -p github/iea-ne_apps
-cd /srv/shiny-server/
-mv * ../github/iea-ne_apps/.
-mv .git ../github/iea-ne_apps/.
-mv .gitignore ../github/iea-ne_apps/.
-ln -s /srv/github/iea-ne_apps/test /srv/shiny-server/test
-cd ../github
-
-ln -s /srv/github/iea-uploader /srv/shiny-server/uploader
-```
-
 
 ## erddap quick fix
 
@@ -432,7 +369,7 @@ apt-get install vim
 
 # edit setup.xml
 cd /usr/local/tomcat/content/erddap
-vi setup.xml 
+vi setup.xml
 
 # exit from erddap container
 exit
@@ -445,7 +382,7 @@ docker restart erddap
 docker cp \
   erddap:/usr/local/tomcat/content/erddap/setup.xml \
   /home/bbest/mbon-dashboard-server/erddap/setup.xml
-  
+
 # (after git commit), refetch and run again
 git pull
 docker-compose up --build -d
@@ -490,30 +427,12 @@ GenerateDatasetsXml.sh -verbose
 
 ## TODO
 
-Web content:
-
-- Rmd website served by nginx
-- **infographics**
-
-Shiny apps:
-
-- **data-uploader**
-
 Install:
 
 - **ERDDAP**: data server
   - similar to [ERDDAP | MBON](http://mbon.marine.usf.edu:8000/erddap/index.html), search "Hyde"
   - [marinebon/erddap-config: ERDDAP config files (setup.xml, datasets.xml)](https://github.com/marinebon/erddap-config)
-  
-- **Drupal**: content management system
-  - [drupal | Docker Hub](https://hub.docker.com/_/drupal/)
-  - used by [integratedecosystemassessment.noaa.gov](https://www.integratedecosystemassessment.noaa.gov/)
-  - alternative to Wordpress
-  
-- **CKAN**: data catalog
-  - similar mbon.ioos.us
-  - used by data.gov
-  - federated
+
 
 - [eduwass/docker-nginx-git](https://github.com/eduwass/docker-nginx-git): Docker Image with Nginx, Git auto-pull and webhooks
 
@@ -523,6 +442,3 @@ Install:
   - docker-letsencrypt-nginx-proxy-companion:
   - [Hosting multiple SSL-enabled sites with Docker and Nginx | Serverwise](https://blog.ssdnodes.com/blog/host-multiple-ssl-websites-docker-nginx/)
   - cron job to renew
-- add phpmyadmin for web interface to mysql wordpress database
-  - [Setting up WordPress with Docker - Containerizers](https://cntnr.io/setting-up-wordpress-with-docker-262571249d50)
-

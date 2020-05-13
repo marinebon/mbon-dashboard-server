@@ -2,10 +2,6 @@ version: '3.3'
 
 volumes:
   share:
-  # postgis-data:
-  # postgis-backups:
-  # geoserver-data:
-  #shiny-apps:
   #nginx-html:
 
 services:
@@ -29,78 +25,6 @@ services:
   #     # - geoserver
   #     # - rstudio-shiny
   #     - nginx
-
-  # postgis:
-  #   container_name: postgis
-  #   image: kartoza/postgis:11.0-2.5
-  #   environment:
-  #     POSTGRES_DBNAME: gis
-  #     POSTGRES_USER: admin
-  #     POSTGRES_PASSWORD: $PASSWORD
-  #   volumes:
-  #     - postgis-data:/var/lib/postgresql
-  #     - share:/share
-  #   restart: unless-stopped
-  #   healthcheck:
-  #     test: 'exit 0'
-  #   ports:
-  #     - 5432:5432
-  #
-  # postgis-backup:
-  #   container_name: postgis-backup
-  #   image: kartoza/pg-backup:11.0
-  #   volumes:
-  #     - postgis-backups:/backups
-  #   environment:
-  #     POSTGRES_HOST: db
-  #     POSTGRES_PORT: 5432
-  #     POSTGRES_DBNAME: gis
-  #     POSTGRES_USER: admin
-  #     POSTGRES_PASS: $PASSWORD
-  #     DUMPPREFIX: PG_gis
-  #   restart: unless-stopped
-  #   depends_on:
-  #     - postgis
-  #
-  # geoserver:
-  #   container_name: geoserver
-  #   image: kartoza/geoserver:2.15.2
-  #   environment:
-  #     VIRTUAL_HOST: gs.$HOST
-  #     USERNAME: admin
-  #     PASS: $PASSWORD
-  #     GEOSERVER_ADMIN_PASSWORD: $PASSWORD
-  #   volumes:
-  #     - geoserver-data:/opt/geoserver/data_dir
-  #     - share:/share
-  #   ports:
-  #     - 8888:8080
-  #   restart: unless-stopped
-  #   depends_on:
-  #     - postgis
-  #   healthcheck:
-  #     test: curl --fail -s http://localhost:8888/ || exit 1
-  #     interval: 1m30s
-  #     timeout: 10s
-  #     retries: 3
-  #
-  # rstudio-shiny:
-  #   container_name: rstudio-shiny
-  #   build: ./rstudio-shiny
-  #   image: bdbest/rstudio-shiny:s4w
-  #   volumes:
-  #     - share:/share
-  #   #  - shiny-apps:/srv/shiny-server
-  #   restart: unless-stopped
-  #   environment:
-  #     # [Running virtual hosts on different ports of the same container · Issue #560 · jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy/issues/560)
-  #     VIRTUAL_HOST: "rstudio.$HOST:8787,shiny.$HOST:3838"
-  #     ROOT: 'true'
-  #     USER: admin
-  #     PASSWORD: $PASSWORD
-  #   ports:
-  #     - 8787:8787
-  #     - 3838:3838
 
   nginx:
     container_name: nginx
