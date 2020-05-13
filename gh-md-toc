@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-
+#
+# Helpful little script for creating table of contents for README files.
 #
 # Steps:
 #
