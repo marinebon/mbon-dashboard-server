@@ -271,7 +271,6 @@ cd ~/mbon-dashboard-server
 
 # set environment variables
 echo "PASSWORD=S3cr!tpw" > .env
-echo "PASSWORD=Mb0n!" > .env
 echo "HOST=mbon.marine.usf.edu" >> .env
 cat .env
 
