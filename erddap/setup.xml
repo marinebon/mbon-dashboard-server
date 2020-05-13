@@ -108,7 +108,7 @@ You MUST CHANGE this when you install ERDDAP on your server. For example,
 <baseUrl>http://coastwatch.pfeg.noaa.gov</baseUrl>    used for ERD releases (erddap and erddap2)
 -->
 <!--baseUrl>http://localhost:8080</baseUrl-->
-<baseUrl>localhost:8080</baseUrl>
+<baseUrl>http://localhost:8080</baseUrl>
 
 <!-- This is a variant of <baseUrl> which is used when authentication is active and the user is logged in.
   In general, you take the <baseUrl>, change "http" to "https", and change/add ":8443".
@@ -121,7 +121,7 @@ You MUST CHANGE this when you install ERDDAP on your server. For example,
 <baseHttpsUrl>https://coastwatch.pfeg.noaa.gov:8443</baseHttpsUrl>  used at ERD for releases (erddap and erddap2)
 -->
 <!--baseHttpsUrl>https://localhost:8443</baseHttpsUrl-->
-<baseHttpsUrl>localhost:8443</baseHttpsUrl>
+<baseHttpsUrl>https://localhost:8443</baseHttpsUrl>
 
 
 <!-- **************************************************************************** -->
