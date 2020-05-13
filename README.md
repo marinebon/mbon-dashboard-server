@@ -424,6 +424,42 @@ ln -s /srv/github/iea-uploader /srv/shiny-server/uploader
 ## erddap quick fix
 
 ```bash
+# get inside erddap docker instance
+docker exec -it erddap bash
+
+# install editor
+apt-get update
+apt-get install vim
+
+# edit setup.xml
+cd /usr/local/tomcat/content/erddap
+vi setup.xml 
+
+# exit from erddap container
+exit
+
+# restart erddap container
+docker restart erddap
+
+# yay! working at http://mbon.marine.usf.edu:8080/erddap
+# so copy working setup.xml into docker
+docker cp \
+  erddap:/usr/local/tomcat/content/erddap/setup.xml \
+  /home/bbest/mbon-dashboard-server/erddap/setup.xml
+  
+# (after git commit), refetch and run again
+git pull; docker-compose up -d
+
+```
+
+- `baseUrl: from `localhost` to `mbon.marine.usf.edu`
+- `baseHttpsUrl: from `localhost` to `mbon.marine.usf.edu`
+
+Voila! http://mbon.marine.usf.edu:8080/erddap/index.html
+
+
+
+```bash
 git pull
 
 nc_local=./erddap/data/iea-ne/ex-chl-ppd/M_201901-MODISA-NESGRID-CHLOR_A.nc
