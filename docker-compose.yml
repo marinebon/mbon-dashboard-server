@@ -2,6 +2,11 @@ version: '3.3'
 
 volumes:
   share:
+  erddap_data:  # host location of ERDDAP data
+      driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/data_links'
   #nginx-html:
 
 services:
@@ -45,7 +50,7 @@ services:
     build: ./erddap
     volumes:
      - share:/share
-     - erddap/data_links:/erddapData
+     - erddap_data:/erddapData
      # - erddap-config:/usr/local/tomcat/content/erddap
     restart: unless-stopped
     environment:
@@ -53,3 +58,10 @@ services:
     ports:
       - 8080:8080
  # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
+
+
+  grafana:
+      container_name: grafana
+      image: grafana/grafana:6.7.3
+      ports:
+          - 3000:3000
