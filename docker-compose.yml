@@ -13,6 +13,11 @@ volumes:
           o: 'bind'
           device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_datasets'
   #nginx-html:
+  influxdb_init_files:
+      driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: '/home/tylar/git-repos/mbon-dashboard-server/influxdb/initdb'
 
 services:
 
@@ -78,5 +83,13 @@ services:
         ports:
             - 8086:8086  # HTTP API
             - 2003:2003  # graphite API
-        # TODO: init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
-        #       should inlcude adding a read-only user for grafana
+        volumes:
+            # init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
+            # this should inlcude adding a read-only user for grafana
+            - influxdb_init_files:/docker-entrypoint-initdb.d
+        environment:
+            - INFLUXDB_DB=fwc_coral_disease
+            - INFLUXDB_HTTP_AUTH_ENABLED=true
+            - INFLUXDB_ADMIN_USER=admin
+            - INFLUXDB_READ_USER=grafana
+            - INFLUXDB_WRITE_USER=telegraf

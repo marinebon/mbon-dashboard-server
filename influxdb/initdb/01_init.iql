@@ -1,0 +1,2 @@
+CREATE DATABASE fwc_coral_disease;
+CREATE RETENTION POLICY keep_forever ON fwc_coral_disease DURATION INF REPLICATION 1 DEFAULT;

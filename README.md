@@ -25,6 +25,9 @@ The subdirectories (eg erddap, nginx, etc) contain container-specific files.
         ```
         PASSWORD="S3cr!tpw"
         HOST="mbon.marine.usf.edu"
+        INFLUXDB_ADMIN_PASSWORD="influxdb_admin_pw"
+        INFLUXDB_READ_USER_PASSWORD="grafana_user_pw"
+        INFLUXDB_WRITE_USER_PASSWORD="telegraf_user_pw"
         ```
     2. set `baseUrl` & `baseHttpsUrl` in `erddap/setup.xml`
         * should be `localhost` or your server hostname
