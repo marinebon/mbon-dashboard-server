@@ -23,8 +23,8 @@ The subdirectories (eg erddap, nginx, etc) contain container-specific files.
     1. set passwords in the environment `.env` file.
         Contents should resemble:
         ```
-        PASSWORD=S3cr!tpw
-        HOST=mbon.marine.usf.edu
+        PASSWORD="S3cr!tpw"
+        HOST="mbon.marine.usf.edu"
         ```
     2. set `baseUrl` & `baseHttpsUrl` in `erddap/setup.xml`
         * should be `localhost` or your server hostname

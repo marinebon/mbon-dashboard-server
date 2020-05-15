@@ -65,9 +65,18 @@ services:
       - 8080:8080
  # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
 
-
   grafana:
       container_name: grafana
       image: grafana/grafana:6.7.3
       ports:
           - 3000:3000
+      # TODO: [install plugins](https://grafana.com/docs/grafana/latest/installation/docker/#install-plugins-in-the-docker-container)
+
+  influxdb:
+        container_name: influxdb
+        image: influxdb:1.8
+        ports:
+            - 8086:8086  # HTTP API
+            - 2003:2003  # graphite API
+        # TODO: init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
+        #       should inlcude adding a read-only user for grafana
