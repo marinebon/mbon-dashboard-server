@@ -2,11 +2,16 @@ version: '3.3'
 
 volumes:
   share:
-  erddap_data:  # host location of ERDDAP data
+  erddap_data:  # host location of ERDDAP caches & logs & stuff
       driver_opts:
           type: 'none'
           o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/data_links'
+          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_data'
+  erddap_datasets:  # host location of ERDDAP science data
+      driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_datasets'
   #nginx-html:
 
 services:
@@ -51,6 +56,7 @@ services:
     volumes:
      - share:/share
      - erddap_data:/erddapData
+     - erddap_datasets:/srv/imars-objects/
      # - erddap-config:/usr/local/tomcat/content/erddap
     restart: unless-stopped
     environment:
