@@ -10,6 +10,10 @@ Uses: https://github.com/ekalinin/github-markdown-toc
 
 For detailed documentation please see `./documentation/`.
 
+## Project Structure Overview
+`docker-compose.yml` handles most configuration.
+The subdirectories (eg erddap, nginx, etc) contain container-specific files.
+
 ## Basic Setup
 1. clone this repo
 2. install docker & docker-compose
