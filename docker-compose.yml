@@ -45,7 +45,7 @@ services:
     build: ./erddap
     volumes:
      - share:/share
-     # - erddap-data:/erddapData
+     - erddap/data_links:/erddapData
      # - erddap-config:/usr/local/tomcat/content/erddap
     restart: unless-stopped
     environment:
