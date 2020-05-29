@@ -21,14 +21,7 @@ The subdirectories (eg erddap, nginx, etc) contain container-specific files.
     1. `sudo usermod -aG docker ${USER}`
 3. adjust settings
     1. set passwords in the environment `.env` file.
-        Contents should resemble:
-        ```
-        PASSWORD="S3cr!tpw"
-        HOST="mbon.marine.usf.edu"
-        INFLUXDB_ADMIN_PASSWORD="influxdb_admin_pw"
-        INFLUXDB_READ_USER_PASSWORD="grafana_user_pw"
-        INFLUXDB_WRITE_USER_PASSWORD="telegraf_user_pw"
-        ```
+        * see the `documentation/example_env_file` for an example.
     2. set `baseUrl` & `baseHttpsUrl` in `erddap/setup.xml`
         * should be `localhost` or your server hostname
     3. the permissions on the following directories need to be set
