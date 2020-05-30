@@ -2,6 +2,11 @@ version: '3.3'
 
 volumes:
   share:
+  erddap_config:
+      driver_opts:
+          type: 'none'
+          o: 'bind'
+          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/content'
   erddap_data:  # host location of ERDDAP caches & logs & stuff
       driver_opts:
           type: 'none'
@@ -66,7 +71,7 @@ services:
      - share:/share
      - erddap_data:/erddapData
      - erddap_datasets:/srv/imars-objects/
-     # - erddap-config:/usr/local/tomcat/content/erddap
+     - erddap_config:/usr/local/tomcat/content/erddap
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: erddap.$HOST
