@@ -23,11 +23,11 @@ volumes:
           type: 'none'
           o: 'bind'
           device: '/home/tylar/git-repos/mbon-dashboard-server/influxdb/initdb'
-  grafana_data:
+  grafana_provisioned_dashboards:
       driver_opts:
           type: 'none'
           o: 'bind'
-          device: /home/tylar/git-repos/mbon-dashboard-server/grafana/grafana_data
+          device: /home/tylar/git-repos/mbon-dashboard-server/grafana/provisioning
 services:
 
   # nginx-proxy:
@@ -86,8 +86,10 @@ services:
           - 3000:3000
       environment:
           - GF_INSTALL_PLUGINS=alexandra-trackmap-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap
+          - GF_PATHS_PROVISIONING=/grafana_provisioned_dashboards
       volumes:
-          - grafana_data:/var/lib/grafana
+          - grafana_provisioned_dashboards:/grafana_provisioned_dashboards
+
   influxdb:
         container_name: influxdb
         image: influxdb:1.8

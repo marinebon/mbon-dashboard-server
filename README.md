@@ -24,8 +24,7 @@ The subdirectories (eg erddap, nginx, etc) contain container-specific files.
         * see the `documentation/example_env_file` for an example.
     2. set `baseUrl` & `baseHttpsUrl` in `erddap/setup.xml`
         * should be `localhost` or your server hostname
-    3. the permissions on the following directories need to be set
-        * `chmod 777 grafana/grafana_data`
+    4. set up ERDDAP data sources and `datasets.xml` (see `./erddap/README.md`)
 3. start everything up: `docker-compose up --build -d`
 4. test it out (assuming your hostname is "localhost")
     1. http://localhost/ should show "welcome to nginx"
