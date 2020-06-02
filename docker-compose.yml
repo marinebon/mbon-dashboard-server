@@ -12,11 +12,15 @@ volumes:
           type: 'none'
           o: 'bind'
           device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_data'
-  erddap_datasets:  # host location of ERDDAP science data
+  # === volumes for each ERDDAP dataset ======================================
+  # NOTE: symlinks do not work.
+  datasets_fk_7d_vsnpp_oc:
+      driver: local
       driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_datasets'
+          type: 'nfs'
+          o: 'addr=thing1.marine.usf.edu,nolock,soft'
+          device: ':/fk/'
+  # ==========================================================================
   #nginx-html:
   influxdb_init_files:
       driver_opts:
@@ -70,8 +74,11 @@ services:
     volumes:
      - share:/share
      - erddap_data:/erddapData
-     - erddap_datasets:/srv/imars-objects/
      - erddap_config:/usr/local/tomcat/content/erddap
+     # === datset mounts =====================================================
+     # NOTE: paths must match "fileDir" paths in erddap/content/datasets.xml
+     - datasets_fk_7d_vsnpp_oc:/mnt/
+     # =======================================================================
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: erddap.$HOST
