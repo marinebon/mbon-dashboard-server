@@ -12,11 +12,6 @@ volumes:
           type: 'none'
           o: 'bind'
           device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_data'
-  erddap_datasets:  # host location of ERDDAP science data
-      driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_datasets'
   #nginx-html:
   influxdb_init_files:
       driver_opts:
@@ -65,13 +60,17 @@ services:
 
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
   erddap:
+    user: root:4504
     container_name: erddap
     build: ./erddap
     volumes:
      - share:/share
      - erddap_data:/erddapData
-     - erddap_datasets:/srv/imars-objects/
      - erddap_config:/usr/local/tomcat/content/erddap
+     # === ERDDAP dataset mounts==============================================
+     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
+     - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
+     # =======================================================================
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: erddap.$HOST
