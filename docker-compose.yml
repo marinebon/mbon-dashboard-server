@@ -99,6 +99,8 @@ services:
             # init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
             # this should inlcude adding a read-only user for grafana
             - influxdb_init_files:/docker-entrypoint-initdb.d
+            # docker data volume:
+            - /home/tylar/git-repos/mbon-dashboard-server/influxdb/data_volume:/var/lib/influxdb
         environment:
             - INFLUXDB_DB=fwc_coral_disease
             - INFLUXDB_HTTP_AUTH_ENABLED=true
