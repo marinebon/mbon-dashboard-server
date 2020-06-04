@@ -14,17 +14,29 @@ For detailed documentation please see `./documentation/`.
 `docker-compose.yml` handles most configuration.
 The subdirectories (eg erddap, nginx, etc) contain container-specific files.
 
-## Basic Setup
-1. clone this repo
+## Setup
+### General Notes
+In general you will configure your stack by:
+1. Modifying `docker-compose.yml` and container-specific configuration files inside of `./erddap/`, `./grafana/`, etc.
+    Directions for this is included within a `README.md` file inside of each directory.
+    Changes made to these files should be version controlled using git.
+2. Setting up of docker volumes so that data can persist when containers are recreated.
+    Volumes are generally too large for git, so you should manage backups of these directories.
+    A strategy for this is not included.
+3. Setting passwords & configuration in `.env`.
+    This file should not be added to git for security reasons and a backup strategy for this file is not included.
+
+### Setup Checklist
+1. fork this repo & clone your fork to local machine
 2. install docker & docker-compose
 3. add permissions to run docker for current user
     1. `sudo usermod -aG docker ${USER}`
 3. adjust settings
     1. set passwords in the environment `.env` file.
         * see the `documentation/example_env_file` for an example.
-    2. set `baseUrl` & `baseHttpsUrl` in `erddap/setup.xml`
-        * should be `localhost` or your server hostname
-    4. set up ERDDAP data sources and `datasets.xml` (see `./erddap/README.md`)
+    2. connect ERDDAP to your data - see `./erddap/README.md`
+    3. load data into InfluxDB - see `./influxdb/README.md`
+    4. modify grafana dashboards - see `./grafana/README.md`
 3. start everything up: `docker-compose up --build -d`
 4. test it out (assuming your hostname is "localhost")
     1. http://localhost/ should show "welcome to nginx"
