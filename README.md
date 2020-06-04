@@ -15,7 +15,7 @@ For detailed documentation please see `./documentation/`.
 The subdirectories (eg erddap, nginx, etc) contain container-specific files.
 
 ## Setup
-### General Notes
+### General Setup Notes
 In general you will configure your stack by:
 1. Modifying `docker-compose.yml` and container-specific configuration files inside of `./erddap/`, `./grafana/`, etc.
     Directions for this is included within a `README.md` file inside of each directory.
@@ -24,7 +24,11 @@ In general you will configure your stack by:
     Volumes are generally too large for git, so you should manage backups of these directories.
     A strategy for this is not included.
 3. Setting passwords & configuration in `.env`.
-    This file should not be added to git for security reasons and a backup strategy for this file is not included.
+    This file should not be added to git for security reasons.
+    A backup strategy for this file is not included.
+
+It is suggested that you configure each container one-at-a-time.
+To do this simply comment out the relevant sections of docker-compose.yml.
 
 ### Setup Checklist
 1. fork this repo & clone your fork to local machine
