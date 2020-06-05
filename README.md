@@ -20,7 +20,7 @@ In general you will configure your stack by:
 1. Modifying `docker-compose.yml` and container-specific configuration files inside of `./erddap/`, `./grafana/`, etc.
     Directions for this is included within a `README.md` file inside of each directory.
     Changes made to these files should be version controlled using git.
-2. Setting up of docker volumes so that data can persist when containers are recreated.
+2. Setting up docker volumes so that data can persist when containers are recreated.
     Volumes are generally too large for git, so you should manage backups of these directories.
     A strategy for this is not included.
 3. Setting passwords & configuration in `.env`.

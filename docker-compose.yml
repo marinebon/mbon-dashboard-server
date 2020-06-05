@@ -107,3 +107,14 @@ services:
             - INFLUXDB_ADMIN_USER=influx_admin
             - INFLUXDB_READ_USER=grafana
             - INFLUXDB_WRITE_USER=telegraf
+  ftp_ingester:
+      container_name: ftp_ingester
+      build: ./ftp_ingester
+      ports:
+          - 20:20
+          - 21:21
+      volumes:
+          - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_home:/home/vsftpd
+          - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_logs:/var/log/vsftpd
+      environment:
+          - "FTP_USER=imars"
