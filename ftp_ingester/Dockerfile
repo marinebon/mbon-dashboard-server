@@ -5,7 +5,7 @@
 FROM fauria/vsftpd
 
 # overwrite the vstfpd default from upstream
-COPY vsftpd.conf /etc/vsftpd/
+#COPY vsftpd.conf /etc/vsftpd/
 
 # TODO:
 # * set up users & passwords
