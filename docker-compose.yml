@@ -2,27 +2,27 @@ version: '3.3'
 
 volumes:
   share:
-  erddap_config:
-      driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/content'
-  erddap_data:  # host location of ERDDAP caches & logs & stuff
-      driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_data'
-  #nginx-html:
-  influxdb_init_files:
-      driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: '/home/tylar/git-repos/mbon-dashboard-server/influxdb/initdb'
-  grafana_provisioning:
-      driver_opts:
-          type: 'none'
-          o: 'bind'
-          device: /home/tylar/git-repos/mbon-dashboard-server/grafana/provisioning
+  # erddap_config:
+  #     driver_opts:
+  #         type: 'none'
+  #         o: 'bind'
+  #         device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/content'
+  # erddap_data:  # host location of ERDDAP caches & logs & stuff
+  #     driver_opts:
+  #         type: 'none'
+  #         o: 'bind'
+  #         device: '/home/tylar/git-repos/mbon-dashboard-server/erddap/erddap_data'
+  # #nginx-html:
+  # influxdb_init_files:
+  #     driver_opts:
+  #         type: 'none'
+  #         o: 'bind'
+  #         device: '/home/tylar/git-repos/mbon-dashboard-server/influxdb/initdb'
+  # grafana_provisioning:
+  #     driver_opts:
+  #         type: 'none'
+  #         o: 'bind'
+  #         device: /home/tylar/git-repos/mbon-dashboard-server/grafana/provisioning
 services:
 
   # nginx-proxy:
@@ -45,76 +45,77 @@ services:
   #     # - rstudio-shiny
   #     - nginx
 
-  nginx:
-    container_name: nginx
-    build: ./nginx
-    volumes:
-      - share:/share
-    # - nginx-html:/usr/share/nginx/html
-    restart: unless-stopped
-    environment:
-      VIRTUAL_HOST: www.$HOST
-    ports:
-      #- 8088:80
-      - 80:80
-
-  # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
-  erddap:
-    user: root:4504
-    container_name: erddap
-    build: ./erddap
-    volumes:
-     - share:/share
-     - erddap_data:/erddapData
-     - erddap_config:/usr/local/tomcat/content/erddap
-     # === ERDDAP dataset mounts==============================================
-     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
-     - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
-     # =======================================================================
-    restart: unless-stopped
-    environment:
-      VIRTUAL_HOST: erddap.$HOST
-    ports:
-      - 8080:8080
- # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
-
-  grafana:
-      container_name: grafana
-      image: grafana/grafana:6.7.3
-      ports:
-          - 3000:3000
-      environment:
-          - "GF_INSTALL_PLUGINS=alexandra-trackmap-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
-          - GF_PATHS_PROVISIONING=/grafana_provisioning
-      volumes:
-          - grafana_provisioning:/grafana_provisioning
-
-  influxdb:
-        container_name: influxdb
-        image: influxdb:1.8
-        ports:
-            - 8086:8086  # HTTP API
-            - 2003:2003  # graphite API
-        volumes:
-            # init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
-            # this should inlcude adding a read-only user for grafana
-            - influxdb_init_files:/docker-entrypoint-initdb.d
-            # docker data volume:
-            - /home/tylar/git-repos/mbon-dashboard-server/influxdb/data_volume:/var/lib/influxdb
-        environment:
-            - INFLUXDB_DB=fwc_coral_disease
-            - INFLUXDB_HTTP_AUTH_ENABLED=true
-            - INFLUXDB_ADMIN_USER=influx_admin
-            - INFLUXDB_READ_USER=grafana
-            - INFLUXDB_WRITE_USER=telegraf
+ #  nginx:
+ #    container_name: nginx
+ #    build: ./nginx
+ #    volumes:
+ #      - share:/share
+ #    # - nginx-html:/usr/share/nginx/html
+ #    restart: unless-stopped
+ #    environment:
+ #      VIRTUAL_HOST: www.$HOST
+ #    ports:
+ #      #- 8088:80
+ #      - 80:80
+ #
+ #  # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
+ #  erddap:
+ #    user: root:4504
+ #    container_name: erddap
+ #    build: ./erddap
+ #    volumes:
+ #     - share:/share
+ #     - erddap_data:/erddapData
+ #     - erddap_config:/usr/local/tomcat/content/erddap
+ #     # === ERDDAP dataset mounts==============================================
+ #     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
+ #     - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
+ #     # =======================================================================
+ #    restart: unless-stopped
+ #    environment:
+ #      VIRTUAL_HOST: erddap.$HOST
+ #    ports:
+ #      - 8080:8080
+ # # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
+ #
+ #  grafana:
+ #      container_name: grafana
+ #      image: grafana/grafana:6.7.3
+ #      ports:
+ #          - 3000:3000
+ #      environment:
+ #          - "GF_INSTALL_PLUGINS=alexandra-trackmap-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
+ #          - GF_PATHS_PROVISIONING=/grafana_provisioning
+ #      volumes:
+ #          - grafana_provisioning:/grafana_provisioning
+ #
+ #  influxdb:
+ #        container_name: influxdb
+ #        image: influxdb:1.8
+ #        ports:
+ #            - 8086:8086  # HTTP API
+ #            - 2003:2003  # graphite API
+ #        volumes:
+ #            # init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
+ #            # this should inlcude adding a read-only user for grafana
+ #            - influxdb_init_files:/docker-entrypoint-initdb.d
+ #            # docker data volume:
+ #            - /home/tylar/git-repos/mbon-dashboard-server/influxdb/data_volume:/var/lib/influxdb
+ #        environment:
+ #            - INFLUXDB_DB=fwc_coral_disease
+ #            - INFLUXDB_HTTP_AUTH_ENABLED=true
+ #            - INFLUXDB_ADMIN_USER=influx_admin
+ #            - INFLUXDB_READ_USER=grafana
+ #            - INFLUXDB_WRITE_USER=telegraf
   ftp_ingester:
       container_name: ftp_ingester
       build: ./ftp_ingester
       ports:
           - 20:20
           - 21:21
-      volumes:
-          - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_home:/home/vsftpd
-          - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_logs:/var/log/vsftpd
+      # volumes:
+      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_home:/home/vsftpd
+      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_logs:/var/log/vsftpd
       environment:
           - "FTP_USER=imars"
+          - "LOG_STDOUT=true"
