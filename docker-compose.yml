@@ -24,7 +24,31 @@ volumes:
   #         o: 'bind'
   #         device: /home/tylar/git-repos/mbon-dashboard-server/grafana/provisioning
 services:
-
+    # === airflow ===========================================================
+    # based on https://github.com/shamoji-tech/airflow_docker
+    webserver:
+        container_name: airflow_webserver
+        image: "apache/airflow:1.10.10-python3.7"
+        env_file:
+            - ./airflow/.env
+        # depends_on:
+        #     - postgres
+        command: webserver
+        ports:
+            - 8080:8080
+        volumes:
+            - ./airflow/dags:/opt/airflow/dags
+    scheduler:
+        image: "apache/airflow:1.10.10-python3.7"
+        container_name: airflow_scheduler
+        env_file:
+            - ./airflow/.env
+        # depends_on:
+        #     - postgres
+        command: scheduler
+        volumes:
+            - ./airflow/dags:/opt/airflow/dags
+    # =======================================================================
   # nginx-proxy:
   #   container_name: proxy
   #   image: jwilder/nginx-proxy
@@ -107,15 +131,15 @@ services:
  #            - INFLUXDB_ADMIN_USER=influx_admin
  #            - INFLUXDB_READ_USER=grafana
  #            - INFLUXDB_WRITE_USER=telegraf
-  ftp_ingester:
-      container_name: ftp_ingester
-      build: ./ftp_ingester
-      ports:
-          - 20:20
-          - 21:21
-      # volumes:
-      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_home:/home/vsftpd
-      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_logs:/var/log/vsftpd
-      environment:
-          - "FTP_USER=imars"
-          - "LOG_STDOUT=true"
+ #  ftp_ingester:
+ #      container_name: ftp_ingester
+ #      build: ./ftp_ingester
+ #      ports:
+ #          - 20:20
+ #          - 21:21
+ #      # volumes:
+ #      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_home:/home/vsftpd
+ #      #     - /home/tylar/git-repos/mbon-dashboard-server/ftp_ingester/vsftpd_logs:/var/log/vsftpd
+ #      environment:
+ #          - "FTP_USER=imars"
+ #          - "LOG_STDOUT=true"
