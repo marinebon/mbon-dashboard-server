@@ -41,6 +41,7 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     2. connect ERDDAP to your data - see `./erddap/README.md`
     3. load data into InfluxDB - see `./influxdb/README.md`
     4. modify grafana dashboards - see `./grafana/README.md`
+    5. create data dir for PostgreSQL - see `./postgres/README.md`
 3. start everything up: `docker-compose up --build -d`
 4. test it out (assuming your hostname is "localhost")
     1. http://localhost/ should show "welcome to nginx"

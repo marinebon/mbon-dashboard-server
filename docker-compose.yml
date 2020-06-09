@@ -23,16 +23,31 @@ volumes:
   #         type: 'none'
   #         o: 'bind'
   #         device: /home/tylar/git-repos/mbon-dashboard-server/grafana/provisioning
+  # === windows only volume (see postgres/README.md) ========================
+  postgresql-volume:
+      external: true
+  # =========================================================================
+
 services:
     # === airflow ===========================================================
     # based on https://github.com/shamoji-tech/airflow_docker
+    postgres:
+        image: postgres:9.6
+        container_name: postgreSQL
+        env_file:
+            - ./postgres/.env
+        volumes:
+            # === linux
+            # - ./postgres/pgdata:/var/lib/postgresql/data/pgdata
+            # === windows
+            - postgresql-volume:/var/lib/postgresql/data/pgdata
     webserver:
         container_name: airflow_webserver
         image: "apache/airflow:1.10.10-python3.7"
         env_file:
             - ./airflow/.env
-        # depends_on:
-        #     - postgres
+        depends_on:
+            - postgres
         command: webserver
         ports:
             - 8080:8080
@@ -43,8 +58,8 @@ services:
         container_name: airflow_scheduler
         env_file:
             - ./airflow/.env
-        # depends_on:
-        #     - postgres
+        depends_on:
+            - postgres
         command: scheduler
         volumes:
             - ./airflow/dags:/opt/airflow/dags
