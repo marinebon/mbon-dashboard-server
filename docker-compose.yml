@@ -1,33 +1,10 @@
 version: '3.3'
 
 services:
-
-  # nginx-proxy:
-  #   container_name: proxy
-  #   image: jwilder/nginx-proxy
-  #   env_file: .env
-  #   environment:
-  #     DEFAULT_HOST: www.$HOST
-  #     VIRTUAL_HOST_SPECIFIC_PORT: 'true'
-  #   volumes:
-  #     - /var/run/docker.sock:/tmp/docker.sock:ro
-  #     - ./nginx-proxy/nginx.tmpl:/app/nginx.tmpl:ro
-  #   restart: unless-stopped
-  #   ports:
-  #     - 80:80
-  #     # TODO: add https
-  #     #- 443:443
-  #   depends_on:
-  #     # - geoserver
-  #     # - rstudio-shiny
-  #     - nginx
-
   nginx:
     container_name: nginx
     build: ./nginx
     restart: unless-stopped
-    environment:
-      VIRTUAL_HOST: www.$HOST
     ports:
       #- 8088:80
       - 80:80
@@ -45,8 +22,6 @@ services:
      - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
      # =======================================================================
     restart: unless-stopped
-    environment:
-      VIRTUAL_HOST: erddap.$HOST
     ports:
       - 8080:8080
  # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
