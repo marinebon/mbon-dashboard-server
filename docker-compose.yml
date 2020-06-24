@@ -1,36 +1,48 @@
 version: '3.3'
 
 services:
-
-  # nginx-proxy:
-  #   container_name: proxy
-  #   image: jwilder/nginx-proxy
-  #   env_file: .env
-  #   environment:
-  #     DEFAULT_HOST: www.$HOST
-  #     VIRTUAL_HOST_SPECIFIC_PORT: 'true'
-  #   volumes:
-  #     - /var/run/docker.sock:/tmp/docker.sock:ro
-  #     - ./nginx-proxy/nginx.tmpl:/app/nginx.tmpl:ro
-  #   restart: unless-stopped
-  #   ports:
-  #     - 80:80
-  #     # TODO: add https
-  #     #- 443:443
-  #   depends_on:
-  #     # - geoserver
-  #     # - rstudio-shiny
-  #     - nginx
-
-  nginx:
-    container_name: nginx
-    build: ./nginx
-    restart: unless-stopped
+  nginx-proxy:
+    container_name: nginx-proxy
+    image: jwilder/nginx-proxy
+    env_file: .env
+    labels:
+      - "com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy=true" # Label needed for Let's Encrypt companion container
     environment:
-      VIRTUAL_HOST: www.$HOST
+      DEFAULT_HOST: wp.$HOST
+      VIRTUAL_HOST_SPECIFIC_PORT: 'true'
+      VIRTUAL_PROTO: https
+      VIRTUAL_PORT: 443
+      DHPARAM_GENERATION: 'false'
+    volumes:
+      - "/var/run/docker.sock:/tmp/docker.sock"
+      - "./nginx-proxy/nginx.tmpl:/app/nginx.tmpl"
+      - "/etc/nginx/conf.d"
+      - "/etc/nginx/certs"
+      - "/etc/nginx/dhparam"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+    restart: unless-stopped
     ports:
-      #- 8088:80
       - 80:80
+      - 443:443
+
+  # https://cloud.google.com/community/tutorials/nginx-reverse-proxy-docker
+  letsencrypt-nginx-proxy-companion:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    restart: always
+    container_name: letsencrypt-nginx-proxy-companion
+    environment:
+      DEFAULT_EMAIL: 'tylarmurray@usf.edu'
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/etc/nginx/conf.d"
+      - "/etc/nginx/certs"
+      - "/etc/nginx/dhparam"
+      - "/etc/nginx/vhost.d"
+      - "/usr/share/nginx/html"
+    # Make sure we start nginx proxy container first
+    depends_on:
+      - nginx-proxy
 
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
   erddap:
@@ -38,29 +50,34 @@ services:
     container_name: erddap
     build: ./erddap
     volumes:
-     - ./erddap/erddap_data:/erddapData
-     - ./erddap/content:/usr/local/tomcat/content/erddap
-     # === ERDDAP dataset mounts==============================================
-     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
-     - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
-     # =======================================================================
+      - ./erddap/erddap_data:/erddapData
+      - ./erddap/content:/usr/local/tomcat/content/erddap
+      # === ERDDAP dataset mounts==============================================
+      # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
+      - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
+      # =======================================================================
     restart: unless-stopped
     environment:
       VIRTUAL_HOST: erddap.$HOST
+      LETSENCRYPT_HOST: erddap.$HOST
+      LETSENCRYPT_EMAIL: tylarmurray@mail.usf.edu
     ports:
       - 8080:8080
- # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
+    depends_on:
+      - letsencrypt-nginx-proxy-companion
 
   grafana:
-      container_name: grafana
-      image: grafana/grafana:6.7.3
-      ports:
-          - 3000:3000
-      environment:
-          - "GF_INSTALL_PLUGINS=alexandra-trackmap-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
-          - GF_PATHS_PROVISIONING=/grafana_provisioning
-      volumes:
-          - ./grafana/provisioning:/grafana_provisioning
+    container_name: grafana
+    image: grafana/grafana:6.7.3
+    ports:
+      - 3000:3000
+    environment:
+      GF_INSTALL_PLUGINS: alexandra-trackmap-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
+      GF_PATHS_PROVISIONING: /grafana_provisioning
+    volumes:
+      - ./grafana/provisioning:/grafana_provisioning
+    depends_on:
+      - influxdb
 
   influxdb:
         container_name: influxdb
@@ -75,11 +92,14 @@ services:
             # docker data volume:
             - ./influxdb/data_volume:/var/lib/influxdb
         environment:
-            - INFLUXDB_DB=fwc_coral_disease
-            - INFLUXDB_HTTP_AUTH_ENABLED=true
-            - INFLUXDB_ADMIN_USER=influx_admin
-            - INFLUXDB_READ_USER=grafana
-            - INFLUXDB_WRITE_USER=telegraf
+            INFLUXDB_DB: fwc_coral_disease
+            INFLUXDB_HTTP_AUTH_ENABLED: 'true'
+            INFLUXDB_ADMIN_USER: influx_admin
+            INFLUXDB_READ_USER: grafana
+            INFLUXDB_WRITE_USER: telegraf
+        depends_on:
+         - letsencrypt-nginx-proxy-companion
+
   ftp_ingester:
       container_name: ftp_ingester
       build: ./ftp_ingester
@@ -90,4 +110,9 @@ services:
           - ./ftp_ingester/vsftpd_home:/home/vsftpd
           - ./ftp_ingester/vsftpd_logs:/var/log/vsftpd
       environment:
-          - "FTP_USER=imars"
+        FTP_USER: imars
+        VIRTUAL_HOST: erddap.$HOST
+        LETSENCRYPT_HOST: erddap.$HOST
+        LETSENCRYPT_EMAIL: tylarmurray@mail.usf.edu
+      depends_on:
+          - letsencrypt-nginx-proxy-companion
