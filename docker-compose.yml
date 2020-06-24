@@ -1,5 +1,14 @@
 version: '3.3'
 
+volumes:
+    erddap-datasets:
+        # where erddap datasets live. See `datasets.xml` for subdirectory info
+        driver: local
+        driver_opts:
+            type: "nfs"
+            device: ":/fk"  # set this for your host
+            o: "addr=thing1.marine.usf.edu,nolock,soft,rw"
+
 services:
   nginx:
     container_name: nginx
@@ -17,10 +26,7 @@ services:
     volumes:
      - ./erddap/erddap_data:/erddapData
      - ./erddap/content:/usr/local/tomcat/content/erddap
-     # === ERDDAP dataset mounts==============================================
-     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
-     - /srv/imars-objects/fk/MEAN_7D_VSNPP/OC:/srv/imars-objects/fk/MEAN_7D_VSNPP/OC
-     # =======================================================================
+     - erddap-datasets:/srv/erddap_datasets/
     restart: unless-stopped
     ports:
       - 8080:8080
