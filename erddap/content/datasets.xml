@@ -78,7 +78,7 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
 <dataset type="EDDGridFromNcFiles" datasetID="OC_2a67_61be_9fd6" active="true">
     <reloadEveryNMinutes>2880</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/srv/imars-objects/fk/MEAN_7D_VSNPP/OC/</fileDir>
+    <fileDir>/srv/erddap-datasets/fk/MEAN_7D_VSNPP/OC/</fileDir>
     <fileNameRegex>.*\.nc</fileNameRegex>
     <recursive>true</recursive>
     <pathRegex>.*</pathRegex>
