@@ -19,7 +19,7 @@ services:
      - ./erddap/content:/usr/local/tomcat/content/erddap
      # === ERDDAP dataset mounts==============================================
      # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
-     - /srv/imars-objects:/srv/erddap-datasets  # NOTE: not working because of NFS root_squash
+     - /srv/imars-objects:/srv/erddap-datasets:ro,shared
      # =======================================================================
     restart: unless-stopped
     ports:
