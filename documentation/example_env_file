@@ -14,7 +14,3 @@ GF_ANALYTICS_GOOGLE_ANALYTICS_UA_ID="your google UA ID here"
 GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=plugin1,plugin2
 GF_DATABASE_URL="mysql://user:secret@host:port/database"
 # ==========================================================================
-
-# === ftp_ingester =========================================================
-FTP_PASS="ftp_user_password"
-# ==========================================================================
