@@ -2,6 +2,7 @@ PASSWORD="password_goes_here"
 # ==========================================================================
 
 # === InfluxDB =============================================================
+INFLUXDB_USER_PASSWORD="influx_user_pw"
 INFLUXDB_ADMIN_PASSWORD="influxdb_admin_pw"
 INFLUXDB_READ_USER_PASSWORD="grafana_user_pw"
 INFLUXDB_WRITE_USER_PASSWORD="telegraf_user_pw"
