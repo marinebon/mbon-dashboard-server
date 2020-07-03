@@ -55,3 +55,11 @@ services:
             - INFLUXDB_ADMIN_USER=influx_admin
             - INFLUXDB_READ_USER=grafana
             - INFLUXDB_WRITE_USER=telegraf
+
+  mbon_data_uploader:
+      container_name: mbon_data_uploader
+      build: ./mbon_data_uploader
+      ports:
+          - 5000:5000
+      environment:
+          - FLASK_APP=mbon_data_uploader
