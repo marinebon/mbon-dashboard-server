@@ -48,6 +48,7 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     3. http://localhost:8080/erddap should show ERDDAP's page
     4. http://localhost:8086/ should show "404 page not found" from InfluxDB
     5. http://localhost:3000/login should show grafana login
+    6. http://localhost:5000 should show a data submission form from mbon_data_uploader
 5. configure grafana
     * import dashboards from [github/USF-IMaRS/grafana-dashboards](https://github.com/USF-IMARS/grafana-dashboards) using [these instructions.](https://grafana.com/docs/grafana/latest/reference/export_import/#importing-a-dashboard)
 
