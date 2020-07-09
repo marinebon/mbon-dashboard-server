@@ -55,10 +55,10 @@ services:
         environment:
             - INFLUXDB_DB=fwc_coral_disease
             - INFLUXDB_HTTP_AUTH_ENABLED=false  # TODO: make this true & + users. See
-            - INFLUXDB_USER=influx_user         #       See https://github.com/influxdata/influxdata-docker/issues/232
-            - INFLUXDB_ADMIN_USER=influx_admin  #       and https://github.com/influxdata/influxdata-docker/issues/224
-            - INFLUXDB_READ_USER=grafana
-            - INFLUXDB_WRITE_USER=telegraf
+            # - INFLUXDB_USER=influx_user         #       See https://github.com/influxdata/influxdata-docker/issues/232
+            # - INFLUXDB_ADMIN_USER=influx_admin  #       and https://github.com/influxdata/influxdata-docker/issues/224
+            # - INFLUXDB_READ_USER=grafana
+            # - INFLUXDB_WRITE_USER=telegraf
 
   mbon_data_uploader:
       container_name: mbon_data_uploader
