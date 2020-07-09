@@ -2,6 +2,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:447",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -15,16 +16,15 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1594233269117,
+  "iteration": 1594314197441,
   "links": [],
   "panels": [
     {
       "content": "![map of sub-regions](http://imars-webserver-01.marine.usf.edu/fk/FKNMS_map_dbv2.png)",
       "datasource": null,
       "gridPos": {
-        "h": 14,
-        "w": 12,
+        "h": 9,
+        "w": 15,
         "x": 0,
         "y": 0
       },
@@ -39,9 +39,9 @@
       "content": "![logo image](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/DB_logos_Horz_FK_vNew.png)\n\n\n\nSelect a specific location using the \"Locations\" dropdown menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n",
       "datasource": null,
       "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
+        "h": 9,
+        "w": 9,
+        "x": 15,
         "y": 0
       },
       "id": 8,
@@ -58,7 +58,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 9
       },
       "id": 4,
       "panels": [],
@@ -77,7 +77,7 @@
         "h": 6,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 10
       },
       "hiddenSeries": false,
       "id": 2,
@@ -93,7 +93,7 @@
       },
       "lines": true,
       "linewidth": 1,
-      "nullPointMode": "null",
+      "nullPointMode": "connected",
       "options": {
         "dataLinks": []
       },
@@ -107,6 +107,7 @@
       "steppedLine": false,
       "targets": [
         {
+          "alias": "$m $col",
           "groupBy": [
             {
               "params": [
@@ -121,10 +122,10 @@
               "type": "fill"
             }
           ],
-          "measurement": "rs_oc_chlor",
+          "measurement": "modis_abi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"anomaly\") FROM \"rs_oc_chlor\" WHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"modis_abi\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval) fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -171,6 +172,7 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:642",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -179,6 +181,182 @@
           "show": true
         },
         {
+          "$$hashKey": "object:643",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$m $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"mean\") AS mean FROM \"modis_abi\"\nWHERE (\"location\" =~ /^$Locations$/) AND mean!=-999 AND $timeFilter \nGROUP BY time($__interval) fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        },
+        {
+          "alias": "$m $col",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"climatology\") AS climatology FROM \"modis_abi\"\nWHERE (\"location\" =~ /^$Locations$/) AND climatology!=-999 AND $timeFilter \nGROUP BY time($__interval) fill(null)",
+          "rawQuery": true,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Panel Title",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:720",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:721",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -198,13 +376,13 @@
       "color_bar_str": "|||||",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 1296000001,
+      "delta": 1296000000,
       "delta_unit": "ms",
       "gridPos": {
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 22
       },
       "id": 10,
       "lat_max": 23.5,
@@ -220,34 +398,34 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-04-09T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-04-09T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "9th Apr 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-04-10T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-04-10T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "10th Apr 2020"
         },
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-04-24T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-04-24T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "24th Apr 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-04-25T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-04-25T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "25th Apr 2020"
         },
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-05-09T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-05-09T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "9th May 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-05-10T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-05-10T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "10th May 2020"
         },
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-05-24T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-05-24T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "24th May 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-05-25T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-05-25T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "25th May 2020"
         },
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-06-08T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-06-08T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "8th Jun 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-06-09T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-06-09T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "9th Jun 2020"
         },
         {
-          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-06-23T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
-          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-06-23T18:34:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "23rd Jun 2020"
+          "display": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.png?sst4_anom[(2020-06-24T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=90000%7C",
+          "link": "http://imars-dockerhost-dune.marine.usf.edu:8080/erddap/griddap/SST4_aac4_99a3_6549.largePng?sst4_anom[(2020-06-24T17:03:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "24th Jun 2020"
         }
       ],
       "variable_id": "sst4_anom"
@@ -264,9 +442,19 @@
         "current": {
           "selected": false,
           "tags": [],
-          "text": "BIS",
+          "text": "BIS + UK + MUK + MK + LK + MQ + DT + WFB + EFB + WFS + SR",
           "value": [
-            "BIS"
+            "BIS",
+            "UK",
+            "MUK",
+            "MK",
+            "LK",
+            "MQ",
+            "DT",
+            "WFB",
+            "EFB",
+            "WFS",
+            "SR"
           ]
         },
         "hide": 0,
@@ -276,57 +464,68 @@
         "name": "Locations",
         "options": [
           {
+            "$$hashKey": "object:490",
             "selected": true,
             "text": "BIS",
             "value": "BIS"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:491",
+            "selected": true,
             "text": "UK",
             "value": "UK"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:492",
+            "selected": true,
             "text": "MUK",
             "value": "MUK"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:493",
+            "selected": true,
             "text": "MK",
             "value": "MK"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:494",
+            "selected": true,
             "text": "LK",
             "value": "LK"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:495",
+            "selected": true,
             "text": "MQ",
             "value": "MQ"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:496",
+            "selected": true,
             "text": "DT",
             "value": "DT"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:497",
+            "selected": true,
             "text": "WFB",
             "value": "WFB"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:498",
+            "selected": true,
             "text": "EFB",
             "value": "EFB"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:499",
+            "selected": true,
             "text": "WFS",
             "value": "WFS"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:500",
+            "selected": true,
             "text": "SR",
             "value": "SR"
           }
