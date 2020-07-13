@@ -1,4 +1,4 @@
 [submodule "mbon_data_uploader"]
 	path = mbon_data_uploader
-	url = git@github.com:marinebon/mbon_data_uploader.git
+	url = https://github.com:marinebon/mbon_data_uploader.git
 	branch = master
