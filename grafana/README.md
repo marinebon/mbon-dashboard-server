@@ -8,3 +8,12 @@ You may add your own .json dashboard export files to this directory.
 Similarly datasources can be added by modifying the contents of `./grafana/provisioning/datasources`.
 
 A cronjob can be configured to export & `git commit` these dashboards nightly (TODO: + details).
+
+
+-----------------------------
+
+Post-install manual configuration:
+
+1. under configuration > preferences
+    1. set org name
+    2. set Home Dashboard to "Home Dashboard"

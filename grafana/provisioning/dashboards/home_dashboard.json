@@ -1,0 +1,106 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 2,
+  "links": [],
+  "panels": [
+    {
+      "content": "![logo image](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/DB_logos_Horz_FK_vNew.png)",
+      "datasource": null,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 4,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "text"
+    },
+    {
+      "content": "Welcome! \n\nHere you will find dashboards built for the Florida Keys National Marine Sanctuary.\nTo get started choose a dashboard from the list and begin exploring! \n",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 15,
+        "x": 0,
+        "y": 6
+      },
+      "id": 8,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "text"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 9,
+        "x": 15,
+        "y": 6
+      },
+      "headings": false,
+      "id": 2,
+      "limit": 10,
+      "query": "",
+      "recent": false,
+      "search": false,
+      "starred": true,
+      "tags": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Dashboards",
+      "type": "dashlist"
+    }
+  ],
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": []
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Home Dashboard",
+  "uid": "Eu4SuDnMk",
+  "variables": {
+    "list": []
+  },
+  "version": 1
+}
