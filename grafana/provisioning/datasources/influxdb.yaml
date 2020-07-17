@@ -11,7 +11,7 @@ datasources:
     # <string> custom UID which can be used to reference this datasource in other parts of the configuration, if not specified will be generated automatically
     uid: influx_db_uid
     # <string> url
-    url: http://tylar-pc:8086  # TODO: use $INFLUXDB_HOSTNAME
+    url: $INFLUXDB_HOSTNAME
     # <string> database name, if used
     database: fwc_coral_disease
     # <bool> mark as default datasource. Max one per org
