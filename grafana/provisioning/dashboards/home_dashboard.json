@@ -2,6 +2,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:218",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -15,11 +16,10 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 2,
   "links": [],
   "panels": [
     {
-      "content": "![logo image](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/DB_logos_Horz_FK_vNew.png)",
+      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/DB_logos_Horz_FK_vNew.png )",
       "datasource": null,
       "gridPos": {
         "h": 6,
@@ -63,8 +63,8 @@
       "limit": 10,
       "query": "",
       "recent": false,
-      "search": false,
-      "starred": true,
+      "search": true,
+      "starred": false,
       "tags": [],
       "timeFrom": null,
       "timeShift": null,
