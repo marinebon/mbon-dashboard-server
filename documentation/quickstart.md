@@ -1,5 +1,6 @@
 updated 2020-07-16
 
+1. install docker & docker-compose
 1. git clone
 1. git submodule update --init --recursive --remote
 1. set passwords in the environment `.env` file.
