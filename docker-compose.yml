@@ -72,3 +72,11 @@ services:
       environment:
           - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
           - INFLUXDB_HOSTNAME=localhost:8086
+
+  postgres:
+      container_name: postgres
+      image: postgres:9.6
+          environment:
+            - POSTGRES_USER=airflow
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+            - POSTGRES_DB=airflow
