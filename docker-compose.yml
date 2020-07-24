@@ -73,10 +73,37 @@ services:
           - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
           - INFLUXDB_HOSTNAME=localhost:8086
 
-  postgres:
+  airflow_postgres:
       container_name: postgres
       image: postgres:9.6
-          environment:
-            - POSTGRES_USER=airflow
-            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-            - POSTGRES_DB=airflow
+      environment:
+        - POSTGRES_USER=airflow
+        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+        - POSTGRES_DB=airflow
+
+  airflow_webserver:
+    container_name: airflow_webserver
+    image: puckel/docker-airflow:1.10.9
+    restart: always
+    # mem_limit: 2048m
+    depends_on:
+        - airflow_postgres
+    env_file:
+        - .env
+    environment:
+        - LOAD_EX=n
+        - EXECUTOR=Local
+    volumes:
+        - ./airflow/dags:/usr/local/airflow/dags
+        # - ./airflow/test:/usr/local/airflow/test
+        # - ./airflow/plugins:/usr/local/airflow/plugins
+        # - ./airflow/requirements.txt:/requirements.txt
+        # - ~/airflow/.aws:/usr/local/airflow/.aws
+    ports:
+        - "8888:8080"
+    command: webserver
+    healthcheck:
+        test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+        interval: 30s
+        timeout: 30s
+        retries: 3
