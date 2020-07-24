@@ -72,180 +72,113 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
 =====================================================================
 -->
 
-<!-- VIIRS kd490, chlor a, Rrs 671 for FWC coral disease dashboard -->
-<!-- NOTE! The source for OC_2a67_61be_9fd6 has nGridVariables=8,
-  but this dataset will only serve 6 because the others use different dimensions. -->
-<dataset type="EDDGridFromNcFiles" datasetID="OC_2a67_61be_9fd6" active="true">
-    <reloadEveryNMinutes>2880</reloadEveryNMinutes>
-    <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/srv/erddap-datasets/fk/MEAN_7D_VSNPP/OC/</fileDir>
-    <fileNameRegex>.*\.nc</fileNameRegex>
-    <recursive>true</recursive>
-    <pathRegex>.*</pathRegex>
-    <metadataFrom>last</metadataFrom>
-    <matchAxisNDigits>20</matchAxisNDigits>
-    <fileTableInMemory>false</fileTableInMemory>
-    <accessibleViaFiles>false</accessibleViaFiles>
-    <!-- sourceAttributes>
-        <att name="Composite_end_date">05/26/2020</att>
-        <att name="Composite_start_date">05/20/2020</att>
-        <att name="Contact">Dan Otis - dotis@usf.edu</att>
-        <att name="CreationDate">05/27/2020 05:01:53</att>
-        <att name="Image_size">653 pixels(N-S) x 890 pixels(E-W)</att>
-        <att name="Lat-Lon_Limits">23.0072N to 27.4N -85W to -79.0105W</att>
-        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
-        <att name="Original_Image_Format">Level-2(NetCDF)</att>
-        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
-        <att name="Processing_and_binning">USF IMaRS</att>
-        <att name="Projection">Equidistant Cylindrical</att>
-        <att name="Region">Florida Keys (FK)</att>
-        <att name="Sensor">VIIRS-SNPP</att>
-        <att name="Time_interval">7-Day Composite (median)</att>
-    </sourceAttributes -->
-    <addAttributes>
-        <att name="cdm_data_type">Grid</att>
-        <att name="Contact">null</att>
-        <att name="contact">Dan Otis - dotis@usf.edu</att>
-        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="creator_email">dotis@usf.edu</att>
-        <att name="creator_name">DOTIS</att>
-        <att name="creator_type">institution</att>
-        <att name="infoUrl">???</att>
-        <att name="institution">USF IMaRS</att>
-        <att name="keywords">anomaly, chemistry, chlor, chlor_a_anom, chlor_a_median, chlorophyll, color, concentration, concentration_of_chlorophyll_in_sea_water, data, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, florida, img_x, img_y, Kd_490_anom, Kd_490_median, local, median, ocean, ocean color, oceans, optical, optical properties, properties, rrs, Rrs_671_anom, Rrs_671_median, science, sea, seawater, source, south, university, usf, water</att>
-        <att name="keywords_vocabulary">GCMD Science Keywords</att>
-        <att name="Lat-Lon_Limits">null</att>
-        <att name="Lat_Lon_Limits">23.0072N to 27.4N -85W to -79.0105W</att>
-        <att name="license">[standard]</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">University of South Florida (USF) data from a local source.</att>
-        <att name="title">VIIRS Ocean Color.</att>
-    </addAttributes>
-    <axisVariable>
-        <!-- example filename : VSNPP_2020141_2020147_7D_FK_OC.nc -->
-        <sourceName>***fileName,timeFormat=yyyyDDD,VSNPP_(\d{7})_(\d{7})_7D_FK_OC\.nc,2</sourceName>
-        <destinationName>time</destinationName>
-        <addAttributes>
-            <att name="ioos_category">Unknown</att>
-            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </addAttributes>
-    </axisVariable>
-    <axisVariable>
-        <sourceName>latitude</sourceName>
-        <destinationName>latitude</destinationName>
-    </axisVariable>
-    <axisVariable>
-        <sourceName>longitude</sourceName>
-        <destinationName>longitude</destinationName>
-    </axisVariable>
-    <dataVariable>
-        <sourceName>chlor_a_median</sourceName>
-        <destinationName>chlor_a_median</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">chlor_a</att>
-            <att name="Units">mg m^-3</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">30.0</att>
-            <att name="colorBarMinimum" type="double">0.03</att>
-            <att name="colorBarScale">Log</att>
-            <att name="ioos_category">Ocean Color</att>
-            <att name="long_name">Concentration Of Chlorophyll In Sea Water</att>
-            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
-            <att name="Units">null</att>
-            <att name="units">mg m^-3</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>chlor_a_anom</sourceName>
-        <destinationName>chlor_a_anom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">chlor_a_anomaly</att>
-            <att name="Units">mg m^-3</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">10.0</att>
-            <att name="colorBarMinimum" type="double">-10.0</att>
-            <att name="ioos_category">Ocean Color</att>
-            <att name="long_name">Chlor A Anom</att>
-            <att name="Units">null</att>
-            <att name="units">mg m^-3</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>Rrs_671_median</sourceName>
-        <destinationName>Rrs_671_median</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">Rrs_671</att>
-            <att name="Units">sr^-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="ioos_category">Optical Properties</att>
-            <att name="long_name">Rrs 671 Median</att>
-            <att name="Units">null</att>
-            <att name="units">sr^-1</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>Rrs_671_anom</sourceName>
-        <destinationName>Rrs_671_anom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">Rrs_671_anomaly</att>
-            <att name="Units">sr^-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">10.0</att>
-            <att name="colorBarMinimum" type="double">-10.0</att>
-            <att name="ioos_category">Optical Properties</att>
-            <att name="long_name">Rrs 671 Anom</att>
-            <att name="Units">null</att>
-            <att name="units">sr^-1</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>Kd_490_median</sourceName>
-        <destinationName>Kd_490_median</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">Kd_490</att>
-            <att name="Units">m^-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="ioos_category">Unknown</att>
-            <att name="long_name">Kd 490 Median</att>
-            <att name="Units">null</att>
-            <att name="units">m^-1</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>Kd_490_anom</sourceName>
-        <destinationName>Kd_490_anom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">Kd_490_anomaly</att>
-            <att name="Units">m^-1</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">10.0</att>
-            <att name="colorBarMinimum" type="double">-10.0</att>
-            <att name="ioos_category">Unknown</att>
-            <att name="long_name">Kd 490 Anom</att>
-            <att name="Units">null</att>
-            <att name="units">m^-1</att>
-        </addAttributes>
-    </dataVariable>
+<!--FGBNMS 7 Day Sea Surface Temperature ================================================================================== -->
+<dataset type="EDDGridFromNcFilesUnpacked" datasetID="SST4_9c29_08ac_eccb" active="true">
+   <reloadEveryNMinutes>1440</reloadEveryNMinutes>
+   <updateEveryNMillis>10000</updateEveryNMillis>
+   <fileDir>/srv/imars-objects/modis_aqua_fgbnms/MEAN_7D_AQUA/SST4/</fileDir>
+   <fileNameRegex>.*\.nc</fileNameRegex>
+   <recursive>true</recursive>
+   <pathRegex>.*</pathRegex>
+   <metadataFrom>last</metadataFrom>
+   <matchAxisNDigits>20</matchAxisNDigits>
+   <fileTableInMemory>false</fileTableInMemory>
+   <accessibleViaFiles>false</accessibleViaFiles>
+   <!-- sourceAttributes>
+       <att name="Region">NW Gulf of Mexico (FGB)</att>
+       <att name="Time_interval">7-Day Composite (median)</att>
+       <att name="Sensor">MODIS-Aqua</att>
+       <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
+       <att name="Original_Image_Format">Level-2(NetCDF)</att>
+       <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
+       <att name="Projection">Equidistant Cylindrical</att>
+       <att name="Image_size">770 pixels(N-S) x 1100 pixels(E-W)</att>
+       <att name="Lat-Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+       <att name="Processing_and_binning">USF IMaRS</att>
+       <att name="Contact">Dan Otis - dotis@mail.usf.edu</att>
+       <att name="CreationDate">12/05/2018 02:37:07</att>
+       <att name="Composite_start_date">12/03/2018</att>
+       <att name="Composite_end_date">12/03/2018</att>
+   </sourceAttributes -->
+   <addAttributes>
+       <att name="cdm_data_type">Grid</att>
+       <att name="Contact">null</att>
+       <att name="contact">Dan Otis - dotis@mail.usf.edu</att>
+       <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+       <att name="creator_email">dotis@mail.usf.edu</att>
+       <att name="creator_name">DOTIS</att>
+       <att name="creator_type">institution</att>
+       <att name="infoUrl">http://imars.marine.usf.edu</att>
+       <att name="institution">USF IMaRS</att>
+       <att name="keywords">anomaly, data, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, florida, land, local, mail.usf, ocean, oceans, science, sea, sea_surface_temperature, source, south, sst4_anom, sst4_median, surface, surface_temperature_anomaly, temperature, university, usf</att>
+       <att name="keywords_vocabulary">GCMD Science Keywords</att>
+       <att name="Lat-Lon_Limits">null</att>
+       <att name="Lat_Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+       <att name="license">[standard]</att>
+       <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+       <att name="summary">FGBNMS 7 Day Sea Surface Temperature</att>
+       <att name="title">Flower Garden Banks National Marine Sanctuary 7 Day Sea Surface Temperature</att>
+   </addAttributes>
+   <axisVariable>
+   <!-- exampple name AQUA_2002225_2002231_7D_FGB_SST4.nc-->
+       <sourceName>***fileName,timeFormat=yyyyDDD,AQUA_(\d{7})_(\d{7})_7D_FGB_SST4\.nc,2</sourceName>
+       <destinationName>time</destinationName>
+       <addAttributes>
+           <att name="ioos_category">Unknown</att>
+           <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+       </addAttributes>
+   </axisVariable>
+   <axisVariable>
+       <sourceName>latitude</sourceName>
+       <destinationName>latitude</destinationName>
+   </axisVariable>
+   <axisVariable>
+       <sourceName>longitude</sourceName>
+       <destinationName>longitude</destinationName>
+   </axisVariable>
+   <dataVariable>
+       <sourceName>sst4_median</sourceName>
+       <destinationName>sst4_median</destinationName>
+       <dataType>double</dataType>
+       <!-- sourceAttributes>
+           <att name="Product">sst4</att>
+           <att name="Units">DegC</att>
+       </sourceAttributes -->
+       <addAttributes>
+           <att name="colorBarMaximum" type="double">32.0</att>
+           <att name="colorBarMinimum" type="double">0.0</att>
+           <att name="ioos_category">Temperature</att>
+           <att name="long_name">Sea Surface Temperature</att>
+           <att name="standard_name">sea_surface_temperature</att>
+           <att name="Units">null</att>
+           <att name="units">degree_C</att>
+       </addAttributes>
+   </dataVariable>
+   <dataVariable>
+       <sourceName>sst4_anom</sourceName>
+       <destinationName>sst4_anom</destinationName>
+       <dataType>double</dataType>
+       <!-- sourceAttributes>
+           <att name="Product">sst4_anomaly</att>
+           <att name="Units">DegC</att>
+       </sourceAttributes -->
+       <addAttributes>
+           <att name="colorBarMaximum" type="double">3.0</att>
+           <att name="colorBarMinimum" type="double">-3.0</att>
+           <att name="ioos_category">Temperature</att>
+           <att name="long_name">Surface Temperature Anomaly</att>
+           <att name="standard_name">surface_temperature_anomaly</att>
+           <att name="Units">null</att>
+           <att name="units">degree_C</att>
+       </addAttributes>
+   </dataVariable>
 </dataset>
-<!-- VIIRS Sea Surface Temperature N -->
-<!-- NOTE! The source for SSTN_2f10_d542_b535 has nGridVariables=4,
-  but this dataset will only serve 2 because the others use different dimensions. -->
-<dataset type="EDDGridFromNcFiles" datasetID="SSTN_2f10_d542_b535" active="true">
-    <reloadEveryNMinutes>90</reloadEveryNMinutes>
+
+<!-- FGBNMS Mean 7 Day OC ==================================================================================================-->
+<dataset type="EDDGridFromNcFilesUnpacked" datasetID="OC_e122_8547_dab0" active="true">
+    <reloadEveryNMinutes>1440</reloadEveryNMinutes>
     <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/srv/imars-objects/fk/MEAN_7D_VSNPP/SSTN/</fileDir>
+    <fileDir>/srv/imars-objects/modis_aqua_fgbnms/MEAN_7D_AQUA/OC/</fileDir>
     <fileNameRegex>.*\.nc</fileNameRegex>
     <recursive>true</recursive>
     <pathRegex>.*</pathRegex>
@@ -254,149 +187,43 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
     <fileTableInMemory>false</fileTableInMemory>
     <accessibleViaFiles>false</accessibleViaFiles>
     <!-- sourceAttributes>
-        <att name="Composite_end_date">04/01/2020</att>
-        <att name="Composite_start_date">04/01/2020</att>
-        <att name="Contact">Dan Otis - dotis@usf.edu</att>
-        <att name="CreationDate">04/02/2020 21:40:29</att>
-        <att name="Image_size">653 pixels(N-S) x 890 pixels(E-W)</att>
-        <att name="Lat-Lon_Limits">23.0072N to 27.4N -85W to -79.0105W</att>
-        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
-        <att name="Original_Image_Format">Level-2(NetCDF)</att>
-        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
-        <att name="Processing_and_binning">USF IMaRS</att>
-        <att name="Projection">Equidistant Cylindrical</att>
-        <att name="Region">Florida Keys (FK)</att>
-        <att name="Sensor">VIIRS-SNPP</att>
+        <att name="Region">NW Gulf of Mexico (FGB)</att>
         <att name="Time_interval">7-Day Composite (median)</att>
-    </sourceAttributes -->
-    <addAttributes>
-        <att name="cdm_data_type">Grid</att>
-        <att name="Contact">null</att>
-        <att name="contact">Dan Otis - dotis@usf.edu</att>
-        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="creator_email">dotis@usf.edu</att>
-        <att name="creator_name">DOTIS</att>
-        <att name="creator_type">institution</att>
-        <att name="infoUrl">???</att>
-        <att name="institution">USF IMaRS</att>
-        <att name="keywords">anomaly, data, earth, Earth Science &gt; Land Surface &gt; Land Temperature &gt; Land Surface Temperature, Earth Science &gt; Oceans &gt; Ocean Temperature &gt; Sea Surface Temperature, florida, land, local, ocean, oceans, science, sea, sea_surface_temperature, source, south, sstn_anom, sstn_median, surface, surface_temperature_anomaly, temperature, university, usf</att>
-        <att name="keywords_vocabulary">GCMD Science Keywords</att>
-        <att name="Lat-Lon_Limits">null</att>
-        <att name="Lat_Lon_Limits">23.0072N to 27.4N -85W to -79.0105W</att>
-        <att name="license">[standard]</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">University of South Florida (USF) data from a local source.</att>
-        <att name="title">VIIRS SSTN.</att>
-    </addAttributes>
-    <axisVariable>
-        <!-- example filename : VSNPP_2018092_2018098_7D_FK_SSTN.nc -->
-        <sourceName>***fileName,timeFormat=yyyyDDD,VSNPP_(\d{7})_(\d{7})_7D_FK_SSTN\.nc,2</sourceName>
-        <destinationName>time</destinationName>
-        <addAttributes>
-            <att name="ioos_category">Unknown</att>
-            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
-        </addAttributes>
-    </axisVariable>
-    <axisVariable>
-        <sourceName>latitude</sourceName>
-        <destinationName>latitude</destinationName>
-    </axisVariable>
-    <axisVariable>
-        <sourceName>longitude</sourceName>
-        <destinationName>longitude</destinationName>
-    </axisVariable>
-    <dataVariable>
-        <sourceName>sstn_median</sourceName>
-        <destinationName>sstn_median</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">sstn</att>
-            <att name="Units">DegC</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">32.0</att>
-            <att name="colorBarMinimum" type="double">0.0</att>
-            <att name="ioos_category">Temperature</att>
-            <att name="long_name">Sea Surface Temperature</att>
-            <att name="standard_name">sea_surface_temperature</att>
-            <att name="Units">null</att>
-            <att name="units">degree_C</att>
-        </addAttributes>
-    </dataVariable>
-    <dataVariable>
-        <sourceName>sstn_anom</sourceName>
-        <destinationName>sstn_anom</destinationName>
-        <dataType>double</dataType>
-        <!-- sourceAttributes>
-            <att name="Product">sstn_anomaly</att>
-            <att name="Units">DegC</att>
-        </sourceAttributes -->
-        <addAttributes>
-            <att name="colorBarMaximum" type="double">3.0</att>
-            <att name="colorBarMinimum" type="double">-3.0</att>
-            <att name="ioos_category">Temperature</att>
-            <att name="long_name">Surface Temperature Anomaly</att>
-            <att name="standard_name">surface_temperature_anomaly</att>
-            <att name="Units">null</att>
-            <att name="units">degree_C</att>
-        </addAttributes>
-    </dataVariable>
-</dataset>
-<!-- Modis Ocean Color ================================================================ -->
-<!-- includes chlor a and ABI -->
-<dataset
-    type="EDDGridFromNcFiles"
-    datasetID="OC_c7fe_e1ee_913c"
-    active="true"
->
-    <reloadEveryNMinutes>90</reloadEveryNMinutes>
-    <updateEveryNMillis>10000</updateEveryNMillis>
-    <fileDir>/srv/imars-objects/fk/MEAN_7D_MODA/OC/</fileDir>
-    <fileNameRegex>.*\.nc</fileNameRegex>
-    <recursive>true</recursive>
-    <pathRegex>.*</pathRegex>
-    <metadataFrom>last</metadataFrom>
-    <matchAxisNDigits>20</matchAxisNDigits>
-    <fileTableInMemory>false</fileTableInMemory>
-    <accessibleViaFiles>false</accessibleViaFiles>
-    <!-- sourceAttributes>
-        <att name="Composite_end_date">04/05/2020</att>
-        <att name="Composite_start_date">04/01/2020</att>
-        <att name="Contact">Dan Otis - dotis@usf.edu</att>
-        <att name="CreationDate">04/06/2020 21:31:05</att>
-        <att name="Image_size">484 pixels(N-S) x 660 pixels(E-W)</att>
-        <att name="Lat-Lon_Limits">23.0104N to 27.4N -85W to -79.0108W</att>
-        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
-        <att name="Original_Image_Format">Level-2(NetCDF)</att>
-        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
-        <att name="Processing_and_binning">USF IMaRS</att>
-        <att name="Projection">Equidistant Cylindrical</att>
-        <att name="Region">Florida Keys (FK)</att>
         <att name="Sensor">MODIS-Aqua</att>
-        <att name="Time_interval">7-Day Composite (median)</att>
+        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
+        <att name="Original_Image_Format">Level-2(NetCDF)</att>
+        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
+        <att name="Projection">Equidistant Cylindrical</att>
+        <att name="Image_size">770 pixels(N-S) x 1100 pixels(E-W)</att>
+        <att name="Lat-Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+        <att name="Processing_and_binning">USF IMaRS</att>
+        <att name="Contact">Dan Otis - dotis@mail.usf.edu</att>
+        <att name="CreationDate">12/05/2018 00:40:09</att>
+        <att name="Composite_start_date">12/03/2018</att>
+        <att name="Composite_end_date">12/03/2018</att>
     </sourceAttributes -->
     <addAttributes>
         <att name="cdm_data_type">Grid</att>
         <att name="Contact">null</att>
-        <att name="contact">Dan Otis - dotis@usf.edu</att>
+        <att name="contact">Dan Otis - dotis@mail.usf.edu</att>
         <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
-        <att name="creator_email">dotis@usf.edu</att>
+        <att name="creator_email">dotis@mail.usf.edu</att>
         <att name="creator_name">DOTIS</att>
         <att name="creator_type">institution</att>
-        <att name="infoUrl">???</att>
+        <att name="infoUrl">http://imars.marine.usf.edu</att>
         <att name="institution">USF IMaRS</att>
-        <att name="keywords">abi, ABI_anom, ABI_median, anomaly, chemistry, chlor, chlor_a_anom, chlor_a_median, chlorophyll, color, concentration, concentration_of_chlorophyll_in_sea_water, data, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, florida, local, median, ocean, ocean color, oceans, optical, optical properties, properties, rrs, Rrs_667_anom, Rrs_667_median, science, sea, seawater, source, south, university, usf, water</att>
+        <att name="keywords">anomaly, chemistry, chlor, chlor_a_anom, chlor_a_median, chlorophyll, color, concentration, concentration_of_chlorophyll_in_sea_water, data, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, florida, local, mail.usf, median, nflh, nflh_anom, nflh_median, ocean, ocean color, oceans, optical, optical properties, properties, rrs, Rrs_667_anom, Rrs_667_median, science, sea, seawater, source, south, university, usf, water</att>
         <att name="keywords_vocabulary">GCMD Science Keywords</att>
         <att name="Lat-Lon_Limits">null</att>
-        <att name="Lat_Lon_Limits">23.0104N to 27.4N -85W to -79.0108W</att>
+        <att name="Lat_Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
         <att name="license">[standard]</att>
-        <att name="standard_name_vocabulary">CF Standard Name Table v55</att>
-        <att name="summary">University of South Florida (USF) data from a local source.</att>
-        <att name="title">Modis Ocean Color.</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="summary">FGBNMS Mean 7 Day OC</att>
+        <att name="title">Flower Gardens Banks National Marine Sanctuary Mean 7 Day Ocean Color</att>
     </addAttributes>
-    <axisVariable>
-        <!-- example filename : MODA_2015316_2015322_7D_FK_OC.nc -->
-        <sourceName>***fileName,timeFormat=yyyyDDD,MODA_(\d{7})_(\d{7})_7D_FK_OC\.nc,2</sourceName>
+     <axisVariable>
+         <!-- exampple name AQUA_2002225_2002231_7D_FGB_OC.nc-->
+        <sourceName>***fileName,timeFormat=yyyyDDD,AQUA_(\d{7})_(\d{7})_7D_FGB_OC\.nc,2</sourceName>
         <destinationName>time</destinationName>
         <addAttributes>
             <att name="ioos_category">Unknown</att>
@@ -448,33 +275,33 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>ABI_median</sourceName>
-        <destinationName>ABI_median</destinationName>
+        <sourceName>nflh_median</sourceName>
+        <destinationName>nflh_median</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
-            <att name="Product">ABI</att>
+            <att name="Product">nflh</att>
             <att name="Units">W m^-2 um^-1 sr^-1</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="ioos_category">Unknown</att>
-            <att name="long_name">ABI Median</att>
+            <att name="long_name">Nflh Median</att>
             <att name="Units">null</att>
             <att name="units">W m^-2 um^-1 sr^-1</att>
         </addAttributes>
     </dataVariable>
     <dataVariable>
-        <sourceName>ABI_anom</sourceName>
-        <destinationName>ABI_anom</destinationName>
+        <sourceName>nflh_anom</sourceName>
+        <destinationName>nflh_anom</destinationName>
         <dataType>double</dataType>
         <!-- sourceAttributes>
-            <att name="Product">ABI_anomaly</att>
+            <att name="Product">nflh_anomaly</att>
             <att name="Units">W m^-2 um^-1 sr^-1</att>
         </sourceAttributes -->
         <addAttributes>
             <att name="colorBarMaximum" type="double">10.0</att>
             <att name="colorBarMinimum" type="double">-10.0</att>
             <att name="ioos_category">Unknown</att>
-            <att name="long_name">ABI Anom</att>
+            <att name="long_name">Nflh Anom</att>
             <att name="Units">null</att>
             <att name="units">W m^-2 um^-1 sr^-1</att>
         </addAttributes>
@@ -513,5 +340,438 @@ into a public sourceUrl (http://oceanwatch.pfeg.noaa.gov/thredds/dodsC/satellite
             <att name="units">sr^-1</att>
         </addAttributes>
     </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_median</sourceName>
+        <destinationName>ABI_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Median</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_anom</sourceName>
+        <destinationName>ABI_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI_anomaly</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Anom</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
 </dataset>
+
+<!-- FGBNMS Mean 7 Day OC ==================================================================================================-->
+<dataset type="EDDGridFromNcFilesUnpacked" datasetID="OC_e122_8547_dab0" active="true">
+    <reloadEveryNMinutes>1440</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/srv/imars-objects/modis_aqua_fgbnms/MEAN_7D_AQUA/OC/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="Region">NW Gulf of Mexico (FGB)</att>
+        <att name="Time_interval">7-Day Composite (median)</att>
+        <att name="Sensor">MODIS-Aqua</att>
+        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
+        <att name="Original_Image_Format">Level-2(NetCDF)</att>
+        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
+        <att name="Projection">Equidistant Cylindrical</att>
+        <att name="Image_size">770 pixels(N-S) x 1100 pixels(E-W)</att>
+        <att name="Lat-Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+        <att name="Processing_and_binning">USF IMaRS</att>
+        <att name="Contact">Dan Otis - dotis@mail.usf.edu</att>
+        <att name="CreationDate">12/05/2018 00:40:09</att>
+        <att name="Composite_start_date">12/03/2018</att>
+        <att name="Composite_end_date">12/03/2018</att>
+    </sourceAttributes -->
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Contact">null</att>
+        <att name="contact">Dan Otis - dotis@mail.usf.edu</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">dotis@mail.usf.edu</att>
+        <att name="creator_name">DOTIS</att>
+        <att name="creator_type">institution</att>
+        <att name="infoUrl">http://imars.marine.usf.edu</att>
+        <att name="institution">USF IMaRS</att>
+        <att name="keywords">anomaly, chemistry, chlor, chlor_a_anom, chlor_a_median, chlorophyll, color, concentration, concentration_of_chlorophyll_in_sea_water, data, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, florida, local, mail.usf, median, nflh, nflh_anom, nflh_median, ocean, ocean color, oceans, optical, optical properties, properties, rrs, Rrs_667_anom, Rrs_667_median, science, sea, seawater, source, south, university, usf, water</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="Lat-Lon_Limits">null</att>
+        <att name="Lat_Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="summary">FGBNMS Mean 7 Day OC</att>
+        <att name="title">Flower Gardens Banks National Marine Sanctuary Mean 7 Day Ocean Color</att>
+    </addAttributes>
+     <axisVariable>
+         <!-- exampple name AQUA_2002225_2002231_7D_FGB_OC.nc-->
+        <sourceName>***fileName,timeFormat=yyyyDDD,AQUA_(\d{7})_(\d{7})_7D_FGB_OC\.nc,2</sourceName>
+        <destinationName>time</destinationName>
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>chlor_a_median</sourceName>
+        <destinationName>chlor_a_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">chlor_a</att>
+            <att name="Units">mg m^-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="ioos_category">Ocean Color</att>
+            <att name="long_name">Concentration Of Chlorophyll In Sea Water</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+            <att name="Units">null</att>
+            <att name="units">mg m^-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>chlor_a_anom</sourceName>
+        <destinationName>chlor_a_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">chlor_a_anomaly</att>
+            <att name="Units">mg m^-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Ocean Color</att>
+            <att name="long_name">Chlor A Anom</att>
+            <att name="Units">null</att>
+            <att name="units">mg m^-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>nflh_median</sourceName>
+        <destinationName>nflh_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">nflh</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Nflh Median</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>nflh_anom</sourceName>
+        <destinationName>nflh_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">nflh_anomaly</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Nflh Anom</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Rrs_667_median</sourceName>
+        <destinationName>Rrs_667_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">Rrs_667</att>
+            <att name="Units">sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-25000.035</att>
+            <att name="colorBarMinimum" type="double">-25000.055</att>
+            <att name="ioos_category">Optical Properties</att>
+            <att name="long_name">Rrs 667 Median</att>
+            <att name="Units">null</att>
+            <att name="units">sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Rrs_667_anom</sourceName>
+        <destinationName>Rrs_667_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">Rrs_667_anomaly</att>
+            <att name="Units">sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">0.01</att>
+            <att name="colorBarMinimum" type="double">-0.01</att>
+            <att name="ioos_category">Optical Properties</att>
+            <att name="long_name">Rrs 667 Anom</att>
+            <att name="Units">null</att>
+            <att name="units">sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_median</sourceName>
+        <destinationName>ABI_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Median</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_anom</sourceName>
+        <destinationName>ABI_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI_anomaly</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Anom</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
+<!-- FGBNMS Mean 7 Day OC ==================================================================================================-->
+<dataset type="EDDGridFromNcFilesUnpacked" datasetID="OC_e122_8547_dab0" active="true">
+    <reloadEveryNMinutes>1440</reloadEveryNMinutes>
+    <updateEveryNMillis>10000</updateEveryNMillis>
+    <fileDir>/srv/imars-objects/modis_aqua_fgbnms/MEAN_7D_AQUA/OC/</fileDir>
+    <fileNameRegex>.*\.nc</fileNameRegex>
+    <recursive>true</recursive>
+    <pathRegex>.*</pathRegex>
+    <metadataFrom>last</metadataFrom>
+    <matchAxisNDigits>20</matchAxisNDigits>
+    <fileTableInMemory>false</fileTableInMemory>
+    <accessibleViaFiles>false</accessibleViaFiles>
+    <!-- sourceAttributes>
+        <att name="Region">NW Gulf of Mexico (FGB)</att>
+        <att name="Time_interval">7-Day Composite (median)</att>
+        <att name="Sensor">MODIS-Aqua</att>
+        <att name="Original_Image_Source">NASA Ocean Biology Processing Group</att>
+        <att name="Original_Image_Format">Level-2(NetCDF)</att>
+        <att name="Ocean_color_masks_based_on_L2_flags">LAND,CLDICE,HIGLINT</att>
+        <att name="Projection">Equidistant Cylindrical</att>
+        <att name="Image_size">770 pixels(N-S) x 1100 pixels(E-W)</att>
+        <att name="Lat-Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+        <att name="Processing_and_binning">USF IMaRS</att>
+        <att name="Contact">Dan Otis - dotis@mail.usf.edu</att>
+        <att name="CreationDate">12/05/2018 00:40:09</att>
+        <att name="Composite_start_date">12/03/2018</att>
+        <att name="Composite_end_date">12/03/2018</att>
+    </sourceAttributes -->
+    <addAttributes>
+        <att name="cdm_data_type">Grid</att>
+        <att name="Contact">null</att>
+        <att name="contact">Dan Otis - dotis@mail.usf.edu</att>
+        <att name="Conventions">COARDS, CF-1.6, ACDD-1.3</att>
+        <att name="creator_email">dotis@mail.usf.edu</att>
+        <att name="creator_name">DOTIS</att>
+        <att name="creator_type">institution</att>
+        <att name="infoUrl">http://imars.marine.usf.edu</att>
+        <att name="institution">USF IMaRS</att>
+        <att name="keywords">anomaly, chemistry, chlor, chlor_a_anom, chlor_a_median, chlorophyll, color, concentration, concentration_of_chlorophyll_in_sea_water, data, earth, Earth Science &gt; Oceans &gt; Ocean Chemistry &gt; Chlorophyll, florida, local, mail.usf, median, nflh, nflh_anom, nflh_median, ocean, ocean color, oceans, optical, optical properties, properties, rrs, Rrs_667_anom, Rrs_667_median, science, sea, seawater, source, south, university, usf, water</att>
+        <att name="keywords_vocabulary">GCMD Science Keywords</att>
+        <att name="Lat-Lon_Limits">null</att>
+        <att name="Lat_Lon_Limits">24.0111N to 31N -98W to -88.012W</att>
+        <att name="license">[standard]</att>
+        <att name="standard_name_vocabulary">CF Standard Name Table v29</att>
+        <att name="summary">FGBNMS Mean 7 Day OC</att>
+        <att name="title">Flower Gardens Banks National Marine Sanctuary Mean 7 Day Ocean Color</att>
+    </addAttributes>
+     <axisVariable>
+         <!-- exampple name AQUA_2002225_2002231_7D_FGB_OC.nc-->
+        <sourceName>***fileName,timeFormat=yyyyDDD,AQUA_(\d{7})_(\d{7})_7D_FGB_OC\.nc,2</sourceName>
+        <destinationName>time</destinationName>
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="units">seconds since 1970-01-01T00:00:00Z</att>
+        </addAttributes>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>latitude</sourceName>
+        <destinationName>latitude</destinationName>
+    </axisVariable>
+    <axisVariable>
+        <sourceName>longitude</sourceName>
+        <destinationName>longitude</destinationName>
+    </axisVariable>
+    <dataVariable>
+        <sourceName>chlor_a_median</sourceName>
+        <destinationName>chlor_a_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">chlor_a</att>
+            <att name="Units">mg m^-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">30.0</att>
+            <att name="colorBarMinimum" type="double">0.03</att>
+            <att name="colorBarScale">Log</att>
+            <att name="ioos_category">Ocean Color</att>
+            <att name="long_name">Concentration Of Chlorophyll In Sea Water</att>
+            <att name="standard_name">concentration_of_chlorophyll_in_sea_water</att>
+            <att name="Units">null</att>
+            <att name="units">mg m^-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>chlor_a_anom</sourceName>
+        <destinationName>chlor_a_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">chlor_a_anomaly</att>
+            <att name="Units">mg m^-3</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Ocean Color</att>
+            <att name="long_name">Chlor A Anom</att>
+            <att name="Units">null</att>
+            <att name="units">mg m^-3</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>nflh_median</sourceName>
+        <destinationName>nflh_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">nflh</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Nflh Median</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>nflh_anom</sourceName>
+        <destinationName>nflh_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">nflh_anomaly</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">Nflh Anom</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Rrs_667_median</sourceName>
+        <destinationName>Rrs_667_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">Rrs_667</att>
+            <att name="Units">sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">-25000.035</att>
+            <att name="colorBarMinimum" type="double">-25000.055</att>
+            <att name="ioos_category">Optical Properties</att>
+            <att name="long_name">Rrs 667 Median</att>
+            <att name="Units">null</att>
+            <att name="units">sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>Rrs_667_anom</sourceName>
+        <destinationName>Rrs_667_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">Rrs_667_anomaly</att>
+            <att name="Units">sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">0.01</att>
+            <att name="colorBarMinimum" type="double">-0.01</att>
+            <att name="ioos_category">Optical Properties</att>
+            <att name="long_name">Rrs 667 Anom</att>
+            <att name="Units">null</att>
+            <att name="units">sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_median</sourceName>
+        <destinationName>ABI_median</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Median</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+    <dataVariable>
+        <sourceName>ABI_anom</sourceName>
+        <destinationName>ABI_anom</destinationName>
+        <dataType>double</dataType>
+        <!-- sourceAttributes>
+            <att name="Product">ABI_anomaly</att>
+            <att name="Units">W m^-2 um^-1 sr^-1</att>
+        </sourceAttributes -->
+        <addAttributes>
+            <att name="colorBarMaximum" type="double">10.0</att>
+            <att name="colorBarMinimum" type="double">-10.0</att>
+            <att name="ioos_category">Unknown</att>
+            <att name="long_name">ABI Anom</att>
+            <att name="Units">null</att>
+            <att name="units">W m^-2 um^-1 sr^-1</att>
+        </addAttributes>
+    </dataVariable>
+</dataset>
+
 </erddapDatasets>
