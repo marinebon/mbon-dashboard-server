@@ -28,8 +28,9 @@ uploaded.
 If a file fails you will receive an html response with the stack trace.
 """
 
+import os
 import subprocess
-UPLOADER_HOSTNAME = 'http://localhost:5000/'
+UPLOADER_HOSTNAME = os.environ["INFLUX_HOSTNAME"]
 
 
 BASE_DIRECTORY = '/srv/imars-objects/fk'
