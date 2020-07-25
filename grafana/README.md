@@ -17,3 +17,12 @@ Post-install manual configuration:
 1. under configuration > preferences
     1. set org name
     2. set Home Dashboard to "Home Dashboard"
+
+
+## Troubleshooting
+
+Sometimes when restarting grafana there is some confusion about the permissions for the grafana-storage directory.
+As a workaround:
+    1. `docker container stop grafana`
+    2. `chmod -R 777 grafana/grafana-storage`
+    3. `docker container start grafana`
