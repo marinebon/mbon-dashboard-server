@@ -94,6 +94,7 @@ services:
         - LOAD_EX=n
         - EXECUTOR=Local
     volumes:
+        - /srv/imars-objects:/srv/imars-objects:ro,slave
         - ./airflow/dags:/usr/local/airflow/dags
         # - ./airflow/test:/usr/local/airflow/test
         # - ./airflow/plugins:/usr/local/airflow/plugins
