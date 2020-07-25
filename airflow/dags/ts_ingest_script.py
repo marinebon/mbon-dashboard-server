@@ -30,7 +30,7 @@ If a file fails you will receive an html response with the stack trace.
 
 import os
 import subprocess
-UPLOADER_HOSTNAME = os.environ["INFLUX_HOSTNAME"]
+UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
 
 
 BASE_DIRECTORY = '/srv/imars-objects/fk'
