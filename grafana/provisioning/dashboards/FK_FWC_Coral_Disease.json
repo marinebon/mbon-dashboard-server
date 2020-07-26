@@ -71,7 +71,7 @@
       "color_bar_str": "Rainbow|||-1|1|",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 1296000000,
+      "delta": 1296000001,
       "delta_unit": "ms",
       "gridPos": {
         "h": 7,
@@ -378,10 +378,192 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 54
+      },
+      "hiddenSeries": false,
+      "id": 17,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Cumulative percent of sampling sites infected",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2014001_2014365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2014001_2014365_CD_obs.png\"\n></img>\n</a>",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 0,
+        "y": 59
+      },
+      "id": 27,
+      "mode": "html",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Coral Disease 2014",
+      "type": "text"
+    },
+    {
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2015001_2015365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2015001_2015365_CD_obs.png \"\n></img>\n</a>",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 6,
+        "y": 59
+      },
+      "id": 28,
+      "mode": "html",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Coral Disease 2015",
+      "type": "text"
+    },
+    {
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2016001_2016365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2016001_2016365_CD_obs.png\"\n></img>\n</a>",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 12,
+        "y": 59
+      },
+      "id": 29,
+      "mode": "html",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Coral Disease 2016",
+      "type": "text"
+    },
+    {
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2017001_2017365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2017001_2017365_CD_obs.png\"\n></img>\n</a>",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 6,
+        "x": 18,
+        "y": 59
+      },
+      "id": 30,
+      "mode": "html",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Coral Disease 2017",
+      "type": "text"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
         "h": 6,
         "w": 6,
         "x": 0,
-        "y": 54
+        "y": 67
       },
       "hiddenSeries": false,
       "id": 21,
@@ -510,10 +692,10 @@
         "h": 6,
         "w": 6,
         "x": 6,
-        "y": 54
+        "y": 67
       },
       "hiddenSeries": false,
-      "id": 17,
+      "id": 25,
       "interval": "",
       "legend": {
         "avg": false,
@@ -559,7 +741,7 @@
           "measurement": "modis_abi",
           "orderByTime": "ASC",
           "policy": "default",
-          "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"viirs_chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"viirs_sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
           "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
@@ -590,7 +772,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "VIIRS Chlorophyll-a Anomaly @ $Locations",
+      "title": "VIIRS SSTN Anomaly @ $Locations",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -639,7 +821,7 @@
         "h": 6,
         "w": 6,
         "x": 12,
-        "y": 54
+        "y": 67
       },
       "hiddenSeries": false,
       "id": 22,
@@ -768,7 +950,7 @@
         "h": 6,
         "w": 6,
         "x": 18,
-        "y": 54
+        "y": 67
       },
       "hiddenSeries": false,
       "id": 23,
@@ -892,7 +1074,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 60
+        "y": 73
       },
       "id": 20,
       "mode": "markdown",
@@ -945,8 +1127,8 @@
     ]
   },
   "time": {
-    "from": "now-90d",
-    "to": "now"
+    "from": "2020-03-13T19:15:53.135Z",
+    "to": "2020-09-09T19:15:53.135Z"
   },
   "timepicker": {
     "hidden": false,
@@ -963,5 +1145,5 @@
   "variables": {
     "list": []
   },
-  "version": 5
+  "version": 6
 }
