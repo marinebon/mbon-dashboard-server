@@ -31,6 +31,7 @@ If a file fails you will receive an html response with the stack trace.
 import os
 import subprocess
 UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
+UPLOADER_ROUTE = UPLOADER_HOSTNAME + "submit/sat_image_extraction"
 
 
 BASE_DIRECTORY = '/srv/imars-objects/fk'
@@ -51,7 +52,7 @@ for river in ['FKdb', 'FWCdb_EFL']:
         '--form', 'time_column=time',
         # -H 'Content-Type: text/plain'
         # -u 'username:password'
-        UPLOADER_HOSTNAME
+        UPLOADER_ROUTE
     ], check=True)
 # ============================================================================
 # === Sat region extractions
@@ -84,7 +85,7 @@ for roi in FK_SUBREGIONS:
         '--form', 'time_column=Time',
         # -H 'Content-Type: text/plain'
         # -u 'username:password'
-        UPLOADER_HOSTNAME
+        UPLOADER_ROUTE
     ], check=True)
 
 
@@ -107,7 +108,7 @@ for roi in FK_SUBREGIONS:
             '--form', 'time_column=Time',
             # -H 'Content-Type: text/plain'
             # -u 'username:password'
-            UPLOADER_HOSTNAME
+            UPLOADER_ROUTE
         ], check=True)
 
 # EXT_TS_VSNPP/SST is empty
@@ -124,7 +125,7 @@ for roi in FK_SUBREGIONS:
         '--form', 'time_column=Time',
         # -H 'Content-Type: text/plain'
         # -u 'username:password'
-        UPLOADER_HOSTNAME
+        UPLOADER_ROUTE
     ], check=True)
 
 
@@ -142,6 +143,6 @@ for roi in ['BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT']:
             '--form', 'time_column=time',
             # -H 'Content-Type: text/plain'
             # -u 'username:password'
-            UPLOADER_HOSTNAME
+            UPLOADER_ROUTE
         ], check=True)
         print(result.args)
