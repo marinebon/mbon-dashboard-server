@@ -58,7 +58,21 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     * import dashboards from [github/USF-IMaRS/grafana-dashboards](https://github.com/USF-IMARS/grafana-dashboards) using [these instructions.](https://grafana.com/docs/grafana/latest/reference/export_import/#importing-a-dashboard)
 
 ## Basic Workflow
+The workflow here is to do any non-site-specific work on the master branch.
+Each client installation then has a `client-*` branch coming off of the master branch.
+To update a client branch to use the latest master `git rebase` is used.
+
+### Editing master
 1. modify `docker-compose.yml` or files within container folders
 2. `docker-compose up --build -d` to update what's running
 3. `git pull` then `git commit` your changes
     * do not commit your `.env` or hostname changes to `erddap/setup.xml`
+    
+### Editing client branch
+1. same as above
+2. same as above
+3. `git checkout client-fknms`
+4. `git rebase master`
+5. resolve any merge issues
+6. `git push -f origin client-fknms`  
+    * !!! be careful with force pushing; it deletes history
