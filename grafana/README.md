@@ -7,12 +7,26 @@ You may add your own .json dashboard export files to this directory.
 
 Similarly datasources can be added by modifying the contents of `./grafana/provisioning/datasources`.
 
-A cronjob can be configured to export & `git commit` these dashboards nightly (TODO: + details).
+### Dashboard editing workflow
+0. sign in (bottom left button)
+1. modify the dashboard
+2. click "save"
+    - a message should pop up "Cannot save provisioned dashboard"
+    - if the message does not pop up go to settings -> JSON model
+3. copy all of the json data
+4. go to [mbon-dashboard-server/grafana/provisioning/dashboards/](https://github.com/marinebon/mbon-dashboard-server/tree/master/grafana/provisioning/dashboards)
+5. select the git branch of your dashboard (top right, default is "master")
+    - your branch is probably called something like client-fwc, client-fknms, or client-fgbnms
+6. click on the dashboard definition you wish to edit
+7. edit the file (pencil button, top right)
+8. delete all of the content and replace it with the json you copied from grafana
+9. at the bottom of the page descibe your change under "commit changes"
+10. click "commit changes" (bottom left)
+11. Your changes should be live on the site within an hour.
 
 
------------------------------
 
-Post-install manual configuration:
+## Post-install manual configuration:
 
 1. under configuration > preferences
     1. set org name
