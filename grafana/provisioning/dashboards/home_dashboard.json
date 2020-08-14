@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "content": "\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/home_dash_logo.png)",
+      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_imagepanel_sized.png)\n",
       "datasource": null,
       "gridPos": {
         "h": 6,
@@ -103,5 +103,5 @@
   "variables": {
     "list": []
   },
-  "version": 1
+  "version": 2
 }
