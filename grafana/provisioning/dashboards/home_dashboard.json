@@ -35,7 +35,7 @@
       "type": "text"
     },
     {
-      "content": "Welcome! \n\nHere you will find dashboards built for the Flower Garden Banks National Marine Sanctuary.\nTo get started choose a dashboard from the list and begin exploring! \n",
+      "content": "Welcome! \n\nHere you will find dashboards built for Florida Fish and Wildlife to allow exploration of the data surrounding coral disease in the Florida Keys.\n\nTo get started choose a dashboard from the list and begin exploring! \n\nPlease submit any questions or issues to our [github page issue tracker](https://github.com/marinebon/mbon-dashboard-server/issues).",
       "datasource": null,
       "gridPos": {
         "h": 8,
