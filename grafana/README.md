@@ -28,6 +28,7 @@ Similarly datasources can be added by modifying the contents of `./grafana/provi
 
 ## Post-install manual configuration:
 
+1. go to the "Home Dashboard" and "star" it
 1. under configuration > preferences
     1. set org name
     2. set Home Dashboard to "Home Dashboard"
