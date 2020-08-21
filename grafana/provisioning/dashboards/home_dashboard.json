@@ -22,9 +22,9 @@
       "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_imagepanel_sized.png)\n",
       "datasource": null,
       "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
+        "h": 11,
+        "w": 19,
+        "x": 2,
         "y": 0
       },
       "id": 4,
@@ -41,7 +41,7 @@
         "h": 8,
         "w": 15,
         "x": 0,
-        "y": 6
+        "y": 11
       },
       "id": 8,
       "mode": "markdown",
@@ -57,7 +57,7 @@
         "h": 8,
         "w": 9,
         "x": 15,
-        "y": 6
+        "y": 11
       },
       "headings": false,
       "id": 2,
@@ -103,5 +103,5 @@
   "variables": {
     "list": []
   },
-  "version": 2
+  "version": 11
 }
