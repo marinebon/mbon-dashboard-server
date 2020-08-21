@@ -488,7 +488,7 @@
       }
     },
     {
-      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2014001_2014365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2014001_2014365_CD_obs.png\"\n></img>\n</a>",
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2014001_2014365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2014001_2014365_CD_obs.png\"\n></img>\n</a>",
       "datasource": null,
       "gridPos": {
         "h": 12,
@@ -504,7 +504,7 @@
       "type": "text"
     },
     {
-      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2015001_2015365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2015001_2015365_CD_obs.png \"\n></img>\n</a>",
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2015001_2015365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2015001_2015365_CD_obs.png \"\n></img>\n</a>",
       "datasource": null,
       "gridPos": {
         "h": 12,
@@ -520,7 +520,7 @@
       "type": "text"
     },
     {
-      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2016001_2016365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2016001_2016365_CD_obs.png\"\n></img>\n</a>",
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2016001_2016365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2016001_2016365_CD_obs.png\"\n></img>\n</a>",
       "datasource": null,
       "gridPos": {
         "h": 12,
@@ -536,7 +536,7 @@
       "type": "text"
     },
     {
-      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2017001_2017365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/FWC_2017001_2017365_CD_obs.png\"\n></img>\n</a>",
+      "content": "<a \n  href=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2017001_2017365_CD_obs.png\"\n><img \n  src=\"https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_2017001_2017365_CD_obs.png\"\n></img>\n</a>",
       "datasource": null,
       "gridPos": {
         "h": 12,
