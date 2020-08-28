@@ -1,14 +1,8 @@
 # mbon-dashboard-server
 
-Server software stack for MBON server serving early-alert dashboards.
+Docker software stack for MBON server serving early-alert dashboards.
 
-Contents:
-<!--
-To update table of contents run: `./gh-md-toc README.md` & copy the output
-Uses: https://github.com/ekalinin/github-markdown-toc
--->
-
-For detailed documentation please see `./documentation/`.
+For more detailed documentation please see `./documentation/`.
 
 ## Project Structure Overview
 `docker-compose.yml` handles most configuration.
@@ -54,8 +48,6 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     4. http://localhost:8086/ should show "404 page not found" from InfluxDB
     5. http://localhost:3000/login should show grafana login
     6. http://localhost:5000 should show a data submission form from mbon_data_uploader
-8. configure grafana
-    * import dashboards from [github/USF-IMaRS/grafana-dashboards](https://github.com/USF-IMARS/grafana-dashboards) using [these instructions.](https://grafana.com/docs/grafana/latest/reference/export_import/#importing-a-dashboard)
 
 ## Basic Workflow
 The workflow here is to do any non-site-specific work on the master branch.
