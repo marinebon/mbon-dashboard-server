@@ -76,7 +76,7 @@ services:
       ports:
           - 3000:3000
       environment:
-          - "GF_INSTALL_PLUGINS=alexandra-trackmap-panel,pierosavi-imageit-panel,fatcloud-windrose-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
+          - "GF_INSTALL_PLUGINS=grafana-worldmap-panel,citilogics-geoloop-panel,alexandra-trackmap-panel,pierosavi-imageit-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
           - GF_PATHS_PROVISIONING=/grafana_provisioning
           - GF_AUTH_ANONYMOUS_ENABLED=true
           - GF_SECURITY_ADMIN_USER=imars_grafana_user
