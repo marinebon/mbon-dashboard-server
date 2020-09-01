@@ -1,30 +1,24 @@
 version: '3.3'
 
-volumes:
-    # === windows only volume (see postgres/README.md) ========================
-    postgresql-volume:
-        external: true
-    # =========================================================================
-
 services:
     # === airflow ===========================================================
     # based on https://github.com/shamoji-tech/airflow_docker
-    postgres:
+    airflow_postgres:
         image: postgres:9.6
-        container_name: postgreSQL
+        container_name: postgres
         env_file:
-            - ./postgres/.env
+            - .env
         volumes:
             # === linux
             # - ./postgres/pgdata:/var/lib/postgresql/data/pgdata
             # === windows
-            - postgresql-volume:/var/lib/postgresql/data/pgdata
+            - .postgres/pgdata:/var/lib/postgresql/data/pgdata
 
     init:
         image: "apache/airflow:1.10.10-python3.7"
         container_name: airflow_initializer
         env_file:
-            - ./airflow/.env
+            - .env
         depends_on:
-            - postgres
+            - airflow_postgres
         command: initdb
