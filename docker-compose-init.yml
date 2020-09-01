@@ -12,7 +12,7 @@ services:
             # === linux
             # - ./postgres/pgdata:/var/lib/postgresql/data/pgdata
             # === windows
-            - .postgres/pgdata:/var/lib/postgresql/data/pgdata
+            - ./postgres/pgdata:/var/lib/postgresql/data
 
     init:
         image: "apache/airflow:1.10.10-python3.7"

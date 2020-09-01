@@ -81,7 +81,7 @@ services:
         - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
         - POSTGRES_DB=airflow
       volumes:
-          - .postgres/pgdata:/var/lib/postgresql/data/pgdata
+          - ./postgres/pgdata:/var/lib/postgresql/data
 
   airflow_webserver:
     container_name: airflow_webserver
