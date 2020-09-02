@@ -98,9 +98,9 @@ services:
     volumes:
         - /srv/imars-objects:/srv/imars-objects:ro,slave
         - ./airflow/dags:/usr/local/airflow/dags
+        - ./airflow/requirements.txt:/requirements.txt
         # - ./airflow/test:/usr/local/airflow/test
         # - ./airflow/plugins:/usr/local/airflow/plugins
-        # - ./airflow/requirements.txt:/requirements.txt
         # - ~/airflow/.aws:/usr/local/airflow/.aws
     ports:
         - "8888:8080"
