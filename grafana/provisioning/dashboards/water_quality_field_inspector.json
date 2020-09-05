@@ -1,0 +1,537 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "iteration": 1599339566771,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 16,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": true,
+        "min": true,
+        "show": true,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "null",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "Walton_Smith",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "$field"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "$tag_name",
+              "operator": "=",
+              "value": "$tag_value"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "$field WHERE $tag_name = $tag_value",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    }
+  ],
+  "schemaVersion": 22,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "pH",
+          "value": "pH"
+        },
+        "datasource": "influxdb",
+        "definition": "SHOW FIELD KEYS",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": null,
+        "multi": false,
+        "name": "field",
+        "options": [
+          {
+            "selected": false,
+            "text": "%Io",
+            "value": "%Io"
+          },
+          {
+            "selected": false,
+            "text": "%SAT-S",
+            "value": "%SAT-S"
+          },
+          {
+            "selected": false,
+            "text": "%SAT_B",
+            "value": "%SAT_B"
+          },
+          {
+            "selected": false,
+            "text": "APA-B",
+            "value": "APA-B"
+          },
+          {
+            "selected": false,
+            "text": "APA-S",
+            "value": "APA-S"
+          },
+          {
+            "selected": false,
+            "text": "CHLA-B",
+            "value": "CHLA-B"
+          },
+          {
+            "selected": false,
+            "text": "CHLA-S",
+            "value": "CHLA-S"
+          },
+          {
+            "selected": false,
+            "text": "DIN-B",
+            "value": "DIN-B"
+          },
+          {
+            "selected": false,
+            "text": "DIN-S",
+            "value": "DIN-S"
+          },
+          {
+            "selected": false,
+            "text": "DIN:TP",
+            "value": "DIN:TP"
+          },
+          {
+            "selected": false,
+            "text": "DO-B",
+            "value": "DO-B"
+          },
+          {
+            "selected": false,
+            "text": "DO-S",
+            "value": "DO-S"
+          },
+          {
+            "selected": false,
+            "text": "DSIGT",
+            "value": "DSIGT"
+          },
+          {
+            "selected": false,
+            "text": "Kd",
+            "value": "Kd"
+          },
+          {
+            "selected": false,
+            "text": "N:P",
+            "value": "N:P"
+          },
+          {
+            "selected": false,
+            "text": "NH4-B",
+            "value": "NH4-B"
+          },
+          {
+            "selected": false,
+            "text": "NH4-S",
+            "value": "NH4-S"
+          },
+          {
+            "selected": false,
+            "text": "NO2-B",
+            "value": "NO2-B"
+          },
+          {
+            "selected": false,
+            "text": "NO2-S",
+            "value": "NO2-S"
+          },
+          {
+            "selected": false,
+            "text": "NO3_B",
+            "value": "NO3_B"
+          },
+          {
+            "selected": false,
+            "text": "NO3_S",
+            "value": "NO3_S"
+          },
+          {
+            "selected": false,
+            "text": "NOX-B",
+            "value": "NOX-B"
+          },
+          {
+            "selected": false,
+            "text": "NOX-S",
+            "value": "NOX-S"
+          },
+          {
+            "selected": true,
+            "text": "pH",
+            "value": "pH"
+          },
+          {
+            "selected": false,
+            "text": "SAL-B",
+            "value": "SAL-B"
+          },
+          {
+            "selected": false,
+            "text": "SAL-S",
+            "value": "SAL-S"
+          },
+          {
+            "selected": false,
+            "text": "Si:DIN",
+            "value": "Si:DIN"
+          },
+          {
+            "selected": false,
+            "text": "SiO2-B",
+            "value": "SiO2-B"
+          },
+          {
+            "selected": false,
+            "text": "SiO2-S",
+            "value": "SiO2-S"
+          },
+          {
+            "selected": false,
+            "text": "SRP-B",
+            "value": "SRP-B"
+          },
+          {
+            "selected": false,
+            "text": "SRP-S",
+            "value": "SRP-S"
+          },
+          {
+            "selected": false,
+            "text": "TEMP-B",
+            "value": "TEMP-B"
+          },
+          {
+            "selected": false,
+            "text": "TEMP-S",
+            "value": "TEMP-S"
+          },
+          {
+            "selected": false,
+            "text": "TN-B",
+            "value": "TN-B"
+          },
+          {
+            "selected": false,
+            "text": "TN-S",
+            "value": "TN-S"
+          },
+          {
+            "selected": false,
+            "text": "TN:TP",
+            "value": "TN:TP"
+          },
+          {
+            "selected": false,
+            "text": "TOC-B",
+            "value": "TOC-B"
+          },
+          {
+            "selected": false,
+            "text": "TOC-S",
+            "value": "TOC-S"
+          },
+          {
+            "selected": false,
+            "text": "TON-B",
+            "value": "TON-B"
+          },
+          {
+            "selected": false,
+            "text": "TON-S",
+            "value": "TON-S"
+          },
+          {
+            "selected": false,
+            "text": "TP-B",
+            "value": "TP-B"
+          },
+          {
+            "selected": false,
+            "text": "TP-S",
+            "value": "TP-S"
+          },
+          {
+            "selected": false,
+            "text": "TURB-B",
+            "value": "TURB-B"
+          },
+          {
+            "selected": false,
+            "text": "TURB-S",
+            "value": "TURB-S"
+          }
+        ],
+        "query": "SHOW FIELD KEYS",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 5,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "BASIN",
+          "value": "BASIN"
+        },
+        "datasource": "influxdb",
+        "definition": "SHOW TAG KEYS",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": null,
+        "multi": false,
+        "name": "tag_name",
+        "options": [
+          {
+            "selected": true,
+            "text": "BASIN",
+            "value": "BASIN"
+          },
+          {
+            "selected": false,
+            "text": "DEPTH",
+            "value": "DEPTH"
+          },
+          {
+            "selected": false,
+            "text": "LATDEC",
+            "value": "LATDEC"
+          },
+          {
+            "selected": false,
+            "text": "LONDEC",
+            "value": "LONDEC"
+          },
+          {
+            "selected": false,
+            "text": "SEGMENT",
+            "value": "SEGMENT"
+          },
+          {
+            "selected": false,
+            "text": "SITE",
+            "value": "SITE"
+          },
+          {
+            "selected": false,
+            "text": "STATION",
+            "value": "STATION"
+          },
+          {
+            "selected": false,
+            "text": "SURV",
+            "value": "SURV"
+          },
+          {
+            "selected": false,
+            "text": "ZONE",
+            "value": "ZONE"
+          }
+        ],
+        "query": "SHOW TAG KEYS",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "text": "FK",
+          "value": "FK"
+        },
+        "datasource": "influxdb",
+        "definition": "SHOW TAG VALUES WITH KEY = \"$tag_name\"",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": null,
+        "multi": false,
+        "name": "tag_value",
+        "options": [
+          {
+            "selected": true,
+            "text": "FK",
+            "value": "FK"
+          },
+          {
+            "selected": false,
+            "text": "SHELF",
+            "value": "SHELF"
+          }
+        ],
+        "query": "SHOW TAG VALUES WITH KEY = \"$tag_name\"",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "now-5y",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ]
+  },
+  "timezone": "",
+  "title": "Field Inspector",
+  "uid": "02hdwxDMz",
+  "variables": {
+    "list": []
+  },
+  "version": 1
+}
