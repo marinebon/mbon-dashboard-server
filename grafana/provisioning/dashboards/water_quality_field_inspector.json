@@ -2,6 +2,7 @@
   "annotations": {
     "list": [
       {
+        "$$hashKey": "object:20",
         "builtIn": 1,
         "datasource": "-- Grafana --",
         "enable": true,
@@ -15,8 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1599339566771,
+  "iteration": 1599426494121,
   "links": [],
   "panels": [
     {
@@ -77,6 +77,8 @@
           "measurement": "Walton_Smith",
           "orderByTime": "ASC",
           "policy": "default",
+          "query": "SELECT mean(\"$field\") FROM \"Walton_Smith\" \nWHERE (\"$tag_name\" = '$tag_value') AND $field!=-999 AND $timeFilter GROUP BY time($__interval) fill(null)",
+          "rawQuery": true,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -122,6 +124,8 @@
       },
       "yaxes": [
         {
+          "$$hashKey": "object:316",
+          "decimals": null,
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -130,6 +134,7 @@
           "show": true
         },
         {
+          "$$hashKey": "object:317",
           "format": "short",
           "label": null,
           "logBase": 1,
@@ -144,6 +149,7 @@
       }
     }
   ],
+  "refresh": false,
   "schemaVersion": 22,
   "style": "dark",
   "tags": [],
@@ -152,6 +158,7 @@
       {
         "allValue": null,
         "current": {
+          "selected": true,
           "tags": [],
           "text": "pH",
           "value": "pH"
@@ -166,221 +173,265 @@
         "name": "field",
         "options": [
           {
+            "$$hashKey": "object:85",
             "selected": false,
             "text": "%Io",
             "value": "%Io"
           },
           {
+            "$$hashKey": "object:86",
             "selected": false,
             "text": "%SAT-S",
             "value": "%SAT-S"
           },
           {
+            "$$hashKey": "object:87",
             "selected": false,
             "text": "%SAT_B",
             "value": "%SAT_B"
           },
           {
+            "$$hashKey": "object:88",
             "selected": false,
             "text": "APA-B",
             "value": "APA-B"
           },
           {
+            "$$hashKey": "object:89",
             "selected": false,
             "text": "APA-S",
             "value": "APA-S"
           },
           {
+            "$$hashKey": "object:90",
             "selected": false,
             "text": "CHLA-B",
             "value": "CHLA-B"
           },
           {
+            "$$hashKey": "object:91",
             "selected": false,
             "text": "CHLA-S",
             "value": "CHLA-S"
           },
           {
+            "$$hashKey": "object:92",
             "selected": false,
             "text": "DIN-B",
             "value": "DIN-B"
           },
           {
+            "$$hashKey": "object:93",
             "selected": false,
             "text": "DIN-S",
             "value": "DIN-S"
           },
           {
+            "$$hashKey": "object:94",
             "selected": false,
             "text": "DIN:TP",
             "value": "DIN:TP"
           },
           {
+            "$$hashKey": "object:95",
             "selected": false,
             "text": "DO-B",
             "value": "DO-B"
           },
           {
+            "$$hashKey": "object:96",
             "selected": false,
             "text": "DO-S",
             "value": "DO-S"
           },
           {
+            "$$hashKey": "object:97",
             "selected": false,
             "text": "DSIGT",
             "value": "DSIGT"
           },
           {
+            "$$hashKey": "object:98",
             "selected": false,
             "text": "Kd",
             "value": "Kd"
           },
           {
+            "$$hashKey": "object:99",
             "selected": false,
             "text": "N:P",
             "value": "N:P"
           },
           {
+            "$$hashKey": "object:100",
             "selected": false,
             "text": "NH4-B",
             "value": "NH4-B"
           },
           {
+            "$$hashKey": "object:101",
             "selected": false,
             "text": "NH4-S",
             "value": "NH4-S"
           },
           {
+            "$$hashKey": "object:102",
             "selected": false,
             "text": "NO2-B",
             "value": "NO2-B"
           },
           {
+            "$$hashKey": "object:103",
             "selected": false,
             "text": "NO2-S",
             "value": "NO2-S"
           },
           {
+            "$$hashKey": "object:104",
             "selected": false,
             "text": "NO3_B",
             "value": "NO3_B"
           },
           {
+            "$$hashKey": "object:105",
             "selected": false,
             "text": "NO3_S",
             "value": "NO3_S"
           },
           {
+            "$$hashKey": "object:106",
             "selected": false,
             "text": "NOX-B",
             "value": "NOX-B"
           },
           {
+            "$$hashKey": "object:107",
             "selected": false,
             "text": "NOX-S",
             "value": "NOX-S"
           },
           {
+            "$$hashKey": "object:108",
             "selected": true,
             "text": "pH",
             "value": "pH"
           },
           {
+            "$$hashKey": "object:109",
             "selected": false,
             "text": "SAL-B",
             "value": "SAL-B"
           },
           {
+            "$$hashKey": "object:110",
             "selected": false,
             "text": "SAL-S",
             "value": "SAL-S"
           },
           {
+            "$$hashKey": "object:111",
             "selected": false,
             "text": "Si:DIN",
             "value": "Si:DIN"
           },
           {
+            "$$hashKey": "object:112",
             "selected": false,
             "text": "SiO2-B",
             "value": "SiO2-B"
           },
           {
+            "$$hashKey": "object:113",
             "selected": false,
             "text": "SiO2-S",
             "value": "SiO2-S"
           },
           {
+            "$$hashKey": "object:114",
             "selected": false,
             "text": "SRP-B",
             "value": "SRP-B"
           },
           {
+            "$$hashKey": "object:115",
             "selected": false,
             "text": "SRP-S",
             "value": "SRP-S"
           },
           {
+            "$$hashKey": "object:116",
             "selected": false,
             "text": "TEMP-B",
             "value": "TEMP-B"
           },
           {
+            "$$hashKey": "object:117",
             "selected": false,
             "text": "TEMP-S",
             "value": "TEMP-S"
           },
           {
+            "$$hashKey": "object:118",
             "selected": false,
             "text": "TN-B",
             "value": "TN-B"
           },
           {
+            "$$hashKey": "object:119",
             "selected": false,
             "text": "TN-S",
             "value": "TN-S"
           },
           {
+            "$$hashKey": "object:120",
             "selected": false,
             "text": "TN:TP",
             "value": "TN:TP"
           },
           {
+            "$$hashKey": "object:121",
             "selected": false,
             "text": "TOC-B",
             "value": "TOC-B"
           },
           {
+            "$$hashKey": "object:122",
             "selected": false,
             "text": "TOC-S",
             "value": "TOC-S"
           },
           {
+            "$$hashKey": "object:123",
             "selected": false,
             "text": "TON-B",
             "value": "TON-B"
           },
           {
+            "$$hashKey": "object:124",
             "selected": false,
             "text": "TON-S",
             "value": "TON-S"
           },
           {
+            "$$hashKey": "object:125",
             "selected": false,
             "text": "TP-B",
             "value": "TP-B"
           },
           {
+            "$$hashKey": "object:126",
             "selected": false,
             "text": "TP-S",
             "value": "TP-S"
           },
           {
+            "$$hashKey": "object:127",
             "selected": false,
             "text": "TURB-B",
             "value": "TURB-B"
           },
           {
+            "$$hashKey": "object:128",
             "selected": false,
             "text": "TURB-S",
             "value": "TURB-S"
@@ -400,6 +451,7 @@
       {
         "allValue": null,
         "current": {
+          "selected": true,
           "tags": [],
           "text": "BASIN",
           "value": "BASIN"
@@ -414,46 +466,55 @@
         "name": "tag_name",
         "options": [
           {
+            "$$hashKey": "object:66",
             "selected": true,
             "text": "BASIN",
             "value": "BASIN"
           },
           {
+            "$$hashKey": "object:67",
             "selected": false,
             "text": "DEPTH",
             "value": "DEPTH"
           },
           {
+            "$$hashKey": "object:68",
             "selected": false,
             "text": "LATDEC",
             "value": "LATDEC"
           },
           {
+            "$$hashKey": "object:69",
             "selected": false,
             "text": "LONDEC",
             "value": "LONDEC"
           },
           {
+            "$$hashKey": "object:70",
             "selected": false,
             "text": "SEGMENT",
             "value": "SEGMENT"
           },
           {
+            "$$hashKey": "object:71",
             "selected": false,
             "text": "SITE",
             "value": "SITE"
           },
           {
+            "$$hashKey": "object:72",
             "selected": false,
             "text": "STATION",
             "value": "STATION"
           },
           {
+            "$$hashKey": "object:73",
             "selected": false,
             "text": "SURV",
             "value": "SURV"
           },
           {
+            "$$hashKey": "object:74",
             "selected": false,
             "text": "ZONE",
             "value": "ZONE"
@@ -473,8 +534,9 @@
       {
         "allValue": null,
         "current": {
-          "text": "FK",
-          "value": "FK"
+          "tags": [],
+          "text": "SHELF",
+          "value": "SHELF"
         },
         "datasource": "influxdb",
         "definition": "SHOW TAG VALUES WITH KEY = \"$tag_name\"",
@@ -486,12 +548,14 @@
         "name": "tag_value",
         "options": [
           {
-            "selected": true,
+            "$$hashKey": "object:1983",
+            "selected": false,
             "text": "FK",
             "value": "FK"
           },
           {
-            "selected": false,
+            "$$hashKey": "object:1984",
+            "selected": true,
             "text": "SHELF",
             "value": "SHELF"
           }
@@ -510,7 +574,7 @@
     ]
   },
   "time": {
-    "from": "now-5y",
+    "from": "now-30y",
     "to": "now"
   },
   "timepicker": {
@@ -533,5 +597,5 @@
   "variables": {
     "list": []
   },
-  "version": 1
+  "version": 2
 }
