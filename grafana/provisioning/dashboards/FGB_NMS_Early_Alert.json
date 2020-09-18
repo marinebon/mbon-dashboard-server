@@ -1208,15 +1208,31 @@
       }
     },
     {
+      "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Colorado, Brazos, Trinity, Neches and Sabine Rivers (green circles on map above) are summed for discharge into the northwest Gulf of Mexico and plotted above. Discharge data from the Mississippi River (yellow circle on map above) is also plotted.\n\n* In-situ salinity and temperature data is obtained from the [Texas Automated Buoy System (TABS)](http://tabs.gerg.tamu.edu/) \"V\" buoy, operated by Texas A&M University.\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@mail.usf.edu](mailto:dotis@mail.usf.edu)\n\n",
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 24,
+        "x": 0,
+        "y": 78
+      },
+      "id": 20,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Data Sources and Contact Information",
+      "type": "text"
+    },
+    {
       "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/DB_logos_Horz_FK_vNew.png)",
       "datasource": null,
       "gridPos": {
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 78
+        "y": 86
       },
-      "id": 20,
+      "id": 21,
       "mode": "markdown",
       "timeFrom": null,
       "timeShift": null,
