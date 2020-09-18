@@ -31,7 +31,9 @@ If a file fails you will receive an html response with the stack trace.
 import os
 import subprocess
 UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
-UPLOADER_ROUTE = UPLOADER_HOSTNAME + "submit/sat_image_extraction"
+if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
+    UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
+UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
 
 
 BASE_DIRECTORY = '/srv/imars-objects/fk'
