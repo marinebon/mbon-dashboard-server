@@ -4,11 +4,11 @@
 import subprocess
 
 
-def ts_ingest_script_usgs(BASE_DIRECTORY, UPLOADER_ROUTE):
+def ts_ingest_script_usgs(BASE_DIRECTORY, UPLOADER_ROUTE, rivers):
     base_dir = BASE_DIRECTORY + '/DISCH_CSV_USGS'
     # 'USGS_disch_FKdb.csv'
     # 'USGS_disch_FWCdb_EFL.csv'
-    for river in ['FKdb', 'FWCdb_EFL']:
+    for river in rivers:
         filepath = base_dir + '/USGS_disch_' + river + '.csv'
         subprocess.run([
             'curl',

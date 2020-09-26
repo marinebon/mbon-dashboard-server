@@ -57,9 +57,12 @@ ts_ingest_script_regions(
         'SFP64', 'SFP6_5', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
         'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
         'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
-        ]
+        ],
+    file_name_pattern='/FKdbv2_{product}_TS_VSNPP_daily_{roi}.csv'
 )
 
-ts_ingest_script_usgs(BASE_DIRECTORY, UPLOADER_ROUTE)
+ts_ingest_script_usgs(
+    BASE_DIRECTORY, UPLOADER_ROUTE, rivers=['FKdb', 'FWCdb_EFL']
+)
 
 ts_ingest_script_bouys(BASE_DIRECTORY, UPLOADER_ROUTE)

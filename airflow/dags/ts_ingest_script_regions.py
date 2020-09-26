@@ -4,7 +4,9 @@
 import subprocess
 
 
-def ts_ingest_script_regions(BASE_DIRECTORY, UPLOADER_ROUTE, SUBREGIONS):
+def ts_ingest_script_regions(
+    BASE_DIRECTORY, UPLOADER_ROUTE, SUBREGIONS, file_name_pattern
+):
     # === MODA
     base_dir = BASE_DIRECTORY + '/EXT_TS_MODA/OC/'
     for roi in SUBREGIONS:
@@ -28,8 +30,7 @@ def ts_ingest_script_regions(BASE_DIRECTORY, UPLOADER_ROUTE, SUBREGIONS):
     for roi in SUBREGIONS:
         for product in ["chlor_a", "Kd_490", "Rrs_671"]:
             filepath = (
-                base_dir + '/FKdbv2_' + product + '_TS_VSNPP_daily_' + roi +
-                '.csv'
+                base_dir + file_name_pattern.format(product=product, roi=roi)
             )
             subprocess.run([
                 'curl',
