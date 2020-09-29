@@ -55,7 +55,7 @@ with DAG(
             BashOperator(
                 task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
                 bash_command=(
-                    " curl "
+                    " curl --silent --show-error --fail "
                     " --form measurement=${measurement} "
                     " --form tag_set=location=${roi},sensor=${sat} "
                     " --form fields=mean,climatology,anomaly "
@@ -87,7 +87,7 @@ with DAG(
             BashOperator(
                 task_id=f"bouy_{roi}_{product}",
                 bash_command=(
-                    'curl '
+                    'curl --silent --show-error --fail '
                     ' --form measurement=bouy_${product} '
                     ' --form tag_set=location=${roi},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
@@ -111,7 +111,7 @@ with DAG(
         BashOperator(
             task_id=f"river_{river}",
             bash_command=(
-                ' curl '
+                ' curl --silent --show-error --fail '
                 ' --form measurement=river_discharge '
                 ' --form tag_set=location=${river},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
