@@ -18,24 +18,12 @@ DATA_HOST = "http://imars.marine.usf.edu/~tylar"
 FNAME_PREFIX = 'FKdbv2'
 
 SAT_ROI_LIST = [
-    'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
-    'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
-    'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
-    'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
-    'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
-    'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
-    'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
-    'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
-    'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
-    'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
-    'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
-    'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
-    'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
+    'WFG', 'EFG', 'STET', 'COAST1', 'COAST2', 'COAST3', 'COAST4', 'SS1',
+    'SS2', 'SS3', 'SS4', 'SS5', 'SS6', 'SS7', 'SS8'
 ]
 SAT_FILE_DETAIL_LIST = [
     ["VSNPP", "OC", "chlor_a"],
     ["VSNPP", "OC", "Rrs_671"],
-    ["VSNPP", "OC", "Kd_490"],
     ["VSNPP", "SSTN", "sstn"],
     ["MODA", "OC", "ABI"],
 ]
@@ -44,7 +32,7 @@ BOUY_ROI_LIST = [
     'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
 ]
 
-USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
+USGS_RIVER_LIST = ['FGBdb_MS', 'FGBdb_TX']
 
 
 with DAG(
