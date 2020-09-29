@@ -68,7 +68,7 @@ with DAG(
                 ),
                 env={
                     "SAT": sat,
-                    "sat": sat.tolower(),
+                    "sat": sat.lower(),
                     "region": "fk",
                     "product_type": product_type,
                     "fname_prefix": fname_prefix,
