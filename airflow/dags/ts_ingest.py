@@ -61,7 +61,7 @@ with DAG(
                     " --form fields=mean,climatology,anomaly "
                     " --form time_column=time "
                     " --form file=@/srv/imars-objects/${region}/"
-                    "EXT_TS_{{SAT}}/${product_type}/"
+                    "EXT_TS_${SAT}/${product_type}/"
                     "${fname_prefix}_${product}_TS_${SAT}_"
                     "daily_${roi}.csv "
                     " ${uploader_route}"
