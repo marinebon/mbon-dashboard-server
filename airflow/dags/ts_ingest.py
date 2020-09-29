@@ -55,7 +55,10 @@ with DAG(
             BashOperator(
                 task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
                 bash_command=(
-                    " curl --silent --show-error --fail "
+                    "if test $( "
+                    " curl --silent "
+                    " --output /dev/stderr "
+                    " --write-out \"%{http_code}\" "
                     " --form measurement=${measurement} "
                     " --form tag_set=location=${roi},sensor=${sat} "
                     " --form fields=mean,climatology,anomaly "
@@ -64,7 +67,8 @@ with DAG(
                     "EXT_TS_${SAT}/${product_type}/"
                     "${fname_prefix}_${product}_TS_${SAT}_"
                     "daily_${roi}.csv "
-                    " ${uploader_route}"
+                    " ${uploader_route} "
+                    ") -ne 200; then exit 1 fi"
                 ),
                 env={
                     "SAT": sat,
@@ -87,14 +91,18 @@ with DAG(
             BashOperator(
                 task_id=f"bouy_{roi}_{product}",
                 bash_command=(
-                    'curl --silent --show-error --fail '
+                    "if test $( "
+                    " curl --silent "
+                    " --output /dev/stderr "
+                    " --write-out \"%{http_code}\" "
                     ' --form measurement=bouy_${product} '
                     ' --form tag_set=location=${roi},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
                     ' --form time_column=time '
                     ' --form file=@/srv/imars-objects/${region}/SAL_TS_NDBC/'
                     '${roi}_NDBC_${product}_FKdb.csv '
-                    ' ${uploader_route}'
+                    ' ${uploader_route} '
+                    ") -ne 200; then exit 1 fi"
                 ),
                 env={
                     "product": product,
@@ -111,14 +119,18 @@ with DAG(
         BashOperator(
             task_id=f"river_{river}",
             bash_command=(
-                ' curl --silent --show-error --fail '
+                "if test $( "
+                " curl --silent "
+                " --output /dev/stderr "
+                " --write-out \"%{http_code}\" "
                 ' --form measurement=river_discharge '
                 ' --form tag_set=location=${river},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
                 ' --form time_column=time '
                 ' --form file=@/srv/imars-objects/${region}/DISCH_CSV_USGS/'
                 'USGS_disch_${river}.csv '
-                ' ${uploader_route}'
+                ' ${uploader_route} '
+                ") -ne 200; then exit 1 fi"
             ),
             env={
                 "river": river,
