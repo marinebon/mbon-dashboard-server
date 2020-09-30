@@ -59,7 +59,7 @@ with DAG(
                     " curl --silent "
                     " --output /dev/stderr "
                     " --write-out \"%{http_code}\" "
-                    " --form measurement={{params.measurement}} "
+                    " --form measurement=sat_img_extraction "
                     " --form tag_set=location={{params.roi}},"
                     "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
