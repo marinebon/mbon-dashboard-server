@@ -59,18 +59,19 @@ with DAG(
                     " curl --silent "
                     " --output /dev/stderr "
                     " --write-out \"%{http_code}\" "
-                    " --form measurement=${measurement} "
-                    " --form tag_set=location=${roi},sensor=${sat} "
+                    " --form measurement={{params.measurement}} "
+                    " --form tag_set=location={{params.roi}},"
+                    "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
                     " --form time_column=time "
-                    " --form file=@/srv/imars-objects/${region}/"
-                    "EXT_TS_${SAT}/${product_type}/"
-                    "${fname_prefix}_${product}_TS_${SAT}_"
-                    "daily_${roi}.csv "
-                    " ${uploader_route} "
+                    " --form file=@/srv/imars-objects/{{params.region}}/"
+                    "EXT_TS_{{params.SAT}}/{{params.product_type}}/"
+                    "{{params.fname_prefix}}_{{params.product}}_TS_"
+                    "{{params.SAT}}_daily_{{params.roi}}.csv "
+                    " {{params.uploader_route}} "
                     ") -ne 200; then exit 1 fi"
                 ),
-                env={
+                params={
                     "SAT": sat,
                     "sat": sat.lower(),
                     "region": region,
@@ -95,16 +96,17 @@ with DAG(
                     " curl --silent "
                     " --output /dev/stderr "
                     " --write-out \"%{http_code}\" "
-                    ' --form measurement=bouy_${product} '
-                    ' --form tag_set=location=${roi},source=ndbc '
+                    ' --form measurement=bouy_{{params.product}} '
+                    ' --form tag_set=location={{params.roi}},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
                     ' --form time_column=time '
-                    ' --form file=@/srv/imars-objects/${region}/SAL_TS_NDBC/'
-                    '${roi}_NDBC_${product}_FKdb.csv '
-                    ' ${uploader_route} '
+                    ' --form file=@/srv/imars-objects/{{params.region}}/'
+                    'SAL_TS_NDBC/'
+                    '{{params.roi}}_NDBC_{{params.product}}_FKdb.csv '
+                    ' {{params.uploader_route}} '
                     ") -ne 200; then exit 1 fi"
                 ),
-                env={
+                params={
                     "product": product,
                     "region": region,
                     "roi": roi,
@@ -124,15 +126,16 @@ with DAG(
                 " --output /dev/stderr "
                 " --write-out \"%{http_code}\" "
                 ' --form measurement=river_discharge '
-                ' --form tag_set=location=${river},source=usgs '
+                ' --form tag_set=location={{params.river}},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
                 ' --form time_column=time '
-                ' --form file=@/srv/imars-objects/${region}/DISCH_CSV_USGS/'
-                'USGS_disch_${river}.csv '
-                ' ${uploader_route} '
+                ' --form file=@/srv/imars-objects/{{params.region}}/'
+                'DISCH_CSV_USGS/'
+                'USGS_disch_{{params.river}}.csv '
+                ' {{params.uploader_route}} '
                 ") -ne 200; then exit 1 fi"
             ),
-            env={
+            params={
                 "river": river,
                 "region": region,
                 "uploader_route": UPLOADER_ROUTE
