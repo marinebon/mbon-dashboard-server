@@ -55,10 +55,7 @@ with DAG(
             BashOperator(
                 task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
                 bash_command=(
-                    "if test $( "
-                    " curl --silent "
-                    " --output /dev/stderr "
-                    " --write-out \"%{http_code}\" "
+                    "curl --fail "
                     " --form measurement=sat_img_extraction "
                     " --form tag_set=location={{params.roi}},"
                     "sensor={{params.sat}} "
@@ -69,7 +66,6 @@ with DAG(
                     "{{params.fname_prefix}}_{{params.product}}_TS_"
                     "{{params.SAT}}_daily_{{params.roi}}.csv "
                     " {{params.uploader_route}} "
-                    ") -ne 200; then exit 1 fi"
                 ),
                 params={
                     "SAT": sat,
@@ -92,10 +88,7 @@ with DAG(
             BashOperator(
                 task_id=f"bouy_{roi}_{product}",
                 bash_command=(
-                    "if test $( "
-                    " curl --silent "
-                    " --output /dev/stderr "
-                    " --write-out \"%{http_code}\" "
+                    "curl --fail "
                     ' --form measurement=bouy_{{params.product}} '
                     ' --form tag_set=location={{params.roi}},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
@@ -104,7 +97,6 @@ with DAG(
                     'SAL_TS_NDBC/'
                     '{{params.roi}}_NDBC_{{params.product}}_FKdb.csv '
                     ' {{params.uploader_route}} '
-                    ") -ne 200; then exit 1 fi"
                 ),
                 params={
                     "product": product,
@@ -121,10 +113,7 @@ with DAG(
         BashOperator(
             task_id=f"river_{river}",
             bash_command=(
-                "if test $( "
-                " curl --silent "
-                " --output /dev/stderr "
-                " --write-out \"%{http_code}\" "
+                "curl --fail "
                 ' --form measurement=river_discharge '
                 ' --form tag_set=location={{params.river}},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
@@ -133,7 +122,6 @@ with DAG(
                 'DISCH_CSV_USGS/'
                 'USGS_disch_{{params.river}}.csv '
                 ' {{params.uploader_route}} '
-                ") -ne 200; then exit 1 fi"
             ),
             params={
                 "river": river,
