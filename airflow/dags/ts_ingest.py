@@ -56,7 +56,7 @@ with DAG(
                 task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
-                    " --form measurement=sat_img_extraction "
+                    " --form measurement=sat_{{params.product}} "
                     " --form tag_set=location={{params.roi}},"
                     "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
