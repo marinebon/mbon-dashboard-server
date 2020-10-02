@@ -60,7 +60,7 @@ with DAG(
                     " --form tag_set=location={{params.roi}},"
                     "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
-                    " --form time_column=time "
+                    " --form time_column=Time "
                     " --form file=@/srv/imars-objects/{{params.region}}/"
                     "EXT_TS_{{params.SAT}}/{{params.product_type}}/"
                     "{{params.fname_prefix}}_{{params.product}}_TS_"
