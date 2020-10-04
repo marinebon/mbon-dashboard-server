@@ -38,6 +38,7 @@ Similarly datasources can be added by modifying the contents of `./grafana/provi
 
 Sometimes when restarting grafana there is some confusion about the permissions for the grafana-storage directory.
 As a workaround:
-    1. `docker container stop grafana`
-    2. `chmod -R 777 grafana/grafana-storage`
-    3. `docker container start grafana`
+
+1. `docker container stop grafana`
+2. `chmod -R 777 grafana/grafana-storage`
+3. `docker container start grafana`
