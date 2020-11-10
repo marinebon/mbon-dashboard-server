@@ -1537,7 +1537,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "In-situ salinity (psu) from selected buoys",
+      "title": "In-situ salinity (psu) from selected buoys(s)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1659,7 +1659,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "In-situ salinity (psu) from selected buoys",
+      "title": "In-situ temperature (DegC) from selected buoy(s)",
       "tooltip": {
         "shared": true,
         "sort": 0,
