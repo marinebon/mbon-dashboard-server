@@ -1290,7 +1290,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "Gage height from rivers on Florida's east coast (sum of gage height from rivers shown by red circles on map)",
+      "title": "USGS Gage Height from rivers on Florida's east coast (sum of gage height from rivers shown by red circles on map - meters)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1412,7 +1412,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "USGS River Discharge Height (sum of discharge from green dots on map)",
+      "title": "USGS River Discharge (sum of discharge from green dots on map - m^3/sec)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1537,7 +1537,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "In-situ salinity (psu) from selected buoys",
+      "title": "In-situ salinity at ~1m depth (psu) from selected buoy(s)",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -1659,7 +1659,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "In-situ salinity (psu) from selected buoys",
+      "title": "In-situ temperature at ~1m depth (DegC) from selected buoy(s)",
       "tooltip": {
         "shared": true,
         "sort": 0,
