@@ -29,25 +29,27 @@ To do this simply comment out the relevant sections of docker-compose.yml.
 2. install docker & docker-compose
 3. add permissions to run docker for current user
     1. `sudo usermod -aG docker ${USER}`
-4. adjust settings
-    1. set passwords in the environment `.env` file.
+4. Adjust settings. Products built on the mbon-dashboard-server base framework (like the FKNMS dashboard on the `client-fknms` branch) will already have configuration for these set up. Please take the **REQUIRED** steps below and use the **OPTIONAL** configuration options to further customize your usage as needed.
+    1. **REQUIRED** set passwords in the environment `.env` file.
         * see the `documentation/example_env_file` for an example.
-    2. connect ERDDAP to your data - see `./erddap/README.md`
-    3. load data into InfluxDB - see `./influxdb/README.md`
-    4. modify grafana dashboards - see `./grafana/README.md`
-    5. create data dir for PostgreSQL - see `./postgres/README.md`
+    2. **REQUIRED**: create data dir for PostgreSQL - see `./postgres/README.md`
+    3. **OPTIONAL:** connect ERDDAP to your data - see `./erddap/README.md`
+    4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
+    5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
 5. run initialization containers:
     1. `docker-compose -f docker-compose-init.yml up -d`
     2. wait a few minutes
     3. `docker-compose -f docker-compose-init.yml down`
 6. start everything up: `docker-compose up --build -d`
-7. test it out (assuming your hostname is "localhost")
+7. **REQUIRED**: toggle "on" airflow processing DAGs - see [issue #12](https://github.com/marinebon/mbon-dashboard-server/issues/12)
+8. test it out (assuming your hostname is "localhost")
     1. http://localhost/ should show "welcome to nginx"
     2. http://localhost:8080/ should show a 404 from tomcat
     3. http://localhost:8080/erddap should show ERDDAP's page
     4. http://localhost:8086/ should show "404 page not found" from InfluxDB
     5. http://localhost:3000/login should show grafana login
     6. http://localhost:5000 should show a data submission form from mbon_data_uploader
+    7. http://localhost:8888 should show airflow login & admin dashboard after logging in
 
 ## Basic Workflow
 The workflow here is to do any non-site-specific work on the master branch.
