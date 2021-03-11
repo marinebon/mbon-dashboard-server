@@ -4,6 +4,16 @@ Docker software stack for MBON server serving early-alert dashboards.
 
 For more detailed documentation please see `./documentation/`.
 
+## Repository "framework" & "product" organization
+Herein we use the terms dashboard *"framework"* for something that people can use to build their own *"products"*.
+An example *product*: "A dashboard so show fish population correlated with nutrient data and satellite imagery".
+Versus the *framework*: "The stack that someone could install, configure, and populate the DB to build the aforementioned product."
+
+The "master" branch of the repository is the framework used to build products. 
+This framework contains the common core of software configuration and setup for any product build.
+
+The `client-*` branches (eg client-fgbnms, client-fk_water_quality, client-fknms, client-fwc) are products ready to be cloned built with minimal configuration.
+
 ## Project Structure Overview
 `docker-compose.yml` handles most configuration.
 The subdirectories (eg erddap, nginx, etc) contain container-specific files.
