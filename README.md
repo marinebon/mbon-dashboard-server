@@ -14,7 +14,9 @@ This framework contains the common core of software configuration and setup for 
 
 The `client-*` branches (eg client-fgbnms, client-fk_water_quality, client-fknms, client-fwc) are products ready to be cloned built with minimal configuration.
 
-## Project Structure Overview
+For details on how to work within this organizational setup see the [basic-workflow section](https://github.com/marinebon/mbon-dashboard-server#basic-workflow) below.
+
+## Directory Structure Overview
 `docker-compose.yml` handles most configuration.
 The subdirectories (eg erddap, nginx, etc) contain container-specific files.
 
