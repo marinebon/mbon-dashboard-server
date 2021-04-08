@@ -40,7 +40,7 @@ docker-compose -f docker-compose-init.yml down
 docker-compose up --build -d
 
 # workaround [issue #13](https://github.com/marinebon/mbon-dashboard-server/issues/13)
-chmod -R 777 grafana/grafana-storage
+sudo chmod -R 777 grafana/grafana-storage
 docker-compose up --build -d
 ```
 
