@@ -95,6 +95,7 @@ services:
     environment:
         - LOAD_EX=n
         - EXECUTOR=Local
+        - UPLOADER_HOSTNAME=http://localhost:5000
     volumes:
         - /srv/imars-objects:/srv/imars-objects:ro,slave
         - ./airflow/dags:/usr/local/airflow/dags
@@ -110,5 +111,3 @@ services:
         interval: 30s
         timeout: 30s
         retries: 3
-    environment:
-        - UPLOADER_HOSTNAME=http://localhost:5000
