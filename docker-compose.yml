@@ -32,10 +32,16 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+#     - LOAD_EX=n
+#     - UPLOADER_HOSTNAME=http://localhost:5000
+#    env_file:
+#        - .env
   volumes:
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins
+    - ./airflow/dags:/opt/airflow/dags
+    - ./airflow/logs:/opt/airflow/logs
+    - ./airflow/plugins:/opt/airflow/plugins
+#     - /srv/imars-objects:/srv/imars-objects:ro,slave
+#     - ./airflow/requirements.txt:/requirements.txt
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
   depends_on:
     redis:
@@ -146,8 +152,6 @@ services:
       retries: 50
     restart: always
 
-
-
   airflow-webserver:
     <<: *airflow-common
     command: webserver
@@ -159,22 +163,8 @@ services:
       timeout: 10s
       retries: 5
     restart: always
-
     # container_name: airflow_webserver
     # mem_limit: 2048m
-    # env_file:
-    #     - .env
-    # environment:
-    #     - LOAD_EX=n
-    #     - EXECUTOR=Local
-    #     - UPLOADER_HOSTNAME=http://localhost:5000
-    # volumes:
-    #     - /srv/imars-objects:/srv/imars-objects:ro,slave
-    #     - ./airflow/dags:/usr/local/airflow/dags
-    #     - ./airflow/requirements.txt:/requirements.txt
-    #     # - ./airflow/test:/usr/local/airflow/test
-    #     # - ./airflow/plugins:/usr/local/airflow/plugins
-    #     # - ~/airflow/.aws:/usr/local/airflow/.aws
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
