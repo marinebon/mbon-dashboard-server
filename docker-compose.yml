@@ -1,4 +1,48 @@
+# Airflow sections based on provided example docker-compose.yml included in
+# airflow's docs here:
+# https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml
+---
 version: '3.3'
+
+# ============================================================================
+# === config shared between all airflow services =============================
+# ============================================================================
+# This config supports use of environment variables or an .env file.
+# The following variables are supported:
+#
+# AIRFLOW_IMAGE_NAME         - Docker image name used to run Airflow.
+#                              Default: apache/airflow:master-python3.8
+# AIRFLOW_UID                - User ID in Airflow containers
+#                              Default: 50000
+# AIRFLOW_GID                - Group ID in Airflow containers
+#                              Default: 50000
+# _AIRFLOW_WWW_USER_USERNAME - Username for the administrator account.
+#                              Default: airflow
+# _AIRFLOW_WWW_USER_PASSWORD - Password for the administrator account.
+#                              Default: airflow
+x-airflow-common:
+  &airflow-common
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.0.1}
+  environment:
+    &airflow-common-env
+    AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
+    AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
+    AIRFLOW__CORE__FERNET_KEY: ''
+    AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'true'
+    AIRFLOW__CORE__LOAD_EXAMPLES: 'true'
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+  user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"
+  depends_on:
+    redis:
+      condition: service_healthy
+    postgres:
+      condition: service_healthy
+# ============================================================================
 
 services:
   nginx:
@@ -8,7 +52,6 @@ services:
     ports:
       #- 8088:80
       - 80:80
-
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
   erddap:
     user: root:4504
@@ -26,6 +69,9 @@ services:
       - 8080:8080
  # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
 
+  # ==========================================================================
+  # === grafana dashboard services
+  # ==========================================================================
   grafana:
       container_name: grafana
       image: grafana/grafana:6.7.3
@@ -42,7 +88,6 @@ services:
       volumes:
           - ./grafana/provisioning:/grafana_provisioning
           - ./grafana/grafana-storage:/var/lib/grafana
-
   influxdb:
         container_name: influxdb
         image: influxdb:1.8
@@ -63,7 +108,7 @@ services:
             # - INFLUXDB_ADMIN_USER=influx_admin  #       and https://github.com/influxdata/influxdata-docker/issues/224
             # - INFLUXDB_READ_USER=grafana
             # - INFLUXDB_WRITE_USER=telegraf
-
+  # ==========================================================================
   mbon_data_uploader:
       container_name: mbon_data_uploader
       build: ./mbon_data_uploader
@@ -73,41 +118,95 @@ services:
           - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
           - INFLUXDB_HOSTNAME=localhost:8086
 
-  airflow_postgres:
-      container_name: postgres
-      image: postgres:9.6
-      environment:
-        - POSTGRES_USER=airflow
-        - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-        - POSTGRES_DB=airflow
-      volumes:
-          - ./postgres/pgdata:/var/lib/postgresql/data
-
-  airflow_webserver:
-    container_name: airflow_webserver
-    image: puckel/docker-airflow:1.10.9
-    restart: always
-    # mem_limit: 2048m
-    depends_on:
-        - airflow_postgres
-    env_file:
-        - .env
+  # ==========================================================================
+  # === airflow job orchestration services
+  # ==========================================================================
+  postgres:
+    image: postgres:13
     environment:
-        - LOAD_EX=n
-        - EXECUTOR=Local
-        - UPLOADER_HOSTNAME=http://localhost:5000
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow  # ${POSTGRES_PASSWORD}
+      POSTGRES_DB: airflow
     volumes:
-        - /srv/imars-objects:/srv/imars-objects:ro,slave
-        - ./airflow/dags:/usr/local/airflow/dags
-        - ./airflow/requirements.txt:/requirements.txt
-        # - ./airflow/test:/usr/local/airflow/test
-        # - ./airflow/plugins:/usr/local/airflow/plugins
-        # - ~/airflow/.aws:/usr/local/airflow/.aws
-    ports:
-        - "8888:8080"
-    command: webserver
+      - postgres-db-volume:/var/lib/postgresql/data
     healthcheck:
-        test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
-        interval: 30s
-        timeout: 30s
-        retries: 3
+      test: ["CMD", "pg_isready", "-U", "airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: always
+
+
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - 8888:8080
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+    # container_name: airflow_webserver
+    # mem_limit: 2048m
+    # env_file:
+    #     - .env
+    # environment:
+    #     - LOAD_EX=n
+    #     - EXECUTOR=Local
+    #     - UPLOADER_HOSTNAME=http://localhost:5000
+    # volumes:
+    #     - /srv/imars-objects:/srv/imars-objects:ro,slave
+    #     - ./airflow/dags:/usr/local/airflow/dags
+    #     - ./airflow/requirements.txt:/requirements.txt
+    #     # - ./airflow/test:/usr/local/airflow/test
+    #     # - ./airflow/plugins:/usr/local/airflow/plugins
+    #     # - ~/airflow/.aws:/usr/local/airflow/.aws
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    restart: always
+
+  airflow-worker:
+    <<: *airflow-common
+    command: celery worker
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    command: version
+    environment:
+      <<: *airflow-common-env
+      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_WWW_USER_CREATE: 'true'
+      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}
+      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}
+
+  flower:
+    <<: *airflow-common
+    command: celery flower
+    ports:
+      - 5555:5555
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+  # ==========================================================================
+
+volumes:
+  postgres-db-volume:
