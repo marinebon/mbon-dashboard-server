@@ -28,13 +28,16 @@ git submodule update --init --recursive --remote
 
 # app config
 vi .env  # & enter text based on provided example file
-mkdir ./postgres/pgdata
 # TODO: we need to edit hostnames in docker-compose.yml ???
 
+# Mounted vols in airflow container use the native user/group permissions,
+# so the container and host computer must have matching file permissions
+echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_GID=0" > .env
+
 # init databases
-docker-compose -f docker-compose-init.yml up -d  
-# wait a couple minutes for the init containers to do their job
-docker-compose -f docker-compose-init.yml down
+docker-compose up airflow-init
+# After completed you should see "start_airflow-init_1 exited with code 0".
+# The airflow account created has the login airflow and the password airflow.
 
 # start it up
 docker-compose up --build -d
@@ -43,4 +46,3 @@ docker-compose up --build -d
 sudo chmod -R 777 grafana/grafana-storage
 docker-compose up --build -d
 ```
-
