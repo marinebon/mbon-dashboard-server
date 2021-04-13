@@ -32,7 +32,7 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    UPLOADER_HOSTNAME: http://localhost:5000
+    UPLOADER_HOSTNAME: http://35.209.104.85:5000
 #    env_file:
 #        - .env
   volumes:
