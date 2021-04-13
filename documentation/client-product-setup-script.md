@@ -50,3 +50,13 @@ docker-compose up --build -d
 sudo chmod -R 777 grafana/grafana-storage
 docker-compose up --build -d
 ```
+
+Now for the manual steps:
+
+## set grafana "home dashboard"
+1. open grafana (http://35.209.104.85:3000) & bottom left click "sign in"
+2. sign in with `imars_grafana_user` and pw from `.env` (`grafana_admin_pw`)
+3. now @ grafana home in top left click "home" > "home dashboard"
+4. top right(ish) click star to "star" the dashboard
+5. left side click the cog > "preferences" 
+6. now in org config set "home dashboard" to "Home Dashboard" & click save 
