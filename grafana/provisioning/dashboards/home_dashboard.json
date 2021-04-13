@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/DB_logos_Horz_FK_vNew.png )",
+      "content": "\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/home_dash_logo.png)",
       "datasource": null,
       "gridPos": {
         "h": 6,
@@ -35,7 +35,7 @@
       "type": "text"
     },
     {
-      "content": "Welcome! \n\nHere you will find dashboards built for the Florida Keys National Marine Sanctuary.\nTo get started choose a dashboard from the list and begin exploring! \n",
+      "content": "Welcome! \n\nHere you will find dashboards built for the Flower Garden Banks National Marine Sanctuary.\nTo get started choose a dashboard from the list and begin exploring! \n",
       "datasource": null,
       "gridPos": {
         "h": 8,
@@ -52,6 +52,7 @@
     },
     {
       "datasource": null,
+      "folderId": null,
       "gridPos": {
         "h": 8,
         "w": 9,
