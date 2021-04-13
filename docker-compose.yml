@@ -56,8 +56,9 @@ services:
     build: ./nginx
     restart: unless-stopped
     ports:
-      #- 8088:80
       - 80:80
+    volumes:
+      - ./static_files:/usr/share/nginx/html:ro
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
   erddap:
     user: root:4504
