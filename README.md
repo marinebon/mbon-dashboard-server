@@ -76,11 +76,10 @@ To update a client branch to use the latest master `git rebase` is used.
 3. `git pull` then `git commit` your changes
     * do not commit your `.env` or hostname changes to `erddap/setup.xml`
     
-### Editing client branch
-1. same as above
-2. same as above
-3. `git checkout client-fknms`
-4. `git rebase master`
-5. resolve any merge issues
-6. `git push -f origin client-fknms`  
+### Update client branch with changes from master
+3. `git branch` to be see if you are on the right branch
+4. `git branch client-*-backup-1` to create new backup branch
+5. `git rebase master` to prepend changes from master
+6. resolve any merge issues
+7. `git push --force-with-lease origin client-fknms`  
     * !!! be careful with force pushing; it deletes history
