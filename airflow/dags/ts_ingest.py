@@ -7,7 +7,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-DAGS_DIR = "/usr/local/airflow/dags/"
+DAGS_DIR = "/opt/airflow/dags/"
 
 
 with DAG(
