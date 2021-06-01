@@ -16,3 +16,8 @@ GF_ANALYTICS_GOOGLE_ANALYTICS_UA_ID="your google UA ID here"
 # === postgres =============================================================
 POSTGRES_PASSWORD="postgres;password#here"
 # ==========================================================================
+
+# === airflow ==============================================================
+_AIRFLOW_WWW_USER_USERNAME="airflow_admin_user"
+_AIRFLOW_WWW_USER_PASSWORD="airfl0w_passw0rd.here"
+# ==========================================================================
