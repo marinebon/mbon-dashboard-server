@@ -109,7 +109,7 @@ with DAG(
     # ========================================================================
     # USGS River Discharge Ingest
     # ========================================================================
-    for river in ['FKdb', "FWCdb_EFL"]:
+    for river in ['FKdb', "FWCdb_EFL", "FWCdb_STL"]:
         BashOperator(
             task_id=f"river_{river}",
             bash_command=(
