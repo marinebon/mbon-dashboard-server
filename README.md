@@ -50,10 +50,7 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     3. **OPTIONAL:** connect ERDDAP to your data - see `./erddap/README.md`
     4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
     5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
-6. run initialization containers:
-    1. `docker-compose -f docker-compose-init.yml up -d`
-    2. wait a few minutes
-    3. `docker-compose -f docker-compose-init.yml down`
+6. run initialization containers: `docker-compose up airflow-init`
 7. start everything up: `docker-compose up --build -d`
 8. **REQUIRED**: toggle "on" airflow processing DAGs - see [issue #12](https://github.com/marinebon/mbon-dashboard-server/issues/12)
 9. test it out (assuming your hostname is "localhost")
