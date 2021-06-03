@@ -83,3 +83,7 @@ To update a client branch to use the latest master `git rebase` is used.
 6. resolve any merge issues
 7. `git push --force-with-lease origin client-fknms`  
     * !!! be careful with force pushing; it deletes history
+
+## requirements
+* docker-compose `~> 1.28.5`. Not sure exactly the min version but `1.21.2` was tested and does not work.
+* ERDDAP generally requires > 8GB memory and more is better.
