@@ -1,7 +1,15 @@
-# mbon-dashboard-server
+# IMaRS mbon-dashboard-server
+
+This is IMaRS's dashboard stack that serves multiple functions:
+
+* airflow scheduler
+    - pushes data from Dan Otis's .csv files into FWC dashboard (see client-fwc branch).
+* TODO: ERDDAP serves up IMaRS data products
+* TODO: grafana to serve up monitoring data for our servers
+* TODO: grafana to serve up public product dashboards for GoM, other? RoIs
+* TODO: InfluxDB public API?
 
 Docker software stack for MBON server serving early-alert dashboards.
-
 For more detailed documentation please see `./documentation/`.
 
 ## Repository "framework" & "product" organization
@@ -9,7 +17,7 @@ Herein we use the terms dashboard *"framework"* for something that people can us
 An example *product*: "A dashboard so show fish population correlated with nutrient data and satellite imagery".
 Versus the *framework*: "The stack that someone could install, configure, and populate the DB to build the aforementioned product."
 
-The "master" branch of the repository is the framework used to build products. 
+The "master" branch of the repository is the framework used to build products.
 This framework contains the common core of software configuration and setup for any product build.
 
 The `client-*` branches (eg client-fgbnms, client-fk_water_quality, client-fknms, client-fwc) are products ready to be cloned built with minimal configuration.
@@ -40,7 +48,7 @@ To do this simply comment out the relevant sections of docker-compose.yml.
 1. install docker & docker-compose
 2. add permissions to run docker for current user
     1. `sudo usermod -aG docker ${USER}`
-3. copy code from github to your machine 
+3. copy code from github to your machine
     1. `git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-fknms`
     2. `git submodule update --init --recursive --remote`
 5. Adjust settings. Products built on the mbon-dashboard-server base framework (like the FKNMS dashboard on the `client-fknms` branch) will already have configuration for these set up. Please take the **REQUIRED** steps below and use the **OPTIONAL** configuration options to further customize your usage as needed.
@@ -75,7 +83,7 @@ To update a client branch to use the latest master `git rebase` is used.
 2. `docker-compose up --build -d` to update what's running
 3. `git pull` then `git commit` your changes
     * do not commit your `.env` or hostname changes to `erddap/setup.xml`
-    
+
 ### Update client branch with changes from master
 3. `git branch` to be see if you are on the right branch
 4. `git branch client-*-backup-1` to create new backup branch

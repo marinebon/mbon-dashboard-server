@@ -19,14 +19,13 @@ x-airflow-common:
     AIRFLOW__CORE__FERNET_KEY: ''
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
-    UPLOADER_HOSTNAME: http://35.209.104.85:5000
+    UPLOADER_HOSTNAME: ${MBON_UPLOADER_ENDPOINT}
 #    env_file:
 #        - .env
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - ./airflow/logs:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
-#     - /srv/imars-objects:/srv/imars-objects:ro,slave
 #     - ./airflow/requirements.txt:/requirements.txt
   user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"  # user & group ID in airflow containers
   depends_on:
@@ -161,6 +160,8 @@ services:
     <<: *airflow-common
     command: celery worker
     restart: always
+    volumes:
+        - /srv/imars-objects:/srv/imars-objects:ro,slave
 
   airflow-init:
     <<: *airflow-common
