@@ -1,0 +1,12 @@
+# the following are excerpts from Dan Otis's (dotis) crontab on seashell.marine.usf.edu.
+# These jobs should be ported into airflow tasks.
+
+# === daily time-series from all ROI, all prods
+# 30 3 * * * tcsh -d -c '/home1/dotis/DB_files/DB_v2/Extract_TS_dbv2_auto.sh  >&    /home1/dotis/logs/Extract_TS_dbv2_auto.log'
+
+# === Buoy data
+# 0 5 * * * tcsh -d -c '/home1/dotis/DB_files/get_NDBC_temp_sal_FKdb.sh  >& /home1/dotis/logs/get_NDBC_temp_sal_FKdb.log'
+# 10 5 * * * tcsh -d -c '/home1/dotis/DB_files/DB_v2/get_NDBC_temp_sal_FK_dbv2.sh  >& /home1/dotis/logs/get_NDBC_temp_sal_FK_dbv2.log'
+
+# === USGS river discharge data
+# 20 5 * * * tcsh -d -c '/home1/dotis/DB_files/DB_v2/get_USGS_disch_dbv2.sh  >& /home1/dotis/logs/get_USGS_disch_dbv2.log'
