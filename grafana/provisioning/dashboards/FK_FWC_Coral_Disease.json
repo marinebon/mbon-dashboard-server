@@ -370,140 +370,13 @@
       "variable_id": "Kd_490_anom"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 5,
-        "w": 24,
-        "x": 0,
-        "y": 57
-      },
-      "hiddenSeries": false,
-      "id": 40,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "SCTLD_Present",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT cumulative_sum(sum(\"value\")) FROM \"SCTLD_Present\" WHERE $timeFilter GROUP BY time($__interval) fill(null)",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "distinct"
-              },
-              {
-                "params": [],
-                "type": "cumulative_sum"
-              }
-            ]
-          ],
-          "tags": []
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Cumulative Sum of distinct SCTLD infections observed",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:321",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:322",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "content": "These plots show a model of the advance of SCLTD alongside the real field data.\n\n\n",
       "datasource": null,
       "gridPos": {
         "h": 22,
         "w": 5,
         "x": 0,
-        "y": 62
+        "y": 57
       },
       "id": 46,
       "mode": "markdown",
@@ -519,7 +392,7 @@
         "h": 22,
         "w": 7,
         "x": 5,
-        "y": 62
+        "y": 57
       },
       "id": 42,
       "mode": "markdown",
@@ -535,7 +408,7 @@
         "h": 22,
         "w": 11,
         "x": 12,
-        "y": 62
+        "y": 57
       },
       "id": 44,
       "mode": "markdown",
@@ -551,7 +424,7 @@
         "h": 20,
         "w": 24,
         "x": 0,
-        "y": 84
+        "y": 79
       },
       "id": 27,
       "mode": "html",
@@ -572,7 +445,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 104
+        "y": 99
       },
       "hiddenSeries": false,
       "id": 21,
@@ -703,7 +576,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 104
+        "y": 99
       },
       "hiddenSeries": false,
       "id": 31,
@@ -834,7 +707,7 @@
         "h": 6,
         "w": 8,
         "x": 16,
-        "y": 104
+        "y": 99
       },
       "hiddenSeries": false,
       "id": 22,
@@ -965,7 +838,7 @@
         "h": 6,
         "w": 8,
         "x": 0,
-        "y": 110
+        "y": 105
       },
       "hiddenSeries": false,
       "id": 23,
@@ -1096,7 +969,7 @@
         "h": 6,
         "w": 8,
         "x": 8,
-        "y": 110
+        "y": 105
       },
       "hiddenSeries": false,
       "id": 25,
@@ -1227,7 +1100,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 116
+        "y": 111
       },
       "hiddenSeries": false,
       "id": 32,
@@ -1349,7 +1222,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 121
+        "y": 116
       },
       "hiddenSeries": false,
       "id": 35,
@@ -1474,7 +1347,7 @@
         "h": 5,
         "w": 11,
         "x": 0,
-        "y": 126
+        "y": 121
       },
       "hiddenSeries": false,
       "id": 33,
@@ -1596,7 +1469,7 @@
         "h": 5,
         "w": 11,
         "x": 11,
-        "y": 126
+        "y": 121
       },
       "hiddenSeries": false,
       "id": 34,
@@ -1713,7 +1586,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 131
+        "y": 126
       },
       "id": 39,
       "mode": "markdown",
@@ -1729,7 +1602,7 @@
         "h": 12,
         "w": 14,
         "x": 0,
-        "y": 139
+        "y": 134
       },
       "id": 20,
       "mode": "markdown",
@@ -1745,7 +1618,7 @@
         "h": 12,
         "w": 10,
         "x": 14,
-        "y": 139
+        "y": 134
       },
       "id": 37,
       "mode": "markdown",
