@@ -37,7 +37,7 @@
       "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DBv21_map_4.png)",
       "datasource": null,
       "gridPos": {
-        "h": 13,
+        "h": 16,
         "w": 12,
         "x": 0,
         "y": 1
@@ -50,10 +50,10 @@
       "type": "text"
     },
     {
-      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_logos_vNew.png)\n\nSelect location(s) for satellite time series  extraction using the \"Locations\" menu at left.\n\nSelect location(s) for buoy data using the \"Buoys\" menu at left.\n\nDisplay mean, climatology, or anomalies of extracted satellite data using the \"metric\" menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all image and time series panels. \n\nPanels can be hidden or revealed by clicking on the \">\" at the left of the panel. \n\nMore detailed information on data products and links to download data is at bottom.\n\nLocations of extracted data:\n* SLI: St. Lucie River inlet\n* PBI: Palm Beach inlet\n* PEV: Port Everglades\n* MIA: Miami\n* MOL: Molasses Reef\n* SOM: Sombrero Key\n* SUG: Sugarloaf Key\n* KW: Key West\n\nBuoy Locations:\n* 1: Whipray Basin\n* 2: Butternut Key\n* 3: Peterson Key\n* 4: Bob Allen Keys\n* 5: Little Rabbit Key",
+      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_logos_vNew.png)\n\nSelect location(s) for satellite time series  extraction using the \"Locations\" menu at left.\n\nSelect location(s) for buoy data using the \"Buoys\" menu at left.\n\nDisplay mean, climatology, or anomalies of extracted satellite data using the \"metric\" menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all image and time series panels. \n\nPanels can be hidden or revealed by clicking on the \">\" at the left of the panel. \n\nMore detailed information on data products and links to download data is at bottom.\n\nLocations of extracted data: (scroll down to see entire list)\n* SLI: St. Lucie River inlet\n* PBI: Palm Beach inlet\n* PEV: Port Everglades\n* MIA: Miami\n* MOL: Molasses Reef\n* SOM: Sombrero Key\n* SUG: Sugarloaf Key\n* KW: Key West\n\nBuoy Locations:\n* 1: Whipray Basin\n* 2: Butternut Key\n* 3: Peterson Key\n* 4: Bob Allen Keys\n* 5: Little Rabbit Key",
       "datasource": null,
       "gridPos": {
-        "h": 13,
+        "h": 16,
         "w": 12,
         "x": 12,
         "y": 1
@@ -72,7 +72,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 17
       },
       "id": 4,
       "panels": [
@@ -391,7 +391,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 18
       },
       "id": 58,
       "panels": [
@@ -454,7 +454,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 19
       },
       "id": 56,
       "panels": [
@@ -1124,7 +1124,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 20
       },
       "id": 54,
       "panels": [
@@ -1509,7 +1509,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 52,
       "panels": [
@@ -1769,7 +1769,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 22
       },
       "id": 50,
       "panels": [
