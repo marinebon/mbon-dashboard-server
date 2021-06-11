@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1623360174579,
+  "iteration": 1623424092237,
   "links": [],
   "panels": [
     {
@@ -34,10 +34,10 @@
       "type": "row"
     },
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DBv21_map_2.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DBv21_map_4.png)",
       "datasource": null,
       "gridPos": {
-        "h": 21,
+        "h": 16,
         "w": 12,
         "x": 0,
         "y": 1
@@ -50,10 +50,10 @@
       "type": "text"
     },
     {
-      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_logos_vNew.png)\n\n* Select location(s) for satellite time series  extraction using the \"Locations\" menu at left.\n* Select location(s) for buoy data using the \"Buoys\" menu at left.\n* Display mean, climatology, or anomalies of extracted satellite data using the \"metric\" menu at left.\n* The range of the displayed time period can be adjusted at top right.\n* Scroll down to see all image and time series panels.\n* More detailed information on data products and links to download data is at bottom.\n\n------------------------------------------------------------------------\n\n### Locations of extracted data:\n|     |                          |\n|-----| -------------------------|\n| SLI | St. Lucie River inlet    \n| PBI | Palm Beach inlet\n| PEV | Port Everglades\n| MIA | Miami\n| MOL | Molasses Reef\n| SOM | Sombrero Key\n| SUG | Sugarloaf Key\n| KW  | Key West\n\n------------------------------------------------------------------------\n\n### Buoy Locations:\n1. Whipray Basin\n2. Butternut Key\n3. Peterson Key\n4. Bob Allen Keys\n5. Little Rabbit Key\n\n------------------------------------------------------------------------\n\nDashboards with satellite data zoomed into subregions are avaiable:\n\n\n* [Biscanye Bay and SE FL](/d/RRa51qeGz/biscayne-bay-and-southeast-florida-drilldown)\n* [Keys Reef Tract](/d/k7kraqeMk/keys-reef-tract-drilldown)\n\nAdditionally, images and other data files can be generated using ERDDAP's GUI. For example: [GHRSST data for 2019 FK](http://131.247.136.200:8080/erddap/griddap/jplMURSST41anom1day.graph?sstAnom%5B(2019-04-01T09:00:00Z)%5D%5B(24):(26.0)%5D%5B(-82.0):(-80)%5D&.draw=surface&.vars=longitude%7Clatitude%7CsstAnom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff).\nDatasets for this project are currently hosted on [USF IMaRS's ERDDAP server](http://131.247.136.200:8080/erddap/info/index.html?page=1&itemsPerPage=1000).",
+      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FWC_DB_logos_vNew.png)\n\n\n* Select location(s) for satellite time series  extraction using the \"Locations\" menu at left.\n* Select location(s) for buoy data using the \"Buoys\" menu at left.\n* Display mean, climatology, or anomalies of extracted satellite data using the \"metric\" menu at left.\n* The range of the displayed time period can be adjusted at top right.\n* Scroll down to see all image and time series data panels.\n* **To show or hide a panel, simply click on the panel title**\n* More detailed information on data products and links to download data is at bottom.\n\n------------------------------------------------------------------------\n\nTo see more detail, dashboards with zoomed in satellite images are available:\n\n\n* [Biscayne Bay and Southeast Florida](/d/RRa51qeGz/biscayne-bay-and-southeast-florida-drilldown)\n* [Keys Reef Tract](/d/k7kraqeMk/keys-reef-tract-drilldown)\n\n------------------------------------------------------------------------\n\n### Scroll down for locations of extracted data:\n|     |                          |\n|-----| -------------------------|\n| SLI | St. Lucie River inlet    \n| PBI | Palm Beach inlet\n| PEV | Port Everglades\n| MIA | Miami\n| MOL | Molasses Reef\n| SOM | Sombrero Key\n| SUG | Sugarloaf Key\n| KW  | Key West\n\n------------------------------------------------------------------------\n\n### Buoy Locations:\n1. Whipray Basin\n2. Butternut Key\n3. Peterson Key\n4. Bob Allen Keys\n5. Little Rabbit Key\n\n",
       "datasource": null,
       "gridPos": {
-        "h": 21,
+        "h": 16,
         "w": 12,
         "x": 12,
         "y": 1
@@ -72,7 +72,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 17
       },
       "id": 4,
       "panels": [
@@ -391,56 +391,40 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 18
       },
       "id": 58,
       "panels": [
         {
-          "content": "These plots show the advance of SCTLD based on the model of Muller et al. (2020) alongside the field observations from FWC's CREMP and SECREMP programs.\n\n\n",
+          "content": "* The animation at right shows the advance of Stony Coral Tissue Loss Disease (SCTLD) based on the model of Muller et al. (2020) alongside the field observations from FWC's CREMP and SECREMP programs.\n\n* SCTLD was first observed near Virginia Key in September 2014 and then spread to both the north and south.\n\n* Annual observations of SCTLD by [FWC's CREMP and SECREMP programs](https://myfwc.com/research/habitat/coral/cremp/) are shown in the map panel below.\n\n\n\n**References:**\n\n* Muller, E.M., Sartor, C., Alcaraz, N.I., and van Woesik, R. Spatial Epidemiology of the Stony-Coral-Tissue-Loss-Disease in Florida. Front. Mar. Sci. 2020. doi: 10.3389/fmars.2020.00163\n\n* Precht, W.F., Gintert, B.E., Robbart, M.L., Fura, R, and van Woesik, R. Unprecedented disease-related coral mortality in Southeastern Florida. Sci. Rep. 6: 31374. 2016.\ndoi: 10.1038/srep31374\n\n\n\n",
           "datasource": null,
           "gridPos": {
-            "h": 22,
-            "w": 5,
+            "h": 17,
+            "w": 9,
             "x": 0,
-            "y": 24
+            "y": 19
           },
           "id": 46,
           "mode": "markdown",
           "timeFrom": null,
           "timeShift": null,
-          "title": "SCTLD Progression",
-          "type": "text"
-        },
-        {
-          "content": "![FK_SCTLD_advance_plot.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_plot.gif)\n\n\n\n",
-          "datasource": null,
-          "gridPos": {
-            "h": 22,
-            "w": 7,
-            "x": 5,
-            "y": 24
-          },
-          "id": 42,
-          "mode": "markdown",
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "Plot of the advance of SCTLD",
+          "title": "SCTLD Advance",
           "type": "text"
         },
         {
           "content": "\n![FK_SCTLD_advance_images.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_images.gif)\n\n\n\n",
           "datasource": null,
           "gridPos": {
-            "h": 22,
-            "w": 11,
-            "x": 12,
-            "y": 24
+            "h": 17,
+            "w": 10,
+            "x": 9,
+            "y": 19
           },
           "id": 44,
           "mode": "markdown",
           "timeFrom": null,
           "timeShift": null,
-          "title": "Advanced of SCTLD animated map",
+          "title": "Animated map of SCTLD advance",
           "type": "text"
         },
         {
@@ -450,7 +434,7 @@
             "h": 20,
             "w": 24,
             "x": 0,
-            "y": 46
+            "y": 36
           },
           "id": 27,
           "mode": "html",
@@ -470,7 +454,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 19
       },
       "id": 56,
       "panels": [
@@ -486,7 +470,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 25
+            "y": 20
           },
           "hiddenSeries": false,
           "id": 21,
@@ -617,7 +601,7 @@
             "h": 6,
             "w": 8,
             "x": 8,
-            "y": 25
+            "y": 20
           },
           "hiddenSeries": false,
           "id": 31,
@@ -748,7 +732,7 @@
             "h": 6,
             "w": 8,
             "x": 16,
-            "y": 25
+            "y": 20
           },
           "hiddenSeries": false,
           "id": 22,
@@ -879,7 +863,7 @@
             "h": 6,
             "w": 8,
             "x": 0,
-            "y": 31
+            "y": 26
           },
           "hiddenSeries": false,
           "id": 23,
@@ -1010,7 +994,7 @@
             "h": 6,
             "w": 8,
             "x": 8,
-            "y": 31
+            "y": 26
           },
           "hiddenSeries": false,
           "id": 25,
@@ -1140,7 +1124,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 20
       },
       "id": 54,
       "panels": [
@@ -1156,129 +1140,7 @@
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 26
-          },
-          "hiddenSeries": false,
-          "id": 32,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS mean FROM \"river_discharge\"\nWHERE (\"location\" = 'FWCdb_EFL') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "USGS Gage Height from creeks and canals draining into Biscayne Bay (sum of gage height from rivers shown by red circles on map - meters)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 5,
-            "w": 24,
-            "x": 0,
-            "y": 31
+            "y": 21
           },
           "hiddenSeries": false,
           "id": 35,
@@ -1402,7 +1264,129 @@
             "h": 5,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 26
+          },
+          "hiddenSeries": false,
+          "id": 32,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "connected",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "river_discharge",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) AS mean FROM \"river_discharge\"\nWHERE (\"location\" = 'FWCdb_EFL') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "USGS Gage Height from Tamiami Canal draining into Biscayne Bay (red circle on map - meters)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "influxdb",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 5,
+            "w": 24,
+            "x": 0,
+            "y": 31
           },
           "hiddenSeries": false,
           "id": 59,
@@ -1475,7 +1459,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "St Lucie River Discharge (Gage Height - m)",
+          "title": "USGS Gage Height from the St Lucie River (white circle on map - meters)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1525,7 +1509,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 21
       },
       "id": 52,
       "panels": [
@@ -1535,14 +1519,14 @@
           "dashLength": 10,
           "dashes": false,
           "datasource": "influxdb",
-          "description": "TODO: add other bouys to overview map?",
+          "description": "",
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 5,
             "w": 12,
             "x": 0,
-            "y": 27
+            "y": 22
           },
           "hiddenSeries": false,
           "id": 33,
@@ -1664,7 +1648,7 @@
             "h": 5,
             "w": 12,
             "x": 12,
-            "y": 27
+            "y": 22
           },
           "hiddenSeries": false,
           "id": 34,
@@ -1785,18 +1769,18 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 22
       },
       "id": 50,
       "panels": [
         {
-          "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and the Visible Infrared Imaging Spectrometer Suite (VIIRS). All satellite products are  obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge and gage height data are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Gage height values for the Tamiami Canal and Snapper Creek (red circles on map above) are summed to estimate discharge from creeks and canals draining into Biscayne Bay. Discharge values from the Shark, Broad, Lostman's and Chatham Rivers (green circles on map) are summed to estimate discharge into Florida Bay shown on plot above. The St. Lucie River (white circle on map) is influenced by controlled discharges from Lake Okeechobee and is shown separately. \n\n* Buoys in Florida Bay are operated by the National Park Service and data are obtained from the [National Data Buoy Center.](https://www.ndbc.noaa.gov/) \n\n* Coral Disease observations were made by the [FWC's Coral Reef Evaluation and Monitoring Project (CREMP)](https://myfwc.com/research/habitat/coral/cremp/). The spatio-temporal model of disease advance is from Muller et al. (2020; doi:10.3389/fmars.2020.00163).\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Dan Otis - [dotis@usf.edu](mailto:dotis@mail.usf.edu)\n\n",
+          "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and the Visible Infrared Imaging Spectrometer Suite (VIIRS). All satellite products are  obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge and gage height data are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Gage height values for the Tamiami Canal and Snapper Creek (red circles on map above) are summed to estimate discharge from creeks and canals draining into Biscayne Bay. Discharge values from the Shark, Broad, Lostman's and Chatham Rivers (green circles on map) are summed to estimate discharge into Florida Bay shown on plot above. The St. Lucie River (white circle on map) is influenced by controlled discharges from Lake Okeechobee and is shown separately. \n\n* Buoys in Florida Bay are operated by the National Park Service and data are obtained from the [National Data Buoy Center.](https://www.ndbc.noaa.gov/) \n\n* Coral Disease observations were made by the [FWC's Coral Reef Evaluation and Monitoring Project (CREMP)](https://myfwc.com/research/habitat/coral/cremp/). The spatio-temporal model of disease advance is from Muller et al. (2020; doi:10.3389/fmars.2020.00163).\n\n* Images and other data files can be generated using ERDDAP's GUI. For example: [GHRSST data for 2019 FK](http://131.247.136.200:8080/erddap/griddap/jplMURSST41anom1day.graph?sstAnom%5B(2019-04-01T09:00:00Z)%5D%5B(24):(26.0)%5D%5B(-82.0):(-80)%5D&.draw=surface&.vars=longitude%7Clatitude%7CsstAnom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff).\nDatasets for this project are currently hosted on [USF IMaRS's ERDDAP server](http://131.247.136.200:8080/erddap/info/index.html?page=1&itemsPerPage=1000).\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Dan Otis - [dotis@usf.edu](mailto:dotis@mail.usf.edu)\n\n",
           "datasource": null,
           "gridPos": {
-            "h": 8,
+            "h": 9,
             "w": 24,
             "x": 0,
-            "y": 28
+            "y": 23
           },
           "id": 39,
           "mode": "markdown",
@@ -1812,7 +1796,7 @@
             "h": 12,
             "w": 14,
             "x": 0,
-            "y": 36
+            "y": 32
           },
           "id": 20,
           "mode": "markdown",
@@ -1828,7 +1812,7 @@
             "h": 12,
             "w": 10,
             "x": 14,
-            "y": 36
+            "y": 32
           },
           "id": 37,
           "mode": "markdown",
@@ -2031,5 +2015,5 @@
   "variables": {
     "list": []
   },
-  "version": 2
+  "version": 3
 }
