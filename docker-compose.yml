@@ -122,7 +122,6 @@ services:
           - 5000:5000
       environment:
           - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
-<<<<<<< HEAD
           - INFLUXDB_HOSTNAME=fknms-dashboard:8086
 
   # ==========================================================================
