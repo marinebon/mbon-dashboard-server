@@ -12,7 +12,39 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-DAGS_DIR = "/opt/airflow/dags/"
+REGION = 'fk'
+DATA_HOST = "http://imars.marine.usf.edu/~tylar"
+
+FNAME_PREFIX = 'FKdbv2'
+
+SAT_ROI_LIST = [
+    'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
+    'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
+    'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
+    'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
+    'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
+    'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
+    'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
+    'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
+    'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
+    'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
+    'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
+    'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
+    'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
+]
+SAT_FILE_DETAIL_LIST = [
+    ["VSNPP", "OC", "chlor_a"],
+    ["VSNPP", "OC", "Rrs_671"],
+    ["VSNPP", "OC", "Kd_490"],
+    ["VSNPP", "SSTN", "sstn"],
+    ["MODA", "OC", "ABI"],
+]
+
+BOUY_ROI_LIST = [
+    'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
+]
+
+USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
 
 
 with DAG(
@@ -24,42 +56,16 @@ with DAG(
         "start_date": datetime(2020, 1, 1)
     },
 ) as dag:
-
     UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
     if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
         UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
     UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
 
-    REGION = 'fk'
-    DATA_HOST = "http://imars.marine.usf.edu/~tylar"
-
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
-
-    FNAME_PREFIX = 'FKdbv2'
-    for roi in [
-        'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
-        'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
-        'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
-        'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
-        'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
-        'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
-        'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
-        'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
-        'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
-        'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
-        'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
-        'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
-        'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
-    ]:
-        for sat, product_type, product in [
-            ["VSNPP", "OC", "chlor_a"],
-            ["VSNPP", "OC", "Rrs_671"],
-            ["VSNPP", "OC", "Kd_490"],
-            ["VSNPP", "SSTN", "sstn"],
-            ["MODA", "OC", "ABI"],
-        ]:
+    for roi in SAT_ROI_LIST:
+        for sat, product_type, product in SAT_FILE_DETAIL_LIST:
             fpath = f"{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION}_{product}_TS_{sat}_daily_{roi}.csv"
             download_task = BashOperator(
                 task_id=f"upload_sat_roi_{REGION}_{sat}_{product}_{roi}",
@@ -96,9 +102,7 @@ with DAG(
     # ========================================================================
     # Bouy Ingest
     # ========================================================================
-    for roi in [
-        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
-    ]:
+    for roi in BOUY_ROI_LIST:
         for product in ['sal', 'temp']:
             fpath = f"{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
             download_task = BashOperator(
@@ -136,7 +140,7 @@ with DAG(
     # ========================================================================
     # USGS River Discharge Ingest
     # ========================================================================
-    for river in ['FKdb', "FWCdb_EFL", "FWCdb_STL"]:
+    for river in USGS_RIVER_LIST:
         fpath = f"{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv}"
         download_task = BashOperator(
             task_id=f"download_river_{river}",
