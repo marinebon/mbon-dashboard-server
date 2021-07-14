@@ -30,13 +30,14 @@ with DAG(
         UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
     UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
 
+    REGION = 'fk'
+    DATA_HOST = "http://imars.marine.usf.edu/~tylar"
+
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
-    region = 'fk'
-    fname_prefix = 'FKdbv2'
-    data_host = "http://imars.marine.usf.edu/~tylar"
 
+    FNAME_PREFIX = 'FKdbv2'
     for roi in [
         'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
         'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
@@ -59,20 +60,20 @@ with DAG(
             ["VSNPP", "SSTN", "sstn"],
             ["MODA", "OC", "ABI"],
         ]:
-            fpath = f"{region}-_-EXT_TS_{sat}-_-{product_type}-_-{fname_prefix}_{product}_TS_{sat}_daily_{roi}.csv"
+            fpath = f"{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION}_{product}_TS_{sat}_daily_{roi}.csv"
             download_task = BashOperator(
-                task_id=f"upload_sat_roi_{region}_{sat}_{product}_{roi}",
+                task_id=f"upload_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
-                    "{{params.data_host}}/{{params.fpath}} "
+                    "{{params.DATA_HOST}}/{{params.fpath}} "
                 ),
                 params={
                     "fpath": fpath,
-                    "data_host": data_host
+                    "DATA_HOST": DATA_HOST
                 }
             )
             upload_task = BashOperator(
-                task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
+                task_id=f"sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
                     " --form measurement={{params.sat}}_{{params.product}} "
@@ -99,16 +100,16 @@ with DAG(
         'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
     ]:
         for product in ['sal', 'temp']:
-            fpath = f"{region}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
+            fpath = f"{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
             download_task = BashOperator(
                 task_id=f"download_bouy_{roi}_{product}",
                 bash_command=(
                     "curl --fail "
-                    "{{params.data_host}}/{{params.fpath}} "
+                    "{{params.DATA_HOST}}/{{params.fpath}} "
                 ),
                 params={
                     "fpath": fpath,
-                    "data_host": data_host
+                    "DATA_HOST": DATA_HOST
                 }
             )
             upload_task = BashOperator(
@@ -136,16 +137,16 @@ with DAG(
     # USGS River Discharge Ingest
     # ========================================================================
     for river in ['FKdb', "FWCdb_EFL", "FWCdb_STL"]:
-        fpath = f"{region}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv}"
+        fpath = f"{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv}"
         download_task = BashOperator(
             task_id=f"download_river_{river}",
             bash_command=(
                 "curl --fail "
-                "{{params.data_host}}/{{params.fpath}} "
+                "{{params.DATA_HOST}}/{{params.fpath}} "
             ),
             params={
                 "fpath": fpath,
-                "data_host": data_host
+                "DATA_HOST": DATA_HOST
             }
         )
         upload_task = BashOperator(
