@@ -1,5 +1,10 @@
 """
 Ingests all timeseries .csv files into influxdb using mbon_data_uploader.
+
+# files linked to 7yl4r's public_html folder on IMaRS servers like so:
+[tylar@seashell ~]$ ln -s /srv/imars-objects/fgb/DISCH_CSV_USGS/USGS_disch_FGBdb_TX.csv public_html/fgb-_-DISCH_CSV_USGS-_-USGS_disch_FGBdb_TX.csv
+[tylar@seashell ~]$ ln -s /srv/imars-objects/fgb/DISCH_CSV_USGS/USGS_disch_FGBdb_MS.csv public_html/fgb-_-DISCH_CSV_USGS-_-USGS_disch_FGBdb_MS.csv
+# note how dir separator (/) is replaced w/ -_-
 """
 import os
 
@@ -30,6 +35,8 @@ with DAG(
     # ========================================================================
     region = 'fk'
     fname_prefix = 'FKdbv2'
+    data_host = "http://imars.marine.usf.edu/~tylar"
+
     for roi in [
         'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
         'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
@@ -52,7 +59,19 @@ with DAG(
             ["VSNPP", "SSTN", "sstn"],
             ["MODA", "OC", "ABI"],
         ]:
-            BashOperator(
+            fpath = f"{region}-_-EXT_TS_{sat}-_-{product_type}-_-{fname_prefix}_{product}_TS_{sat}_daily_{roi}.csv"
+            download_task = BashOperator(
+                task_id=f"upload_sat_roi_{region}_{sat}_{product}_{roi}",
+                bash_command=(
+                    "curl --fail "
+                    "{{params.data_host}}/{{params.fpath}} "
+                ),
+                params={
+                    "fpath": fpath,
+                    "data_host": data_host
+                }
+            )
+            upload_task = BashOperator(
                 task_id=f"sat_roi_{region}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
@@ -61,23 +80,18 @@ with DAG(
                     "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
                     " --form time_column=Time "
-                    " --form file=@/srv/imars-objects/{{params.region}}/"
-                    "EXT_TS_{{params.SAT}}/{{params.product_type}}/"
-                    "{{params.fname_prefix}}_{{params.product}}_TS_"
-                    "{{params.SAT}}_daily_{{params.roi}}.csv "
+                    " --form file=@./{{params.fpath}} "
                     " {{params.uploader_route}} "
                 ),
                 params={
-                    "SAT": sat,
+                    "fpath": fpath,
                     "sat": sat.lower(),
-                    "region": region,
-                    "product_type": product_type,
-                    "fname_prefix": fname_prefix,
                     "product": product,
                     "roi": roi,
                     "uploader_route": UPLOADER_ROUTE
                 }
             )
+            download_task >> upload_task
     # ========================================================================
     # Bouy Ingest
     # ========================================================================
@@ -85,47 +99,69 @@ with DAG(
         'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
     ]:
         for product in ['sal', 'temp']:
-            BashOperator(
-                task_id=f"bouy_{roi}_{product}",
+            fpath = f"{region}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
+            download_task = BashOperator(
+                task_id=f"download_bouy_{roi}_{product}",
+                bash_command=(
+                    "curl --fail "
+                    "{{params.data_host}}/{{params.fpath}} "
+                ),
+                params={
+                    "fpath": fpath,
+                    "data_host": data_host
+                }
+            )
+            upload_task = BashOperator(
+                task_id=f"upload_bouy_{roi}_{product}",
                 bash_command=(
                     "curl --fail "
                     ' --form measurement=bouy_{{params.product}} '
                     ' --form tag_set=location={{params.roi}},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
                     ' --form time_column=time '
-                    ' --form file=@/srv/imars-objects/{{params.region}}/'
-                    'SAL_TS_NDBC/'
-                    '{{params.roi}}_NDBC_{{params.product}}_FKdb.csv '
+                    ' --form file=@./{{params.fpath}} '
                     ' {{params.uploader_route}} '
                 ),
                 params={
+                    "fpath": fpath,
                     "product": product,
-                    "region": region,
                     "roi": roi,
                     "uploader_route": UPLOADER_ROUTE
                 }
             )
+            download_task >> upload_task
+
 
     # ========================================================================
     # USGS River Discharge Ingest
     # ========================================================================
     for river in ['FKdb', "FWCdb_EFL", "FWCdb_STL"]:
-        BashOperator(
-            task_id=f"river_{river}",
+        fpath = f"{region}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv}"
+        download_task = BashOperator(
+            task_id=f"download_river_{river}",
+            bash_command=(
+                "curl --fail "
+                "{{params.data_host}}/{{params.fpath}} "
+            ),
+            params={
+                "fpath": fpath,
+                "data_host": data_host
+            }
+        )
+        upload_task = BashOperator(
+            task_id=f"upload_river_{river}",
             bash_command=(
                 "curl --fail "
                 ' --form measurement=river_discharge '
                 ' --form tag_set=location={{params.river}},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
                 ' --form time_column=time '
-                ' --form file=@/srv/imars-objects/{{params.region}}/'
-                'DISCH_CSV_USGS/'
-                'USGS_disch_{{params.river}}.csv '
+                ' --form file=@./{{params.fpath}} '
                 ' {{params.uploader_route}} '
             ),
             params={
                 "river": river,
-                "region": region,
                 "uploader_route": UPLOADER_ROUTE
             }
         )
+        download_task >> upload_task
