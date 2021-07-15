@@ -139,7 +139,7 @@ with DAG(
     # USGS River Discharge Ingest
     # ========================================================================
     for river in USGS_RIVER_LIST:
-        fpath = f"{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv}"
+        fpath = f"{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
         download_task = BashOperator(
             task_id=f"download_river_{river}",
             bash_command=(
