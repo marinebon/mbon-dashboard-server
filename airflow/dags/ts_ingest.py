@@ -15,8 +15,6 @@ from datetime import datetime
 REGION = 'fk'
 DATA_HOST = "http://imars.marine.usf.edu/~tylar"
 
-FNAME_PREFIX = 'FKdbv2'
-
 SAT_ROI_LIST = [
     'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
     'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
