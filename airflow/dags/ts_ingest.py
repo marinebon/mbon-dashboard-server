@@ -101,107 +101,80 @@ with DAG(
     # ========================================================================
     for roi in SAT_ROI_LIST:
         for sat, product_type, product in SAT_FILE_DETAIL_LIST:
-            fpath = SAT_FPATH.format(**vars())
-            download_task = BashOperator(
-                task_id=f"upload_sat_roi_{REGION}_{sat}_{product}_{roi}",
+            BashOperator(
+                task_id=f"ingest_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
-                    " {{params.DATA_HOST}}/{{params.fpath}} "
-                    " > datafile.csv"
-                ),
-                params={
-                    "fpath": fpath,
-                    "DATA_HOST": DATA_HOST
-                }
-            )
-            upload_task = BashOperator(
-                task_id=f"sat_roi_{REGION}_{sat}_{product}_{roi}",
-                bash_command=(
-                    "curl --fail "
-                    " --form measurement={{params.sat}}_{{params.product}} "
-                    " --form tag_set=location={{params.roi}},"
-                    "sensor={{params.sat}} "
-                    " --form fields=mean,climatology,anomaly "
-                    " --form time_column=Time "
-                    " --form file=@./datafile.csv "
-                    " {{params.uploader_route}} "
+                    "    {{params.DATA_HOST}}/{{params.fpath}} "
+                    "    > datafile.csv "
+                    " && curl --fail "
+                    "    --form measurement={{params.sat}}_{{params.product}} "
+                    "    --form tag_set=location={{params.roi}},"
+                        "sensor={{params.sat}} "
+                    "    --form fields=mean,climatology,anomaly "
+                    "    --form time_column=Time "
+                    "    --form file=@./datafile.csv "
+                    "    {{params.uploader_route}} "
                 ),
                 params={
                     "sat": sat.lower(),
                     "product": product,
                     "roi": roi,
-                    "uploader_route": UPLOADER_ROUTE
+                    "uploader_route": UPLOADER_ROUTE,
+                    "fpath": SAT_FPATH.format(**vars()),
+                    "DATA_HOST": DATA_HOST
                 }
             )
-            download_task >> upload_task
     # ========================================================================
     # Bouy Ingest
     # ========================================================================
     for roi in BOUY_ROI_LIST:
         for product in ['sal', 'temp']:
-            fpath = BOUY_FPATH.format(**vars())
-            download_task = BashOperator(
-                task_id=f"download_bouy_{roi}_{product}",
+            BashOperator(
+                task_id=f"ingest_bouy_{roi}_{product}",
                 bash_command=(
                     "curl --fail "
-                    " {{params.DATA_HOST}}/{{params.fpath}} "
-                    " > datafile.csv"
-                ),
-                params={
-                    "fpath": fpath,
-                    "DATA_HOST": DATA_HOST
-                }
-            )
-            upload_task = BashOperator(
-                task_id=f"upload_bouy_{roi}_{product}",
-                bash_command=(
-                    "curl --fail "
-                    ' --form measurement=bouy_{{params.product}} '
-                    ' --form tag_set=location={{params.roi}},source=ndbc '
-                    ' --form fields="mean,climatology,anomaly" '
-                    ' --form time_column=time '
-                    ' --form file=@./datafile.csv '
-                    ' {{params.uploader_route}} '
+                    "    {{params.DATA_HOST}}/{{params.fpath}} "
+                    "    > datafile.csv"
+                    " && curl --fail "
+                    '    --form measurement=bouy_{{params.product}} '
+                    '    --form tag_set=location={{params.roi}},source=ndbc '
+                    '    --form fields="mean,climatology,anomaly" '
+                    '    --form time_column=time '
+                    '    --form file=@./datafile.csv '
+                    '    {{params.uploader_route}} '
                 ),
                 params={
                     "product": product,
                     "roi": roi,
-                    "uploader_route": UPLOADER_ROUTE
+                    "uploader_route": UPLOADER_ROUTE,
+                    "fpath": BOUY_FPATH.format(**vars()),
+                    "DATA_HOST": DATA_HOST
                 }
             )
-            download_task >> upload_task
 
     # ========================================================================
     # USGS River Discharge Ingest
     # ========================================================================
     for river in USGS_RIVER_LIST:
-        fpath = RIVER_FPATH.format(**vars())
-        download_task = BashOperator(
-            task_id=f"download_river_{river}",
+        BashOperator(
+            task_id=f"ingest_river_{river}",
             bash_command=(
                 "curl --fail "
-                " {{params.DATA_HOST}}/{{params.fpath}} "
-                " > datafile.csv"
-            ),
-            params={
-                "fpath": fpath,
-                "DATA_HOST": DATA_HOST
-            }
-        )
-        upload_task = BashOperator(
-            task_id=f"upload_river_{river}",
-            bash_command=(
-                "curl --fail "
-                ' --form measurement=river_discharge '
-                ' --form tag_set=location={{params.river}},source=usgs '
-                ' --form fields=mean,climatology,anomaly '
-                ' --form time_column=time '
-                ' --form file=@./datafile.csv '
-                ' {{params.uploader_route}} '
+                "    {{params.DATA_HOST}}/{{params.fpath}} "
+                "    > datafile.csv"
+                " && curl --fail "
+                '    --form measurement=river_discharge '
+                '    --form tag_set=location={{params.river}},source=usgs '
+                '    --form fields=mean,climatology,anomaly '
+                '    --form time_column=time '
+                '    --form file=@./datafile.csv '
+                '    {{params.uploader_route}} '
             ),
             params={
                 "river": river,
-                "uploader_route": UPLOADER_ROUTE
+                "uploader_route": UPLOADER_ROUTE,
+                "fpath": RIVER_FPATH.format(**vars()),
+                "DATA_HOST": DATA_HOST
             }
         )
-        download_task >> upload_task
