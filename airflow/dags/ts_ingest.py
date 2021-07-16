@@ -37,14 +37,40 @@ SAT_FILE_DETAIL_LIST = [
     ["VSNPP", "SSTN", "sstn"],
     ["MODA", "OC", "ABI"],
 ]
+SAT_FPATH = "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION.upper()}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
 
 BOUY_ROI_LIST = [
     'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
 ]
+BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
 
 USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
+RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
 
+# ============================================================================
+# === this code prints out the symlinks needed
+# ============================================================================
+# NOTE: if you want to remove all the broken symlinks use:
+#       find ~/public_html/ -xtype l -delete
+def print_link_bash(fpath):
+    """prints out the bash to create required symlink"""
+    print(f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} /srv/imars-objects/homes/tylar/public_html/{fpath}")
 
+# These loops are expected to be identical to the lines further down in this
+# file which define the tasks.
+for roi in SAT_ROI_LIST:
+    for sat, product_type, product in SAT_FILE_DETAIL_LIST:
+        print_link_bash(SAT_FPATH.format(**vars()))
+for roi in BOUY_ROI_LIST:
+    for product in ['sal', 'temp']:
+        print_link_bash(BOUY_FPATH.format(**vars()))
+for river in USGS_RIVER_LIST:
+    print_link_bash(RIVER_FPATH.format(**vars()))
+# ============================================================================
+
+# ============================================================================
+# === DAG defines the task exec order
+# ============================================================================
 with DAG(
     'ts_ingest',
     catchup=False,  # latest only
@@ -64,7 +90,7 @@ with DAG(
     # ========================================================================
     for roi in SAT_ROI_LIST:
         for sat, product_type, product in SAT_FILE_DETAIL_LIST:
-            fpath = f"{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION}_{product}_TS_{sat}_daily_{roi}.csv"
+            fpath = SAT_FPATH.format(**vars())
             download_task = BashOperator(
                 task_id=f"upload_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
@@ -102,7 +128,7 @@ with DAG(
     # ========================================================================
     for roi in BOUY_ROI_LIST:
         for product in ['sal', 'temp']:
-            fpath = f"{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
+            fpath = BOUY_FPATH.format(**vars())
             download_task = BashOperator(
                 task_id=f"download_bouy_{roi}_{product}",
                 bash_command=(
@@ -139,7 +165,7 @@ with DAG(
     # USGS River Discharge Ingest
     # ========================================================================
     for river in USGS_RIVER_LIST:
-        fpath = f"{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
+        fpath = RIVER_FPATH.format(**vars())
         download_task = BashOperator(
             task_id=f"download_river_{river}",
             bash_command=(
