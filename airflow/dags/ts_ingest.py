@@ -13,7 +13,9 @@ from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
 REGION = 'fk'
-DATA_HOST = "http://imars.marine.usf.edu/~tylar"
+# needed bc we cannot do REGION.upper() inside the format string.
+REGION_UPPERCASE = REGION.upper()
+DATA_HOST = "http://imars.marine.usf.edu/~tylar/ts_symlinks"
 
 SAT_ROI_LIST = [
     'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
@@ -37,7 +39,7 @@ SAT_FILE_DETAIL_LIST = [
     ["VSNPP", "SSTN", "sstn"],
     ["MODA", "OC", "ABI"],
 ]
-SAT_FPATH = "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION.upper()}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+SAT_FPATH = "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION_UPPERCASE}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
 
 BOUY_ROI_LIST = [
     'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
@@ -54,7 +56,7 @@ RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
 #       find ~/public_html/ -xtype l -delete
 def print_link_bash(fpath):
     """prints out the bash to create required symlink"""
-    print(f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} /srv/imars-objects/homes/tylar/public_html/{fpath}")
+    print(f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} /srv/imars-objects/homes/tylar/public_html/ts_symlinks/{fpath}")
 
 # These loops are expected to be identical to the lines further down in this
 # file which define the tasks.
