@@ -106,7 +106,8 @@ with DAG(
                 task_id=f"upload_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
                     "curl --fail "
-                    "{{params.DATA_HOST}}/{{params.fpath}} "
+                    " {{params.DATA_HOST}}/{{params.fpath}} "
+                    " > datafile.csv"
                 ),
                 params={
                     "fpath": fpath,
@@ -122,11 +123,10 @@ with DAG(
                     "sensor={{params.sat}} "
                     " --form fields=mean,climatology,anomaly "
                     " --form time_column=Time "
-                    " --form file=@./{{params.fpath}} "
+                    " --form file=@./datafile.csv "
                     " {{params.uploader_route}} "
                 ),
                 params={
-                    "fpath": fpath,
                     "sat": sat.lower(),
                     "product": product,
                     "roi": roi,
@@ -144,7 +144,8 @@ with DAG(
                 task_id=f"download_bouy_{roi}_{product}",
                 bash_command=(
                     "curl --fail "
-                    "{{params.DATA_HOST}}/{{params.fpath}} "
+                    " {{params.DATA_HOST}}/{{params.fpath}} "
+                    " > datafile.csv"
                 ),
                 params={
                     "fpath": fpath,
@@ -159,11 +160,10 @@ with DAG(
                     ' --form tag_set=location={{params.roi}},source=ndbc '
                     ' --form fields="mean,climatology,anomaly" '
                     ' --form time_column=time '
-                    ' --form file=@./{{params.fpath}} '
+                    ' --form file=@./datafile.csv '
                     ' {{params.uploader_route}} '
                 ),
                 params={
-                    "fpath": fpath,
                     "product": product,
                     "roi": roi,
                     "uploader_route": UPLOADER_ROUTE
@@ -180,7 +180,8 @@ with DAG(
             task_id=f"download_river_{river}",
             bash_command=(
                 "curl --fail "
-                "{{params.DATA_HOST}}/{{params.fpath}} "
+                " {{params.DATA_HOST}}/{{params.fpath}} "
+                " > datafile.csv"
             ),
             params={
                 "fpath": fpath,
@@ -195,7 +196,7 @@ with DAG(
                 ' --form tag_set=location={{params.river}},source=usgs '
                 ' --form fields=mean,climatology,anomaly '
                 ' --form time_column=time '
-                ' --form file=@./{{params.fpath}} '
+                ' --form file=@./datafile.csv '
                 ' {{params.uploader_route}} '
             ),
             params={
