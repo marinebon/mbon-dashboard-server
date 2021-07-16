@@ -1,10 +1,11 @@
 """
 Ingests all timeseries .csv files into influxdb using mbon_data_uploader.
 
-# files linked to 7yl4r's public_html folder on IMaRS servers like so:
-[tylar@seashell ~]$ ln -s /srv/imars-objects/fgb/DISCH_CSV_USGS/USGS_disch_FGBdb_TX.csv public_html/fgb-_-DISCH_CSV_USGS-_-USGS_disch_FGBdb_TX.csv
-[tylar@seashell ~]$ ln -s /srv/imars-objects/fgb/DISCH_CSV_USGS/USGS_disch_FGBdb_MS.csv public_html/fgb-_-DISCH_CSV_USGS-_-USGS_disch_FGBdb_MS.csv
-# note how dir separator (/) is replaced w/ -_-
+files linked to 7yl4r's public_html folder on IMaRS servers by using the
+printout ln statements produced below.
+
+!!! NOTE how the dir separator (/) is replaced w/ -_- in the FPATH variables
+below.
 """
 import os
 
@@ -39,7 +40,10 @@ SAT_FILE_DETAIL_LIST = [
     ["VSNPP", "SSTN", "sstn"],
     ["MODA", "OC", "ABI"],
 ]
-SAT_FPATH = "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-{REGION_UPPERCASE}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+SAT_FPATH = (
+    "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-"
+    "{REGION_UPPERCASE}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+)
 
 BOUY_ROI_LIST = [
     'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
@@ -49,6 +53,7 @@ BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
 USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
 RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
 
+
 # ============================================================================
 # === this code prints out the symlinks needed
 # ============================================================================
@@ -56,7 +61,11 @@ RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
 #       find ~/public_html/ -xtype l -delete
 def print_link_bash(fpath):
     """prints out the bash to create required symlink"""
-    print(f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} /srv/imars-objects/homes/tylar/public_html/ts_symlinks/{fpath}")
+    print(
+        f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} "
+        f" /srv/imars-objects/homes/tylar/public_html/ts_symlinks/{fpath}"
+    )
+
 
 # These loops are expected to be identical to the lines further down in this
 # file which define the tasks.
@@ -161,7 +170,6 @@ with DAG(
                 }
             )
             download_task >> upload_task
-
 
     # ========================================================================
     # USGS River Discharge Ingest
