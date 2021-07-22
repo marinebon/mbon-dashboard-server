@@ -76,9 +76,10 @@ To update a client branch to use the latest master `git rebase` is used.
 ### Update client branch with changes from master
 3. `git branch` to be see if you are on the right branch
 4. `git branch client-*-backup-1` to create new backup branch
-5. `git rebase origin/master` to prepend changes from master
-6. resolve any merge issues
-7. `git push --force-with-lease origin client-*`  
+5. `git fetch` so git knows about remote repo changes
+6. `git rebase origin/master` to prepend changes from master
+7. resolve any merge issues
+8. `git push --force-with-lease origin client-*`  
     * !!! be careful with force pushing; it deletes history
 
 ## requirements
