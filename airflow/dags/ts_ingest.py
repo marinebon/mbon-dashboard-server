@@ -104,10 +104,10 @@ with DAG(
             BashOperator(
                 task_id=f"ingest_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
-                    "curl --fail "
+                    "curl --fail-with-body "
                     "    {{params.DATA_HOST}}/{{params.fpath}} "
                     "    > datafile.csv "
-                    " && curl --fail "
+                    " && curl --fail-with-body "
                     "    --form measurement={{params.sat}}_{{params.product}} "
                     "    --form tag_set=location={{params.roi}},"
                         "sensor={{params.sat}} "
