@@ -9,7 +9,7 @@ Herein we use the terms dashboard *"framework"* for something that people can us
 An example *product*: "A dashboard so show fish population correlated with nutrient data and satellite imagery".
 Versus the *framework*: "The stack that someone could install, configure, and populate the DB to build the aforementioned product."
 
-The "master" branch of the repository is the framework used to build products. 
+The "master" branch of the repository is the framework used to build products.
 This framework contains the common core of software configuration and setup for any product build.
 
 The `client-*` branches (eg client-fgbnms, client-fk_water_quality, client-fknms, client-fwc) are products ready to be cloned built with minimal configuration.
@@ -40,7 +40,7 @@ To do this simply comment out the relevant sections of docker-compose.yml.
 1. install docker & docker-compose
 2. add permissions to run docker for current user
     1. `sudo usermod -aG docker ${USER}`
-3. copy code from github to your machine 
+3. copy code from github to your machine
     1. `git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-fknms`
     2. `git submodule update --init --recursive --remote`
 5. Adjust settings. Products built on the mbon-dashboard-server base framework (like the FKNMS dashboard on the `client-fknms` branch) will already have configuration for these set up. Please take the **REQUIRED** steps below and use the **OPTIONAL** configuration options to further customize your usage as needed.
@@ -72,13 +72,13 @@ To update a client branch to use the latest master `git rebase` is used.
 2. `docker-compose up --build -d` to update what's running
 3. `git pull` then `git commit` your changes
     * do not commit your `.env` or hostname changes to `erddap/setup.xml`
-    
+
 ### Update client branch with changes from master
 3. `git branch` to be see if you are on the right branch
 4. `git branch client-*-backup-1` to create new backup branch
-5. `git rebase master` to prepend changes from master
+5. `git rebase origin/master` to prepend changes from master
 6. resolve any merge issues
-7. `git push --force-with-lease origin client-fknms`  
+7. `git push --force-with-lease origin client-*`  
     * !!! be careful with force pushing; it deletes history
 
 ## requirements
