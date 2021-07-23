@@ -9,7 +9,7 @@ version: '3.3'
 # ============================================================================
 x-airflow-common:
   &airflow-common
-  image: apache/airflow:2.1.2
+  build: ./airflow
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
