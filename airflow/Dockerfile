@@ -1,7 +1,8 @@
 FROM apache/airflow:2.1.2
+USER root
 
 # update curl so we can use --fail-with-body option in curl v7.76.0+
-# TODO: is libcurl4 a required package too? 
+# TODO: is libcurl4 a required package too?
 RUN apt-get update && \
     apt-get install --yes --no-install-recommends wget build-essential && \
     wget https://curl.se/download/curl-7.78.0.tar.gz && \
