@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1625599354120,
+  "iteration": 1628267537107,
   "links": [],
   "panels": [
     {
@@ -380,7 +380,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"vsnpp_chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"vsnpp_chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -411,7 +411,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS Chlorophyll-a Anomaly @ $Locations",
+          "title": "VIIRS Chlorophyll-a $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -427,6 +427,7 @@
           },
           "yaxes": [
             {
+              "$$hashKey": "object:273",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -435,6 +436,7 @@
               "show": true
             },
             {
+              "$$hashKey": "object:274",
               "format": "short",
               "label": null,
               "logBase": 1,
@@ -508,7 +510,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"vsnpp_sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"vsnpp_sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -539,7 +541,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS SSTN Anomaly @ $Locations",
+          "title": "VIIRS SSTN $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -636,7 +638,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"vsnpp_Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"vsnpp_Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -667,7 +669,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS Rrs 671 Anomaly @ $Locations",
+          "title": "VIIRS Rrs 671 $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -764,7 +766,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(\"anomaly\") AS anomaly FROM \"moda_ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -795,7 +797,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "MODIS ABI Anomaly @ $Locations",
+          "title": "MODIS ABI $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1114,7 +1116,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
@@ -1123,25 +1125,26 @@
         "y": 17
       },
       "id": 23,
-      "panels": [],
+      "panels": [
+        {
+          "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Colorado, Brazos, Trinity, Neches and Sabine Rivers (green circles on map above) are summed for discharge into the northwest Gulf of Mexico and plotted above. Discharge data from the Mississippi River (yellow circle on map above) is also plotted.\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
+          "datasource": null,
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 29
+          },
+          "id": 20,
+          "mode": "markdown",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Data Sources and Contact Information",
+          "type": "text"
+        }
+      ],
       "title": "More Information",
       "type": "row"
-    },
-    {
-      "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Colorado, Brazos, Trinity, Neches and Sabine Rivers (green circles on map above) are summed for discharge into the northwest Gulf of Mexico and plotted above. Discharge data from the Mississippi River (yellow circle on map above) is also plotted.\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
-      "datasource": null,
-      "gridPos": {
-        "h": 8,
-        "w": 24,
-        "x": 0,
-        "y": 18
-      },
-      "id": 20,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Data Sources and Contact Information",
-      "type": "text"
     },
     {
       "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGB_DBv2_logos_banner2.png)",
@@ -1150,7 +1153,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 18
       },
       "id": 21,
       "mode": "markdown",
@@ -1169,6 +1172,7 @@
       {
         "allValue": null,
         "current": {
+          "tags": [],
           "text": "EFG + STET + WFG",
           "value": [
             "EFG",
@@ -1178,24 +1182,24 @@
         },
         "hide": 0,
         "includeAll": false,
-        "label": null,
+        "label": "Satellite Time Series Extraction Locations",
         "multi": true,
         "name": "Locations",
         "options": [
           {
-            "$$hashKey": "object:161",
+            "$$hashKey": "object:724",
             "selected": true,
             "text": "EFG",
             "value": "EFG"
           },
           {
-            "$$hashKey": "object:162",
+            "$$hashKey": "object:725",
             "selected": true,
             "text": "STET",
             "value": "STET"
           },
           {
-            "$$hashKey": "object:163",
+            "$$hashKey": "object:726",
             "selected": true,
             "text": "WFG",
             "value": "WFG"
@@ -1204,6 +1208,58 @@
         "query": "EFG,STET,WFG",
         "skipUrlSync": false,
         "type": "custom"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "anomaly",
+          "value": "anomaly"
+        },
+        "datasource": "influxdb",
+        "definition": "SHOW FIELD KEYS",
+        "hide": 0,
+        "includeAll": false,
+        "index": -1,
+        "label": "Satellite Time Series Extraction Metric",
+        "multi": false,
+        "name": "metric",
+        "options": [
+          {
+            "$$hashKey": "object:620",
+            "selected": true,
+            "text": "anomaly",
+            "value": "anomaly"
+          },
+          {
+            "$$hashKey": "object:621",
+            "selected": false,
+            "text": "climatology",
+            "value": "climatology"
+          },
+          {
+            "$$hashKey": "object:622",
+            "selected": false,
+            "text": "mean",
+            "value": "mean"
+          },
+          {
+            "$$hashKey": "object:623",
+            "selected": false,
+            "text": "timestamp",
+            "value": "timestamp"
+          }
+        ],
+        "query": "SHOW FIELD KEYS",
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
       }
     ]
   },
@@ -1226,5 +1282,5 @@
   "variables": {
     "list": []
   },
-  "version": 3
+  "version": 1
 }
