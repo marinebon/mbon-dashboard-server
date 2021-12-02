@@ -23,7 +23,7 @@ sudo yum install -y git
 # === start here if you are already set up with docker-compose & git =================
 # ====================================================================================
 # (1) git clone the app to your local
-git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-fwc3
+git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-CLIENT_NAME_HERE
 cd mbon-dashboard-server/
 git submodule update --init --recursive --remote
 
