@@ -1,1564 +1,1549 @@
 {
-  "meta": {
-    "type": "db",
-    "canSave": false,
-    "canEdit": false,
-    "canStar": true,
-    "slug": "fl_keys_dash",
-    "expires": "0001-01-01T00:00:00Z",
-    "created": "2018-10-04T19:39:08Z",
-    "updated": "2019-02-07T20:53:41Z",
-    "updatedBy": "admin",
-    "createdBy": "admin",
-    "version": 167
+  "annotations": {
+    "list": []
   },
-  "dashboard": {
-    "annotations": {
-      "list": []
-    },
-    "editable": true,
-    "gnetId": null,
-    "graphTooltip": 1,
-    "hideControls": false,
-    "id": 31,
-    "links": [],
-    "refresh": false,
-    "rows": [
-      {
-        "collapse": false,
-        "height": 386,
-        "panels": [
-          {
-            "content": "![map of sub-regions](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/FKdb_map.png)",
-            "id": 51,
-            "links": [],
-            "mode": "markdown",
-            "span": 6,
-            "title": "",
-            "type": "text"
-          },
-          {
-            "content": "Select a specific location using the \"Locations\" dropdown menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nLocations of extracted data:\n* BB: Offshore Biscayne Bay\n* UK: Upper Keys\n* MR: Molasses Reef\n* SFP12: Station 12 from NOAA AOML's South Florida Program routine sampling\n* SFP18: Station 18 from NOAA AOML's South Florida Program routine sampling\n* WS: Western Sambo\n* LK: Looe Key\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: West of Shark River mouth \n* FLB: Florida Bay\n* IFB: Inner Florida Bay (SST only)\n\n\n",
-            "id": 52,
-            "links": [],
-            "mode": "markdown",
-            "span": 6,
-            "title": "General information",
-            "type": "text"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": false,
-        "title": "General information",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 139,
-        "panels": [
-          {
-            "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "bg_color": "0xffccccff",
-            "color_bar_str": "|||||",
-            "colorbar_display": "individual",
-            "delta": 3111600000,
-            "delta_unit": "ms",
-            "description": "",
-            "id": 44,
-            "lat_max": 23.5,
-            "lat_min": 26,
-            "links": [],
-            "lon_max": -79.5,
-            "lon_min": -84,
-            "n_images": 6,
-            "product_id": "SST4_b24c_5823_8b7c",
-            "show_request_dates": false,
-            "span": 12,
-            "targets": [
-              {
-                "refId": "A",
-                "target": ""
-              }
-            ],
-            "title": "MODIS-Aqua 7-Day SST anomaly images (DegC)",
-            "type": "erddap-panel",
-            "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "urls": [
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "4th Jan 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "9th Feb 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "16th Mar 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "21st Apr 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "27th May 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "2nd Jul 2016"
-              }
-            ],
-            "variable_id": "sst4_anom"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "SST satellite images",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": true,
-        "height": 93,
-        "panels": [
-          {
-            "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "bg_color": "0xffccccff",
-            "color_bar_str": "Rainbow|||-1.0|1.0|",
-            "colorbar_display": "individual",
-            "delta": 864000000,
-            "delta_unit": "ms",
-            "description": "MODIS-Aqua 1km chlor_a product (mg/m^3) binned to 7-day intervals.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2017.",
-            "id": 34,
-            "lat_max": 23.5,
-            "lat_min": 26,
-            "links": [
-              {
-                "title": "",
-                "type": "dashboard",
-                "url": "http://imars.marine.usf.edu"
-              }
-            ],
-            "lon_max": -79.5,
-            "lon_min": -84,
-            "n_images": 6,
-            "product_id": "OC_f0d3_1bc2_8172",
-            "show_request_dates": false,
-            "span": 12,
-            "targets": [
-              {
-                "refId": "A",
-                "target": ""
-              }
-            ],
-            "title": "MODIS-Aqua CHLa 7-Day anomaly images (mg/m^3)",
-            "type": "erddap-panel",
-            "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "urls": [
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-05T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-05T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "5th Mar 2018"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-15T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-15T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "15th Mar 2018"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-25T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-25T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "25th Mar 2018"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-04T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-04T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "4th Apr 2018"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-14T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-14T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "14th Apr 2018"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-24T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-24T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "24th Apr 2018"
-              }
-            ],
-            "variable_id": "chlor_a_anom"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Chlorophyll concentration satellite images",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 130,
-        "panels": [
-          {
-            "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "bg_color": "0xffccccff",
-            "color_bar_str": "Rainbow|||-0.2|0.2|",
-            "colorbar_display": "individual",
-            "delta": 3111600000,
-            "delta_unit": "ms",
-            "description": "via MODIS",
-            "id": 37,
-            "lat_max": 23.5,
-            "lat_min": 26,
-            "links": [],
-            "lon_max": -79.5,
-            "lon_min": -84,
-            "n_images": 6,
-            "product_id": "OC_f0d3_1bc2_8172",
-            "show_request_dates": false,
-            "span": 12,
-            "targets": [
-              {
-                "refId": "A",
-                "target": ""
-              }
-            ],
-            "title": "MODIS-Aqua ABI 7-Day anomaly images (W/m^2/um/sr)",
-            "type": "erddap-panel",
-            "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "urls": [
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "4th Jan 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "9th Feb 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "16th Mar 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "21st Apr 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "27th May 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "2nd Jul 2016"
-              }
-            ],
-            "variable_id": "ABI_anom"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Algal Bloom Index (ABI)",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 39,
-        "panels": [
-          {
-            "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "bg_color": "0xffccccff",
-            "color_bar_str": "Rainbow|||-0.2|0.2|",
-            "colorbar_display": "individual",
-            "delta": 3111600000,
-            "delta_unit": "ms",
-            "description": "via MODIS",
-            "id": 56,
-            "lat_max": 23.5,
-            "lat_min": 26,
-            "links": [],
-            "lon_max": -79.5,
-            "lon_min": -84,
-            "n_images": 6,
-            "product_id": "OC_f0d3_1bc2_8172",
-            "show_request_dates": false,
-            "span": 12,
-            "targets": [
-              {
-                "refId": "A",
-                "target": ""
-              }
-            ],
-            "title": "MODIS-Aqua nFLH 7-Day anomaly images (W/m^2/um/sr)",
-            "type": "erddap-panel",
-            "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "urls": [
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "4th Jan 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "9th Feb 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "16th Mar 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "21st Apr 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "27th May 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "2nd Jul 2016"
-              }
-            ],
-            "variable_id": "nflh_anom"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Normalized Fluorescence Line Height satellite images",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 26,
-        "panels": [
-          {
-            "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "bg_color": "0xffccccff",
-            "color_bar_str": "Rainbow|||-0.005|0.005|",
-            "colorbar_display": "individual",
-            "delta": 3111600000,
-            "delta_unit": "ms",
-            "description": "via MODIS",
-            "id": 45,
-            "lat_max": 23.5,
-            "lat_min": 26,
-            "links": [],
-            "lon_max": -79.5,
-            "lon_min": -84,
-            "n_images": 6,
-            "product_id": "OC_f0d3_1bc2_8172",
-            "show_request_dates": false,
-            "span": 12,
-            "targets": [
-              {
-                "refId": "A",
-                "target": ""
-              }
-            ],
-            "title": "MODIS-Aqua remote sensing reflectance at 667nm 7-Day anomaly images (sr^-1)",
-            "type": "erddap-panel",
-            "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
-            "urls": [
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "4th Jan 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "9th Feb 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "16th Mar 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "21st Apr 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "27th May 2016"
-              },
-              {
-                "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-                "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-                "request_time": "2nd Jul 2016"
-              }
-            ],
-            "variable_id": "Rrs_667_anom"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Rrs_667 (turbidity proxy) satellite images",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 222,
-        "panels": [
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 1,
-            "id": 39,
-            "legend": {
-              "alignAsTable": false,
-              "avg": false,
-              "current": false,
-              "hideEmpty": false,
-              "max": false,
-              "min": false,
-              "rightSide": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 3,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.roi.$Locations.sst4.mean, 3)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "SST @ $Locations",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "DegC",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 2,
-            "id": 3,
-            "legend": {
-              "alignAsTable": false,
-              "avg": false,
-              "current": false,
-              "hideEmpty": false,
-              "hideZero": false,
-              "max": false,
-              "min": false,
-              "rightSide": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 3,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.roi.$Locations.chlor_a.mean, 3)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Chlorophyll-a @ $Locations",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "mg/m^3",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 1,
-            "id": 41,
-            "legend": {
-              "alignAsTable": false,
-              "avg": false,
-              "current": false,
-              "hideEmpty": false,
-              "max": false,
-              "min": false,
-              "rightSide": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 3,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.roi.$Locations.Rrs_667.mean, 3)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "Rrs_667 (turbidity proxy) @ $Locations",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "none",
-                "label": "sr^-1",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 1,
-            "id": 40,
-            "legend": {
-              "alignAsTable": false,
-              "avg": false,
-              "current": false,
-              "hideEmpty": false,
-              "max": false,
-              "min": false,
-              "rightSide": false,
-              "show": true,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 2,
-            "links": [],
-            "nullPointMode": "connected",
-            "percentage": false,
-            "pointradius": 1,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 3,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.roi.$Locations.nflh.mean, 3)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "nFLH @ $Locations",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "W/m^2/um/sr",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Satellite time-series",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": "180",
-        "panels": [
-          {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-              "rgba(9, 0, 255, 0.97)",
-              "rgba(10, 192, 0, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "datasource": null,
-            "decimals": null,
-            "format": "none",
-            "gauge": {
-              "maxValue": 35,
-              "minValue": 10,
-              "show": true,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
-            "id": 48,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
-            "maxDataPoints": 100,
-            "nullPointMode": "connected",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
-            "span": 3,
-            "sparkline": {
-              "fillColor": "rgba(31, 118, 189, 0.18)",
-              "full": false,
-              "lineColor": "rgb(31, 120, 193)",
-              "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-              {
-                "refId": "A",
-                "target": "imars_regions.fk.roi.$Locations.sst4.mean",
-                "textEditor": false
-              }
-            ],
-            "thresholds": "17, 29",
-            "title": "SST (DegC) @ $Locations",
-            "type": "singlestat",
-            "valueFontSize": "80%",
-            "valueMaps": [
-              {
-                "op": "=",
-                "text": "N/A",
-                "value": "null"
-              }
-            ],
-            "valueName": "current"
-          },
-          {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-              "rgba(50, 172, 45, 0.97)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "datasource": null,
-            "decimals": null,
-            "format": "none",
-            "gauge": {
-              "maxValue": 3,
-              "minValue": 0,
-              "show": true,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
-            "id": 49,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
-            "maxDataPoints": 100,
-            "nullPointMode": "connected",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
-            "span": 3,
-            "sparkline": {
-              "fillColor": "rgba(31, 118, 189, 0.18)",
-              "full": false,
-              "lineColor": "rgb(31, 120, 193)",
-              "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-              {
-                "refId": "A",
-                "target": "imars_regions.fk.roi.$Locations.chlor_a.mean",
-                "textEditor": false
-              }
-            ],
-            "thresholds": "0.75,1.5",
-            "title": "CHLa (mg/m^3) @ $Locations",
-            "type": "singlestat",
-            "valueFontSize": "80%",
-            "valueMaps": [
-              {
-                "op": "=",
-                "text": "N/A",
-                "value": "null"
-              }
-            ],
-            "valueName": "current"
-          },
-          {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-              "rgba(50, 172, 45, 0.97)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "datasource": null,
-            "format": "none",
-            "gauge": {
-              "maxValue": 0.005,
-              "minValue": 0,
-              "show": true,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
-            "id": 46,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
-            "maxDataPoints": 100,
-            "nullPointMode": "connected",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
-            "span": 3,
-            "sparkline": {
-              "fillColor": "rgba(31, 118, 189, 0.18)",
-              "full": false,
-              "lineColor": "rgb(31, 120, 193)",
-              "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-              {
-                "refId": "A",
-                "target": "imars_regions.fk.roi.$Locations.Rrs_667.mean",
-                "textEditor": true
-              }
-            ],
-            "thresholds": ".001, .002",
-            "title": "Rrs_667 (turbidity proxy) @ $Locations",
-            "type": "singlestat",
-            "valueFontSize": "80%",
-            "valueMaps": [
-              {
-                "op": "=",
-                "text": "N/A",
-                "value": "null"
-              }
-            ],
-            "valueName": "current"
-          },
-          {
-            "cacheTimeout": null,
-            "colorBackground": false,
-            "colorValue": false,
-            "colors": [
-              "rgba(50, 172, 45, 0.97)",
-              "rgba(237, 129, 40, 0.89)",
-              "rgba(245, 54, 54, 0.9)"
-            ],
-            "datasource": null,
-            "decimals": null,
-            "format": "none",
-            "gauge": {
-              "maxValue": 0.75,
-              "minValue": 0,
-              "show": true,
-              "thresholdLabels": false,
-              "thresholdMarkers": true
-            },
-            "id": 50,
-            "interval": null,
-            "links": [],
-            "mappingType": 1,
-            "mappingTypes": [
-              {
-                "name": "value to text",
-                "value": 1
-              },
-              {
-                "name": "range to text",
-                "value": 2
-              }
-            ],
-            "maxDataPoints": 100,
-            "nullPointMode": "connected",
-            "nullText": null,
-            "postfix": "",
-            "postfixFontSize": "50%",
-            "prefix": "",
-            "prefixFontSize": "50%",
-            "rangeMaps": [
-              {
-                "from": "null",
-                "text": "N/A",
-                "to": "null"
-              }
-            ],
-            "span": 3,
-            "sparkline": {
-              "fillColor": "rgba(31, 118, 189, 0.18)",
-              "full": false,
-              "lineColor": "rgb(31, 120, 193)",
-              "show": false
-            },
-            "tableColumn": "",
-            "targets": [
-              {
-                "refId": "A",
-                "target": "imars_regions.fk.roi.$Locations.nflh.mean",
-                "textEditor": false
-              }
-            ],
-            "thresholds": ".15, .25",
-            "title": "nFLH @ $Locations",
-            "type": "singlestat",
-            "valueFontSize": "80%",
-            "valueMaps": [
-              {
-                "op": "=",
-                "text": "N/A",
-                "value": "null"
-              }
-            ],
-            "valueName": "current"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Current conditions",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": true,
-        "height": 250,
-        "panels": [
-          {
-            "alert": {
-              "conditions": [
-                {
-                  "evaluator": {
-                    "params": [
-                      300
-                    ],
-                    "type": "gt"
-                  },
-                  "operator": {
-                    "type": "and"
-                  },
-                  "query": {
-                    "params": [
-                      "A",
-                      "672h",
-                      "now"
-                    ]
-                  },
-                  "reducer": {
-                    "params": [],
-                    "type": "max"
-                  },
-                  "type": "query"
-                }
-              ],
-              "executionErrorState": "keep_state",
-              "frequency": "24h",
-              "handler": 1,
-              "message": "Unusually high FL bay river discharge this month",
-              "name": "High discharge into Florida Bay alert",
-              "noDataState": "no_data",
-              "notifications": []
-            },
-            "aliasColors": {},
-            "bars": true,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 7,
-            "id": 22,
-            "legend": {
-              "alignAsTable": false,
-              "avg": false,
-              "current": false,
-              "hideEmpty": false,
-              "hideZero": false,
-              "max": false,
-              "min": false,
-              "rightSide": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": false,
-            "linewidth": 0,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 12,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "hide": false,
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.river.FL_Bay_river_index, 3)"
-              }
-            ],
-            "thresholds": [
-              {
-                "colorMode": "critical",
-                "fill": true,
-                "line": true,
-                "op": "gt",
-                "value": 300
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "River discharge into Florida Bay (combined discharge from gages shown as green circles on map)",
-            "tooltip": {
-              "shared": false,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": [
-                "total"
-              ]
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "m^3/sec",
-                "logBase": 1,
-                "max": null,
-                "min": "-200",
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "River Discharge",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 311,
-        "panels": [
-          {
-            "alert": {
-              "conditions": [
-                {
-                  "evaluator": {
-                    "params": [
-                      30,
-                      40
-                    ],
-                    "type": "outside_range"
-                  },
-                  "operator": {
-                    "type": "and"
-                  },
-                  "query": {
-                    "params": [
-                      "A",
-                      "5m",
-                      "now"
-                    ]
-                  },
-                  "reducer": {
-                    "params": [],
-                    "type": "avg"
-                  },
-                  "type": "query"
-                }
-              ],
-              "executionErrorState": "alerting",
-              "frequency": "60s",
-              "handler": 1,
-              "name": "in-situ salinity out of range",
-              "noDataState": "no_data",
-              "notifications": []
-            },
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 1,
-            "id": 42,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.sal.{mean,climatology}, 3, 4, 5)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [
-              {
-                "colorMode": "critical",
-                "fill": true,
-                "line": true,
-                "op": "lt",
-                "value": 30
-              },
-              {
-                "colorMode": "critical",
-                "fill": true,
-                "line": true,
-                "op": "gt",
-                "value": 40
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "In-situ salinity (psu) from Peterson Key buoy (yellow circle on map)",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "PSU",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          },
-          {
-            "alert": {
-              "conditions": [
-                {
-                  "evaluator": {
-                    "params": [
-                      17,
-                      32
-                    ],
-                    "type": "outside_range"
-                  },
-                  "operator": {
-                    "type": "and"
-                  },
-                  "query": {
-                    "params": [
-                      "A",
-                      "5m",
-                      "now"
-                    ]
-                  },
-                  "reducer": {
-                    "params": [],
-                    "type": "avg"
-                  },
-                  "type": "query"
-                }
-              ],
-              "executionErrorState": "alerting",
-              "frequency": "24h",
-              "handler": 1,
-              "name": "Low in-situ SST",
-              "noDataState": "no_data",
-              "notifications": []
-            },
-            "aliasColors": {},
-            "bars": false,
-            "dashLength": 10,
-            "dashes": false,
-            "datasource": null,
-            "fill": 1,
-            "id": 43,
-            "legend": {
-              "avg": false,
-              "current": false,
-              "max": false,
-              "min": false,
-              "show": false,
-              "total": false,
-              "values": false
-            },
-            "lines": true,
-            "linewidth": 1,
-            "links": [],
-            "nullPointMode": "null",
-            "percentage": false,
-            "pointradius": 5,
-            "points": false,
-            "renderer": "flot",
-            "seriesOverrides": [],
-            "spaceLength": 10,
-            "span": 6,
-            "stack": false,
-            "steppedLine": false,
-            "targets": [
-              {
-                "hide": false,
-                "refId": "A",
-                "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.temp.{mean,climatology}, 3, 4, 5)",
-                "textEditor": false
-              },
-              {
-                "hide": true,
-                "refId": "B",
-                "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.temp.anomaly, 3, 4, 5)",
-                "textEditor": false
-              }
-            ],
-            "thresholds": [
-              {
-                "colorMode": "critical",
-                "fill": true,
-                "line": true,
-                "op": "lt",
-                "value": 17
-              },
-              {
-                "colorMode": "critical",
-                "fill": true,
-                "line": true,
-                "op": "gt",
-                "value": 32
-              }
-            ],
-            "timeFrom": null,
-            "timeShift": null,
-            "title": "In-situ temperature (DegC) at 0.5m from Peterson Key buoy",
-            "tooltip": {
-              "shared": true,
-              "sort": 0,
-              "value_type": "individual"
-            },
-            "type": "graph",
-            "xaxis": {
-              "buckets": null,
-              "mode": "time",
-              "name": null,
-              "show": true,
-              "values": []
-            },
-            "yaxes": [
-              {
-                "format": "short",
-                "label": "DegC",
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              },
-              {
-                "format": "short",
-                "label": null,
-                "logBase": 1,
-                "max": null,
-                "min": null,
-                "show": true
-              }
-            ]
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": true,
-        "title": "Buoy data",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 175,
-        "panels": [
-          {
-            "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Shark, Harney, Broad, Lostman's and Chatham Rivers (green circles on map above) are summed for discharge into Florida Bay shown on plot above.\n\n* Buoy at Peterson Key is operated by the National Park Service and data is obtained from the [National Data Buoy Center.](https://www.ndbc.noaa.gov/) \n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@mail.usf.edu](mailto:dotis@mail.usf.edu)\n\n",
-            "id": 55,
-            "links": [],
-            "mode": "markdown",
-            "span": 12,
-            "title": "Data Sources and contact information",
-            "type": "text"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": false,
-        "title": "Data sources",
-        "titleSize": "h6"
-      },
-      {
-        "collapse": false,
-        "height": 223,
-        "panels": [
-          {
-            "content": "![logo image](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/FKdb_logos_horz.png)",
-            "id": 54,
-            "links": [],
-            "mode": "markdown",
-            "span": 12,
-            "title": "This work supported by",
-            "type": "text"
-          }
-        ],
-        "repeat": null,
-        "repeatIteration": null,
-        "repeatRowId": null,
-        "showTitle": false,
-        "title": "Acknowledgements",
-        "titleSize": "h6"
-      }
-    ],
-    "schemaVersion": 14,
-    "style": "dark",
-    "tags": [
-      "sanctuaries",
-      "product_dash"
-    ],
-    "templating": {
-      "list": [
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 1,
+  "hideControls": false,
+  "id": null,
+  "links": [],
+  "refresh": false,
+  "rows": [
+    {
+      "collapse": false,
+      "height": 386,
+      "panels": [
         {
-          "allValue": null,
-          "current": {
-            "tags": [],
-            "text": "WFS",
-            "value": [
-              "WFS"
+          "content": "![map of sub-regions](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/FKdb_map.png)",
+          "id": 51,
+          "links": [],
+          "mode": "markdown",
+          "span": 6,
+          "title": "",
+          "type": "text"
+        },
+        {
+          "content": "Select a specific location using the \"Locations\" dropdown menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nLocations of extracted data:\n* BB: Offshore Biscayne Bay\n* UK: Upper Keys\n* MR: Molasses Reef\n* SFP12: Station 12 from NOAA AOML's South Florida Program routine sampling\n* SFP18: Station 18 from NOAA AOML's South Florida Program routine sampling\n* WS: Western Sambo\n* LK: Looe Key\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: West of Shark River mouth \n* FLB: Florida Bay\n* IFB: Inner Florida Bay (SST only)\n\n\n",
+          "id": 52,
+          "links": [],
+          "mode": "markdown",
+          "span": 6,
+          "title": "General information",
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "General information",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 139,
+      "panels": [
+        {
+          "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "bg_color": "0xffccccff",
+          "color_bar_str": "|||||",
+          "colorbar_display": "individual",
+          "delta": 3111600000,
+          "delta_unit": "ms",
+          "description": "",
+          "id": 44,
+          "lat_max": 23.5,
+          "lat_min": 26,
+          "links": [],
+          "lon_max": -79.5,
+          "lon_min": -84,
+          "n_images": 6,
+          "product_id": "SST4_b24c_5823_8b7c",
+          "show_request_dates": false,
+          "span": 12,
+          "targets": [
+            {
+              "refId": "A",
+              "target": ""
+            }
+          ],
+          "title": "MODIS-Aqua 7-Day SST anomaly images (DegC)",
+          "type": "erddap-panel",
+          "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "urls": [
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "4th Jan 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "9th Feb 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "16th Mar 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "21st Apr 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "27th May 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.png?sst4_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/SST4_b24c_5823_8b7c.largePng?sst4_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "2nd Jul 2016"
+            }
+          ],
+          "variable_id": "sst4_anom"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "SST satellite images",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": true,
+      "height": 93,
+      "panels": [
+        {
+          "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "bg_color": "0xffccccff",
+          "color_bar_str": "Rainbow|||-1.0|1.0|",
+          "colorbar_display": "individual",
+          "delta": 864000000,
+          "delta_unit": "ms",
+          "description": "MODIS-Aqua 1km chlor_a product (mg/m^3) binned to 7-day intervals.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2017.",
+          "id": 34,
+          "lat_max": 23.5,
+          "lat_min": 26,
+          "links": [
+            {
+              "title": "",
+              "type": "dashboard",
+              "url": "http://imars.marine.usf.edu"
+            }
+          ],
+          "lon_max": -79.5,
+          "lon_min": -84,
+          "n_images": 6,
+          "product_id": "OC_f0d3_1bc2_8172",
+          "show_request_dates": false,
+          "span": 12,
+          "targets": [
+            {
+              "refId": "A",
+              "target": ""
+            }
+          ],
+          "title": "MODIS-Aqua CHLa 7-Day anomaly images (mg/m^3)",
+          "type": "erddap-panel",
+          "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "urls": [
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-05T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-05T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "5th Mar 2018"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-15T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-15T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "15th Mar 2018"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-03-25T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-03-25T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "25th Mar 2018"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-04T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-04T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "4th Apr 2018"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-14T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-14T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2018"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?chlor_a_anom[(2018-04-24T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?chlor_a_anom[(2018-04-24T16:01:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "24th Apr 2018"
+            }
+          ],
+          "variable_id": "chlor_a_anom"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Chlorophyll concentration satellite images",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 130,
+      "panels": [
+        {
+          "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "bg_color": "0xffccccff",
+          "color_bar_str": "Rainbow|||-0.2|0.2|",
+          "colorbar_display": "individual",
+          "delta": 3111600000,
+          "delta_unit": "ms",
+          "description": "via MODIS",
+          "id": 37,
+          "lat_max": 23.5,
+          "lat_min": 26,
+          "links": [],
+          "lon_max": -79.5,
+          "lon_min": -84,
+          "n_images": 6,
+          "product_id": "OC_f0d3_1bc2_8172",
+          "show_request_dates": false,
+          "span": 12,
+          "targets": [
+            {
+              "refId": "A",
+              "target": ""
+            }
+          ],
+          "title": "MODIS-Aqua ABI 7-Day anomaly images (W/m^2/um/sr)",
+          "type": "erddap-panel",
+          "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "urls": [
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "4th Jan 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "9th Feb 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "16th Mar 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "21st Apr 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "27th May 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?ABI_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?ABI_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "2nd Jul 2016"
+            }
+          ],
+          "variable_id": "ABI_anom"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Algal Bloom Index (ABI)",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 39,
+      "panels": [
+        {
+          "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "bg_color": "0xffccccff",
+          "color_bar_str": "Rainbow|||-0.2|0.2|",
+          "colorbar_display": "individual",
+          "delta": 3111600000,
+          "delta_unit": "ms",
+          "description": "via MODIS",
+          "id": 56,
+          "lat_max": 23.5,
+          "lat_min": 26,
+          "links": [],
+          "lon_max": -79.5,
+          "lon_min": -84,
+          "n_images": 6,
+          "product_id": "OC_f0d3_1bc2_8172",
+          "show_request_dates": false,
+          "span": 12,
+          "targets": [
+            {
+              "refId": "A",
+              "target": ""
+            }
+          ],
+          "title": "MODIS-Aqua nFLH 7-Day anomaly images (W/m^2/um/sr)",
+          "type": "erddap-panel",
+          "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "urls": [
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "4th Jan 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "9th Feb 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "16th Mar 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "21st Apr 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "27th May 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?nflh_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?nflh_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7Cnflh_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "2nd Jul 2016"
+            }
+          ],
+          "variable_id": "nflh_anom"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Normalized Fluorescence Line Height satellite images",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 26,
+      "panels": [
+        {
+          "base_url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "bg_color": "0xffccccff",
+          "color_bar_str": "Rainbow|||-0.005|0.005|",
+          "colorbar_display": "individual",
+          "delta": 3111600000,
+          "delta_unit": "ms",
+          "description": "via MODIS",
+          "id": 45,
+          "lat_max": 23.5,
+          "lat_min": 26,
+          "links": [],
+          "lon_max": -79.5,
+          "lon_min": -84,
+          "n_images": 6,
+          "product_id": "OC_f0d3_1bc2_8172",
+          "show_request_dates": false,
+          "span": 12,
+          "targets": [
+            {
+              "refId": "A",
+              "target": ""
+            }
+          ],
+          "title": "MODIS-Aqua remote sensing reflectance at 667nm 7-Day anomaly images (sr^-1)",
+          "type": "erddap-panel",
+          "url": "http://imars-physalis.marine.usf.edu:8080/erddap",
+          "urls": [
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-01-04T17:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "4th Jan 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-02-09T17:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "9th Feb 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-03-16T18:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "16th Mar 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-04-21T18:22:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "21st Apr 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-05-27T18:42:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "27th May 2016"
+            },
+            {
+              "display": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.png?Rrs_667_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+              "link": "http://imars-physalis.marine.usf.edu:8080/erddap/griddap/OC_f0d3_1bc2_8172.largePng?Rrs_667_anom[(2016-07-02T19:02:00Z)][(26):(23.5)][(-84):(-79.5)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "2nd Jul 2016"
+            }
+          ],
+          "variable_id": "Rrs_667_anom"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Rrs_667 (turbidity proxy) satellite images",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 222,
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 39,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.roi.$Locations.sst4.mean, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "SST @ $Locations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "DegC",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 2,
+          "id": 3,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.roi.$Locations.chlor_a.mean, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Chlorophyll-a @ $Locations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "mg/m^3",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 41,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.roi.$Locations.Rrs_667.mean, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Rrs_667 (turbidity proxy) @ $Locations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "none",
+              "label": "sr^-1",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 40,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 2,
+          "links": [],
+          "nullPointMode": "connected",
+          "percentage": false,
+          "pointradius": 1,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 3,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.roi.$Locations.nflh.mean, 3)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "nFLH @ $Locations",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "W/m^2/um/sr",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Satellite time-series",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": "180",
+      "panels": [
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(9, 0, 255, 0.97)",
+            "rgba(10, 192, 0, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "decimals": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 35,
+            "minValue": 10,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 48,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "imars_regions.fk.roi.$Locations.sst4.mean",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "17, 29",
+          "title": "SST (DegC) @ $Locations",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "decimals": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 3,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 49,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "imars_regions.fk.roi.$Locations.chlor_a.mean",
+              "textEditor": false
+            }
+          ],
+          "thresholds": "0.75,1.5",
+          "title": "CHLa (mg/m^3) @ $Locations",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 0.005,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 46,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "imars_regions.fk.roi.$Locations.Rrs_667.mean",
+              "textEditor": true
+            }
+          ],
+          "thresholds": ".001, .002",
+          "title": "Rrs_667 (turbidity proxy) @ $Locations",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        },
+        {
+          "cacheTimeout": null,
+          "colorBackground": false,
+          "colorValue": false,
+          "colors": [
+            "rgba(50, 172, 45, 0.97)",
+            "rgba(237, 129, 40, 0.89)",
+            "rgba(245, 54, 54, 0.9)"
+          ],
+          "datasource": null,
+          "decimals": null,
+          "format": "none",
+          "gauge": {
+            "maxValue": 0.75,
+            "minValue": 0,
+            "show": true,
+            "thresholdLabels": false,
+            "thresholdMarkers": true
+          },
+          "id": 50,
+          "interval": null,
+          "links": [],
+          "mappingType": 1,
+          "mappingTypes": [
+            {
+              "name": "value to text",
+              "value": 1
+            },
+            {
+              "name": "range to text",
+              "value": 2
+            }
+          ],
+          "maxDataPoints": 100,
+          "nullPointMode": "connected",
+          "nullText": null,
+          "postfix": "",
+          "postfixFontSize": "50%",
+          "prefix": "",
+          "prefixFontSize": "50%",
+          "rangeMaps": [
+            {
+              "from": "null",
+              "text": "N/A",
+              "to": "null"
+            }
+          ],
+          "span": 3,
+          "sparkline": {
+            "fillColor": "rgba(31, 118, 189, 0.18)",
+            "full": false,
+            "lineColor": "rgb(31, 120, 193)",
+            "show": false
+          },
+          "tableColumn": "",
+          "targets": [
+            {
+              "refId": "A",
+              "target": "imars_regions.fk.roi.$Locations.nflh.mean",
+              "textEditor": false
+            }
+          ],
+          "thresholds": ".15, .25",
+          "title": "nFLH @ $Locations",
+          "type": "singlestat",
+          "valueFontSize": "80%",
+          "valueMaps": [
+            {
+              "op": "=",
+              "text": "N/A",
+              "value": "null"
+            }
+          ],
+          "valueName": "current"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Current conditions",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": true,
+      "height": 250,
+      "panels": [
+        {
+          "alert": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    300
+                  ],
+                  "type": "gt"
+                },
+                "operator": {
+                  "type": "and"
+                },
+                "query": {
+                  "params": [
+                    "A",
+                    "672h",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "max"
+                },
+                "type": "query"
+              }
+            ],
+            "executionErrorState": "keep_state",
+            "frequency": "24h",
+            "handler": 1,
+            "message": "Unusually high FL bay river discharge this month",
+            "name": "High discharge into Florida Bay alert",
+            "noDataState": "no_data",
+            "notifications": []
+          },
+          "aliasColors": {},
+          "bars": true,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 7,
+          "id": 22,
+          "legend": {
+            "alignAsTable": false,
+            "avg": false,
+            "current": false,
+            "hideEmpty": false,
+            "hideZero": false,
+            "max": false,
+            "min": false,
+            "rightSide": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": false,
+          "linewidth": 0,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 12,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.river.FL_Bay_river_index, 3)"
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 300
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "River discharge into Florida Bay (combined discharge from gages shown as green circles on map)",
+          "tooltip": {
+            "shared": false,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": [
+              "total"
             ]
           },
-          "datasource": "IMaRS graphite server",
-          "hide": 0,
-          "includeAll": false,
-          "label": null,
-          "multi": true,
-          "name": "Locations",
-          "options": [],
-          "query": "imars_regions.fk.roi.*",
-          "refresh": 1,
-          "regex": "",
-          "sort": 0,
-          "tagValuesQuery": "",
-          "tags": [],
-          "tagsQuery": "",
-          "type": "query",
-          "useTags": false
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "m^3/sec",
+              "logBase": 1,
+              "max": null,
+              "min": "-200",
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
         }
-      ]
-    },
-    "time": {
-      "from": "2016-01-04T17:22:00.000Z",
-      "to": "2016-08-07T19:22:00.000Z"
-    },
-    "timepicker": {
-      "refresh_intervals": [
-        "5s",
-        "10s",
-        "30s",
-        "1m",
-        "5m",
-        "15m",
-        "30m",
-        "1h",
-        "2h",
-        "1d"
       ],
-      "time_options": [
-        "5m",
-        "15m",
-        "1h",
-        "6h",
-        "12h",
-        "24h",
-        "2d",
-        "7d",
-        "30d"
-      ]
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "River Discharge",
+      "titleSize": "h6"
     },
-    "timezone": "",
-    "title": "FL_keys_dash",
-    "version": 167
-  }
+    {
+      "collapse": false,
+      "height": 311,
+      "panels": [
+        {
+          "alert": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    30,
+                    40
+                  ],
+                  "type": "outside_range"
+                },
+                "operator": {
+                  "type": "and"
+                },
+                "query": {
+                  "params": [
+                    "A",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              }
+            ],
+            "executionErrorState": "alerting",
+            "frequency": "60s",
+            "handler": 1,
+            "name": "in-situ salinity out of range",
+            "noDataState": "no_data",
+            "notifications": []
+          },
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 42,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.sal.{mean,climatology}, 3, 4, 5)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "lt",
+              "value": 30
+            },
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 40
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "In-situ salinity (psu) from Peterson Key buoy (yellow circle on map)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "PSU",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        },
+        {
+          "alert": {
+            "conditions": [
+              {
+                "evaluator": {
+                  "params": [
+                    17,
+                    32
+                  ],
+                  "type": "outside_range"
+                },
+                "operator": {
+                  "type": "and"
+                },
+                "query": {
+                  "params": [
+                    "A",
+                    "5m",
+                    "now"
+                  ]
+                },
+                "reducer": {
+                  "params": [],
+                  "type": "avg"
+                },
+                "type": "query"
+              }
+            ],
+            "executionErrorState": "alerting",
+            "frequency": "24h",
+            "handler": 1,
+            "name": "Low in-situ SST",
+            "noDataState": "no_data",
+            "notifications": []
+          },
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "id": 43,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "links": [],
+          "nullPointMode": "null",
+          "percentage": false,
+          "pointradius": 5,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "span": 6,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "hide": false,
+              "refId": "A",
+              "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.temp.{mean,climatology}, 3, 4, 5)",
+              "textEditor": false
+            },
+            {
+              "hide": true,
+              "refId": "B",
+              "target": "aliasByNode(imars_regions.fk.bouys.pkyf1.temp.anomaly, 3, 4, 5)",
+              "textEditor": false
+            }
+          ],
+          "thresholds": [
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "lt",
+              "value": 17
+            },
+            {
+              "colorMode": "critical",
+              "fill": true,
+              "line": true,
+              "op": "gt",
+              "value": 32
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "In-situ temperature (DegC) at 0.5m from Peterson Key buoy",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "format": "short",
+              "label": "DegC",
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ]
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": true,
+      "title": "Buoy data",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 175,
+      "panels": [
+        {
+          "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Shark, Harney, Broad, Lostman's and Chatham Rivers (green circles on map above) are summed for discharge into Florida Bay shown on plot above.\n\n* Buoy at Peterson Key is operated by the National Park Service and data is obtained from the [National Data Buoy Center.](https://www.ndbc.noaa.gov/) \n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@mail.usf.edu](mailto:dotis@mail.usf.edu)\n\n",
+          "id": 55,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "Data Sources and contact information",
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Data sources",
+      "titleSize": "h6"
+    },
+    {
+      "collapse": false,
+      "height": 223,
+      "panels": [
+        {
+          "content": "![logo image](http://imars-webserver-01.marine.usf.edu/modis_aqua_fk/FKdb_logos_horz.png)",
+          "id": 54,
+          "links": [],
+          "mode": "markdown",
+          "span": 12,
+          "title": "This work supported by",
+          "type": "text"
+        }
+      ],
+      "repeat": null,
+      "repeatIteration": null,
+      "repeatRowId": null,
+      "showTitle": false,
+      "title": "Acknowledgements",
+      "titleSize": "h6"
+    }
+  ],
+  "schemaVersion": 14,
+  "style": "dark",
+  "tags": [
+    "sanctuaries",
+    "product_dash"
+  ],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "tags": [],
+          "text": "WFS",
+          "value": [
+            "WFS"
+          ]
+        },
+        "datasource": "IMaRS graphite server",
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": true,
+        "name": "Locations",
+        "options": [],
+        "query": "imars_regions.fk.roi.*",
+        "refresh": 1,
+        "regex": "",
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      }
+    ]
+  },
+  "time": {
+    "from": "2016-01-04T17:22:00.000Z",
+    "to": "2016-08-07T19:22:00.000Z"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "",
+  "title": "FL_keys_dash",
+  "version": 167
 }
