@@ -122,7 +122,7 @@ services:
           - 5000:5000
       environment:
           - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
-          - INFLUXDB_HOSTNAME=35.211.39.43:5000:8086
+          - INFLUXDB_HOSTNAME=35.211.39.43:8086
 
   # ==========================================================================
   # === airflow job orchestration services
