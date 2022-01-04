@@ -16,11 +16,11 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1628276816181,
+  "iteration": 1641223540367,
   "links": [],
   "panels": [
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGBdb_map.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGBdb_map_2021.png)",
       "datasource": null,
       "gridPos": {
         "h": 14,
@@ -36,7 +36,7 @@
       "type": "text"
     },
     {
-      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGB_DBv2_logos_banner2.png)\n\n\n\nSelect a specific location using the \"Locations\" dropdown menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nLocations of extracted data:\n* STET: Stetson Bank\n* WFG: West Flower Garden Bank\n* EFG: East Flower Garden Bank\n* COAST 1-4: Coastal Regions of Interest\n* SS 1-8: Sentinel Sites\n \n\n\n\n",
+      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGB_DBv2_logos_banner2.png)\n\nSelect location(s) for satellite time series extraction using the \"Locations\" menu at left.\n\nSelect location(s) for buoy data using the \"Buoys\" menu at left.\n\nDisplay mean, climatology, or anomalies of extracted satellite data using the \"Time Series Metric\" menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all image and time series data panels.\nTo show or hide a panel, simply click on the panel title\n\nLocations of extracted data:\n* A: Stetson Bank\n* B: West Flower Garden Bank\n* C: Horseshoe Bank\n* D: East Flower Garden Bank\n* E: MacNeil Bank\n* F: Rankin/28 Fathom Bank\n* G: Bright Bank\n* H: Geyer Bank\n* I: Elvers Bank\n* J: McGrail Bank\n* K: Bouma Bank\n* L: Rezak Bank\n* M: Sidner Bank\n* N: Parker Bank\n* O: Alderice Bank\n* P: Sonnier Bank\n* COAST 1-4: Coastal Regions of Interest\n* SS 1-8: Sentinel Sites\n \n\n\n\n",
       "datasource": null,
       "gridPos": {
         "h": 14,
@@ -48,7 +48,7 @@
       "mode": "markdown",
       "timeFrom": null,
       "timeShift": null,
-      "title": "General Information",
+      "title": "Welcome to the Flower Garden Banks data dashboard",
       "type": "text"
     },
     {
@@ -1160,7 +1160,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "EFG + SS6 + WFG",
           "value": [
             "EFG",
@@ -1261,5 +1260,5 @@
   "variables": {
     "list": []
   },
-  "version": 2
+  "version": 11
 }
