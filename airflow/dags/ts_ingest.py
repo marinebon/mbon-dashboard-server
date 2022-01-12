@@ -15,7 +15,7 @@ printout ln statements produced below.
 
 You can pipe the output to a file & execute it (careful!):
 ```bash
-python ts_ingest.py >> create_symlinks.sh
+python ts_ingest.py > create_symlinks.sh
 # open the file and look at it for safety:
 less create_symlinks.sh
 # execute the file
