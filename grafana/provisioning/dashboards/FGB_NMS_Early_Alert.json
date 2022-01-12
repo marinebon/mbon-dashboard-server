@@ -411,7 +411,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS Chlorophyll-a $metric @ $Locations",
+          "title": "MODIS Chlorophyll-a $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -510,7 +510,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_sst4\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -541,7 +541,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS SSTN $metric @ $Locations",
+          "title": "MODIS SST4 $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -669,7 +669,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "VIIRS Rrs 671 $metric @ $Locations",
+          "title": "MODIS Rrs 671 $metric @ $Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
