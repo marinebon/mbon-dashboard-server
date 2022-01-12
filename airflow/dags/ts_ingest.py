@@ -4,6 +4,27 @@ Ingests all timeseries .csv files into influxdb using mbon_data_uploader.
 files linked to 7yl4r's public_html folder on IMaRS servers by using the
 printout ln statements produced below.
 
+## To prep the symlinks:
+1. run this file
+    (outside of airflow (you can comment out all airflow stuff as needed))
+    `python ts_ingest.py`
+2. a bunch of `ln -s ...` lines should be printed.
+    copy-paste all these into the command line to create the symlinks.
+
+-- OR --
+
+You can pipe the output to a file & execute it (careful!):
+```bash
+python ts_ingest.py >> create_symlinks.sh
+# open the file and look at it for safety:
+less create_symlinks.sh
+# execute the file
+bash ./create_symlinks_file.sh
+```
+# NOTE: if you want to remove all the broken symlinks use:
+#       find ~/public_html/ -xtype l -delete
+
+
 !!! NOTE how the dir separator (/) is replaced w/ -_- in the FPATH variables
 below.
 """
@@ -57,8 +78,6 @@ RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
 # ============================================================================
 # === this code prints out the symlinks needed
 # ============================================================================
-# NOTE: if you want to remove all the broken symlinks use:
-#       find ~/public_html/ -xtype l -delete
 def print_link_bash(fpath):
     """prints out the bash to create required symlink"""
     print(
