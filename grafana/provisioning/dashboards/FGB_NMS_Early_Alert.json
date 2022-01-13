@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1642083927485,
+  "iteration": 1642101755604,
   "links": [],
   "panels": [
     {
@@ -94,33 +94,33 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "14th May 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "14th May 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "15th May 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?chlor_a_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?chlor_a_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=Rainbow%7C%7C%7C-1.0%7C1.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2021"
         }
       ],
@@ -155,33 +155,33 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "14th May 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "14th May 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "15th May 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.png?sst4_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/SST4_9c29_08ac_eccb.largePng?sst4_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2021"
         }
       ],
@@ -216,33 +216,33 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-01-13T14:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-01-13T14:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-05-14T10:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-05-14T10:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "14th May 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-09-13T06:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-09-13T06:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-01-13T02:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-01-13T02:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-05-14T22:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-05-14T22:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "14th May 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "15th May 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-09-13T18:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-09-13T18:32:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?Rrs_667_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?Rrs_667_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=Rainbow%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2021"
         }
       ],
@@ -277,33 +277,33 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-01-13T14:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-01-13T19:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-05-14T10:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-05-14T15:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "14th May 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-09-13T06:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2020-09-13T11:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-01-13T02:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-01-13T07:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Jan 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-05-14T22:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "14th May 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-05-15T03:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "15th May 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-09-13T18:30:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.png?ABI_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=24576%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/OC_e122_8547_dab0.largePng?ABI_anom[(2021-09-13T23:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=Rainbow%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "13th Sep 2021"
         }
       ],
@@ -1187,10 +1187,11 @@
       {
         "allValue": null,
         "current": {
-          "$$hashKey": "object:1897",
-          "selected": false,
+          "tags": [],
           "text": "mean",
-          "value": "mean"
+          "value": [
+            "mean"
+          ]
         },
         "datasource": "influxdb",
         "definition": "SHOW FIELD KEYS",
@@ -1198,32 +1199,26 @@
         "includeAll": false,
         "index": -1,
         "label": "Time Series Metric",
-        "multi": false,
+        "multi": true,
         "name": "metric",
         "options": [
           {
-            "$$hashKey": "object:1895",
+            "$$hashKey": "object:415",
             "selected": false,
             "text": "anomaly",
             "value": "anomaly"
           },
           {
-            "$$hashKey": "object:1896",
+            "$$hashKey": "object:416",
             "selected": false,
             "text": "climatology",
             "value": "climatology"
           },
           {
-            "$$hashKey": "object:1897",
+            "$$hashKey": "object:417",
             "selected": true,
             "text": "mean",
             "value": "mean"
-          },
-          {
-            "$$hashKey": "object:1898",
-            "selected": false,
-            "text": "timestamp",
-            "value": "timestamp"
           }
         ],
         "query": "SHOW FIELD KEYS",
@@ -1258,5 +1253,5 @@
   "variables": {
     "list": []
   },
-  "version": 18
+  "version": 19
 }
