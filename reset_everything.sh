@@ -6,13 +6,31 @@
 # README.md is what you *should* be doing.
 # If you are using this then you are being lazy and you should be ashamed.
 
-# nuke
+# === nuke
 docker-compose down --volumes --rmi all
-# init
+
+rm -rf ./airflow/logs/*
+git checkout ./airflow/logs/.gitignore
+
+rm -rf ./erddap/erddap_data/*
+git checkout ./erddap/erddap_data/.gitignore
+
+rm -rf ./grafana/grafana-storage/*
+git checkout ./grafana/grafana-storage/.gitignore
+
+rm -rf ./influxdb/data_volume/*
+git checkout ./influxdb/data_volume/.gitignore
+
+rm -rf ./postgres/pgdata
+mkdir ./postgres/pgdata
+
+# === init
 docker-compose up airflow-init
-# start
+
+# === start
 docker-compose up --build -d
-# workaround [issue #13](https://github.com/marinebon/mbon-dashboard-server/issues/13)
+
+# === workaround [issue #13](https://github.com/marinebon/mbon-dashboard-server/issues/13)
 echo contemplating the ethics of laziness...
 sleep 10
 sudo chmod -R 777 grafana/grafana-storage
