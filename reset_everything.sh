@@ -9,19 +9,19 @@
 # === nuke
 docker-compose down --volumes --rmi all
 
-rm -rf ./airflow/logs/*
+sudo rm -rf ./airflow/logs/*
 git checkout ./airflow/logs/.gitignore
 
-rm -rf ./erddap/erddap_data/*
+sudo rm -rf ./erddap/erddap_data/*
 git checkout ./erddap/erddap_data/.gitignore
 
-rm -rf ./grafana/grafana-storage/*
+sudo rm -rf ./grafana/grafana-storage/*
 git checkout ./grafana/grafana-storage/.gitignore
 
-rm -rf ./influxdb/data_volume/*
+sudo rm -rf ./influxdb/data_volume/*
 git checkout ./influxdb/data_volume/.gitignore
 
-rm -rf ./postgres/pgdata
+sudo rm -rf ./postgres/pgdata
 mkdir ./postgres/pgdata
 
 # === init
