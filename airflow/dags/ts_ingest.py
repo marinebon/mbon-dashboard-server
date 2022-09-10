@@ -126,6 +126,7 @@ with DAG(
                     "curl --fail-with-body "
                     "    {{params.DATA_HOST}}/{{params.fpath}} "
                     "    > datafile.csv "
+                    " && head datafile.csv "
                     " && curl --location --fail-with-body "
                     "    --form measurement={{params.sat}}_{{params.product}} "
                     "    --form tag_set=location={{params.roi}},"
