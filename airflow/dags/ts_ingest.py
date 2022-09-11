@@ -91,10 +91,11 @@ with DAG(
             BashOperator(
                 task_id=f"ingest_bouy_{roi}_{product}",
                 bash_command=(
-                    "curl --fail-with-body "
+                    "curl --location --fail-with-body "
                     "    {{params.DATA_HOST}}/{{params.fpath}} "
                     "    > datafile.csv"
-                    " && curl --fail-with-body "
+                    " && head datafile.csv "
+                    " && curl --location --fail-with-body "
                     '    --form measurement=bouy_{{params.product}} '
                     '    --form tag_set=location={{params.roi}},source=ndbc '
                     '    --form fields="mean,climatology,anomaly" '
@@ -121,10 +122,11 @@ with DAG(
         BashOperator(
             task_id=f"ingest_river_{river}",
             bash_command=(
-                "curl --fail-with-body "
+                "curl --location --fail-with-body "
                 "    {{params.DATA_HOST}}/{{params.fpath}} "
                 "    > datafile.csv"
-                " && curl --fail-with-body "
+                " && head datafile.csv "
+                " && curl --location --fail-with-body "
                 '    --form measurement=river_discharge '
                 '    --form tag_set=location={{params.river}},source=usgs '
                 '    --form fields=mean,climatology,anomaly '
