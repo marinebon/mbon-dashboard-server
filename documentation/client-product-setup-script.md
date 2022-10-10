@@ -1,4 +1,34 @@
-The steps below are everything you need to do to stand up one of the `client-*` product branches on a fresh CentOS 8 machine.
+The steps below are everything you need to do to stand up one of the `client-*` product branches.
+
+# Ubuntu 22.04 LTS 
+```bash
+sudo mkdir -p /etc/apt/keyrings
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+ 
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin docker-compose-plugin
+
+sudo usermod -aG docker tylarmurray  # (use your username) then restart session to reload groups
+
+# (1) git clone the app to your local
+git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-CLIENT_NAME_HERE
+cd mbon-dashboard-server/
+git submodule update --init --recursive --remote
+
+docker compose up --build -d
+
+# workaround [issue #13](https://github.com/marinebon/mbon-dashboard-server/issues/13)
+sudo chmod -R 777 grafana/grafana-storage
+docker compose up --build -d
+```
+
+# Centos 8
+on a fresh CentOS 8 machine.
 
 ```bash
 # ====================================================================================
