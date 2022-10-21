@@ -51,20 +51,20 @@ services:
     volumes:
       - ./static_files:/usr/share/nginx/html:ro
   # docker run -d -p 8080:8080 --name erddap axiom/docker-erddap
-  erddap:
-    user: root:4504
-    container_name: erddap
-    build: ./erddap
-    volumes:
-     - ./erddap/erddap_data:/erddapData
-     - ./erddap/content:/usr/local/tomcat/content/erddap
-     # === ERDDAP dataset mounts==============================================
-     # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
-     - /srv/imars-objects:/srv/erddap-datasets:ro,slave
-     # =======================================================================
-    restart: unless-stopped
-    ports:
-      - 8080:8080
+#   erddap:
+#     user: root:4504
+#     container_name: erddap
+#     build: ./erddap
+#     volumes:
+#      - ./erddap/erddap_data:/erddapData
+#      - ./erddap/content:/usr/local/tomcat/content/erddap
+#      # === ERDDAP dataset mounts==============================================
+#      # NOTE: paths must match "fileDir" paths in erddap/content/datsets.xml
+#      - /srv/imars-objects:/srv/erddap-datasets:ro,slave
+#      # =======================================================================
+#     restart: unless-stopped
+#     ports:
+#       - 8080:8080
  # sudo docker exec -it erddap bash -c "cd /usr/local/tomcat/webapps/erddap/WEB-INF && bash GenerateDatasetsXml.sh -verbose"
 
   # ==========================================================================
