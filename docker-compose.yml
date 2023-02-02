@@ -29,7 +29,7 @@ x-airflow-common:
     - ./airflow/plugins:/opt/airflow/plugins
 #     - /srv/imars-objects:/srv/imars-objects:ro,slave
 #     - ./airflow/requirements.txt:/requirements.txt
-  user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-50000}"  # user & group ID in airflow containers
+  user: "${AIRFLOW_UID:-50000}:${AIRFLOW_GID:-0}"  # user & group ID in airflow containers
   depends_on:
     redis:
       condition: service_healthy
