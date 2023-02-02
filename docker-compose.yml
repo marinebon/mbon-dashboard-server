@@ -13,7 +13,8 @@ x-airflow-common:
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
-    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
+    AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow  # TODO: rm this bc it is deprecated
+    AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres/airflow
     AIRFLOW__CELERY__BROKER_URL: redis://:@redis:6379/0
     AIRFLOW__CORE__FERNET_KEY: ''
@@ -21,6 +22,9 @@ x-airflow-common:
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__PARALLELISM: '1'
     UPLOADER_HOSTNAME: http://35.209.104.85:5000
+    SQLALCHEMY_WARN_20: 0  # set to 1 verbose logging about sqlAlchemy deprecations
+    AIRFLOW__LOGGING__LOGGING_LEVEL: INFO  # DEBUG
+    AIRFLOW_HOME: /opt/airflow/
 #    env_file:
 #        - .env
   volumes:

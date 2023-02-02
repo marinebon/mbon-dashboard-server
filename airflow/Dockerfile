@@ -1,4 +1,4 @@
-FROM apache/airflow:2.1.3
+FROM apache/airflow:2.1.2
 USER root
 
 # update curl so we can use --fail-with-body option in curl v7.76.0+
