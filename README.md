@@ -47,7 +47,7 @@ It is suggested that you configure each container one-at-a-time.
 To do this simply comment out the relevant sections of docker-compose.yml.
 
 ### Setup Checklist
-1. install docker & docker-compose
+1. install docker & docker & the docker compose plugin
 2. add permissions to run docker for current user
     1. `sudo usermod -aG docker ${USER}`
 3. copy code from github to your machine
@@ -60,8 +60,8 @@ To do this simply comment out the relevant sections of docker-compose.yml.
         * see the `documentation/example_env_file` for an example.
     2. **REQUIRED**: create data dir for PostgreSQL - see `./postgres/README.md`
     3. **OPTIONAL:** connect ERDDAP to your data - see `./erddap/README.md`
-6. run initialization containers: `docker-compose up airflow-init`
-7. start everything up: `docker-compose up --build -d`
+6. run initialization containers: `docker compose up airflow-init`
+7. start everything up: `docker compose up --build -d`
 8. **REQUIRED**: toggle "on" airflow processing DAGs - see [issue #12](https://github.com/marinebon/mbon-dashboard-server/issues/12)
 9. test it out (assuming your hostname is "localhost")
     1. http://localhost/ should show "welcome to nginx"
