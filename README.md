@@ -52,14 +52,14 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     1. `sudo usermod -aG docker ${USER}`
 3. copy code from github to your machine
     1. `git clone https://github.com/marinebon/mbon-dashboard-server.git -b client-fknms`
+       * NOTE: be sure to choose the right branch name (`client-fknms`, `client-fgbns`, etc)
+    1. `cd mbon-dashboard-server`
     2. `git submodule update --init --recursive --remote`
 5. Adjust settings. Products built on the mbon-dashboard-server base framework (like the FKNMS dashboard on the `client-fknms` branch) will already have configuration for these set up. Please take the **REQUIRED** steps below and use the **OPTIONAL** configuration options to further customize your usage as needed.
     1. **REQUIRED** set passwords in the environment `.env` file.
         * see the `documentation/example_env_file` for an example.
     2. **REQUIRED**: create data dir for PostgreSQL - see `./postgres/README.md`
     3. **OPTIONAL:** connect ERDDAP to your data - see `./erddap/README.md`
-    4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
-    5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
 6. run initialization containers: `docker-compose up airflow-init`
 7. start everything up: `docker-compose up --build -d`
 8. **REQUIRED**: toggle "on" airflow processing DAGs - see [issue #12](https://github.com/marinebon/mbon-dashboard-server/issues/12)
@@ -71,6 +71,9 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     5. http://localhost:3000/login should show grafana login
     6. http://localhost:5000 should show a data submission form from mbon_data_uploader
     7. http://localhost:8888 should show airflow login & admin dashboard after logging in
+1. steps for after things are running
+    4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
+    5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
 
 ## Basic Workflow
 The workflow here is to do any non-site-specific work on the master branch.
