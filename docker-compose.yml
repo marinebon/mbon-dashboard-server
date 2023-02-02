@@ -161,6 +161,10 @@ services:
     restart: always
     # container_name: airflow_webserver
     # mem_limit: 2048m
+  depends_on:
+    airflow-worker:
+      condition: service_healthy
+
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
@@ -170,6 +174,9 @@ services:
     <<: *airflow-common
     command: celery worker
     restart: always
+  depends_on:
+    airflow-scheduler:
+      condition: service_healthy
 
   airflow-init:
     <<: *airflow-common
@@ -192,6 +199,10 @@ services:
       timeout: 10s
       retries: 5
     restart: always
+  depends_on:
+    airflow-worker:
+      condition: service_healthy
+  
   # ==========================================================================
 
 volumes:
