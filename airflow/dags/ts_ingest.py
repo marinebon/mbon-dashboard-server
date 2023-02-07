@@ -37,7 +37,7 @@ from datetime import datetime
 REGION = 'fk'
 # needed bc we cannot do REGION.upper() inside the format string.
 REGION_UPPERCASE = REGION.upper()
-DATA_HOST = "http://manglillo.marine.usf.edu/~tylar/ts_symlinks"
+DATA_HOST = "https://manglillo.marine.usf.edu/~tylar/ts_symlinks"
 
 SAT_ROI_LIST = [
     'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
