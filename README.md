@@ -8,11 +8,11 @@ For more detailed documentation please see `./documentation/`.
 Below is a list of "product" instances that are built with this framework.
 Each "product" instance is built on a git branch in this repository, based off of the master branch.
 
-Name                        | git branch   | URL                                      | Description
---------------------------- | ------------ | -----------------------------------------| ------------
-FWRI SCTLD Dashboard        | `client-fwc` | http://fwc-dashboard.marine.usf.edu:3000 | Monitoring the spread of stony coral tissue loss disease in the Florida Keys.
-FGB NMS Sentinel Sites Dash | `client-fgb` | http://fgbnms-dashboard.marine.usf.edu:3000 | Monitoring a ring of sites around the Flower Garden Banks National Marine Sanctuary where anomalously high values of chlorophyll-a concentration, for example, can be detected from satellite imagery before reaching the reefs.
-FK NMS                      | `client-fk`  | http://fknms-dashboard.marine.usf.edu:3000 | Monitoring of satellite, bouy, & river discharge data around the Florida Keys National Marine Sanctuary.
+Name                        | git branch   | status | URL                                      | Description
+--------------------------- | ------------ | ------ | -----------------------------------------| ------------
+FWRI SCTLD Dashboard        | `client-fwc` | :x: down for extended maintainence | http://fwc-dashboard.marine.usf.edu:3000 | Monitoring the spread of stony coral tissue loss disease in the Florida Keys.
+FGB NMS Sentinel Sites Dash | `client-fgb` | :heavy_check_mark: up     | http://fgbnms-dashboard.marine.usf.edu:3000 | Monitoring a ring of sites around the Flower Garden Banks National Marine Sanctuary where anomalously high values of chlorophyll-a concentration, for example, can be detected from satellite imagery before reaching the reefs.
+FK NMS                      | `client-fk`  | :x: down for rebuild | http://fknms-dashboard.marine.usf.edu:3000 | Monitoring of satellite, bouy, & river discharge data around the Florida Keys National Marine Sanctuary.
 
 ## Repository "framework" & "product" organization
 Herein we use the terms dashboard *"framework"* for something that people can use to build their own *"products"*.
