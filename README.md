@@ -70,13 +70,19 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     1. http://localhost/ should show "welcome to nginx"
     2. http://localhost:8080/ should show a 404 from tomcat
     3. http://localhost:8080/erddap should show ERDDAP's page
-    4. http://localhost:8086/ should show "404 page not found" from InfluxDB
+    4. http://localhost:8086/health should show status report from InfluxDB
     5. http://localhost:3000/login should show grafana login
     6. http://localhost:5000 should show a data submission form from mbon_data_uploader
     7. http://localhost:8888 should show airflow login & admin dashboard after logging in
 1. steps for after things are running
     4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
     5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
+
+### debugging on the grafana interface
+* `502: bad gateway` error: this means that grafana can't connect to the timeseries database (influxDB).
+    * check {URL}:8086/health to ensure InfluxDB okay
+    * check connection urls in the config, firewalls, etc 
+    * check airflow jobs to ensure ingest is working.
 
 ## Basic Workflow
 The workflow here is to do any non-site-specific work on the master branch.
