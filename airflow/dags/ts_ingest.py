@@ -88,14 +88,15 @@ def print_link_bash(fpath):
 
 # These loops are expected to be identical to the lines further down in this
 # file which define the tasks.
-for roi in SAT_ROI_LIST:
-    for sat, product_type, product in SAT_FILE_DETAIL_LIST:
-        print_link_bash(SAT_FPATH.format(**vars()))
-for roi in BOUY_ROI_LIST:
-    for product in ['sal', 'temp']:
-        print_link_bash(BOUY_FPATH.format(**vars()))
-for river in USGS_RIVER_LIST:
-    print_link_bash(RIVER_FPATH.format(**vars()))
+if(False):  # set to True if generating symlinks, False for airflow jobs
+    for roi in SAT_ROI_LIST:
+        for sat, product_type, product in SAT_FILE_DETAIL_LIST:
+            print_link_bash(SAT_FPATH.format(**vars()))
+    for roi in BOUY_ROI_LIST:
+        for product in ['sal', 'temp']:
+            print_link_bash(BOUY_FPATH.format(**vars()))
+    for river in USGS_RIVER_LIST:
+        print_link_bash(RIVER_FPATH.format(**vars()))
 # ============================================================================
 
 # ============================================================================
