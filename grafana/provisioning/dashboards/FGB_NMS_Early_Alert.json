@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1682101050563,
+  "iteration": 1683049187149,
   "links": [],
   "panels": [
     {
@@ -68,10 +68,10 @@
     {
       "base_url": "http://131.247.136.200:8080/erddap",
       "bg_color": "0xffccccff",
-      "color_bar_str": "",
+      "color_bar_str": "BlueWhiteRed|||-2.0|2.0|",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 10512000000,
+      "delta": 26294400000,
       "delta_unit": "ms",
       "description": "MODIS-Aqua 1km chlor_a product (mg/m^3) binned to 7-day intervals.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
       "gridPos": {
@@ -94,34 +94,34 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2021-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2021-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2018-05-02T17:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2018-05-02T17:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd May 2018"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2021-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2021-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2019-03-03T01:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2019-03-03T01:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "3rd Mar 2019"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2021-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2021-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2020-01-01T09:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2020-01-01T09:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2022-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2022-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2020-10-31T17:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2020-10-31T17:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "31st Oct 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2022-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2022-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2021-09-01T01:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2021-09-01T01:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Sep 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2022-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2022-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?chlor_a_anom[(2022-07-02T09:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?chlor_a_anom[(2022-07-02T09:57:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd Jul 2022"
         }
       ],
       "variable_id": "chlor_a_anom"
@@ -132,7 +132,7 @@
       "color_bar_str": "|||||",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 10512000000,
+      "delta": 26294400000,
       "delta_unit": "ms",
       "description": "MODIS-Aqua 1km nighttime SST product (DegC) binned to 7-day intervals.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
       "gridPos": {
@@ -155,34 +155,34 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2021-04-21T18:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2021-04-21T18:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2018-05-02T17:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2018-05-02T17:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd May 2018"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2021-08-21T10:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2021-08-21T10:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2019-03-03T01:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2019-03-03T01:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "3rd Mar 2019"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2021-12-21T02:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2021-12-21T02:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2020-01-01T09:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2020-01-01T09:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2022-04-21T18:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2022-04-21T18:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2020-10-31T17:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2020-10-31T17:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "31st Oct 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2022-08-21T10:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2022-08-21T10:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2021-09-01T01:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2021-09-01T01:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Sep 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2022-12-21T02:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2022-12-21T02:17:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.png?sst4_anom[(2022-07-02T09:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_fgb.largePng?sst4_anom[(2022-07-02T09:50:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd Jul 2022"
         }
       ],
       "variable_id": "sst4_anom"
@@ -190,10 +190,10 @@
     {
       "base_url": "http://131.247.136.200:8080/erddap",
       "bg_color": "0xffccccff",
-      "color_bar_str": "",
+      "color_bar_str": "BlueWhiteRed|||-0.005|0.005|",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 10512000000,
+      "delta": 26294400000,
       "delta_unit": "ms",
       "description": "MODIS-Aqua 1km Rrs_667 (sr^-1) binned to 7-day intervals.\nThis product is a proxy for suspended sediments in surface waters.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
       "gridPos": {
@@ -208,7 +208,7 @@
       "lon_max": -88.01,
       "lon_min": -98,
       "n_images": 6,
-      "product_id": "moda_oc_7d_fgb",
+      "product_id": "moda_oc_7d_gom",
       "show_request_dates": false,
       "timeFrom": null,
       "timeShift": null,
@@ -216,34 +216,34 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2021-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2021-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2018-05-02T18:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2018-05-02T18:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd May 2018"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2021-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2021-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2019-03-03T02:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2019-03-03T02:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "3rd Mar 2019"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2021-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2021-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2020-01-01T10:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2020-01-01T10:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2022-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2022-04-21T18:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2020-10-31T18:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2020-10-31T18:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "31st Oct 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2022-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2022-08-21T10:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2021-09-01T02:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2021-09-01T02:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Sep 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?Rrs_667_anom[(2022-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?Rrs_667_anom[(2022-12-21T02:23:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?Rrs_667_anom[(2022-07-02T10:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?Rrs_667_anom[(2022-07-02T10:13:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd Jul 2022"
         }
       ],
       "variable_id": "Rrs_667_anom"
@@ -251,10 +251,10 @@
     {
       "base_url": "http://131.247.136.200:8080/erddap",
       "bg_color": "0xffccccff",
-      "color_bar_str": "BlueWhiteRed|||-0.2|0.2|",
+      "color_bar_str": "BlueWhiteRed|||-0.15|0.15|",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 10512000000,
+      "delta": 26294400000,
       "delta_unit": "ms",
       "description": "MODIS-Aqua 1km Algal Bloom Index (ABI) product (W m^2 um^-1 sr^-1) binned to 7-day intervals. ABI is based on normalized fluorescent line height and is normalized by green reflectance to account for suspended sediments. \nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
       "gridPos": {
@@ -269,7 +269,7 @@
       "lon_max": -88.01,
       "lon_min": -98,
       "n_images": 6,
-      "product_id": "moda_oc_7d_fgb",
+      "product_id": "moda_oc_7d_gom",
       "show_request_dates": false,
       "timeFrom": null,
       "timeShift": null,
@@ -277,831 +277,37 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2021-04-21T18:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2021-04-21T18:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2018-05-02T18:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2018-05-02T18:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd May 2018"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2021-08-21T10:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2021-08-21T10:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2019-03-03T02:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2019-03-03T02:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "3rd Mar 2019"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2021-12-21T02:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2021-12-21T02:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2021"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2020-01-01T10:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2020-01-01T10:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Jan 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2022-04-21T18:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2022-04-21T18:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Apr 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2020-10-31T18:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2020-10-31T18:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "31st Oct 2020"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2022-08-21T10:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2022-08-21T10:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Aug 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2021-09-01T02:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2021-09-01T02:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "1st Sep 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.png?ABI_anom[(2022-12-21T02:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=31408%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_fgb.largePng?ABI_anom[(2022-12-21T02:27:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.2%7C0.2%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-          "request_time": "21st Dec 2022"
+          "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.png?ABI_anom[(2022-07-02T10:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_gom.largePng?ABI_anom[(2022-07-02T10:02:00Z)][(31):(24.01)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "request_time": "2nd Jul 2022"
         }
       ],
       "variable_id": "ABI_anom"
-    },
-    {
-      "collapsed": true,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 43
-      },
-      "id": 27,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 44
-          },
-          "hiddenSeries": false,
-          "id": 2,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_location",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "MODIS Chlorophyll-a $metric @ $Locations",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:273",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:274",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 44
-          },
-          "hiddenSeries": false,
-          "id": 12,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_location",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_sst4\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "MODIS nightime SST $metric @ $Locations",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 52
-          },
-          "hiddenSeries": false,
-          "id": 13,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_location",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_Rrs_667\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "MODIS Rrs 667 (susp. sediment proxy) $metric @ $Locations",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 52
-          },
-          "hiddenSeries": false,
-          "id": 11,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "$tag_location",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "MODIS ABI (Algal Bloom Index) $metric @ $Locations",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        }
-      ],
-      "title": "Satellite Imagery Time Series Extractions",
-      "type": "row"
-    },
-    {
-      "collapsed": true,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 44
-      },
-      "id": 25,
-      "panels": [
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 61
-          },
-          "hiddenSeries": false,
-          "id": 17,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "TX $metric",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                }
-              ],
-              "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(\"anomaly\") FROM \"river_discharge\"\nWHERE (\"location\"='FKdb') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": false,
-              "refId": "B",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "$metric"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=",
-                  "value": "FGBdb_TX"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "Discharge from Texas rivers $metric (combined discharge from guages shown as  green circles on map)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:568",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:569",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 67
-          },
-          "hiddenSeries": false,
-          "id": 31,
-          "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": false,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "alias": "TX $metric",
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                }
-              ],
-              "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(\"anomaly\") FROM \"river_discharge\"\nWHERE (\"location\"='FKdb') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": false,
-              "refId": "B",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "$metric"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=",
-                  "value": "FGBdb_MS"
-                }
-              ]
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "Discharge from Mississippi River $metric (discharge from guage shown by red circle on map)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:568",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:569",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": false
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        }
-      ],
-      "title": "River Discharge",
-      "type": "row"
     },
     {
       "collapsed": false,
@@ -1110,7 +316,799 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 43
+      },
+      "id": 27,
+      "panels": [],
+      "title": "Satellite Imagery Time Series Extractions",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 44
+      },
+      "hiddenSeries": false,
+      "id": 2,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_location",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "MODIS Chlorophyll-a $metric @ $Locations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:273",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:274",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 44
+      },
+      "hiddenSeries": false,
+      "id": 12,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_location",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_sst4\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "MODIS nightime SST $metric @ $Locations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 52
+      },
+      "hiddenSeries": false,
+      "id": 13,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_location",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_Rrs_667\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "MODIS Rrs 667 (susp. sediment proxy) $metric @ $Locations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 52
+      },
+      "hiddenSeries": false,
+      "id": 11,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "$tag_location",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"moda_ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "MODIS ABI (Algal Bloom Index) $metric @ $Locations",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 60
+      },
+      "id": 25,
+      "panels": [],
+      "title": "River Discharge",
+      "type": "row"
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 61
+      },
+      "hiddenSeries": false,
+      "id": 17,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "TX $metric",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "hide": false,
+          "measurement": "river_discharge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"anomaly\") FROM \"river_discharge\"\nWHERE (\"location\"='FKdb') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": false,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "$metric"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=",
+              "value": "FGBdb_TX"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Discharge from Texas rivers $metric (combined discharge from guages shown as  green circles on map)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:568",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:569",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "influxdb",
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 67
+      },
+      "hiddenSeries": false,
+      "id": 31,
+      "interval": "",
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": false,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "nullPointMode": "connected",
+      "options": {
+        "dataLinks": []
+      },
+      "percentage": false,
+      "pointradius": 2,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "alias": "TX $metric",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            }
+          ],
+          "hide": false,
+          "measurement": "river_discharge",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(\"anomaly\") FROM \"river_discharge\"\nWHERE (\"location\"='FKdb') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": false,
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "$metric"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=",
+              "value": "FGBdb_MS"
+            }
+          ]
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "Discharge from Mississippi River $metric (discharge from guage shown by red circle on map)",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "$$hashKey": "object:568",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "$$hashKey": "object:569",
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": false
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 73
       },
       "id": 23,
       "panels": [],
@@ -1124,7 +1122,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 74
       },
       "id": 20,
       "mode": "markdown",
@@ -1140,7 +1138,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 54
+        "y": 82
       },
       "id": 21,
       "mode": "markdown",
@@ -1233,7 +1231,7 @@
     ]
   },
   "time": {
-    "from": "now-2y",
+    "from": "now-5y",
     "to": "now"
   },
   "timepicker": {
@@ -1251,5 +1249,5 @@
   "variables": {
     "list": []
   },
-  "version": 1
+  "version": 2
 }
