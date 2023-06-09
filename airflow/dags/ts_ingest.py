@@ -12,46 +12,9 @@ from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
 REGION = 'GOM'
-# needed bc we cannot do REGION.upper() inside the format string.
-REGION_UPPERCASE = REGION.upper()
 DATA_HOST = "https://raw.githubusercontent.com/7yl4r/extracted_sat_ts_gom_csv_data/main/data"
 
-SAT_ROI_LIST = [
-    'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
-    'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
-    'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
-    'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
-    'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
-    'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
-    'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
-    'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
-    'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
-    'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
-    'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
-    'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
-    'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
-]
-SAT_FILE_DETAIL_LIST = [
-    # sat    | product
-    ["VSNPP", "chlor_a"],
-    ["VSNPP", "Rrs_671"],
-    ["VSNPP", "Kd_490"],
-    ["VSNPP", "sstn"],
-    ["MODA",  "ABI"],
-]
-# example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
-SAT_FPATH = (
-    "{REGION}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
-)
-
-BOUY_ROI_LIST = [
-    'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
-]
-BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
-
-USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
-RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
-
+REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string.
 # ============================================================================
 # === DAG defines the task exec order
 # ============================================================================
@@ -72,6 +35,33 @@ with DAG(
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
+    SAT_ROI_LIST = [
+        'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
+        'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
+        'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
+        'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
+        'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
+        'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
+        'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
+        'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
+        'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
+        'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
+        'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
+        'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
+        'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
+    ]
+    SAT_FILE_DETAIL_LIST = [
+        # sat    | product
+        ["VSNPP", "chlor_a"],
+        ["VSNPP", "Rrs_671"],
+        ["VSNPP", "Kd_490"],
+        ["VSNPP", "sstn"],
+        ["MODA",  "ABI"],
+    ]
+    # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
+    SAT_FPATH = (
+        "{REGION}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+    )
     for roi in SAT_ROI_LIST:
         for sat, product in SAT_FILE_DETAIL_LIST:
             BashOperator(
@@ -102,6 +92,10 @@ with DAG(
     # ========================================================================
     # Bouy Ingest
     # ========================================================================
+    BOUY_ROI_LIST = [
+        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
+    ]
+    BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
     for roi in BOUY_ROI_LIST:
         for product in ['sal', 'temp']:
             BashOperator(
@@ -130,6 +124,8 @@ with DAG(
     # ========================================================================
     # USGS River Discharge Ingest
     # ========================================================================
+    USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
+    RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
     for river in USGS_RIVER_LIST:
         BashOperator(
             task_id=f"ingest_river_{river}",
