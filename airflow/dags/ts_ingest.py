@@ -1,29 +1,6 @@
 """
 Ingests all timeseries .csv files into influxdb using mbon_data_uploader.
-
-files linked to 7yl4r's public_html folder on IMaRS servers by using the
-printout ln statements produced below.
-
-## To prep the symlinks:
-1. run this file
-    (outside of airflow (you can comment out all airflow stuff as needed))
-    `python ts_ingest.py`
-2. a bunch of `ln -s ...` lines should be printed.
-    copy-paste all these into the command line to create the symlinks.
-
--- OR --
-
-You can pipe the output to a file & execute it (careful!):
-```bash
-python ts_ingest.py > create_symlinks.sh
-# open the file and look at it for safety:
-less create_symlinks.sh
-# execute the file
-bash ./create_symlinks_file.sh
-```
-# NOTE: if you want to remove all the broken symlinks use:
-#       find ~/public_html/ -xtype l -delete
-
+The timeseries are ingested from a public github repo folder.
 
 !!! NOTE how the dir separator (/) is replaced w/ -_- in the FPATH variables
 below.
@@ -34,10 +11,10 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-REGION = 'fk'
+REGION = 'GOM'
 # needed bc we cannot do REGION.upper() inside the format string.
 REGION_UPPERCASE = REGION.upper()
-DATA_HOST = "https://manglillo.marine.usf.edu/~tylar/ts_symlinks"
+DATA_HOST = "https://raw.githubusercontent.com/7yl4r/extracted_sat_ts_gom_csv_data/main/data"
 
 SAT_ROI_LIST = [
     'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
@@ -55,15 +32,16 @@ SAT_ROI_LIST = [
     'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
 ]
 SAT_FILE_DETAIL_LIST = [
-    ["VSNPP", "OC", "chlor_a"],
-    ["VSNPP", "OC", "Rrs_671"],
-    ["VSNPP", "OC", "Kd_490"],
-    ["VSNPP", "SSTN", "sstn"],
-    ["MODA", "OC", "ABI"],
+    # sat    | product
+    ["VSNPP", "chlor_a"],
+    ["VSNPP", "Rrs_671"],
+    ["VSNPP", "Kd_490"],
+    ["VSNPP", "sstn"],
+    ["MODA",  "ABI"],
 ]
+# example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
 SAT_FPATH = (
-    "{REGION}-_-EXT_TS_{sat}-_-{product_type}-_-"
-    "{REGION_UPPERCASE}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+    "{REGION}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
 )
 
 BOUY_ROI_LIST = [
@@ -73,31 +51,6 @@ BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
 
 USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
 RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
-
-
-# ============================================================================
-# === this code prints out the symlinks needed
-# ============================================================================
-def print_link_bash(fpath):
-    """prints out the bash to create required symlink"""
-    print(
-        f"ln -s /srv/imars-objects/{fpath.replace('-_-', '/')} "
-        f" /srv/imars-objects/homes/tylar/public_html/ts_symlinks/{fpath}"
-    )
-
-
-# These loops are expected to be identical to the lines further down in this
-# file which define the tasks.
-if(False):  # set to True if generating symlinks, False for airflow jobs
-    for roi in SAT_ROI_LIST:
-        for sat, product_type, product in SAT_FILE_DETAIL_LIST:
-            print_link_bash(SAT_FPATH.format(**vars()))
-    for roi in BOUY_ROI_LIST:
-        for product in ['sal', 'temp']:
-            print_link_bash(BOUY_FPATH.format(**vars()))
-    for river in USGS_RIVER_LIST:
-        print_link_bash(RIVER_FPATH.format(**vars()))
-# ============================================================================
 
 # ============================================================================
 # === DAG defines the task exec order
@@ -120,7 +73,7 @@ with DAG(
     # Satellite RoI Extractions
     # ========================================================================
     for roi in SAT_ROI_LIST:
-        for sat, product_type, product in SAT_FILE_DETAIL_LIST:
+        for sat, product in SAT_FILE_DETAIL_LIST:
             BashOperator(
                 task_id=f"ingest_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
