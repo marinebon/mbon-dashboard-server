@@ -45,7 +45,7 @@ with DAG(
         ["VSNPP", "chlor_a"],
         ["VSNPP", "Rrs_671"],
         ["VSNPP", "Kd_490"],
-        ["VSNPP", "sstn"],
+        ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
     # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
