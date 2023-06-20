@@ -42,9 +42,9 @@ with DAG(
     ]
     SAT_FILE_DETAIL_LIST = [
         # sat    | product
-        ["VSNPP", "chlor_a"],
-        ["VSNPP", "Rrs_671"],
-        ["VSNPP", "Kd_490"],
+        ["MODA", "chlor_a"],
+        ["MODA", "Rrs_667"],
+        ["MODA", "Kd_490"],
         ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
