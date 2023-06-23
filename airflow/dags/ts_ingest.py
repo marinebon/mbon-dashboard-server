@@ -84,7 +84,6 @@ with DAG(
     # Bouy Ingest
     # ========================================================================
     BOUY_ROI_LIST = [
-        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
     ]
     # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
     BOUY_FPATH = "{roi}_NDBC_{product}_FKdb.csv"
