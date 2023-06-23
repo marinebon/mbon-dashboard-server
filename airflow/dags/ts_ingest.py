@@ -36,7 +36,8 @@ with DAG(
     # Satellite RoI Extractions
     # ========================================================================
     SAT_ROI_LIST = [
-        'WFG', 'EFG', 'STET', 'Elvers', 'Geyer', 'Horseshoe', 'Bright', 'Rankin', 'McGrail', 'Sidner', 'Parker',' Rezak','MacNeil', 'Bouma', 'Alderice', 'Sonnier',
+        'WFG', 'EFG', 'STET', 'Elvers', 'Geyer', 'Horseshoe', 'Bright', 'Rankin', 
+        'McGrail', 'Sidner', 'Parker','Rezak','MacNeil', 'Bouma', 'Alderice', 'Sonnier',
         'COAST1', 'COAST2', 'COAST3', 'COAST4',
         'SS1', 'SS2', 'SS3', 'SS4', 'SS5', 'SS6', 'SS7', 'SS8'
     ]
