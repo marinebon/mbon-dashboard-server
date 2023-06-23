@@ -95,7 +95,8 @@ with DAG(
     BOUY_ROI_LIST = [
         'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
     ]
-    BOUY_FPATH = "{REGION}-_-SAL_TS_NDBC-_-{roi}_NDBC_{product}_FKdb.csv"
+    # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
+    BOUY_FPATH = "{roi}_NDBC_{product}_FKdb.csv"
     for roi in BOUY_ROI_LIST:
         for product in ['sal', 'temp']:
             BashOperator(
@@ -125,7 +126,8 @@ with DAG(
     # USGS River Discharge Ingest
     # ========================================================================
     USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
-    RIVER_FPATH = "{REGION}-_-DISCH_CSV_USGS-_-USGS_disch_{river}.csv"
+    # example fname: USGS_disch_FWCdb_STL.csv
+    RIVER_FPATH = "USGS_disch_{river}.csv"
     for river in USGS_RIVER_LIST:
         BashOperator(
             task_id=f"ingest_river_{river}",
