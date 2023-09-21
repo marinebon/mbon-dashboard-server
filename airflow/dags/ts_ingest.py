@@ -11,7 +11,7 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
-REGION = 'GOM'
+REGION = 'SEUS'
 DATA_HOST = "https://raw.githubusercontent.com/7yl4r/extracted_sat_ts_gom_csv_data/main/data"
 
 REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string.
@@ -52,15 +52,15 @@ with DAG(
     ]
     SAT_FILE_DETAIL_LIST = [
         # sat    | product
-        ["VSNPP", "chlor_a"],
-        ["VSNPP", "Rrs_671"],
-        ["VSNPP", "Kd_490"],
-        ["VSNPP", "sstn"],
+        ["MODA", "chlor_a"],
+        ["MODA", "Rrs_671"],
+        ["MODA", "Kd_490"],
+        ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
     # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
     SAT_FPATH = (
-        "{REGION}dbv2_{product}_TS_{sat}_daily_{roi}.csv"
+        "{REGION}dbv23_{product}_TS_{sat}_daily_{roi}.csv"
     )
     for roi in SAT_ROI_LIST:
         for sat, product in SAT_FILE_DETAIL_LIST:
@@ -96,9 +96,9 @@ with DAG(
         'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
     ]
     # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
-    BOUY_FPATH = "{roi}_NDBC_{product}_FKdb.csv"
+    BOUY_FPATH = "{roi}_NDBC_{product}_SEUSdb.csv"
     for roi in BOUY_ROI_LIST:
-        for product in ['sal', 'temp']:
+        for product in ['wdir', 'wsp']:
             BashOperator(
                 task_id=f"ingest_bouy_{roi}_{product}",
                 bash_command=(
@@ -123,11 +123,11 @@ with DAG(
             )
 
     # ========================================================================
-    # USGS River Discharge Ingest
+    # USGS Gage Height Ingest
     # ========================================================================
-    USGS_RIVER_LIST = ['FKdb', "FWCdb_EFL", "FWCdb_STL"]
-    # example fname: USGS_disch_FWCdb_STL.csv
-    RIVER_FPATH = "USGS_disch_{river}.csv"
+    USGS_RIVER_LIST = ['SavannahRv','HudsonCr','AltahamaRv','SatillaRv','StJohnsRv']
+    # example fname: USGS_gh_SavannahRv_SEUSdb.csv
+    RIVER_FPATH = "USGS_gh_{river}_SEUSdb.csv"
     for river in USGS_RIVER_LIST:
         BashOperator(
             task_id=f"ingest_river_{river}",
@@ -150,3 +150,7 @@ with DAG(
                 "DATA_HOST": DATA_HOST
             }
         )
+    # ========================================================================
+    # USGS Water Quality Ingest
+    # ========================================================================
+    
