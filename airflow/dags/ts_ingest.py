@@ -36,26 +36,15 @@ with DAG(
     # Satellite RoI Extractions
     # ========================================================================
     SAT_ROI_LIST = [
-        'BB', 'BIS', 'CAR', 'DT', 'DTN', 'EFB', 'EK_IN', 'EK_MID', 'FKNMS',
-        'FLB', 'FROCK', 'IFB', 'KW', 'LK', 'MIA', 'MK', 'MOL', 'MQ', 'MR',
-        'MUK', 'PBI', 'PEV', 'SANDK', 'SFP10', 'SFP11', 'SFP12', 'SFP13',
-        'SFP14', 'SFP15_5', 'SFP15', 'SFP16', 'SFP17', 'SFP18', 'SFP19',
-        'SFP1', 'SFP20', 'SFP21_5', 'SFP22_5', 'SFP22', 'SFP23', 'SFP24',
-        'SFP2', 'SFP30_5', 'SFP31', 'SFP32', 'SFP33', 'SFP34', 'SFP39',
-        'SFP40', 'SFP41', 'SFP42', 'SFP45', 'SFP46', 'SFP47', 'SFP48', 'SFP49',
-        'SFP4', 'SFP50', 'SFP51', 'SFP52', 'SFP53', 'SFP54', 'SFP5_5',
-        'SFP55', 'SFP56', 'SFP57_2', 'SFP57_3', 'SFP57', 'SFP5',
-        'SFP6_5', 'SFP61', 'SFP62', 'SFP63',
-        'SFP64', 'SFP65', 'SFP66', 'SFP67', 'SFP69', 'SFP6', 'SFP70',
-        'SFP7', 'SFP8', 'SFP9_5', 'SFP9', 'SUG', 'SLI', 'SOM', 'SR', 'UFB1',
-        'UFB2', 'UFB4', 'UK', 'UK_IN', 'UK_MID', 'UK_OFF', 'WFB', 'WFS', 'WS'
+        '01', '02', '03', '04', '05', '06', '07', '08', '09',
+        '10', '11', '12', '13', '14', '15', '16', '17'
     ]
     SAT_FILE_DETAIL_LIST = [
         # sat    | product
         ["MODA", "chlor_a"],
-        ["MODA", "Rrs_671"],
-        ["MODA", "Kd_490"],
-        ["MODA", "sst4"],
+        ["MODA", "Rrs_667"],
+ #       ["MODA", "Kd_490"],
+ #       ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
     # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
@@ -92,35 +81,35 @@ with DAG(
     # ========================================================================
     # Bouy Ingest
     # ========================================================================
-    BOUY_ROI_LIST = [
-        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
-    ]
-    # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
-    BOUY_FPATH = "{roi}_NDBC_{product}_SEUSdb.csv"
-    for roi in BOUY_ROI_LIST:
-        for product in ['wdir', 'wsp']:
-            BashOperator(
-                task_id=f"ingest_bouy_{roi}_{product}",
-                bash_command=(
-                    "curl --fail-with-body "
-                    "    {{params.DATA_HOST}}/{{params.fpath}} "
-                    "    > datafile.csv"
-                    " && curl --fail-with-body "
-                    '    --form measurement=bouy_{{params.product}} '
-                    '    --form tag_set=location={{params.roi}},source=ndbc '
-                    '    --form fields="mean,climatology,anomaly" '
-                    '    --form time_column=time '
-                    '    --form file=@./datafile.csv '
-                    '    {{params.uploader_route}} '
-                ),
-                params={
-                    "product": product,
-                    "roi": roi,
-                    "uploader_route": UPLOADER_ROUTE,
-                    "fpath": BOUY_FPATH.format(**vars()),
-                    "DATA_HOST": DATA_HOST
-                }
-            )
+#    BOUY_ROI_LIST = [
+#        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
+#    ]
+#    # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
+#    BOUY_FPATH = "{roi}_NDBC_{product}_SEUSdb.csv"
+#    for roi in BOUY_ROI_LIST:
+#        for product in ['wdir', 'wsp']:
+#            BashOperator(
+#                task_id=f"ingest_bouy_{roi}_{product}",
+#                bash_command=(
+#                    "curl --fail-with-body "
+#                    "    {{params.DATA_HOST}}/{{params.fpath}} "
+#                    "    > datafile.csv"
+#                    " && curl --fail-with-body "
+#                    '    --form measurement=bouy_{{params.product}} '
+#                    '    --form tag_set=location={{params.roi}},source=ndbc '
+#                    '    --form fields="mean,climatology,anomaly" '
+#                    '    --form time_column=time '
+#                    '    --form file=@./datafile.csv '
+#                    '    {{params.uploader_route}} '
+#                ),
+#                params={
+#                    "product": product,
+#                    "roi": roi,
+#                    "uploader_route": UPLOADER_ROUTE,
+#                    "fpath": BOUY_FPATH.format(**vars()),
+#                    "DATA_HOST": DATA_HOST
+#                }
+#            )
 
     # ========================================================================
     # USGS Gage Height Ingest
