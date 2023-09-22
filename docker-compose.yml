@@ -31,7 +31,7 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__PARALLELISM: '1'
-    UPLOADER_HOSTNAME: http://35.209.104.85:5000
+    UPLOADER_HOSTNAME: http://35.211.219.154:5000
     SQLALCHEMY_WARN_20: 0  # set to 1 verbose logging about sqlAlchemy deprecations
     AIRFLOW__LOGGING__LOGGING_LEVEL: INFO  # DEBUG
     AIRFLOW_HOME: /opt/airflow/
