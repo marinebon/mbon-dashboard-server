@@ -43,8 +43,8 @@ with DAG(
         # sat    | product
         ["MODA", "chlor_a"],
         ["MODA", "Rrs_667"],
- #       ["MODA", "Kd_490"],
- #       ["MODA", "sst4"],
+        ["MODA", "Kd_490"],
+        ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
     # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
