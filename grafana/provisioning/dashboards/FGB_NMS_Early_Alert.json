@@ -334,7 +334,7 @@
       "show_request_dates": false,
       "timeFrom": null,
       "timeShift": null,
-      "title": "MODIS-Aqua ABI (Algal Bloom Index) 7-Day anomaly images (W/m^2/um/sr)",
+      "title": "Dynamic biogeographic seascapes (class)",
       "type": "erddap-panel",
       "urls": [
         {
