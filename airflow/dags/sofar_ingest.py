@@ -18,10 +18,10 @@ with DAG(
     schedule_interval="0 0 * * *",
     max_active_runs=1,
     default_args={
-        "start_date": datetime(2023, 6, 20)
+        "start_date": datetime(2023, 6, 20),
+        'retries': 3,
+        'retry_delay': timedelta(days=1),
     },
-    'retries': 3,
-    'retry_delay': timedelta(days=1),
 ) as dag:
     UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
     if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
