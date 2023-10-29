@@ -20,6 +20,8 @@ with DAG(
     default_args={
         "start_date": datetime(2023, 6, 20)
     },
+    'retries': 3,
+    'retry_delay': timedelta(days=1),
 ) as dag:
     UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
     if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
