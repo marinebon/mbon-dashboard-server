@@ -28,7 +28,7 @@ with DAG(
     BashOperator(
         task_id=f"sofar_ingest",
         bash_command=(
-            "curl 'https://api.sofarocean.com/fetch/download-sensor-data/?spotterId=SPOT-30987C&startDate={{ prev_ds }}T{{ ts }}Z&endDate={{ ds }}T{{ ts }}Z&processingSources=all' "
+            "curl 'https://api.sofarocean.com/fetch/download-sensor-data/?spotterId=SPOT-30987C&startDate={{ prev_ds }}T00:00Z&endDate={{ ds }}T00:00Z&processingSources=all' "
             "  -X GET "
             "  -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0' "
             "  -H 'Accept: application/json, text/plain, */*' "
