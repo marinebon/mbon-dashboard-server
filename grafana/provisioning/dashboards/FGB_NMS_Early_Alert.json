@@ -312,10 +312,10 @@
     {
       "base_url": "http://131.247.136.200:8080/erddap",
       "bg_color": "0xffccccff",
-      "color_bar_str": "",
+      "color_bar_str": "Seascapes|||0|33|",
       "colorbar_display": "individual",
       "datasource": null,
-      "delta": 10512000000,
+      "delta": 10512000001,
       "delta_unit": "ms",
       "description": "MODIS-Aqua 1km Algal Bloom Index (ABI) product (W m^2 um^-1 sr^-1) binned to 7-day intervals. ABI is based on normalized fluorescent line height and is normalized by green reflectance to account for suspended sediments. \nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
       "gridPos": {
@@ -338,33 +338,33 @@
       "type": "erddap-panel",
       "urls": [
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2021-10-31T20:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2021-10-31T20:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2021-10-31T20:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2021-10-31T20:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "31st Oct 2021"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-03-02T12:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-03-02T12:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-03-02T12:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-03-02T12:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "2nd Mar 2022"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-07-02T04:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-07-02T04:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-07-02T04:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-07-02T04:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "2nd Jul 2022"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-10-31T20:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-10-31T20:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-10-31T20:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-10-31T20:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "31st Oct 2022"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-03-02T12:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-03-02T12:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-03-02T12:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-03-02T12:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "2nd Mar 2023"
         },
         {
-          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-07-02T04:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-07-02T04:17:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+          "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-07-02T04:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=40960%7C",
+          "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-07-02T04:18:00Z)][(24):(31)][(-98):(-88.01)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
           "request_time": "2nd Jul 2023"
         }
       ],
