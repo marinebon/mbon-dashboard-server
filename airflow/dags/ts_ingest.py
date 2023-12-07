@@ -114,7 +114,7 @@ with DAG(
     # ========================================================================
     # USGS Gage Height Ingest
     # ========================================================================
-    USGS_RIVER_LIST = ['SavannahRv','HudsonCr','AltahamaRv','SatillaRv','StJohnsRv',"OgeecheeRv']
+    USGS_RIVER_LIST = ['SavannahRv','HudsonCr','AltahamaRv','SatillaRv','StJohnsRv','OgeecheeRv']
     # example fname: USGS_gh_SavannahRv_SEUSdb.csv
     RIVER_FPATH = "USGS_gh_{river}_SEUSdb.csv"
     for river in USGS_RIVER_LIST:
