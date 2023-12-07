@@ -82,12 +82,12 @@ with DAG(
     # Bouy Ingest
     # ========================================================================
 #    BOUY_ROI_LIST = [
-#        'BUTTERNUT', 'WHIPRAY', 'PETERSON', 'BOBALLEN', 'LITTLERABBIT'
+#        'GR_MET_BUOY'
 #    ]
-#    # example filname: BUTTERNUT_NDBC_sal_FKdb.csv
-#    BOUY_FPATH = "{roi}_NDBC_{product}_SEUSdb.csv"
+#    # example filname: GR_MET_BUOY_NDBC_stdmet_atemp_SEUSdb.csv
+#    BOUY_FPATH = "{roi}_NDBC_stdmet_{product}_SEUSdb.csv"
 #    for roi in BOUY_ROI_LIST:
-#        for product in ['wdir', 'wsp']:
+#        for product in ['wdir','wspd','gust','atemp','wtemp','barp','wvht','dwpd','awpd',mwd']:
 #            BashOperator(
 #                task_id=f"ingest_bouy_{roi}_{product}",
 #                bash_command=(
@@ -97,7 +97,7 @@ with DAG(
 #                    " && curl --fail-with-body "
 #                    '    --form measurement=bouy_{{params.product}} '
 #                    '    --form tag_set=location={{params.roi}},source=ndbc '
-#                    '    --form fields="mean,climatology,anomaly" '
+#                    '    --form fields="data" '
 #                    '    --form time_column=time '
 #                    '    --form file=@./datafile.csv '
 #                    '    {{params.uploader_route}} '
