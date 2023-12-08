@@ -40,9 +40,6 @@ with DAG(
         'sapmlmet'
         'gtmpcmet'
     ]
-            
-'gtm pcmet',
-    ]
     def getData():
         """
         fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
