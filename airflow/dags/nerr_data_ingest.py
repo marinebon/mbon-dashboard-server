@@ -25,7 +25,7 @@ with DAG(
 
     # TODO: do this for each in:
     {
-        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor]
+        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor']
         "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp']
         "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N']
     }
