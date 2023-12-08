@@ -55,7 +55,7 @@ with DAG(
         param_data = soapClient.service.exportSingleParamXML(
             station_code,  # Station_Code
             25,  # Number of records to retrieve TODO: make this inf?
-            param_name",  # parameter
+            param_name,  # parameter
         )
         print(param_data)
         pd.write_csv(param_data, "./datafile.csv")
