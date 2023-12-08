@@ -88,7 +88,7 @@ with DAG(
     # example filname: GR_MET_BUOY_NDBC_stdmet_atemp_SEUSdb.csv
     BOUY_FPATH = "{roi}_NDBC_stdmet_{product}_SEUSdb.csv"
     for roi in BOUY_ROI_LIST:
-       for product in ['wdir','wspd','gust','atemp','wtemp','barp','wvht','dwpd','awpd',mwd']:
+       for product in ['wdir','wspd','gust','atemp','wtemp','barp','wvht','dwpd','awpd','mwd']:
            BashOperator(
                task_id=f"ingest_bouy_{roi}_{product}",
                bash_command=(
