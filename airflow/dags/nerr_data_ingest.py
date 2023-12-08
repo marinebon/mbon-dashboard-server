@@ -24,11 +24,11 @@ with DAG(
     # === get the data from SOAP API
 
     # TODO: do this for each in:
-    {
-        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor']
-        "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp']
-        "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N']
-    }
+    # {
+    #     "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
+    #     "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp'],
+    #     "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
+    # }
         
     # TODO: also the get the quality flags for each (eg `Sal_F`)
     # TODO: do this for each station code
