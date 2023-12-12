@@ -12,7 +12,7 @@ from airflow.operators.bash_operator import BashOperator
 from datetime import datetime
 
 REGION = 'GOM'
-DATA_HOST = "https://raw.githubusercontent.com/7yl4r/extracted_sat_ts_gom_csv_data/main/data"
+DATA_HOST = "https://storage.googleapis.com/dashboards_csvs"
 
 REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string.
 # ============================================================================
