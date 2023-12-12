@@ -17,46 +17,46 @@ REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string
 with DAG(
     'ts_ingest',
     catchup=False,  # latest only
-    schedule_interval="0 0 0 0 *",  # TODO: set this to only run once or when manually triggered
+    schedule_interval=None,  # run only once (unless triggered manually)
     max_active_runs=1,
     default_args={
-        "start_date": datetime(2020, 1, 1)
+        "start_date": datetime(2023, 1, 1)
     },
+    catchup=False,
 ) as dag:
     UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
     if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
         UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
     UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
   
-    PARAM_LIST = ['ApCo2', 'Sal', 'WTemp', 'WpCo2', 'pH']
-    FIELDS_LIST = [  # NOTE: These must line up with the PARAMS listed above
-      'pco2_in_air', 
-      'sea_water_practical_salinity', 
-      'sea_water_temperature', 
-      'pco2_in_sea_water',
-      'sea_water_ph_reported_on_total_scale'
-    ]
-    FPATH = "gov_ornl_cdiac_graysrf_{param}.csv "
-    for river in USGS_RIVER_LIST:
+    PARAM_LIST = {
+        'ApCo2': 'pco2_in_air',
+        'Sal': 'sea_water_practical_salinity',
+        'WTemp': 'sea_water_temperature',
+        'WpCo2': 'pco2_in_sea_water',
+        'pH': 'sea_water_ph_reported_on_total_scale',
+    }
+    FPATH = "gov_ornl_cdiac_graysrf_{param_name}.csv "
+    for param_name, param_col_name in PARAM_LIST.items():
         BashOperator(
-            task_id=f"ingest_river_{river}",
+            task_id=f"ingest_oa_{param_name}",
             bash_command=(
                 "curl --fail-with-body "
                 "    {{params.DATA_HOST}}/{{params.fpath}} "
                 "    > datafile.csv" 
-                " && awk ... > datafile.csv"   # TODO: drop 2nd row of csv file
+                " && sed -i '2d' datafile.csv "   # drop 2nd row of the csv file (this is the units row)
                 " && curl --fail-with-body "
                 '    --form measurement=oa_params '
-                '    --form fields=mean,climatology,anomaly '  # TODO: use field hree
+                '    --form fields={{params.col_name}} '
                 '    --form time_column=time '
                 '    --form file=@./datafile.csv '
                 '    {{params.uploader_route}} '
             ),
             params={
-                "river": river,
                 "uploader_route": UPLOADER_ROUTE,
                 "fpath": FPATH.format(**vars()),
-                "DATA_HOST": DATA_HOST
+                "DATA_HOST": DATA_HOST,
+                "col_name": param_col_name,
             }
         )
     
