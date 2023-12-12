@@ -17,7 +17,7 @@ REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string
 with DAG(
     'ts_ingest',
     catchup=False,  # latest only
-    schedule_interval=None,  # run only once (unless triggered manually)
+    schedule_interval="@once",  # run only once (unless triggered manually)
     max_active_runs=1,
     default_args={
         "start_date": datetime(2023, 1, 1)
