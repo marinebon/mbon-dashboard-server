@@ -46,6 +46,7 @@ with DAG(
                 " && sed -i '2d' datafile.csv "   # drop 2nd row of the csv file (this is the units row)
                 " && curl --fail-with-body "
                 '    --form measurement=oa_params '
+                '    --form tag_set=location=GRNMS '
                 '    --form fields={{params.col_name}} '
                 '    --form time_column=time '
                 '    --form file=@./datafile.csv '
