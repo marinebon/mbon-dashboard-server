@@ -917,7 +917,7 @@
       "id": 59,
       "panels": [
         {
-          "content": "#### Station 41008 is a 3-m discuss buoy located within Gray's Reef National Marine Sanctuary (31.4N/80.866W). Water depth at this location is 16m.\n\n#### Meterological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Dominant wave period (seconds) is the period with the maximum wave energy.\n6. Average wave period (seconds) of all waves during the 20-minute period. \n7. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n8. Air temperature (C) measured 3.4m above sea level.\n9. Water temperature (C) measured 2m below water line.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
+          "content": "#### Station 41008 is a 3-m discuss buoy located within Gray's Reef National Marine Sanctuary (31.4N/80.866W). Water depth at this location is 16m.\n\n#### Meterological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Air temperature (C) measured 3.4m above sea level.\n6. Water temperature (C) measured 2m below water line.\n7. Dominant wave period (seconds) is the period with the maximum wave energy.\n8. Average wave period (seconds) of all waves during the 20-minute period. \n9. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
           "datasource": null,
           "description": "",
           "gridPos": {
@@ -2739,7 +2739,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 22
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 35,
