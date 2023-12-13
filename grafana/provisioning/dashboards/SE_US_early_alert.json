@@ -16,15 +16,15 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1702409141266,
+  "iteration": 1702476875324,
   "links": [],
   "panels": [
     {
       "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_dbv23_map.png)",
       "datasource": null,
       "gridPos": {
-        "h": 18,
-        "w": 11,
+        "h": 21,
+        "w": 10,
         "x": 0,
         "y": 0
       },
@@ -36,12 +36,12 @@
       "type": "text"
     },
     {
-      "content": "### On the map at left:\n\n - Black hatched circles indicate areas where satellite data is extracted.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality is measured\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of a meteorological buoy where winds are measured.\n\n### Directions for site navigation: \n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from five locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all of the images and time series.\n\n\n\n\n\n",
+      "content": "### On the map at left:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality is measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
       "datasource": null,
       "gridPos": {
-        "h": 18,
-        "w": 13,
-        "x": 11,
+        "h": 21,
+        "w": 14,
+        "x": 10,
         "y": 0
       },
       "id": 8,
@@ -58,7 +58,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 21
       },
       "id": 29,
       "panels": [
@@ -68,7 +68,7 @@
           "color_bar_str": "BlueWhiteRed|||-2.0|2.0|",
           "colorbar_display": "individual",
           "datasource": null,
-          "delta": 26294400001,
+          "delta": 10512000000,
           "delta_unit": "ms",
           "description": "MODIS-Aqua 1km chlor_a product (mg/m^3) binned to 7-day intervals.\nAnomaly images created by subtracting 7-day climatologies made using data from 2003-2019.",
           "gridPos": {
@@ -91,34 +91,34 @@
           "type": "erddap-panel",
           "urls": [
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2018-12-12T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2018-12-12T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Dec 2018"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2021-12-13T15:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2021-12-13T15:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2021"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2019-10-13T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2019-10-13T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Oct 2019"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2022-04-14T07:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2022-04-14T07:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2020-08-12T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2020-08-12T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Aug 2020"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2022-08-13T23:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2022-08-13T23:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2021-06-12T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2021-06-12T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jun 2021"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2022-12-13T15:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2022-12-13T15:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2022-04-13T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2022-04-13T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Apr 2022"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2023-04-14T07:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2023-04-14T07:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2023"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2023-02-11T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2023-02-11T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "11th Feb 2023"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?chlor_a_anom[(2023-08-13T23:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?chlor_a_anom[(2023-08-13T23:35:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2023"
             }
           ],
           "variable_id": "chlor_a_anom"
@@ -129,7 +129,7 @@
           "color_bar_str": "|||||",
           "colorbar_display": "individual",
           "datasource": null,
-          "delta": 26294400000,
+          "delta": 10512000000,
           "delta_unit": "ms",
           "gridPos": {
             "h": 9,
@@ -151,34 +151,34 @@
           "type": "erddap-panel",
           "urls": [
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2018-12-12T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2018-12-12T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Dec 2018"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2021-12-13T15:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2021-12-13T15:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2021"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2019-10-13T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2019-10-13T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Oct 2019"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2022-04-14T07:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2022-04-14T07:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2020-08-12T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2020-08-12T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Aug 2020"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2022-08-13T23:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2022-08-13T23:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2021-06-12T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2021-06-12T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jun 2021"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2022-12-13T15:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2022-12-13T15:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2022-04-13T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2022-04-13T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Apr 2022"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2023-04-14T07:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2023-04-14T07:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2023"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2023-02-11T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2023-02-11T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "11th Feb 2023"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.png?sst4_anom[(2023-08-13T23:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_sst4_7d_seus.largePng?sst4_anom[(2023-08-13T23:35:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csst4_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2023"
             }
           ],
           "variable_id": "sst4_anom"
@@ -189,7 +189,7 @@
           "color_bar_str": "BlueWhiteRed|||-0.005|0.005|",
           "colorbar_display": "individual",
           "datasource": null,
-          "delta": 26294400000,
+          "delta": 10512000000,
           "delta_unit": "ms",
           "description": "",
           "gridPos": {
@@ -212,34 +212,34 @@
           "type": "erddap-panel",
           "urls": [
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2018-12-12T18:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2018-12-12T18:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Dec 2018"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2021-12-13T15:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2021-12-13T15:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2021"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2019-10-13T02:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2019-10-13T02:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Oct 2019"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2022-04-14T07:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2022-04-14T07:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2020-08-12T10:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2020-08-12T10:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Aug 2020"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2022-08-13T23:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2022-08-13T23:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2021-06-12T18:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2021-06-12T18:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jun 2021"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2022-12-13T15:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2022-12-13T15:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Dec 2022"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2022-04-13T02:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2022-04-13T02:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Apr 2022"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2023-04-14T07:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2023-04-14T07:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "14th Apr 2023"
             },
             {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2023-02-11T10:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2023-02-11T10:05:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "11th Feb 2023"
+              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?Rrs_667_anom[(2023-08-13T23:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=256000%7C",
+              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?Rrs_667_anom[(2023-08-13T23:35:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_667_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
+              "request_time": "13th Aug 2023"
             }
           ],
           "variable_id": "Rrs_667_anom"
@@ -377,7 +377,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 22
       },
       "id": 27,
       "panels": [
@@ -912,12 +912,12 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 23
       },
       "id": 59,
       "panels": [
         {
-          "content": "#### Station 41008 is a 3-m discuss buoy located within Gray's Reef National Marine Sanctuary (31.4N/80.866W). Water depth at this location is 16m.\n\n#### Meterological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Air temperature (C) measured 3.4m above sea level.\n6. Water temperature (C) measured 2m below water line.\n7. Dominant wave period (seconds) is the period with the maximum wave energy.\n8. Average wave period (seconds) of all waves during the 20-minute period. \n9. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
+          "content": "#### Station 41008 is a 3-m discuss buoy located within Gray's Reef National Marine Sanctuary (31.40°N, 80.87°W). Water depth at this location is 16m.\n\n#### Meterological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Air temperature (C) measured 3.4m above sea level.\n6. Water temperature (C) measured 2m below water line.\n7. Dominant wave period (seconds) is the period with the maximum wave energy.\n8. Average wave period (seconds) of all waves during the 20-minute period. \n9. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
           "datasource": null,
           "description": "",
           "gridPos": {
@@ -2098,7 +2098,7 @@
           }
         }
       ],
-      "title": "Meterological Data",
+      "title": "Meteorological Data",
       "type": "row"
     },
     {
@@ -2108,10 +2108,64 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 24
       },
       "id": 72,
       "panels": [
+        {
+          "content": "\n## Ocean acidification parameters measured at the NDBC 41008 mooring (31.40°N, 80.87°W).\n\n####  - Data shown in this panel has undergone post-calibration and a full set of quality control checks and ends in 2019. Please adjust the time interval at top right to see data prior to 2019.\n####  - Recent data without full QC is available [HERE](https://www.pmel.noaa.gov/co2/story/Grays+Reef).\n\n - The National Data Buoy Center (NDBC) [Mooring 41008](https://www.ndbc.noaa.gov/station_page.php?station=41008) is located 40 nautical miles Southeast of Savannah, Georgia in Gray's Reef National Marine Sanctuary. \n - On July 17, 2006 PMEL in collaboration with NDBC and researchers from the University of Georgia deployed a MAPCO2TM system on the NDBC 41008 buoy. \n - Dr. Scott Noakes and Wei-Jun Cai are collaborating with us to maintain the system and have been deploying other sensors and making a variety of biogeochemical measurements in the Sanctuary. \n - For more information about complimentary projects at Gray's Reef visit the [Gray's Reef researcher's webpage](https://graysreef.noaa.gov/science/research/researchers/welcome.html).\n - On September 19, 2011, a surface seawater pH sensor was added to the Grays Reef mooring. By measuring pH in addition to pCO2, we are able to more accurately and precisely study the changes associated with ocean acidification. \n - This project is supported by [NOAA's Ocean Acidification Program](https://oceanacidification.noaa.gov/).\n\nParameters:\n1. Partial pressure of CO2 in air (micro atm).\n2. Partial pressure of CO2 in water (micro atm).\n3. Seawater salinity (psu).\n4. Seawater pH (unitless).\n5. Water temperature (degreesC).\n\n",
+          "datasource": "influxdb",
+          "gridPos": {
+            "h": 8,
+            "w": 24,
+            "x": 0,
+            "y": 22
+          },
+          "id": 74,
+          "mode": "markdown",
+          "targets": [
+            {
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "oa_params",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "pco2_in_air"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Ocean Acidification parameters ",
+          "type": "text"
+        },
         {
           "aliasColors": {},
           "bars": false,
@@ -2124,10 +2178,10 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 22
+            "y": 30
           },
           "hiddenSeries": false,
-          "id": 74,
+          "id": 81,
           "legend": {
             "avg": false,
             "current": false,
@@ -2193,247 +2247,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "pco2_in_air",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:112",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:113",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 22
-          },
-          "hiddenSeries": false,
-          "id": 77,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "oa_params",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "sea_water_practical_salinity"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "sea_water_practical_salinity",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "buckets": null,
-            "mode": "time",
-            "name": null,
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:112",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:113",
-              "format": "short",
-              "label": null,
-              "logBase": 1,
-              "max": null,
-              "min": null,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false,
-            "alignLevel": null
-          }
-        },
-        {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
-          "datasource": "influxdb",
-          "fill": 1,
-          "fillGradient": 0,
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 30
-          },
-          "hiddenSeries": false,
-          "id": 78,
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "null",
-          "options": {
-            "dataLinks": []
-          },
-          "percentage": false,
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
-          "targets": [
-            {
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "oa_params",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "sea_water_temperature"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
-            }
-          ],
-          "thresholds": [],
-          "timeFrom": null,
-          "timeRegions": [],
-          "timeShift": null,
-          "title": "sea_water_temperature",
+          "title": "Partial pressure of CO2 in air (micro atm)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2553,7 +2367,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "pco2_in_sea_water",
+          "title": "partial pressure of CO2 in water (micro atm)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2603,7 +2417,7 @@
           "gridPos": {
             "h": 8,
             "w": 12,
-            "x": 12,
+            "x": 0,
             "y": 38
           },
           "hiddenSeries": false,
@@ -2673,7 +2487,247 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "sea_water_ph_reported_on_total_scale",
+          "title": "Seawater pH (unitless)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:112",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:113",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "influxdb",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 38
+          },
+          "hiddenSeries": false,
+          "id": 77,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "oa_params",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "sea_water_practical_salinity"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Seawater salinity (psu)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:112",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:113",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": "influxdb",
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 46
+          },
+          "hiddenSeries": false,
+          "id": 78,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "oa_params",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "sea_water_temperature"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Water temperature (DegreesC)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2713,7 +2767,7 @@
           }
         }
       ],
-      "title": "OA data",
+      "title": "Ocean Acidification Data",
       "type": "row"
     },
     {
@@ -2723,7 +2777,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 25
       },
       "id": 54,
       "panels": [
@@ -2862,7 +2916,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 26
       },
       "id": 23,
       "panels": [],
@@ -2876,7 +2930,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 27
       },
       "id": 20,
       "mode": "markdown",
@@ -2892,7 +2946,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 35
       },
       "id": 21,
       "mode": "markdown",
@@ -2911,7 +2965,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "grnms",
           "value": [
             "grnms"
@@ -2987,6 +3040,7 @@
       {
         "allValue": null,
         "current": {
+          "selected": true,
           "text": "AltahamaRv",
           "value": "AltahamaRv"
         },
@@ -3031,5 +3085,5 @@
   "variables": {
     "list": []
   },
-  "version": 13
+  "version": 14
 }
