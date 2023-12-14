@@ -8,3 +8,7 @@ RUN apt-get update && \
     wget https://curl.se/download/curl-7.78.0.tar.gz && \
     tar -xvf curl-7.78.0.tar.gz && cd curl-7.78.0 && \
     ./configure --with-gnutls && make && make install
+
+# install python dependencies from requirements.txt
+ADD requirements.txt . 
+RUN pip install -r requirements.txt
