@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1702476875324,
+  "iteration": 1702566042128,
   "links": [],
   "panels": [
     {
@@ -393,7 +393,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 20
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 2,
@@ -523,7 +523,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 20
+            "y": 23
           },
           "hiddenSeries": false,
           "id": 12,
@@ -653,7 +653,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 28
+            "y": 31
           },
           "hiddenSeries": false,
           "id": 13,
@@ -783,7 +783,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 28
+            "y": 31
           },
           "hiddenSeries": false,
           "id": 11,
@@ -914,6 +914,201 @@
         "x": 0,
         "y": 23
       },
+      "id": 83,
+      "panels": [
+        {
+          "content": "\n# Title\n\nFor markdown syntax help: [commonmark.org/help](https://commonmark.org/help/)\n\n\n\n",
+          "datasource": null,
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 24
+          },
+          "id": 87,
+          "mode": "markdown",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Panel Title",
+          "type": "text"
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 31
+          },
+          "hiddenSeries": false,
+          "id": 85,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Panel Title",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:93",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:94",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": null,
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 31
+          },
+          "hiddenSeries": false,
+          "id": 88,
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "thresholds": [],
+          "timeFrom": null,
+          "timeRegions": [],
+          "timeShift": null,
+          "title": "Panel Title",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "buckets": null,
+            "mode": "time",
+            "name": null,
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:93",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:94",
+              "format": "short",
+              "label": null,
+              "logBase": 1,
+              "max": null,
+              "min": null,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false,
+            "alignLevel": null
+          }
+        }
+      ],
+      "title": "NERRS Data (Not yet implemented)",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
       "id": 59,
       "panels": [
         {
@@ -924,7 +1119,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 21
+            "y": 25
           },
           "id": 70,
           "mode": "markdown",
@@ -945,7 +1140,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 30
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 57,
@@ -1075,7 +1270,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 30
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 61,
@@ -1206,7 +1401,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 38
+            "y": 42
           },
           "hiddenSeries": false,
           "id": 62,
@@ -1335,7 +1530,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 38
+            "y": 42
           },
           "hiddenSeries": false,
           "id": 63,
@@ -1464,7 +1659,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 64,
@@ -1593,7 +1788,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 65,
@@ -1722,7 +1917,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 66,
@@ -1851,7 +2046,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 67,
@@ -1980,7 +2175,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 62
+            "y": 66
           },
           "hiddenSeries": false,
           "id": 68,
@@ -2108,7 +2303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 25
       },
       "id": 72,
       "panels": [
@@ -2119,7 +2314,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 22
+            "y": 26
           },
           "id": 74,
           "mode": "markdown",
@@ -2178,7 +2373,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 30
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 81,
@@ -2224,6 +2419,8 @@
               "measurement": "oa_params",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT mean(\"pco2_in_air\") FROM \"oa_params\" WHERE $timeFilter AND pco2_in_air!=-999 GROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2298,7 +2495,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 30
+            "y": 34
           },
           "hiddenSeries": false,
           "id": 79,
@@ -2344,6 +2541,8 @@
               "measurement": "oa_params",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT mean(\"pco2_in_sea_water\") FROM \"oa_params\" WHERE $timeFilter AND pco2_in_sea_water!=-999 GROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2418,7 +2617,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 38
+            "y": 42
           },
           "hiddenSeries": false,
           "id": 80,
@@ -2464,6 +2663,8 @@
               "measurement": "oa_params",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT mean(\"sea_water_ph_reported_on_total_scale\") FROM \"oa_params\" WHERE $timeFilter AND sea_water_ph_reported_on_total_scale!=-999 GROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2538,7 +2739,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 38
+            "y": 42
           },
           "hiddenSeries": false,
           "id": 77,
@@ -2584,6 +2785,8 @@
               "measurement": "oa_params",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT mean(\"sea_water_practical_salinity\") FROM \"oa_params\" WHERE $timeFilter AND sea_water_practical_salinity!=-999 GROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2658,7 +2861,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 78,
@@ -2704,6 +2907,8 @@
               "measurement": "oa_params",
               "orderByTime": "ASC",
               "policy": "default",
+              "query": "SELECT mean(\"sea_water_temperature\") FROM \"oa_params\" WHERE $timeFilter AND sea_water_temperature!=-999 GROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
               "select": [
@@ -2777,7 +2982,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 26
       },
       "id": 54,
       "panels": [
@@ -2916,7 +3121,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 27
       },
       "id": 23,
       "panels": [],
@@ -2930,7 +3135,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 28
       },
       "id": 20,
       "mode": "markdown",
@@ -2946,7 +3151,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 36
       },
       "id": 21,
       "mode": "markdown",
@@ -3040,7 +3245,6 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
           "text": "AltahamaRv",
           "value": "AltahamaRv"
         },
@@ -3085,5 +3289,5 @@
   "variables": {
     "list": []
   },
-  "version": 14
+  "version": 15
 }
