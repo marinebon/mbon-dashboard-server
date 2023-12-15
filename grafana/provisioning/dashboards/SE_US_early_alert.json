@@ -36,7 +36,7 @@
       "type": "text"
     },
     {
-      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserve System (NERRS) locations where water quality, nutrients and meteorological parameters are measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n 1. Hudson Creek\n 2. Savannah River\n 3. Altahama River\n 4. Saltilla River\n 5. St. Johns River\n 6. Ogeecheee River\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality, nutrients and meteorological parameters are measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n 1. Hudson Creek\n 2. Savannah River\n 3. Altahama River\n 4. Saltilla River\n 5. St. Johns River\n 6. Ogeecheee River\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
       "datasource": null,
       "gridPos": {
         "h": 15,
@@ -917,10 +917,10 @@
       "id": 83,
       "panels": [
         {
-          "content": "\n### There are three NERRS locations within this region:\n1. Ashepoo Combahee Edisto (ACE) Basin, SC\n2. Sapello Island, GA\n3. Guana Tolomato Matanzas, FL\n\nWater quality, nutrients and meteorolical parameters are measured at multiple locations within each of these NERRS.\n\nData citation:\n - NOAA National Estuarine Research Reserve System (NERRS). \n - System-wide Monitoring Program. Data accessed from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Data are accessed nightly.\n\n\n\n\n\n",
+          "content": "\n### There are three NERRS locations within this region:\n1. Ashepoo Combahee Edisto (ACE) Basin, SC\n2. Sapello Island, GA\n3. Guana Tolomato Matanzas, FL\n\nWater quality and nutrients are measured at multiple locations within each of these NERRS. Meteorological parameters are also measured at each NERRS site.\n\nData citation:\n - NOAA National Estuarine Research Reserve System (NERRS). \n - System-wide Monitoring Program. Data accessed from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Data are accessed nightly.\n\n\n\n\n\n",
           "datasource": null,
           "gridPos": {
-            "h": 7,
+            "h": 9,
             "w": 24,
             "x": 0,
             "y": 40
@@ -929,7 +929,7 @@
           "mode": "markdown",
           "timeFrom": null,
           "timeShift": null,
-          "title": "Data from National Estuarine Research Reserves",
+          "title": "Data from National Estuarine Research Reserves System (NERRS)",
           "type": "text"
         },
         {
@@ -944,7 +944,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 47
+            "y": 49
           },
           "hiddenSeries": false,
           "id": 85,
@@ -1026,7 +1026,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 47
+            "y": 49
           },
           "hiddenSeries": false,
           "id": 88,
