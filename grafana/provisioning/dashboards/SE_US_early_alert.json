@@ -16,15 +16,15 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1702566042128,
+  "iteration": 1702592774890,
   "links": [],
   "panels": [
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_dbv23_map.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_vNERR.png)",
       "datasource": null,
       "gridPos": {
-        "h": 21,
-        "w": 10,
+        "h": 22,
+        "w": 20,
         "x": 0,
         "y": 0
       },
@@ -32,17 +32,17 @@
       "mode": "markdown",
       "timeFrom": null,
       "timeShift": null,
-      "title": "",
+      "title": "Location Map",
       "type": "text"
     },
     {
-      "content": "### On the map at left:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality is measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality, nutrients and meteorological parameters are measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n 1. Hudson Creek\n 2. Savannah River\n 3. Altahama River\n 4. Saltilla River\n 5. St. Johns River\n 6. Ogeecheee River\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
       "datasource": null,
       "gridPos": {
-        "h": 21,
-        "w": 14,
-        "x": 10,
-        "y": 0
+        "h": 15,
+        "w": 23,
+        "x": 0,
+        "y": 22
       },
       "id": 8,
       "mode": "markdown",
@@ -58,7 +58,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 37
       },
       "id": 29,
       "panels": [
@@ -377,7 +377,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 38
       },
       "id": 27,
       "panels": [
@@ -912,24 +912,24 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 39
       },
       "id": 83,
       "panels": [
         {
-          "content": "\n# Title\n\nFor markdown syntax help: [commonmark.org/help](https://commonmark.org/help/)\n\n\n\n",
+          "content": "\n### There are three NERRS locations within this region:\n1. Ashepoo Combahee Edisto (ACE) Basin, SC\n2. Sapello Island, GA\n3. Guana Tolomato Matanzas, FL\n\nWater quality, nutrients and meteorolical parameters are measured at multiple locations within each of these NERRS.\n\nData citation:\n - NOAA National Estuarine Research Reserve System (NERRS). \n - System-wide Monitoring Program. Data accessed from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Data are accessed nightly.\n\n\n\n\n\n",
           "datasource": null,
           "gridPos": {
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 24
+            "y": 40
           },
           "id": 87,
           "mode": "markdown",
           "timeFrom": null,
           "timeShift": null,
-          "title": "Panel Title",
+          "title": "Data from National Estuarine Research Reserves",
           "type": "text"
         },
         {
@@ -944,7 +944,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 31
+            "y": 47
           },
           "hiddenSeries": false,
           "id": 85,
@@ -1026,7 +1026,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 31
+            "y": 47
           },
           "hiddenSeries": false,
           "id": 88,
@@ -1107,7 +1107,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 40
       },
       "id": 59,
       "panels": [
@@ -2303,7 +2303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 41
       },
       "id": 72,
       "panels": [
@@ -2314,7 +2314,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 26
+            "y": 42
           },
           "id": 74,
           "mode": "markdown",
@@ -2373,7 +2373,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 34
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 81,
@@ -2495,7 +2495,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 34
+            "y": 50
           },
           "hiddenSeries": false,
           "id": 79,
@@ -2617,7 +2617,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 42
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 80,
@@ -2739,7 +2739,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 42
+            "y": 58
           },
           "hiddenSeries": false,
           "id": 77,
@@ -2861,7 +2861,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 50
+            "y": 66
           },
           "hiddenSeries": false,
           "id": 78,
@@ -2982,7 +2982,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 42
       },
       "id": 54,
       "panels": [
@@ -3121,7 +3121,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 43
       },
       "id": 23,
       "panels": [],
@@ -3129,13 +3129,13 @@
       "type": "row"
     },
     {
-      "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of [Hu and Feng 2016](https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-11/issue-01/012003/Modified-MODIS-fluorescence-line-height-data-product-to-improve-image/10.1117/1.JRS.11.012003.full?SSO=1)\n\n* River gauge height data (green cicles on map) are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis).  \n\n* Water quality data in the Savannah River comes from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis/inventory?agency_code=USGS&site_no=021989773) \n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
+      "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of [Hu and Feng 2016](https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-11/issue-01/012003/Modified-MODIS-fluorescence-line-height-data-product-to-improve-image/10.1117/1.JRS.11.012003.full?SSO=1)\n\n* River gauge height data (green cicles on map) are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis).  \n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
       "datasource": null,
       "gridPos": {
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 44
       },
       "id": 20,
       "mode": "markdown",
@@ -3151,7 +3151,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 52
       },
       "id": 21,
       "mode": "markdown",
@@ -3271,7 +3271,7 @@
     ]
   },
   "time": {
-    "from": "now-2y",
+    "from": "now-5y",
     "to": "now"
   },
   "timepicker": {
@@ -3289,5 +3289,5 @@
   "variables": {
     "list": []
   },
-  "version": 15
+  "version": 16
 }
