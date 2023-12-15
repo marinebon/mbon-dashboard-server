@@ -917,7 +917,7 @@
       "id": 83,
       "panels": [
         {
-          "content": "\n### There are three NERRS locations within this region:\n1. Ashepoo Combahee Edisto (ACE) Basin, SC\n2. Sapello Island, GA\n3. Guana Tolomato Matanzas, FL\n\nWater quality and nutrients are measured at multiple locations within each of these NERRS. Meteorological parameters are also measured at each NERRS site.\n\nData citation:\n - NOAA National Estuarine Research Reserve System (NERRS). \n - System-wide Monitoring Program. Data accessed from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Data are accessed nightly.\n\n\n\n\n\n",
+          "content": "\n### There are three NERRS sites within this region:\n1. Ashepoo Combahee Edisto (ACE) Basin, SC\n2. Sapello Island, GA\n3. Guana Tolomato Matanzas, FL\n\nWater quality and nutrients are measured at multiple locations within each of these NERRS. Meteorological parameters are also measured at each NERRS site.\n\nData citation:\n - NOAA National Estuarine Research Reserve System (NERRS). \n - System-wide Monitoring Program. Data accessed from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Data are accessed nightly.\n\n\n\n\n\n",
           "datasource": null,
           "gridPos": {
             "h": 9,
