@@ -52,6 +52,7 @@ with DAG(
             "    --form tag_set=spotter_id=SPOT30987C "
             "    --form fields=value,sensor_position "
             "    --form time_column=utc_timestamp "
+            "    --form should_convert_time=True "
             "    --form file=@./datafile.csv "
             "    {{params.uploader_route}} "
         ),
