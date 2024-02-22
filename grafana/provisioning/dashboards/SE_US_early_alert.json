@@ -16,15 +16,15 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1702592774890,
+  "iteration": 1708631900528,
   "links": [],
   "panels": [
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_vNERR.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v2_wInset.png)",
       "datasource": null,
       "gridPos": {
-        "h": 22,
-        "w": 20,
+        "h": 24,
+        "w": 23,
         "x": 0,
         "y": 0
       },
@@ -36,13 +36,13 @@
       "type": "text"
     },
     {
-      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Red dots indicate National Estuarine Research Reserves (NERR) locations where water quality, nutrients and meteorological parameters are measured.\n\n - Green dots indicate locations where river gauge height is measured by the USGS.\n 1. Hudson Creek\n 2. Savannah River\n 3. Altamaha River\n 4. Saltilla River\n 5. St. Johns River\n 6. Ogeecheee River\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
       "datasource": null,
       "gridPos": {
         "h": 15,
         "w": 23,
         "x": 0,
-        "y": 22
+        "y": 24
       },
       "id": 8,
       "mode": "markdown",
@@ -58,7 +58,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 39
       },
       "id": 29,
       "panels": [
@@ -377,7 +377,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 40
       },
       "id": 27,
       "panels": [
@@ -912,7 +912,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 41
       },
       "id": 83,
       "panels": [
@@ -1107,7 +1107,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 42
       },
       "id": 59,
       "panels": [
@@ -2303,7 +2303,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 43
       },
       "id": 72,
       "panels": [
@@ -2982,7 +2982,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 44
       },
       "id": 54,
       "panels": [
@@ -3121,7 +3121,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 45
       },
       "id": 23,
       "panels": [],
@@ -3135,7 +3135,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 46
       },
       "id": 20,
       "mode": "markdown",
@@ -3151,7 +3151,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 54
       },
       "id": 21,
       "mode": "markdown",
@@ -3271,7 +3271,7 @@
     ]
   },
   "time": {
-    "from": "now-5y",
+    "from": "now-2y",
     "to": "now"
   },
   "timepicker": {
@@ -3289,5 +3289,5 @@
   "variables": {
     "list": []
   },
-  "version": 16
+  "version": 24
 }
