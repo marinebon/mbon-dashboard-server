@@ -156,7 +156,7 @@ NERR_ROI_LIST = [
         ["WQ", "DO_mgl"],
         ["WQ", "Turb"],
         ["WQ", "pH"],
-        ["WQ",  "Sal"],
+        ["WQ", "Sal"],
     ]
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     SAT_FPATH = (
