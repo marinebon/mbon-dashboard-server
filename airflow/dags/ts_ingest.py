@@ -159,7 +159,7 @@ with DAG(
         ["WQ", "Sal"],
     ]
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
-    SAT_FPATH = (
+    NERR_FPATH = (
         "SAP_{roi}_{product}_NERR_{suite}_HIST_{region}db.csv"
     )
     for roi in NERR_ROI_LIST:
@@ -185,7 +185,7 @@ with DAG(
                     "product": product,
                     "roi": roi,
                     "uploader_route": UPLOADER_ROUTE,
-                    "fpath": SAT_FPATH.format(**vars()),
+                    "fpath": NERR_FPATH.format(**vars()),
                     "DATA_HOST": DATA_HOST
                 }
             )
