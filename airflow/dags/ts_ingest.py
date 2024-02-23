@@ -145,7 +145,7 @@ with DAG(
     # ========================================================================
     # TODO
     # ========================================================================
-    # NERRS Water Quality Ingest (temporary - will be replaced)
+    # NERRS Water Quality Ingest (Not working, temporary - will be replaced)
     # ========================================================================
 #NERR_ROI_LIST = [
 #        'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
