@@ -160,7 +160,7 @@ with DAG(
     ]
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = (
-        "SAP_{roi}_{product}_NERR_{suite}_HIST_{region}db.csv"
+        "SAP_{roi}_{product}_NERR_{suite}_HIST_{REGION}db.csv"
     )
     for roi in NERR_ROI_LIST:
         for suite, product in NERR_FILE_DETAIL_LIST:
