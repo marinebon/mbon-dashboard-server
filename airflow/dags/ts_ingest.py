@@ -147,10 +147,10 @@ with DAG(
     # ========================================================================
     # NERRS Water Quality Ingest (temporary - will be replaced)
     # ========================================================================
-NERR_ROI_LIST = [
+    NERR_ROI_LIST = [
         'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
     ]
-NERR_FILE_DETAIL_LIST = [
+    NERR_FILE_DETAIL_LIST = [
         # suite | product
         ["WQ", "Temp"],
         ["WQ", "DO_mgl"],
