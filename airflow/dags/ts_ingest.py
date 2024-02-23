@@ -150,8 +150,8 @@ with DAG(
 NERR_ROI_LIST = [
         'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
     ]
-    NERR_FILE_DETAIL_LIST = [
-        # suite    | product
+NERR_FILE_DETAIL_LIST = [
+        # suite | product
         ["WQ", "Temp"],
         ["WQ", "DO_mgl"],
         ["WQ", "Turb"],
