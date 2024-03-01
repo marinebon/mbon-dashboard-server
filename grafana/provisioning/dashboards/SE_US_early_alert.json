@@ -34,7 +34,7 @@
       "type": "row"
     },
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v2_wInset.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v3_wInset.png)",
       "datasource": null,
       "gridPos": {
         "h": 20,
