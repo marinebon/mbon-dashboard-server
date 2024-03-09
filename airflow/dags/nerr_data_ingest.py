@@ -48,6 +48,7 @@ with DAG(
         param_name = "Sal"
         
         from suds.client import Client
+        import pandas as pd
         
         soapClient = Client("http://cdmo.baruch.sc.edu/webservices2/requests.cfc?wsdl", timeout=90, retxml=True)
         
