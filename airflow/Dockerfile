@@ -11,4 +11,5 @@ RUN apt-get update && \
 
 # install python dependencies from requirements.txt
 ADD requirements.txt . 
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
