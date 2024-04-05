@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1712336418748,
+  "iteration": 1712345345424,
   "links": [],
   "panels": [
     {
@@ -34,11 +34,11 @@
       "type": "row"
     },
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v3_wInset.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
       "datasource": null,
       "gridPos": {
-        "h": 20,
-        "w": 20,
+        "h": 28,
+        "w": 21,
         "x": 0,
         "y": 1
       },
@@ -56,7 +56,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 29
       },
       "id": 8,
       "mode": "markdown",
@@ -72,7 +72,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 29,
       "panels": [
@@ -391,7 +391,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 41
       },
       "id": 27,
       "panels": [
@@ -926,7 +926,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 42
       },
       "id": 83,
       "panels": [
@@ -1568,7 +1568,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 43
       },
       "id": 59,
       "panels": [
@@ -2764,7 +2764,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 44
       },
       "id": 72,
       "panels": [
@@ -3443,7 +3443,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 45
       },
       "id": 54,
       "panels": [
@@ -3582,7 +3582,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 46
       },
       "id": 23,
       "panels": [],
@@ -3596,7 +3596,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 47
       },
       "id": 20,
       "mode": "markdown",
@@ -3612,7 +3612,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 55
       },
       "id": 21,
       "mode": "markdown",
@@ -3778,5 +3778,5 @@
   "variables": {
     "list": []
   },
-  "version": 2
+  "version": 3
 }
