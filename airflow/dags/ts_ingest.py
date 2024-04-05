@@ -149,41 +149,41 @@ with DAG(
     # ========================================================================
     NERR_ROI_LIST = [
            'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
-       ]
-       NERR_FILE_DETAIL_LIST = [
-           # suite | product
-           ["WQ", "Temp"],
-           ["WQ", "DO_mgl"],
-           ["WQ", "Turb"],
-           ["WQ", "pH"],
-           ["WQ", "Sal"],
-       ]
-       # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
-       NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
-       for roi in NERR_ROI_LIST:
-           for suite, product in NERR_FILE_DETAIL_LIST:
-               BashOperator(
-                   task_id=f"ingest_nerrwq_roi_{REGION}_{suite}_{product}_{roi}",
-                   bash_command=(
-                       "curl --location --fail-with-body "
-                       "    {{params.DATA_HOST}}/{{params.fpath}} "
-                       "    > datafile.csv "
-                       " && head datafile.csv "
-                       " && curl --location --fail-with-body "
-                       "    --form measurement={{params.suite}}_{{params.product}} "
-                       "    --form tag_set=location={{params.roi}},"
-                           "sensor={{params.suite}} "
-                       "    --form fields=mean,climatology,anomaly "
-                       "    --form time_column=Time "
-                       "    --form file=@./datafile.csv "
-                       "    {{params.uploader_route}} "
-                   ),
-                   params={
-                       "suite": suite.lower(),
-                       "product": product,
-                       "roi": roi,
-                       "uploader_route": UPLOADER_ROUTE,
-                       "fpath": NERR_FPATH.format(**vars()),
-                       "DATA_HOST": DATA_HOST
-                   }
-               )
+    ]
+    NERR_FILE_DETAIL_LIST = [
+       # suite | product
+       ["WQ", "Temp"],
+       ["WQ", "DO_mgl"],
+       ["WQ", "Turb"],
+       ["WQ", "pH"],
+       ["WQ", "Sal"],
+    ]
+    # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
+    NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
+    for roi in NERR_ROI_LIST:
+       for suite, product in NERR_FILE_DETAIL_LIST:
+           BashOperator(
+               task_id=f"ingest_nerrwq_roi_{REGION}_{suite}_{product}_{roi}",
+               bash_command=(
+                   "curl --location --fail-with-body "
+                   "    {{params.DATA_HOST}}/{{params.fpath}} "
+                   "    > datafile.csv "
+                   " && head datafile.csv "
+                   " && curl --location --fail-with-body "
+                   "    --form measurement={{params.suite}}_{{params.product}} "
+                   "    --form tag_set=location={{params.roi}},"
+                       "sensor={{params.suite}} "
+                   "    --form fields=mean,climatology,anomaly "
+                   "    --form time_column=time "
+                   "    --form file=@./datafile.csv "
+                   "    {{params.uploader_route}} "
+               ),
+               params={
+                   "suite": suite.lower(),
+                   "product": product,
+                   "roi": roi,
+                   "uploader_route": UPLOADER_ROUTE,
+                   "fpath": NERR_FPATH.format(**vars()),
+                   "DATA_HOST": DATA_HOST
+               }
+           )
