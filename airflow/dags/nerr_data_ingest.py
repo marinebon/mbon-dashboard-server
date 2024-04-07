@@ -46,19 +46,9 @@ with DAG(
         """
         station_code = "acespwq"  # ace sp wq
         param_name = "Sal"
-        
-        from suds.client import Client
-        import pandas as pd
-        
-        soapClient = Client("http://cdmo.baruch.sc.edu/webservices2/requests.cfc?wsdl", timeout=90, retxml=True)
-        
-        #Get the station codes SOAP request example.
-        param_data = soapClient.service.exportSingleParamXML(
-            station_code,  # Station_Code
-            25,  # Number of records to retrieve TODO: make this inf?
-            param_name,  # parameter
-        )
-        print(param_data)
+
+        import nerrs_data
+        param_data = nerrs_data.getData(station_code, param_name)
         pd.write_csv(param_data, "./datafile.csv")
         
         # === upload the data
