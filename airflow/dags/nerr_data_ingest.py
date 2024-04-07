@@ -40,7 +40,7 @@ with DAG(
         'sapmlmet'
         'gtmpcmet'
     ]
-    def getData():
+    def nerrs2influx():
         """
         fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
         """
@@ -83,6 +83,6 @@ with DAG(
     
     download_data_task = PythonOperator(
         task_id='download_data_task',
-        python_callable=getData
+        python_callable=nerrs2influx
     )
 
