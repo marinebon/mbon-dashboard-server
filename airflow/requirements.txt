@@ -1,3 +1,3 @@
 suds>=1.1.0
 pandas>=1.0.0
-filepanther @ git+https://github.com/USF-IMaRS/nerrs_data@master#egg=nerrs_data
+nerrs_data @ git+https://github.com/USF-IMaRS/nerrs_data@master#egg=nerrs_data
