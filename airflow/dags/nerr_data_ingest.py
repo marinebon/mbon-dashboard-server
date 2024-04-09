@@ -48,8 +48,9 @@ with DAG(
         param_name = "Sal"
 
         import nerrs_data
+        import pandas as pd
         param_data = nerrs_data.getData(station_code, param_name)
-        pd.write_csv(param_data, "./datafile.csv")
+        param_data.to_csv("./datafile.csv")
         
         # === upload the data
         import requests
