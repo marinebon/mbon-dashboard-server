@@ -21,32 +21,10 @@ with DAG(
         #'retry_delay': timedelta(days=1),
     },
 ) as dag:
-    # === get the data from SOAP API
-
-    # TODO: do this for each in:
-    # {
-    #     "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
-    #     "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp'],
-    #     "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
-    # }
-        
-    # TODO: also the get the quality flags for each (eg `Sal_F`)
-    # TODO: do this for each station code
-    station_code_prefixes =  [
-        'acebpmet',
-        'acespnut',
-        'acespwq'
-        
-        'sapmlmet'
-        'gtmpcmet'
-    ]
-    def nerrs2influx():
+    def nerrs2influx(station_code, param_name):
         """
         fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
         """
-        station_code = "acespwq"  # ace sp wq
-        param_name = "Sal"
-
         import nerrs_data
         import pandas as pd
         param_data = nerrs_data.getData(station_code, param_name)
@@ -64,7 +42,7 @@ with DAG(
         data = {
             'measurement': 'nerrs_met_data',
             'tag_set': 'station_code=SPOT30987C',
-            'fields': 'Sal',
+            'fields': param_name,
             'time_column': 'utc_timestamp',
         }
         
@@ -82,8 +60,30 @@ with DAG(
             raise ValueError(response.text)
 
     
-    download_data_task = PythonOperator(
-        task_id='download_data_task',
-        python_callable=nerrs2influx
-    )
+    # TODO: do this for each in:
+    NERR_PRODUCTS = {
+        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
+        "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp'],
+        "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
+    }
+        
+    # TODO: also the get the quality flags for each (eg `Sal_F`)?
+    NERR_ROI_LIST = [
+           'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
+    ]
+
+    # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
+    NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
+    for roi in NERR_ROI_LIST:
+       for suite, product_list in NERR_PRODUCTS:
+           for product in product_list:
+                download_data_task = PythonOperator(
+                    task_id=f"ingest_nerr_{suite}_{product}_{roi}",
+                    task_id='download_data_task',
+                    python_callable=nerrs2influx,
+                    op_kwargs={
+                        'station_code': roi,  # "acespwq"  # ace sp wq
+                        'param_name': product # "Sal"
+                    },
+                )
 
