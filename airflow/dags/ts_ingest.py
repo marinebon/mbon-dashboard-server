@@ -151,12 +151,18 @@ with DAG(
            'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
     ]
     NERR_FILE_DETAIL_LIST = [
-       # suite | product
-       ["WQ", "Temp"],
-       ["WQ", "DO_mgl"],
-       ["WQ", "Turb"],
-       ["WQ", "pH"],
-       ["WQ", "Sal"],
+        # suite | product
+        ["WQ", "Temp"],
+        ["WQ", "DO_mgl"],
+        ["WQ", "Turb"],
+        ["WQ", "pH"],
+        ["WQ", "Sal"],
+        ["NUT", "CHLA_N"],
+        ["NUT", "NH4F"],
+        ["NUT", "NO2F"],
+        ["NUT", "PO4F"],
+        ["NUT", "NO23F"],
+        ["NUT", "NO3F"],
     ]
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
