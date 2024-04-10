@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1712773999745,
+  "iteration": 1712779128982,
   "links": [],
   "panels": [
     {
@@ -931,7 +931,7 @@
       "id": 83,
       "panels": [
         {
-          "content": "\n\n\n### NERRS water quality and nutrient data is from the Sapelo Island location:\nWater quality and nutrients are measured at four locations within the Sapelo Island NERR:\n1. Cabretta Creek\n2. Dean Creek\n3. Hunt Dock\n4. Lower Duplin\n\nPlease select locations(s) to visualize at the top.\n\n - Data are obtained from the NOAA National Estuarine Research Reserve System (NERRS) System-Wide Monitoring Program (SWMP). \n - Water quality and meteorological data are accessed nightly from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Quality flags are applied to all NERRS SWMP data as described [HERE](https://cdmo.baruch.sc.edu/data/qaqc.cfm).\n - Nutrients are sampled monthly as part of routine monthly monitoring at each NERRS site. Data are made available once per year after a series of quality control checks.\n \n\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/NERRS_logo_sm.jpg)\n\n\n\n\n\n",
+          "content": "\n\n\n### NERRS water quality and nutrient data is from the Sapelo Island location:\nFour water quality parameters (dissolved oxygen, turbidity, pH, salinity and water temperature) are measured at four locations within the Sapelo Island NERR:\n1. Cabretta Creek (31°26'19.2\"N 81°14'19.5\"W)\n2. Dean Creek (31°23'41.2\"N 81°16'11.5\"W)\n3. Hunt Dock (31°28'43.3\"N 81°16'23.2\"W)\n4. Lower Duplin (31°25'04.3\"N 81°17'45.4\"W)\n\nPlease select locations(s) to visualize at the top.\n\n - Data are obtained from the NOAA National Estuarine Research Reserve System (NERRS) System-Wide Monitoring Program (SWMP). \n - Water quality data are accessed nightly from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Quality flags are applied to all NERRS SWMP data as described [HERE](https://cdmo.baruch.sc.edu/data/qaqc.cfm).\n\n\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/NERRS_logo_sm.jpg)\n\n\n\n\n\n",
           "datasource": null,
           "gridPos": {
             "h": 13,
@@ -943,7 +943,7 @@
           "mode": "markdown",
           "timeFrom": null,
           "timeShift": null,
-          "title": "Data from National Estuarine Research Reserves System (NERRS)",
+          "title": "Water Quality Data from National Estuarine Research Reserves System (NERRS)",
           "type": "text"
         },
         {
@@ -1573,6 +1573,22 @@
       "id": 96,
       "panels": [
         {
+          "content": "\n\n\n### NERRS nutrient data is from the Sapelo Island location:\nFour nutrient parameters (Chlorophyll-a, orthophosphate, nitrate+nitrite and ammonium) are measured at four locations within the Sapelo Island NERR:\n1. Cabretta Creek (31°26'19.2\"N 81°14'19.5\"W)\n2. Dean Creek (31°23'41.2\"N 81°16'11.5\"W)\n3. Hunt Dock (31°28'43.3\"N 81°16'23.2\"W)\n4. Lower Duplin (31°25'04.3\"N 81°17'45.4\"W)\n\nPlease select locations(s) to visualize at the top.\n\n - Data are obtained from the NOAA National Estuarine Research Reserve System (NERRS) System-Wide Monitoring Program (SWMP). \n - Nutrients are sampled monthly as part of routine monthly monitoring at each NERRS site. Data are made available once per year after a series of quality control checks.\n - Quality flags are applied to all NERRS SWMP data as described [HERE](https://cdmo.baruch.sc.edu/data/qaqc.cfm).\n - Nutrient data from any NERRS site can be accessed from [the Centralized Data Management Office](https://cdmo.baruch.sc.edu/)\n\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/NERRS_logo_sm.jpg)\n\n\n\n\n\n",
+          "datasource": null,
+          "gridPos": {
+            "h": 13,
+            "w": 24,
+            "x": 0,
+            "y": 44
+          },
+          "id": 101,
+          "mode": "markdown",
+          "timeFrom": null,
+          "timeShift": null,
+          "title": "Nutrient Data from National Estuarine Research Reserves System (NERRS)",
+          "type": "text"
+        },
+        {
           "aliasColors": {},
           "bars": false,
           "dashLength": 10,
@@ -1584,7 +1600,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 81
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 97,
@@ -1655,7 +1671,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "CHLA_N @ $NERR_Locations",
+          "title": "Chlorophyll @ $NERR_Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1706,7 +1722,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 81
+            "y": 57
           },
           "hiddenSeries": false,
           "id": 98,
@@ -1777,7 +1793,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "NH4F @ $NERR_Locations",
+          "title": "Ammonia @ $NERR_Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1828,7 +1844,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 89
+            "y": 65
           },
           "hiddenSeries": false,
           "id": 99,
@@ -1899,7 +1915,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "PO4F @ $NERR_Locations",
+          "title": "Phosphate @ $NERR_Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1950,7 +1966,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 89
+            "y": 65
           },
           "hiddenSeries": false,
           "id": 100,
@@ -2021,7 +2037,7 @@
           "timeFrom": null,
           "timeRegions": [],
           "timeShift": null,
-          "title": "NO23F @ $NERR_Locations",
+          "title": "Total nitrogen @ $NERR_Locations",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -2061,7 +2077,7 @@
           }
         }
       ],
-      "title": "NERR Nutrient Data",
+      "title": "NERRS Nutrient Data",
       "type": "row"
     },
     {
@@ -4235,7 +4251,6 @@
       {
         "allValue": null,
         "current": {
-          "tags": [],
           "text": "LowerDuplin",
           "value": [
             "LowerDuplin"
@@ -4282,5 +4297,5 @@
   "variables": {
     "list": []
   },
-  "version": 4
+  "version": 5
 }
