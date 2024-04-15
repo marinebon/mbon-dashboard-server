@@ -77,9 +77,8 @@ with DAG(
     for roi in NERR_ROI_LIST:
        for suite, product_list in NERR_PRODUCTS:
            for product in product_list:
-                download_data_task = PythonOperator(
+                PythonOperator(
                     task_id=f"ingest_nerr_{suite}_{product}_{roi}",
-                    task_id='download_data_task',
                     python_callable=nerrs2influx,
                     op_kwargs={
                         'station_code': roi,  # "acespwq"  # ace sp wq
