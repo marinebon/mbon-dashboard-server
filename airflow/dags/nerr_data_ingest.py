@@ -75,7 +75,7 @@ with DAG(
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
     for roi in NERR_ROI_LIST:
-       for suite, product_list in NERR_PRODUCTS:
+       for suite, product_list in NERR_PRODUCTS.items():
            for product in product_list:
                 PythonOperator(
                     task_id=f"ingest_nerr_{suite}_{product}_{roi}",
