@@ -29,7 +29,7 @@ with DAG(
         import pandas as pd
         try: 
             param_data = nerrs_data.getData(station_code, product)
-        except Error as e:
+        except Exception as e:
             print(f"failed to `getData({station_code}, {product})`...\n", e)
             raise e
         
