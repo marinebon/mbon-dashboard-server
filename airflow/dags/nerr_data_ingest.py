@@ -27,6 +27,7 @@ with DAG(
         """
         import nerrs_data
         import pandas as pd
+        print(f"getData({station_code},{product})")
         param_data = nerrs_data.getData(station_code, product)
         param_data.to_csv("./datafile.csv")
         
