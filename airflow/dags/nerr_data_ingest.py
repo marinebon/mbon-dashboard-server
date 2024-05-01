@@ -27,7 +27,6 @@ with DAG(
         """
         import nerrs_data
         import pandas as pd
-        print(f"getData({station_code},{product})")
         param_data = nerrs_data.getData(station_code, product)
         param_data.to_csv("./datafile.csv")
         
@@ -86,6 +85,7 @@ with DAG(
             station_name = station[1]
             for suite, product_list in NERR_PRODUCTS.items():
                 for product in product_list:
+                    print(f"setting up to run getData({station_code},{product})...")
                     PythonOperator(
                         task_id=f"ingest_nerr_{suite}_{product}_{station_name}",
                         python_callable=nerrs2influx,
