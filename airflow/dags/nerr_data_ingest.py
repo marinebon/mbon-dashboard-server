@@ -78,14 +78,14 @@ with DAG(
     }
 
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
-    NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
+    NERR_FPATH = "SAP_{station_name}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
     for nerr_abbrev, station in NERR_ROI_LIST.items():
         station_abbrev = station[0]
         station_name = station[1]
         for suite, product_list in NERR_PRODUCTS.items():
             for product in product_list:
                 PythonOperator(
-                    task_id=f"ingest_nerr_{suite}_{product}_{roi}",
+                    task_id=f"ingest_nerr_{suite}_{product}_{station_name}",
                     python_callable=nerrs2influx,
                     op_kwargs={
                         'station_name': station_name,
