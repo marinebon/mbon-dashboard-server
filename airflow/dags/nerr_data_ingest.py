@@ -85,13 +85,14 @@ with DAG(
             station_name = station[1]
             for suite, product_list in NERR_PRODUCTS.items():
                 for product in product_list:
+                    station_code = f"{nerr_abbrev}{station_abbrev}{suite}"
                     print(f"setting up to run getData({station_code},{product})...")
                     PythonOperator(
                         task_id=f"ingest_nerr_{suite}_{product}_{station_name}",
                         python_callable=nerrs2influx,
                         op_kwargs={
                             'station_name': station_name,
-                            'station_code': f"{nerr_abbrev}{station_abbrev}{suite}",  # "acespwq"  # ace sp wq
+                            'station_code': station_code,  # "acespwq"  # ace sp wq
                             'suite': suite,
                             'product': product # "Sal"
                         },
