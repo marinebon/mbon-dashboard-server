@@ -92,7 +92,7 @@ with DAG(
                             'station_name': station_name,
                             'station_code': f"{nerr_abbrev}{station_abbrev}{suite}",  # "acespwq"  # ace sp wq
                             'suite': suite,
-                            'param_name': product # "Sal"
+                            'product': product # "Sal"
                         },
                     )
 
