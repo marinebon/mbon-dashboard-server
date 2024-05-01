@@ -47,7 +47,7 @@ with DAG(
         data = {
             'measurement': f"{suite}_{product}",
             'tag_set': f'station_code={station_code},location={station_name},sensor={suite}',
-            'fields': param_name,
+            'fields': product,
             'time_column': 'utc_timestamp',
         }
         
