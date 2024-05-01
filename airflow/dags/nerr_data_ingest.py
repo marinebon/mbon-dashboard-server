@@ -21,13 +21,13 @@ with DAG(
         #'retry_delay': timedelta(days=1),
     },
 ) as dag:
-    def nerrs2influx(station_code, param_name):
+    def nerrs2influx(station_name, station_code, suite, product):
         """
         fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
         """
         import nerrs_data
         import pandas as pd
-        param_data = nerrs_data.getData(station_code, param_name)
+        param_data = nerrs_data.getData(station_code, product)
         param_data.to_csv("./datafile.csv")
         
         # === upload the data
@@ -40,8 +40,8 @@ with DAG(
 
         url = UPLOADER_ROUTE  # Replace this with your actual URL
         data = {
-            'measurement': 'nerrs_met_data',
-            'tag_set': 'station_code=SPOT30987C',
+            'measurement': f"{suite}_{product}",
+            'tag_set': f'station_code={station_code},location={station_name},sensor={suite}',
             'fields': param_name,
             'time_column': 'utc_timestamp',
         }
@@ -68,20 +68,29 @@ with DAG(
     }
         
     # TODO: also the get the quality flags for each (eg `Sal_F`)?
-    NERR_ROI_LIST = [
-           'HuntDock', 'LowerDuplin', 'CabCr', 'DeanCr'
-    ]
+    NERR_ROI_LIST = {  # all of these are Sapelo (sap)
+        "sap": [
+            ["hd", 'HuntDock'], 
+            ["ld", 'LowerDuplin'], 
+            ["ca", 'CabCr'], 
+            ["dc", 'DeanCr']
+        ]
+    }
 
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
-    for roi in NERR_ROI_LIST:
-       for suite, product_list in NERR_PRODUCTS.items():
-           for product in product_list:
+    for nerr_abbrev, station in NERR_ROI_LIST.items():
+        station_abbrev = station[0]
+        station_name = station[1]
+        for suite, product_list in NERR_PRODUCTS.items():
+            for product in product_list:
                 PythonOperator(
                     task_id=f"ingest_nerr_{suite}_{product}_{roi}",
                     python_callable=nerrs2influx,
                     op_kwargs={
-                        'station_code': roi,  # "acespwq"  # ace sp wq
+                        'station_name': station_name,
+                        'station_code': f"{nerr_abbrev}{station_abbrev}{suite}",  # "acespwq"  # ace sp wq
+                        'suite': suite,
                         'param_name': product # "Sal"
                     },
                 )
