@@ -27,7 +27,12 @@ with DAG(
         """
         import nerrs_data
         import pandas as pd
-        param_data = nerrs_data.getData(station_code, product)
+        try: 
+            param_data = nerrs_data.getData(station_code, product)
+        except Error as e:
+            print(f"failed to `getData({station_code}, {product})`...\n", e)
+            raise e
+        
         param_data.to_csv("./datafile.csv")
         
         # === upload the data
@@ -86,7 +91,6 @@ with DAG(
             for suite, product_list in NERR_PRODUCTS.items():
                 for product in product_list:
                     station_code = f"{nerr_abbrev}{station_abbrev}{suite}"
-                    print(f"setting up to run getData({station_code},{product})...")
                     PythonOperator(
                         task_id=f"ingest_nerr_{suite}_{product}_{station_name}",
                         python_callable=nerrs2influx,
