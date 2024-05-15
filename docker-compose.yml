@@ -88,7 +88,7 @@ services:
           - ./grafana/grafana-storage:/var/lib/grafana
   influxdb:
         container_name: influxdb
-        image: influxdb:1.8
+        image: influxdb:2.7.6
         ports:
             - 8086:8086  # HTTP API
             - 2003:2003  # graphite API
