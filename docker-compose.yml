@@ -114,7 +114,7 @@ services:
             - DOCKER_INFLUXDB_INIT_USERNAME=imars_influx_user
             - DOCKER_INFLUXDB_INIT_PASSWORD=${INFLUX_PASSWORD} \
             - DOCKER_INFLUXDB_INIT_ORG=imars \
-            - DOCKER_INFLUXDB_INIT_BUCKET=default-bucket \
+            - DOCKER_INFLUXDB_INIT_BUCKET=imars-bucket \
             # - DOCKER_INFLUXDB_INIT_RETENTION=1w \
             - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=${INFLUX_ADMIN_TOKEN} \
             # - INFLUXDB_USER=influx_user         #       See https://github.com/influxdata/influxdata-docker/issues/232
