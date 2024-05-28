@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1712779128984,
+  "iteration": 1716908498454,
   "links": [],
   "panels": [
     {
@@ -66,13 +66,29 @@
       "type": "text"
     },
     {
+      "content": "### Data Catalog\n\n - Data are shown for the time ranges over which they are collected. \n - Not all parameters are collected at the same intervals or over the same time ranges.\n - Data are put up as soon as they become available.\n - Some datasets are discretely sampled and require QA/QC, so there is often a delay in publishing these datasets to the dashboard.\n \n#### Satellite data (2003-present)\n - Satellite data are from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) satellite sensor. \n - Images are collected every 1-2 days at 1-km spatial resolution. \n - Images shown on the dashboard below are weekly anomaly composites. Anomalies are calculated by subtracting a weekly climatology using data from 2003-2019.\n - Time series plots are based on daily data.\n - Biogeographic seascapes, also based on MODIS-Aqua data, are 8-Day composites at 5-km spatial resolution.\n \n\n#### NERRS water quality data (2012-present)\n - Instrumented water quality observations are measured approximately every 30 minutes depending on the parameter.\n - \n \n\n#### NERRS nutrient data (2009-2022)\n - Discretely sampled nutrient measurements are measured approximately once per month. \n - Data are processed in a laboratory followed by QA/QC, so these data are only published to the dashboard once per year.\n - \n\n\n#### Meteorological data (2009-present)\n\n\n#### Ocean acidification data (2017-2020)\n\n\n#### River discharge and guage height (2009-present)\n\n",
+      "datasource": null,
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 102,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Data Catalog",
+      "type": "text"
+    },
+    {
       "collapsed": true,
       "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 51
       },
       "id": 29,
       "panels": [
@@ -391,7 +407,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 52
       },
       "id": 27,
       "panels": [
@@ -926,7 +942,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 53
       },
       "id": 83,
       "panels": [
@@ -1568,7 +1584,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 54
       },
       "id": 96,
       "panels": [
@@ -2087,7 +2103,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 55
       },
       "id": 59,
       "panels": [
@@ -3283,7 +3299,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 56
       },
       "id": 72,
       "panels": [
@@ -3962,7 +3978,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 57
       },
       "id": 54,
       "panels": [
@@ -4101,7 +4117,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 58
       },
       "id": 23,
       "panels": [],
@@ -4115,7 +4131,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 59
       },
       "id": 20,
       "mode": "markdown",
@@ -4131,7 +4147,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 67
       },
       "id": 21,
       "mode": "markdown",
@@ -4298,5 +4314,5 @@
   "variables": {
     "list": []
   },
-  "version": 5
+  "version": 10
 }
