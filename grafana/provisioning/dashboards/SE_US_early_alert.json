@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 1,
-  "iteration": 1717429113542,
+  "iteration": 1717441667893,
   "links": [],
   "panels": [
     {
@@ -36,6 +36,7 @@
     {
       "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
       "datasource": null,
+      "description": " - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - '12nm' and '24nm' lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone maritime boundaries respectively. Boundaries are from the [U.S. Office of Coast Survey](https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html#faq).\n",
       "gridPos": {
         "h": 28,
         "w": 21,
@@ -50,7 +51,7 @@
       "type": "text"
     },
     {
-      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - '12nm' and '24nm' lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone maritime boundaries respectively. Boundaries are from the [U.S. Office of Coast Survey](https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html#faq).\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
       "datasource": null,
       "gridPos": {
         "h": 11,
@@ -66,7 +67,7 @@
       "type": "text"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
@@ -75,26 +76,25 @@
         "y": 40
       },
       "id": 104,
-      "panels": [
-        {
-          "content": "\n - Not all parameters are collected at the same intervals or over the same time ranges.\n - Data are shown for the time ranges over which they are collected.\n - Data are displayed on the dashboard as soon as they become available.\n - Some datasets are discretely sampled and require QA/QC, so there is often a delay in publishing these datasets to the dashboard.\n \n#### Satellite data (2003-present)\n - Satellite data are from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) satellite sensor. \n - Images are collected every 1-2 days at 1-km spatial resolution. \n - Images shown on the dashboard below are weekly anomaly composites. Anomalies are calculated by subtracting a weekly climatology using data from 2003-2019.\n - Time series plots are based on daily data.\n - Biogeographic seascapes, also based on MODIS-Aqua data, are 8-Day composites at 5-km spatial resolution.\n \n\n#### NERRS water quality data (2012-present)\n - Instrumented water quality observations are measured approximately every 30 minutes depending on the parameter.\n - \n \n\n#### NERRS nutrient data (2009-2022)\n - Discretely sampled nutrient measurements are measured approximately once per month. \n - Data are processed in a laboratory followed by QA/QC, so these data are only published to the dashboard once per year.\n - \n\n\n#### Buoy data - Meteorological data and wave information (2009-present)\n - Data from moored buoys is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/) on a daily basis\n\n\n#### Ocean acidification data (2017-2020)\n\n\n#### River discharge and guage height (2009-present)\n\n\n### List of Acronyms\nABI - Algal Bloom Index  \nChlorophyll-a - An estimate of phytoplankton biomass; can be measured in situ or estimated from satellite measurements  \nNDBC - National Data Buoy Center  \nNERR - National Estuarine Research Reserve  \nMODIS - Moderate Resolution Imaging Spectroradiometer  \nRrs - Remote Sensing Reflectance (reflectance from below the water surface at a particular wavelength)  \nSST - Sea Surface Temperature  \nUSGS - United States Geological Survey  \n",
-          "datasource": null,
-          "gridPos": {
-            "h": 11,
-            "w": 24,
-            "x": 0,
-            "y": 41
-          },
-          "id": 102,
-          "mode": "markdown",
-          "timeFrom": null,
-          "timeShift": null,
-          "title": "",
-          "type": "text"
-        }
-      ],
+      "panels": [],
       "title": "Data Catalog and list of Acronyms",
       "type": "row"
+    },
+    {
+      "content": "\n - Not all parameters are collected at the same intervals or over the same time ranges.\n - Data are shown for the time ranges over which they are collected.\n - Data are displayed on the dashboard as soon as they become available.\n - Some datasets are discretely sampled and require QA/QC, so there is often a delay in publishing these datasets to the dashboard.\n \n#### Satellite data (2003-present)\n - Satellite data are from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) satellite sensor. \n - Images are collected every 1-2 days at 1-km spatial resolution. \n - Images shown on the dashboard below are weekly anomaly composites. Anomalies are calculated by subtracting a weekly climatology using data from 2003-2019.\n - Time series plots are based on daily data.\n - Biogeographic seascapes, also based on MODIS-Aqua data, are 8-Day composites at 5-km spatial resolution.\n \n\n#### NERRS water quality data (2012-present)\n - Instrumented water quality observations are measured approximately every 30 minutes depending on the parameter.\n - \n \n\n#### NERRS nutrient data (2009-2022)\n - Discretely sampled nutrient measurements are measured approximately once per month. \n - Data are processed in a laboratory followed by QA/QC, so these data are only published to the dashboard once per year.\n - \n\n\n#### Buoy data - Meteorological data and wave information (2009-present)\n - Data from moored buoys is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/) on a daily basis\n\n\n#### Ocean acidification data (2017-2020)\n\n\n#### River discharge and guage height (2009-present)\n\n\n### List of Acronyms\nABI - Algal Bloom Index  \nChlorophyll-a - An estimate of phytoplankton biomass; can be measured in situ or estimated from satellite measurements  \nNDBC - National Data Buoy Center  \nNERR - National Estuarine Research Reserve  \nMODIS - Moderate Resolution Imaging Spectroradiometer  \nRrs - Remote Sensing Reflectance (reflectance from below the water surface at a particular wavelength)  \nSST - Sea Surface Temperature  \nUSGS - United States Geological Survey  \n",
+      "datasource": null,
+      "gridPos": {
+        "h": 11,
+        "w": 24,
+        "x": 0,
+        "y": 41
+      },
+      "id": 102,
+      "mode": "markdown",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "",
+      "type": "text"
     },
     {
       "collapsed": true,
@@ -103,7 +103,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 41
+        "y": 52
       },
       "id": 29,
       "panels": [
@@ -423,7 +423,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 42
+        "y": 53
       },
       "id": 27,
       "panels": [
@@ -958,7 +958,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 43
+        "y": 54
       },
       "id": 83,
       "panels": [
@@ -1600,7 +1600,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 55
       },
       "id": 96,
       "panels": [
@@ -1611,7 +1611,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 44
+            "y": 56
           },
           "id": 101,
           "mode": "markdown",
@@ -1632,7 +1632,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 97,
@@ -1754,7 +1754,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 69
           },
           "hiddenSeries": false,
           "id": 98,
@@ -1876,7 +1876,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 77
           },
           "hiddenSeries": false,
           "id": 99,
@@ -1998,7 +1998,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 65
+            "y": 77
           },
           "hiddenSeries": false,
           "id": 100,
@@ -2119,7 +2119,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 56
       },
       "id": 59,
       "panels": [
@@ -3315,7 +3315,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 57
       },
       "id": 72,
       "panels": [
@@ -3994,7 +3994,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 47
+        "y": 58
       },
       "id": 54,
       "panels": [
@@ -4133,7 +4133,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 48
+        "y": 59
       },
       "id": 23,
       "panels": [],
@@ -4147,7 +4147,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 60
       },
       "id": 20,
       "mode": "markdown",
@@ -4163,7 +4163,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 57
+        "y": 68
       },
       "id": 21,
       "mode": "markdown",
@@ -4330,5 +4330,5 @@
   "variables": {
     "list": []
   },
-  "version": 11
+  "version": 12
 }
