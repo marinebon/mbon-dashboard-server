@@ -33,37 +33,30 @@ with DAG(
             print(f"failed to `getData({station_code}, {product})`...\n", e)
             raise e
         
-        param_data.to_csv("./datafile.csv")
-        
         # === upload the data
-        import requests
-
-        UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
-        if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
-            UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
-        UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
-
-        url = UPLOADER_ROUTE  # Replace this with your actual URL
-        data = {
-            'measurement': f"{suite}_{product}",
-            'tag_set': f'station_code={station_code},location={station_name},sensor={suite}',
-            'fields': product,
-            'time_column': 'utc_timestamp',
-        }
+        import influxdb_client, os, time
+        from influxdb_client import InfluxDBClient, Point, WritePrecision
+        from influxdb_client.client.write_api import SYNCHRONOUS
         
-        files = {
-            'file': ('datafile.csv', open('./datafile.csv', 'rb'))
-        }
+        token = os.environ.get("INFLUXDB_TOKEN")
+        org = "imars \"
+        url = "localhost:8086"
         
-        response = requests.post(url, data=data, files=files)
+        write_client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
+        bucket="imars-bucket"
         
-        if response.status_code == 200:
-            print("Upload successful")
-        else:
-            print(f"Upload failed with status code {response.status_code}")
-            print(response.text)
-            raise ValueError(response.text)
-
+        write_api = client.write_api(write_options=SYNCHRONOUS)
+        # write each point in the df to influxDB
+        for row in param_data:
+          point = (
+            Point(f"{suite}_{product}")
+            .tag("station_code", station_code)
+            .tag("location", station_name)
+            .tag("sensor", suite)
+            .field("value", row[product])
+            .time(row['utc_timestamp'])
+          )
+          write_api.write(bucket=bucket, org=org, record=point)
     
     # TODO: do this for each in:
     NERR_PRODUCTS = {
