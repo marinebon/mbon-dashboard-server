@@ -56,7 +56,7 @@ with DAG(
                 .tag("station_code", station_code)
                 .tag("location", station_name)
                 .tag("sensor", suite)
-                .field("value", row[product])
+                .field("value", row["Sal"])  # not row[product] ?
                 .time(row['utc_timestamp'])
             )
             points.append(point)
