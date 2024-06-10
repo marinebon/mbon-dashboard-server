@@ -29,11 +29,13 @@ with DAG(
         import pandas as pd
         try: 
             param_data = nerrs_data.getData(station_code, product)
+            print(f"loaded data cols: {param_data.columns}")
         except Exception as e:
             print(f"failed to `getData({station_code}, {product})`...\n", e)
             raise e
         
         # === upload the data
+        # influx connection setup
         import influxdb_client, os, time
         from influxdb_client import InfluxDBClient, Point, WritePrecision
         from influxdb_client.client.write_api import SYNCHRONOUS
