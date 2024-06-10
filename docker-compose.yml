@@ -12,6 +12,7 @@ x-global-common:
   environment:
     &global-common-env
     INFLUXDB_HOSTNAME: http://35.211.219.154:8086
+    INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
 # ============================================================================
 # ============================================================================
 # === config shared between all airflow services =============================
