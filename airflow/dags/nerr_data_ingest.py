@@ -42,7 +42,7 @@ with DAG(
         
         token = os.environ.get("INFLUXDB_TOKEN")
         org = "imars"
-        url = os.eviron.get("INFLUXDB_HOSTNAME")
+        url = os.environ.get("INFLUXDB_HOSTNAME")
         
         client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
         bucket="imars-bucket"
