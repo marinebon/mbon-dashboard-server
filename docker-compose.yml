@@ -11,17 +11,18 @@ x-global-common:
   &global-common
   environment:
     &global-common-env
-    INFLUXDB_HOSTNAME: http://35.209.104.85:8086
-    INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
+      - INFLUXDB_HOSTNAME=http://35.211.219.154:8086
 # ============================================================================
 # ============================================================================
 # === config shared between all airflow services =============================
 # ============================================================================
 x-airflow-common:
   &airflow-common
+  <<: *global-common
   build: ./airflow
   environment:
     &airflow-common-env
+    <<: *global-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
     AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow  # TODO: rm this bc it is deprecated
     AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres/airflow
@@ -65,6 +66,7 @@ services:
   # === grafana dashboard services
   # ==========================================================================
   grafana:
+      <<: *global-common
       container_name: grafana
       image: grafana/grafana:10.4.4
       ports:
