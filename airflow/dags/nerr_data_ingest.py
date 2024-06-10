@@ -47,17 +47,20 @@ with DAG(
         
         write_api = client.write_api(write_options=SYNCHRONOUS)
         # write each point in the df to influxDB
-        for row in param_data:
-          point = (
-            Point(f"{suite}_{product}")
-            .tag("station_code", station_code)
-            .tag("location", station_name)
-            .tag("sensor", suite)
-            .field("value", row[product])
-            .time(row['utc_timestamp'])
-          )
-          write_api.write(bucket=bucket, org=org, record=point)
-    
+        points = []
+        for index, row in param_data.iterrows():
+            point = (
+                Point(f"{suite}_{product}")
+                .tag("station_code", station_code)
+                .tag("location", station_name)
+                .tag("sensor", suite)
+                .field("value", row[product])
+                .time(row['utc_timestamp'])
+            )
+            points.append(point)
+        
+        # Batch write points
+        write_api.write(bucket=bucket, org=org, record=points)    
     # TODO: do this for each in:
     NERR_PRODUCTS = {
         "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
