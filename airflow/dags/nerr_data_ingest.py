@@ -63,7 +63,9 @@ with DAG(
             points.append(point)
         
         # Batch write points
-        write_api.write(bucket=bucket, org=org, record=points)    
+        results = write_api.write(bucket=bucket, org=org, record=points)  
+        print("influxdb API response:")
+        print(results)
     # TODO: do this for each in:
     NERR_PRODUCTS = {
         "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
