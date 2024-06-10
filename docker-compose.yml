@@ -11,7 +11,7 @@ x-global-common:
   &global-common
   environment:
     &global-common-env
-      - INFLUXDB_HOSTNAME=http://35.211.219.154:8086
+    INFLUXDB_HOSTNAME: http://35.211.219.154:8086
 # ============================================================================
 # ============================================================================
 # === config shared between all airflow services =============================
