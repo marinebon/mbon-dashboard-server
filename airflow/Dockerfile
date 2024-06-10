@@ -12,4 +12,5 @@ RUN apt-get update && \
 # install python dependencies from requirements.txt
 ADD requirements.txt . 
 RUN pip install --upgrade pip
-RUN pip install --upgrade apache-airflow==${AIRFLOW_VERSION} -r requirements.txt
+RUN pip install --upgrade apache-airflow==${AIRFLOW_VERSION} 
+RUN pip install --upgrade --force-reinstall -r requirements.txt
