@@ -30,6 +30,7 @@ with DAG(
         try: 
             param_data = nerrs_data.getData(station_code, product)
             print(f"loaded data cols: {param_data.columns}")
+            print(f"1st few rows:\n {param_data.head()}")
         except Exception as e:
             print(f"failed to `getData({station_code}, {product})`...\n", e)
             raise e
