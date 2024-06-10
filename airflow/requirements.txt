@@ -1,1 +1,2 @@
 nerrs_data @ git+https://github.com/USF-IMARS/nerrs-data.git#branch=main
+influxdb-client~=1.43.0
