@@ -41,7 +41,7 @@ with DAG(
         from influxdb_client.client.write_api import SYNCHRONOUS
         
         token = os.environ.get("INFLUXDB_TOKEN")
-        org = "imars "
+        org = "imars"
         url = "http://localhost:8086"
         
         client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
