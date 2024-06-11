@@ -51,6 +51,7 @@ with DAG(
         # write each point in the df to influxDB
         points = []
         for index, row in param_data.iterrows():
+            print(f"{row['Sal']} @ {row['DateTimeStamp']}")
             point = (
                 Point(f"{suite}_{product}")
                 .tag("station_code", station_code)
