@@ -48,7 +48,6 @@ with DAG(
         client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
         bucket="imars-bucket"
         
-        write_api = client.write_api(write_options=SYNCHRONOUS)
         # write each point in the df to influxDB
         points = []
         for index, row in param_data.iterrows():
@@ -63,7 +62,9 @@ with DAG(
             points.append(point)
         
         # Batch write points
-        results = write_api.write(bucket=bucket, org=org, record=points)  
+        results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)  
+        # Manually close the client to ensure no batching issues
+        client.__del__()
         print("influxdb API response:")
         print(results)
     # TODO: do this for each in:
