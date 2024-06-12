@@ -6,7 +6,7 @@ datasources:
     access: proxy
     url: $INFLUXDB_HOSTNAME
     jsonData:
-      dbName: imars-bucket
+      dbName: "imars-bucket"
       httpHeaderName1: 'Authorization'
     secureJsonData:
       httpHeaderValue1: "Token $INFLUXDB_TOKEN"
