@@ -72,7 +72,7 @@ services:
   # ==========================================================================
   grafana:
       container_name: grafana
-      image: grafana/grafana:6.7.3
+      image: grafana/grafana:10.4.4
       ports:
           - 3000:3000
       environment:
@@ -85,7 +85,7 @@ services:
           - INFLUXDB_GRAPHITE_HOSTNAME=http://localhost:2003
       volumes:
           - ./grafana/provisioning:/grafana_provisioning
-          - ./grafana/grafana-storage:/var/lib/grafana
+          - grafana-storage:/var/lib/grafana
   influxdb:
         container_name: influxdb
         image: influxdb:2.7.6
@@ -97,7 +97,7 @@ services:
             # this should inlcude adding a read-only user for grafana
             - ./influxdb/initdb:/docker-entrypoint-initdb.d
             # docker data volume:
-            - ./influxdb/data_volume:/var/lib/influxdb
+            - influx-data-volume:/var/lib/influxdb
         environment:
             - INFLUXDB_DB=fwc_coral_disease
             - INFLUXDB_GRAPHITE_ENABLED=true
@@ -209,3 +209,5 @@ services:
 
 volumes:
   postgres-db-volume:
+  influx-data-volume:
+  grafana-storage:
