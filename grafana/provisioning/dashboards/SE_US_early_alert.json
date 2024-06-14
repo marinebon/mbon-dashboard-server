@@ -4,7 +4,10 @@
       {
         "$$hashKey": "object:13",
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -14,14 +17,16 @@
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 1,
-  "iteration": 1718109058726,
   "links": [],
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -30,12 +35,23 @@
       },
       "id": 90,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Location map and site navigation",
       "type": "row"
     },
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 20,
         "w": 20,
@@ -43,15 +59,32 @@
         "y": 1
       },
       "id": 6,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "type": "text"
     },
     {
-      "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - \"12 nm\" and \"24 nm\" lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone Maritime Boundaries. Data is from <a href=\"https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html\" target=\"_blank\">NOAA's Office of Coast Survey</a>.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 11,
         "w": 24,
@@ -59,15 +92,34 @@
         "y": 21
       },
       "id": 8,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - \"12 nm\" and \"24 nm\" lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone Maritime Boundaries. Data is from <a href=\"https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html\" target=\"_blank\">NOAA's Office of Coast Survey</a>.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Welcome to the Gray's Reef NMS data dashboard",
       "type": "text"
     },
     {
-      "collapsed": false,
-      "datasource": null,
+      "collapsed": true,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -75,34 +127,65 @@
         "y": 32
       },
       "id": 96,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 24,
+            "x": 0,
+            "y": 33
+          },
+          "id": 97,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "#### Data Catalog\n - Near real time (NRT) datasets are displayed on the dashboard as soon as they are available.  \n - Some datasets require manual downloading from deployed instruments and become available at irregular intervals once downloading and QC are complete.   \n - Some datasets consist of samples processed in a laboratory and become available at irregular intervals once processing and QC are complete.    \n\n\n###### A table of with the duration and frequency of each dataset displayed on the dashboard is shown below.  \n###### Further information on each dataset is shown at the top of the respective panel.  \n\n| Dataset                         | Start Date |  End Date  |  NRT?  | Frequency |      Notes                                 | \n| --------------------------------| ---------- |  --------  | ------ | --------- | ------------------------------------------ |\n| Satellite Images                | Jan 2012   |  Present   |  Yes   |  Weekly   |  Satellite data is from the VIIRS sensor*  | \n| Satellite Time Series           | Jan 2012   |  Present   |  Yes   |  Daily    |  Time series are extracted daily           |\n| NERRS WQ Data                   |            |            |  Yes   |  Hourly   |  Start date depends on NERR location       |\n| NERRS Nutrient Data             |            |            |  No    |  Monthy   |  Start date depends on NERR location       |\n| Meteorological and Wave Data    |            |            |  Yes   |  Hourly   |  Start date depends on NDBC buoy location  |\n| Ocean Acidification Data        |            |            |  No    |  Hourly   |                                            |\n\n*Algal Bloom Index (ABI) comes from the MODIS satellite sensor  \n\n### List of acronyms:\nABI - Algal Bloom Index  \nGRNMS - Gray's Reef National Marine Sanctuary  \nMODIS - Moderate Resolution Imaging Spectroradiometer (ocean color satellite)  \nNDBC - National Data Buoy Center  \nNERRS - National Estuarine Research Reserve System  \nNRT - Near real time  \nOA - Ocean Acidification  \nQC - Quality control  \nRRS - Remote Sensing Relfectance  \nSST - Sea Surface Temperature   \nVIIRS - Visible Infrared Imaging Spectrometer Suite (ocean color satellite)  \n\n\n\n\n\n\n\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "List of Datasets and Acronyms",
+          "type": "text"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Data Catalog",
       "type": "row"
     },
     {
-      "content": "#### Data Catalog\n - Near real time (NRT) datasets are displayed on the dashboard as soon as they are available.  \n - Some datasets require manual downloading from deployed instruments and become available at irregular intervals once downloading and QC are complete.   \n - Some datasets consist of samples processed in a laboratory and become available at irregular intervals once processing and QC are complete.    \n\n\n###### A table of with the duration and frequency of each dataset displayed on the dashboard is shown below.  \n###### Further information on each dataset is shown at the top of the respective panel.  \n\n| Dataset                         | Start Date |  End Date  |  NRT?  | Frequency |      Notes                                 | \n| --------------------------------| ---------- |  --------  | ------ | --------- | ------------------------------------------ |\n| Satellite Images                | Jan 2012   |  Present   |  Yes   |  Weekly   |  Satellite data is from the VIIRS sensor*  | \n| Satellite Time Series           | Jan 2012   |  Present   |  Yes   |  Daily    |  Time series are extracted daily           |\n| NERRS WQ Data                   |            |            |  Yes   |  Hourly   |  Start date depends on NERR location       |\n| NERRS Nutrient Data             |            |            |  No    |  Monthy   |  Start date depends on NERR location       |\n| Meteorological and Wave Data    |            |            |  Yes   |  Hourly   |  Start date depends on NDBC buoy location  |\n| Ocean Acidification Data        |            |            |  No    |  Hourly   |                                            |\n\n*Algal Bloom Index (ABI) comes from the MODIS satellite sensor  \n\n### List of acronyms:\nABI - Algal Bloom Index  \nGRNMS - Gray's Reef National Marine Sanctuary  \nMODIS - Moderate Resolution Imaging Spectroradiometer (ocean color satellite)  \nNDBC - National Data Buoy Center  \nNERRS - National Estuarine Research Reserve System  \nNRT - Near real time  \nOA - Ocean Acidification  \nQC - Quality control  \nRRS - Remote Sensing Relfectance  \nSST - Sea Surface Temperature   \nVIIRS - Visible Infrared Imaging Spectrometer Suite (ocean color satellite)  \n\n\n\n\n\n\n\n\n\n\n",
-      "datasource": null,
-      "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 33
-      },
-      "id": 97,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "List of Datasets and Acronyms",
-      "type": "text"
-    },
-    {
       "collapsed": true,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 44
+        "y": 33
       },
       "id": 29,
       "panels": [
@@ -111,7 +194,6 @@
           "bg_color": "0xffccccff",
           "color_bar_str": "BlueWhiteRed|||-2.0|2.0|",
           "colorbar_display": "individual",
-          "datasource": null,
           "delta": 10526400000,
           "delta_unit": "ms",
           "description": "MODIS-Aqua 1km chlorophyll-a concentration (mg/m^3) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
@@ -129,8 +211,6 @@
           "n_images": 6,
           "product_id": "moda_oc_7d_seus",
           "show_request_dates": false,
-          "timeFrom": null,
-          "timeShift": null,
           "title": "Weekly chlorophyll anomalies (mg/m^3)",
           "type": "erddap-panel",
           "urls": [
@@ -172,7 +252,6 @@
           "bg_color": "0xffccccff",
           "color_bar_str": "|||||",
           "colorbar_display": "individual",
-          "datasource": null,
           "delta": 10526400000,
           "delta_unit": "ms",
           "description": "MODIS-Aqua 1km nighttime sea-surface temperature (DegC) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
@@ -190,8 +269,6 @@
           "n_images": 6,
           "product_id": "moda_sst4_7d_seus",
           "show_request_dates": false,
-          "timeFrom": null,
-          "timeShift": null,
           "title": "Weekly nighttime SST anomalies (DegC)",
           "type": "erddap-panel",
           "urls": [
@@ -233,7 +310,6 @@
           "bg_color": "0xffccccff",
           "color_bar_str": "BlueWhiteRed|||-0.005|0.005|",
           "colorbar_display": "individual",
-          "datasource": null,
           "delta": 10526400000,
           "delta_unit": "ms",
           "description": "MODIS-Aqua 1km remote sensing reflectance (sr^-1) at 667nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface.\nAnomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
@@ -251,8 +327,6 @@
           "n_images": 6,
           "product_id": "moda_oc_7d_seus",
           "show_request_dates": false,
-          "timeFrom": null,
-          "timeShift": null,
           "title": "Weekly red reflectance (suspended sediment proxy) anomalies (sr^-1)",
           "type": "erddap-panel",
           "urls": [
@@ -294,7 +368,6 @@
           "bg_color": "0xffccccff",
           "color_bar_str": "BlueWhiteRed|||-0.15|0.15|",
           "colorbar_display": "individual",
-          "datasource": null,
           "delta": 10526400000,
           "delta_unit": "ms",
           "description": "MODIS-Aqua 1km Algal Bloom Index (W/m^2/um/sr) binned to 7-day intervals. Algal Bloom Index (ABI) is based on normalized fluorescence line height and can be used to identify algal blooms.\nAnomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
@@ -312,8 +385,6 @@
           "n_images": 6,
           "product_id": "moda_oc_7d_seus",
           "show_request_dates": false,
-          "timeFrom": null,
-          "timeShift": null,
           "title": "Weekly Algal Bloom Index anomalies (W/m^2/um/sr)",
           "type": "erddap-panel",
           "urls": [
@@ -355,7 +426,6 @@
           "bg_color": "0xffccccff",
           "color_bar_str": "Seascapes|||0|33|",
           "colorbar_display": "individual",
-          "datasource": null,
           "delta": 10526400000,
           "delta_unit": "ms",
           "description": "Dynamic seascapes are classified using multivariate  data and describe basin and gyre scale features and seasonal boundary shifts.  A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).",
@@ -373,8 +443,6 @@
           "n_images": 6,
           "product_id": "noaa_aoml_seascapes_8day",
           "show_request_dates": false,
-          "timeFrom": null,
-          "timeShift": null,
           "title": "8-Day Biogeographic seascape classes",
           "type": "erddap-panel",
           "urls": [
@@ -412,17 +480,29 @@
           "variable_id": "CLASS"
         }
       ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Satellite Imagery",
       "type": "row"
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 34
       },
       "id": 27,
       "panels": [
@@ -431,7 +511,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -469,6 +552,10 @@
           "targets": [
             {
               "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -514,9 +601,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "MODIS-Aqua Chlorophyll-a $metric @ location $Locations",
           "tooltip": {
             "shared": true,
@@ -525,9 +610,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -537,23 +620,17 @@
               "format": "short",
               "label": "mg/m^3",
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:238",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -561,7 +638,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -599,6 +679,10 @@
           "targets": [
             {
               "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -644,9 +728,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "MODIS-Aqua nighttime SST $metric @ location $Locations",
           "tooltip": {
             "shared": true,
@@ -655,9 +737,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -667,23 +747,17 @@
               "format": "short",
               "label": "DegC",
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:316",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -691,7 +765,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -729,6 +806,10 @@
           "targets": [
             {
               "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -774,9 +855,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "MODIS-Aqua Rrs 667 $metric @ location $Locations",
           "tooltip": {
             "shared": true,
@@ -785,9 +864,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -797,23 +874,17 @@
               "format": "short",
               "label": "sr^-1",
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:394",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -821,7 +892,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -859,6 +933,10 @@
           "targets": [
             {
               "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -904,9 +982,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "MODIS ABI $metric @ location $Locations",
           "tooltip": {
             "shared": true,
@@ -915,9 +991,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -927,24 +1001,27 @@
               "format": "short",
               "label": "W/m^2/um/sr",
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:491",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
         }
       ],
       "title": "Satellite Imagery Time Series Extractions",
@@ -952,29 +1029,740 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 46
+        "y": 35
       },
       "id": 83,
       "panels": [
         {
-          "content": "\n\n\n### NERRS water quality and nutrient data is from the Sapelo Island location:\nWater quality and nutrients are measured at four locations within the Sapelo Island NERR:\n1. Cabretta Creek\n2. Dean Creek\n3. Hunt Dock\n4. Lower Duplin\n\nPlease select locations(s) to visualize at the top.\n\n - Data are obtained from the NOAA National Estuarine Research Reserve System (NERRS) System-Wide Monitoring Program (SWMP). \n - Water quality and meteorological data are accessed nightly from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Quality flags are applied to all NERRS SWMP data as described [HERE](https://cdmo.baruch.sc.edu/data/qaqc.cfm).\n - Nutrients are sampled monthly as part of routine monthly monitoring at each NERRS site. Data are made available once per year after a series of quality control checks.\n \n\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/NERRS_logo_sm.jpg)\n\n\n\n\n\n",
-          "datasource": null,
           "gridPos": {
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 47
+            "y": 5
           },
           "id": 87,
-          "mode": "markdown",
-          "timeFrom": null,
-          "timeShift": null,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "\n\n\n### NERRS water quality and nutrient data is from the Sapelo Island location:\nWater quality and nutrients are measured at four locations within the Sapelo Island NERR:\n1. Cabretta Creek\n2. Dean Creek\n3. Hunt Dock\n4. Lower Duplin\n\nPlease select locations(s) to visualize at the top.\n\n - Data are obtained from the NOAA National Estuarine Research Reserve System (NERRS) System-Wide Monitoring Program (SWMP). \n - Water quality and meteorological data are accessed nightly from the [NOAA NERRS Centralized Data Management Office website](http://www.nerrsdata.org) \n - Quality flags are applied to all NERRS SWMP data as described [HERE](https://cdmo.baruch.sc.edu/data/qaqc.cfm).\n - Nutrients are sampled monthly as part of routine monthly monitoring at each NERRS site. Data are made available once per year after a series of quality control checks.\n \n\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/NERRS_logo_sm.jpg)\n\n\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
           "title": "Data from National Estuarine Research Reserves System (NERRS)",
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 18
+          },
+          "id": 85,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Temp\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "Temperature @ $NERR_Locations",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 18
+          },
+          "id": 91,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_DO_mgl\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "Dissolved Oxygen [mg/L] @ $NERR_Locations",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+          },
+          "id": 92,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Turb\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "Turbidity @ $NERR_Locations",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+          },
+          "id": 93,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_pH\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "pH @ $NERR_Locations",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 3,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+          },
+          "id": 94,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Sal\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "Salinity @ $NERR_Locations",
+          "type": "timeseries"
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
+      "title": "NERRS Water Quality Data",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 59,
+      "panels": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "description": "",
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 37
+          },
+          "id": 70,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "#### Station 41008 is a 3-m discus buoy located within Gray's Reef National Marine Sanctuary (31.40°N, 80.87°W). Water depth at this location is 16m.\n\n#### Meteorological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Air temperature (C) measured 3.4m above sea level.\n6. Water temperature (C) measured 2m below water line.\n7. Dominant wave period (seconds) is the period with the maximum wave energy.\n8. Average wave period (seconds) of all waves during the 20-minute period. \n9. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "Meterological and wave conditions within Gray's Reef NMS",
           "type": "text"
         },
         {
@@ -982,36 +1770,45 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
-          "description": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 60
+            "y": 46
           },
           "hiddenSeries": false,
-          "id": 85,
+          "id": 57,
           "interval": "",
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
           "lines": true,
           "linewidth": 1,
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
-          "pointradius": 0.5,
+          "pluginVersion": "10.4.4",
+          "pointradius": 1,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -1020,6 +1817,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -1034,9 +1835,10 @@
                   "type": "fill"
                 }
               ],
+              "measurement": "bouy_wspd",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Temp\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(\"data\") FROM \"bouy_wspd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1044,7 +1846,7 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "data"
                     ],
                     "type": "field"
                   },
@@ -1054,14 +1856,18 @@
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
-          "title": "Temperature @ $NERR_Locations",
+          "title": "Wind Speed (m/s)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1069,35 +1875,26 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
           "yaxes": [
             {
-              "$$hashKey": "object:93",
+              "$$hashKey": "object:137",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
-              "$$hashKey": "object:94",
+              "$$hashKey": "object:138",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -1105,35 +1902,45 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 60
+            "y": 46
           },
           "hiddenSeries": false,
-          "id": 91,
+          "id": 61,
           "interval": "",
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
           "lines": true,
           "linewidth": 1,
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
-          "pointradius": 0.5,
+          "pluginVersion": "10.4.4",
+          "pointradius": 1,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -1142,6 +1949,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -1156,9 +1967,10 @@
                   "type": "fill"
                 }
               ],
+              "measurement": "bouy_wspd",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_DO_mgl\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(\"data\") FROM \"bouy_wdir\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1166,7 +1978,7 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "data"
                     ],
                     "type": "field"
                   },
@@ -1176,14 +1988,18 @@
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
-          "title": "Dissolved Oxygen [mg/L] @ $NERR_Locations",
+          "title": "Wind Direction (Degrees)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1191,35 +2007,26 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
           "yaxes": [
             {
-              "$$hashKey": "object:93",
+              "$$hashKey": "object:137",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
-              "$$hashKey": "object:94",
+              "$$hashKey": "object:138",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -1227,35 +2034,45 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 68
+            "y": 54
           },
           "hiddenSeries": false,
-          "id": 92,
+          "id": 62,
           "interval": "",
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
           "lines": true,
           "linewidth": 1,
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
-          "pointradius": 0.5,
+          "pluginVersion": "10.4.4",
+          "pointradius": 1,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -1264,6 +2081,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -1278,9 +2099,10 @@
                   "type": "fill"
                 }
               ],
+              "measurement": "bouy_wspd",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Turb\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(\"data\") FROM \"bouy_gust\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1288,7 +2110,7 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "data"
                     ],
                     "type": "field"
                   },
@@ -1298,14 +2120,18 @@
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
-          "title": "Turbidity @ $NERR_Locations",
+          "title": "Wind Gust (m/s)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1313,35 +2139,26 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
           "yaxes": [
             {
-              "$$hashKey": "object:93",
+              "$$hashKey": "object:137",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
-              "$$hashKey": "object:94",
+              "$$hashKey": "object:138",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -1349,36 +2166,46 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 68
+            "y": 54
           },
           "hiddenSeries": false,
-          "id": 93,
+          "id": 63,
           "interval": "",
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
           "lines": true,
           "linewidth": 1,
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "options": {
-            "dataLinks": []
+            "alertThreshold": true
           },
           "percentage": false,
-          "pointradius": 0.5,
-          "points": true,
+          "pluginVersion": "10.4.4",
+          "pointradius": 2,
+          "points": false,
           "renderer": "flot",
           "seriesOverrides": [],
           "spaceLength": 10,
@@ -1386,6 +2213,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -1400,9 +2231,10 @@
                   "type": "fill"
                 }
               ],
+              "measurement": "bouy_wspd",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_pH\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(\"data\") FROM \"bouy_wvht\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1410,7 +2242,7 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "data"
                     ],
                     "type": "field"
                   },
@@ -1420,14 +2252,18 @@
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
-          "title": "pH @ $NERR_Locations",
+          "title": "Wave Height (m)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1435,35 +2271,26 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
           "yaxes": [
             {
-              "$$hashKey": "object:93",
+              "$$hashKey": "object:137",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
-              "$$hashKey": "object:94",
+              "$$hashKey": "object:138",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -1471,35 +2298,38 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 76
+            "y": 62
           },
           "hiddenSeries": false,
-          "id": 94,
+          "id": 64,
           "interval": "",
           "legend": {
             "avg": false,
             "current": false,
             "max": false,
             "min": false,
-            "show": false,
+            "show": true,
             "total": false,
             "values": false
           },
           "lines": true,
           "linewidth": 1,
-          "nullPointMode": "connected",
+          "nullPointMode": "null",
           "options": {
             "dataLinks": []
           },
           "percentage": false,
-          "pointradius": 0.5,
+          "pointradius": 1,
           "points": true,
           "renderer": "flot",
           "seriesOverrides": [],
@@ -1508,6 +2338,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -1522,9 +2356,10 @@
                   "type": "fill"
                 }
               ],
+              "measurement": "bouy_wspd",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Sal\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(\"data\") FROM \"bouy_atemp\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1532,7 +2367,7 @@
                 [
                   {
                     "params": [
-                      "value"
+                      "data"
                     ],
                     "type": "field"
                   },
@@ -1542,14 +2377,18 @@
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
-          "title": "Salinity @ $NERR_Locations",
+          "title": "Air Temperature (DegC)",
           "tooltip": {
             "shared": true,
             "sort": 0,
@@ -1557,1250 +2396,561 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
           "yaxes": [
             {
-              "$$hashKey": "object:93",
+              "$$hashKey": "object:137",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
-              "$$hashKey": "object:94",
+              "$$hashKey": "object:138",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 62
+          },
+          "hiddenSeries": false,
+          "id": 65,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "bouy_wspd",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(\"data\") FROM \"bouy_wtemp\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "data"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Water Temperature (DegC)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:137",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:138",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 70
+          },
+          "hiddenSeries": false,
+          "id": 66,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "bouy_wspd",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(\"data\") FROM \"bouy_dwpd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "data"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Dom Wave Period (sec)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:137",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:138",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 70
+          },
+          "hiddenSeries": false,
+          "id": 67,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "bouy_wspd",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(\"data\") FROM \"bouy_awpd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "data"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Average Wave Period (sec)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:137",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:138",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        },
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 78
+          },
+          "hiddenSeries": false,
+          "id": 68,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": true,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "null",
+          "options": {
+            "dataLinks": []
+          },
+          "percentage": false,
+          "pointradius": 1,
+          "points": true,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "bouy_wspd",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(\"data\") FROM \"bouy_mwd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "data"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "\"data\"",
+                  "operator": "!=",
+                  "value": "-999"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Mean Wave Direction (Degrees)",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:137",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:138",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            }
+          ],
+          "yaxis": {
+            "align": false
           }
         }
       ],
-      "title": "NERRS Water Quality Data",
-      "type": "row"
-    },
-    {
-      "collapsed": false,
-      "datasource": null,
-      "gridPos": {
-        "h": 1,
-        "w": 24,
-        "x": 0,
-        "y": 47
-      },
-      "id": 59,
-      "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Meteorological and Wave Data",
       "type": "row"
     },
     {
-      "content": "#### Station 41008 is a 3-m discus buoy located within Gray's Reef National Marine Sanctuary (31.40°N, 80.87°W). Water depth at this location is 16m.\n\n#### Meteorological parameters:\n1. Wind speed (m/s) averaged over an eight-minute period 3.8m above sea level.\n2. Wind direction (the direction the wind is coming from in degrees clockwise from true N) over an 8-minute period 3.8m above sea level. \n3. Peak 5 second gust speed (m/s) measured during the eight-minute or two-minute period 3.8m above sea level. \n4. Significant wave height (m) is the average of the highest one-third of all of the wave heights during the 20-minute sampling period.\n5. Air temperature (C) measured 3.4m above sea level.\n6. Water temperature (C) measured 2m below water line.\n7. Dominant wave period (seconds) is the period with the maximum wave energy.\n8. Average wave period (seconds) of all waves during the 20-minute period. \n9. Mean Wave Direction (MWD) - the direction from which the waves at the dominant period (DPD) are coming. The units are degrees from true North, (North = 0 (zero) degrees and East = 90 degrees.\n\nData is obtained from the [National Data Buoy Center](https://www.ndbc.noaa.gov/station_page.php?station=41008).\n\n\n\n",
-      "datasource": null,
-      "description": "",
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 48
-      },
-      "id": 70,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Meterological and wave conditions within Gray's Reef NMS",
-      "type": "text"
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 57
-      },
-      "hiddenSeries": false,
-      "id": 57,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_wspd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Wind Speed (m/s)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "cacheTimeout": null,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 57
-      },
-      "hiddenSeries": false,
-      "id": 61,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pluginVersion": "6.7.3",
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_wdir\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Wind Direction (Degrees)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 65
-      },
-      "hiddenSeries": false,
-      "id": 62,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_gust\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Wind Gust (m/s)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 65
-      },
-      "hiddenSeries": false,
-      "id": 63,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_wvht\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Wave Height (m)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 73
-      },
-      "hiddenSeries": false,
-      "id": 64,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_atemp\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Air Temperature (DegC)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 73
-      },
-      "hiddenSeries": false,
-      "id": 65,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_wtemp\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Water Temperature (DegC)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 81
-      },
-      "hiddenSeries": false,
-      "id": 66,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_dwpd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Dom Wave Period (sec)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 12,
-        "y": 81
-      },
-      "hiddenSeries": false,
-      "id": 67,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_awpd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Average Wave Period (sec)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "influxdb",
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 8,
-        "w": 12,
-        "x": 0,
-        "y": 89
-      },
-      "hiddenSeries": false,
-      "id": 68,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "null",
-      "options": {
-        "dataLinks": []
-      },
-      "percentage": false,
-      "pointradius": 1,
-      "points": true,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "bouy_wspd",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT mean(\"data\") FROM \"bouy_mwd\" \nWHERE (\"data\" != -999) \nAND $timeFilter \nGROUP BY time($__interval) fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "data"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "\"data\"",
-              "operator": "!=",
-              "value": "-999"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Mean Wave Direction (Degrees)",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:137",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:138",
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
-        }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
-    },
-    {
       "collapsed": true,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 97
+        "y": 37
       },
       "id": 72,
       "panels": [
         {
           "content": "\n## Ocean acidification parameters measured at the NDBC 41008 mooring (31.40°N, 80.87°W).\n\n####  - Data shown in this panel has undergone post-calibration and a full set of quality control checks and ends in 2019. Please adjust the time interval at top right to see data prior to 2019.\n####  - Recent data without full QC is available [HERE](https://www.pmel.noaa.gov/co2/story/Grays+Reef).\n\n - The National Data Buoy Center (NDBC) [Mooring 41008](https://www.ndbc.noaa.gov/station_page.php?station=41008) is located 40 nautical miles Southeast of Savannah, Georgia in Gray's Reef National Marine Sanctuary. \n - On July 17, 2006 PMEL in collaboration with NDBC and researchers from the University of Georgia deployed a MAPCO2TM system on the NDBC 41008 buoy. \n - Dr. Scott Noakes and Wei-Jun Cai are collaborating with us to maintain the system and have been deploying other sensors and making a variety of biogeochemical measurements in the Sanctuary. \n - For more information about complimentary projects at Gray's Reef visit the [Gray's Reef researcher's webpage](https://graysreef.noaa.gov/science/research/researchers/welcome.html).\n - On September 19, 2011, a surface seawater pH sensor was added to the Grays Reef mooring. By measuring pH in addition to pCO2, we are able to more accurately and precisely study the changes associated with ocean acidification. \n - This project is supported by [NOAA's Ocean Acidification Program](https://oceanacidification.noaa.gov/).\n\nParameters:\n1. Partial pressure of CO2 in air (micro atm).\n2. Partial pressure of CO2 in water (micro atm).\n3. Seawater salinity (psu).\n4. Seawater pH (unitless).\n5. Water temperature (degreesC).\n\n",
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "gridPos": {
             "h": 8,
             "w": 24,
@@ -2811,6 +2961,10 @@
           "mode": "markdown",
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -2847,8 +3001,6 @@
               "tags": []
             }
           ],
-          "timeFrom": null,
-          "timeShift": null,
           "title": "Ocean Acidification parameters ",
           "type": "text"
         },
@@ -2857,7 +3009,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -2893,6 +3048,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -2932,9 +3091,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "Partial pressure of CO2 in air (micro atm)",
           "tooltip": {
             "shared": true,
@@ -2943,9 +3100,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -2953,25 +3108,18 @@
             {
               "$$hashKey": "object:112",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:113",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -2979,7 +3127,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -3015,6 +3166,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -3054,9 +3209,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "partial pressure of CO2 in water (micro atm)",
           "tooltip": {
             "shared": true,
@@ -3065,9 +3218,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -3075,25 +3226,18 @@
             {
               "$$hashKey": "object:112",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:113",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -3101,7 +3245,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -3137,6 +3284,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -3176,9 +3327,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "Seawater pH (unitless)",
           "tooltip": {
             "shared": true,
@@ -3187,9 +3336,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -3197,25 +3344,18 @@
             {
               "$$hashKey": "object:112",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:113",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -3223,7 +3363,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -3259,6 +3402,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -3298,9 +3445,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "Seawater salinity (psu)",
           "tooltip": {
             "shared": true,
@@ -3309,9 +3454,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -3319,25 +3462,18 @@
             {
               "$$hashKey": "object:112",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:113",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
         },
         {
@@ -3345,7 +3481,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -3381,6 +3520,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -3420,9 +3563,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "Water temperature (DegreesC)",
           "tooltip": {
             "shared": true,
@@ -3431,9 +3572,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -3441,26 +3580,28 @@
             {
               "$$hashKey": "object:112",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:113",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
         }
       ],
       "title": "Ocean Acidification Data",
@@ -3468,12 +3609,15 @@
     },
     {
       "collapsed": true,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 98
+        "y": 38
       },
       "id": 54,
       "panels": [
@@ -3482,7 +3626,10 @@
           "bars": false,
           "dashLength": 10,
           "dashes": false,
-          "datasource": "influxdb",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
           "fill": 1,
           "fillGradient": 0,
           "gridPos": {
@@ -3519,6 +3666,10 @@
           "steppedLine": false,
           "targets": [
             {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
               "groupBy": [
                 {
                   "params": [
@@ -3559,9 +3710,7 @@
             }
           ],
           "thresholds": [],
-          "timeFrom": null,
           "timeRegions": [],
-          "timeShift": null,
           "title": "USGS River Gauge Height (m)  $metric @ $gauge_location",
           "tooltip": {
             "shared": true,
@@ -3570,9 +3719,7 @@
           },
           "type": "graph",
           "xaxis": {
-            "buckets": null,
             "mode": "time",
-            "name": null,
             "show": true,
             "values": []
           },
@@ -3580,26 +3727,28 @@
             {
               "$$hashKey": "object:265",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             },
             {
               "$$hashKey": "object:266",
               "format": "short",
-              "label": null,
               "logBase": 1,
-              "max": null,
-              "min": null,
               "show": true
             }
           ],
           "yaxis": {
-            "align": false,
-            "alignLevel": null
+            "align": false
           }
+        }
+      ],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
         }
       ],
       "title": "USGS River Gauge Height",
@@ -3607,70 +3756,121 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 99
+        "y": 39
       },
       "id": 23,
       "panels": [],
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "More Information",
       "type": "row"
     },
     {
-      "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of [Hu and Feng 2016](https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-11/issue-01/012003/Modified-MODIS-fluorescence-line-height-data-product-to-improve-image/10.1117/1.JRS.11.012003.full?SSO=1)\n\n* River gauge height data (green cicles on map) are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis).  \n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 100
+        "y": 40
       },
       "id": 20,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "* Satellite data is from the Moderate Resolution Imaging Spectroradiometer (MODIS-Aqua) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Algal Bloom Index (ABI) is calculated using the method of [Hu and Feng 2016](https://www.spiedigitallibrary.org/journals/journal-of-applied-remote-sensing/volume-11/issue-01/012003/Modified-MODIS-fluorescence-line-height-data-product-to-improve-image/10.1117/1.JRS.11.012003.full?SSO=1)\n\n* River gauge height data (green cicles on map) are obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis).  \n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Data Sources and Contact Information",
       "type": "text"
     },
     {
-      "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/DB_logos_Horz_SEUS2.png)",
-      "datasource": null,
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
       "gridPos": {
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 108
+        "y": 48
       },
       "id": 21,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/DB_logos_Horz_SEUS2.png)",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "This work supported by",
       "type": "text"
     }
   ],
   "refresh": false,
-  "schemaVersion": 22,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
+          "selected": true,
+          "text": [
+            "None"
+          ],
+          "value": [
+            ""
+          ]
         },
-        "datasource": "influxdb",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P3C6603E967DC8568"
+        },
         "definition": "SHOW TAG VALUES FROM moda_ABI WITH KEY=location",
         "hide": 0,
         "includeAll": false,
-        "index": -1,
         "label": "Satellite Time Series Extraction Locations",
         "multi": true,
         "name": "Locations",
@@ -3681,71 +3881,55 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
       },
       {
-        "allValue": null,
         "current": {
-          "text": "mean",
+          "selected": true,
+          "text": [
+            "value"
+          ],
           "value": [
-            "mean"
+            "value"
           ]
         },
-        "datasource": "influxdb",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P3C6603E967DC8568"
+        },
         "definition": "SHOW FIELD KEYS",
         "hide": 0,
         "includeAll": false,
-        "index": -1,
         "label": "Time Series Metric",
         "multi": true,
         "name": "metric",
-        "options": [
-          {
-            "$$hashKey": "object:260",
-            "selected": false,
-            "text": "anomaly",
-            "value": "anomaly"
-          },
-          {
-            "$$hashKey": "object:261",
-            "selected": false,
-            "text": "climatology",
-            "value": "climatology"
-          },
-          {
-            "$$hashKey": "object:262",
-            "selected": true,
-            "text": "mean",
-            "value": "mean"
-          }
-        ],
+        "options": [],
         "query": "SHOW FIELD KEYS",
-        "refresh": 0,
+        "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
       },
       {
-        "allValue": null,
         "current": {
           "isNone": true,
           "selected": false,
           "text": "None",
           "value": ""
         },
-        "datasource": "influxdb",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P3C6603E967DC8568"
+        },
         "definition": "SHOW TAG VALUES FROM river_discharge WITH KEY=location",
         "hide": 0,
         "includeAll": false,
-        "index": -1,
         "label": "USGS River Gauge Location",
         "multi": false,
         "name": "gauge_location",
@@ -3756,24 +3940,27 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
       },
       {
-        "allValue": null,
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
+          "selected": true,
+          "text": [
+            "CabCr"
+          ],
+          "value": [
+            "CabCr"
+          ]
         },
-        "datasource": "influxdb",
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P3C6603E967DC8568"
+        },
         "definition": "SHOW TAG VALUES FROM wq_Temp WITH KEY=location",
         "hide": 0,
         "includeAll": false,
-        "index": -1,
         "label": "NERR_Locations",
         "multi": true,
         "name": "NERR_Locations",
@@ -3784,7 +3971,6 @@
         "skipUrlSync": false,
         "sort": 0,
         "tagValuesQuery": "",
-        "tags": [],
         "tagsQuery": "",
         "type": "query",
         "useTags": false
@@ -3807,8 +3993,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gk",
-  "variables": {
-    "list": []
-  },
-  "version": 14
+  "version": 2,
+  "weekStart": ""
 }
