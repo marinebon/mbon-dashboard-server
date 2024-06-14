@@ -46,7 +46,7 @@ with DAG(
         url = os.environ.get("INFLUXDB_HOSTNAME")
         
         client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
-        bucket="imars-bucket"
+        bucket="imars_bucket"
         
         # write each point in the df to influxDB
         points = []
