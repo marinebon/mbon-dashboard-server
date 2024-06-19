@@ -19,7 +19,7 @@ REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string
 # === DAG defines the task exec order
 # ============================================================================
 with DAG(
-    'ts_ingest',
+    'sat_ts_ingest',
     catchup=False,  # latest only
     schedule_interval="0 0 * * *",
     max_active_runs=1,
@@ -56,24 +56,16 @@ with DAG(
             BashOperator(
                 task_id=f"ingest_sat_roi_{REGION}_{sat}_{product}_{roi}",
                 bash_command=(
-                    "curl --location --fail-with-body "
-                    "    {{params.DATA_HOST}}/{{params.fpath}} "
-                    "    > datafile.csv "
-                    " && head datafile.csv "
-                    " && curl --location --fail-with-body "
-                    "    --form measurement={{params.sat}}_{{params.product}} "
-                    "    --form tag_set=location={{params.roi}},"
-                        "sensor={{params.sat}} "
-                    "    --form fields=mean,climatology,anomaly "
-                    "    --form time_column=Time "
-                    "    --form file=@./datafile.csv "
-                    "    {{params.uploader_route}} "
+                    "influx write --bucket imars_bucket --url {{params.DATA_HOST}}/{{params.fpath}} "
+                    "  --header '#group,true,true,true,false,false,false' "
+                    "  --header '#datatype,string,string,dateTime:number,float,float,float' "
+                    "  --header '#constant measurement,{{params.sat}}_{{params.product}}' "
+                    "  --header '#constant tag,location,{{params.roi}}' "
                 ),
                 params={
                     "sat": sat.lower(),
                     "product": product,
                     "roi": roi,
-                    "uploader_route": UPLOADER_ROUTE,
                     "fpath": SAT_FPATH.format(**vars()),
                     "DATA_HOST": DATA_HOST
                 }
@@ -87,30 +79,30 @@ with DAG(
     ]
     # example filname: GR_MET_BUOY_NDBC_stdmet_atemp_SEUSdb.csv
     BOUY_FPATH = "{roi}_NDBC_stdmet_{product}_SEUSdb.csv"
-    for roi in BOUY_ROI_LIST:
-       for product in ['wdir','wspd','gust','atemp','wtemp','barp','wvht','dwpd','awpd','mwd']:
-           BashOperator(
-               task_id=f"ingest_bouy_{roi}_{product}",
-               bash_command=(
-                   "curl --fail-with-body "
-                   "    {{params.DATA_HOST}}/{{params.fpath}} "
-                   "    > datafile.csv"
-                   " && curl --fail-with-body "
-                   '    --form measurement=bouy_{{params.product}} '
-                   '    --form tag_set=location={{params.roi}},source=ndbc '
-                   '    --form fields=data '
-                   '    --form time_column=time '
-                   '    --form file=@./datafile.csv '
-                   '    {{params.uploader_route}} '
-               ),
-               params={
-                   "product": product,
-                   "roi": roi,
-                   "uploader_route": UPLOADER_ROUTE,
-                   "fpath": BOUY_FPATH.format(**vars()),
-                   "DATA_HOST": DATA_HOST
-               }
-           )
+#    for roi in BOUY_ROI_LIST:
+#       for product in ['wdir','wspd','gust','atemp','wtemp','barp','wvht','dwpd','awpd','mwd']:
+#           BashOperator(
+#               task_id=f"ingest_bouy_{roi}_{product}",
+#               bash_command=(
+#                   "curl --fail-with-body "
+#                   "    {{params.DATA_HOST}}/{{params.fpath}} "
+#                   "    > datafile.csv"
+#                   " && curl --fail-with-body "
+#                   '    --form measurement=bouy_{{params.product}} '
+#                   '    --form tag_set=location={{params.roi}},source=ndbc '
+#                   '    --form fields=data '
+#                   '    --form time_column=time '
+#                   '    --form file=@./datafile.csv '
+#                   '    {{params.uploader_route}} '
+#               ),
+#               params={
+#                   "product": product,
+#                   "roi": roi,
+#                   "uploader_route": UPLOADER_ROUTE,
+#                   "fpath": BOUY_FPATH.format(**vars()),
+#                   "DATA_HOST": DATA_HOST
+#               }
+#           )
 
     # ========================================================================
     # USGS Gage Height Ingest
@@ -118,28 +110,28 @@ with DAG(
     USGS_RIVER_LIST = ['SavannahRv','HudsonCr','AltamahaRv','SatillaRv','StJohnsRv','OgeecheeRv','BrunswickRv','StMarysRv']
     # example fname: USGS_gh_SavannahRv_SEUSdb.csv
     RIVER_FPATH = "USGS_gh_{river}_SEUSdb.csv"
-    for river in USGS_RIVER_LIST:
-        BashOperator(
-            task_id=f"ingest_river_{river}",
-            bash_command=(
-                "curl --fail-with-body "
-                "    {{params.DATA_HOST}}/{{params.fpath}} "
-                "    > datafile.csv"
-                " && curl --fail-with-body "
-                '    --form measurement=river_discharge '
-                '    --form tag_set=location={{params.river}},source=usgs '
-                '    --form fields=mean,climatology,anomaly '
-                '    --form time_column=time '
-                '    --form file=@./datafile.csv '
-                '    {{params.uploader_route}} '
-            ),
-            params={
-                "river": river,
-                "uploader_route": UPLOADER_ROUTE,
-                "fpath": RIVER_FPATH.format(**vars()),
-                "DATA_HOST": DATA_HOST
-            }
-        )
+ #   for river in USGS_RIVER_LIST:
+ #       BashOperator(
+ #           task_id=f"ingest_river_{river}",
+ #           bash_command=(
+ #               "curl --fail-with-body "
+ #               "    {{params.DATA_HOST}}/{{params.fpath}} "
+ #               "    > datafile.csv"
+ #               " && curl --fail-with-body "
+ #               '    --form measurement=river_discharge '
+ #               '    --form tag_set=location={{params.river}},source=usgs '
+ #               '    --form fields=mean,climatology,anomaly '
+ #               '    --form time_column=time '
+ #               '    --form file=@./datafile.csv '
+ #               '    {{params.uploader_route}} '
+ #           ),
+ #           params={
+ #               "river": river,
+ #               "uploader_route": UPLOADER_ROUTE,
+ #               "fpath": RIVER_FPATH.format(**vars()),
+ #               "DATA_HOST": DATA_HOST
+ #           }
+ #       )
     # ========================================================================
     # USGS Water Quality Ingest
     # ========================================================================
@@ -166,30 +158,30 @@ with DAG(
     ]
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{roi}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
-    for roi in NERR_ROI_LIST:
-       for suite, product in NERR_FILE_DETAIL_LIST:
-           BashOperator(
-               task_id=f"ingest_nerrwq_roi_{REGION}_{suite}_{product}_{roi}",
-               bash_command=(
-                   "curl --location --fail-with-body "
-                   "    {{params.DATA_HOST}}/{{params.fpath}} "
-                   "    > datafile.csv "
-                   " && head datafile.csv "
-                   " && curl --location --fail-with-body "
-                   "    --form measurement={{params.suite}}_{{params.product}} "
-                   "    --form tag_set=location={{params.roi}},"
-                       "sensor={{params.suite}} "
-                   "    --form fields=mean,climatology,anomaly "
-                   "    --form time_column=time "
-                   "    --form file=@./datafile.csv "
-                   "    {{params.uploader_route}} "
-               ),
-               params={
-                   "suite": suite.lower(),
-                   "product": product,
-                   "roi": roi,
-                   "uploader_route": UPLOADER_ROUTE,
-                   "fpath": NERR_FPATH.format(**vars()),
-                   "DATA_HOST": DATA_HOST
-               }
-           )
+  #  for roi in NERR_ROI_LIST:
+  #     for suite, product in NERR_FILE_DETAIL_LIST:
+  #         BashOperator(
+  #             task_id=f"ingest_nerrwq_roi_{REGION}_{suite}_{product}_{roi}",
+  #             bash_command=(
+  #                 "curl --location --fail-with-body "
+  #                 "    {{params.DATA_HOST}}/{{params.fpath}} "
+  #                 "    > datafile.csv "
+  #                 " && head datafile.csv "
+  #                 " && curl --location --fail-with-body "
+  #                 "    --form measurement={{params.suite}}_{{params.product}} "
+  #                 "    --form tag_set=location={{params.roi}},"
+  #                     "sensor={{params.suite}} "
+  #                 "    --form fields=mean,climatology,anomaly "
+  #                 "    --form time_column=time "
+  #                 "    --form file=@./datafile.csv "
+  #                 "    {{params.uploader_route}} "
+  #             ),
+  #             params={
+  #                 "suite": suite.lower(),
+  #                 "product": product,
+  #                 "roi": roi,
+  #                 "uploader_route": UPLOADER_ROUTE,
+  #                 "fpath": NERR_FPATH.format(**vars()),
+  #                 "DATA_HOST": DATA_HOST
+  #             }
+  #         )
