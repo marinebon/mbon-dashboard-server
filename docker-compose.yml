@@ -20,7 +20,6 @@ x-global-common:
 x-airflow-common:
   &airflow-common
   <<: *global-common
-  build: ./airflow
   environment:
     &airflow-common-env
     <<: *global-common-env
@@ -51,6 +50,11 @@ x-airflow-common:
       condition: service_healthy
     postgres:
       condition: service_healthy
+  build:
+    context: ./airflow
+    args:
+      INFLUXDB_HOSTNAME: http://35.211.21.154:8086
+      INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
 # ============================================================================
 
 services:
