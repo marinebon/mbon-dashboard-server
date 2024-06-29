@@ -103,39 +103,6 @@ with DAG(
 #                   "DATA_HOST": DATA_HOST
 #               }
 #           )
-
-    # ========================================================================
-    # USGS Gage Height Ingest
-    # ========================================================================
-    USGS_RIVER_LIST = ['SavannahRv','HudsonCr','AltamahaRv','SatillaRv','StJohnsRv','OgeecheeRv','BrunswickRv','StMarysRv']
-    # example fname: USGS_gh_SavannahRv_SEUSdb.csv
-    RIVER_FPATH = "USGS_gh_{river}_SEUSdb.csv"
- #   for river in USGS_RIVER_LIST:
- #       BashOperator(
- #           task_id=f"ingest_river_{river}",
- #           bash_command=(
- #               "curl --fail-with-body "
- #               "    {{params.DATA_HOST}}/{{params.fpath}} "
- #               "    > datafile.csv"
- #               " && curl --fail-with-body "
- #               '    --form measurement=river_discharge '
- #               '    --form tag_set=location={{params.river}},source=usgs '
- #               '    --form fields=mean,climatology,anomaly '
- #               '    --form time_column=time '
- #               '    --form file=@./datafile.csv '
- #               '    {{params.uploader_route}} '
- #           ),
- #           params={
- #               "river": river,
- #               "uploader_route": UPLOADER_ROUTE,
- #               "fpath": RIVER_FPATH.format(**vars()),
- #               "DATA_HOST": DATA_HOST
- #           }
- #       )
-    # ========================================================================
-    # USGS Water Quality Ingest
-    # ========================================================================
-    # TODO
     # ========================================================================
     # NERRS Water Quality Ingest (Not working, temporary - will be replaced)
     # ========================================================================
