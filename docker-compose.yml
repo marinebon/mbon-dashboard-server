@@ -53,7 +53,7 @@ x-airflow-common:
   build:
     context: ./airflow
     args:
-      INFLUXDB_HOSTNAME: http://35.211.21.154:8086
+      INFLUXDB_HOSTNAME: http://35.211.219.154:8086
       INFLUXDB_TOKEN: ${INFLUXDB_TOKEN}
 # ============================================================================
 
