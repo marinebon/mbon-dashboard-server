@@ -8,8 +8,10 @@ below.
 import os
 
 from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
+
+from csv2influx import csv2influx
 
 REGION = 'SEUS'
 DATA_HOST = "https://storage.googleapis.com/dashboards_csvs"
@@ -27,11 +29,7 @@ with DAG(
         "start_date": datetime(2020, 1, 1)
     },
 ) as dag:
-    UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
-    if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
-        UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
-    UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
-
+    GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
@@ -47,29 +45,29 @@ with DAG(
         ["MODA", "sst4"],
         ["MODA",  "ABI"],
     ]
-    # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
-    SAT_FPATH = (
-        "{REGION}dbv23_{product}_TS_{sat}_daily_{roi}.csv"
-    )
     for roi in SAT_ROI_LIST:
         for sat, product in SAT_FILE_DETAIL_LIST:
-            BashOperator(
-                task_id=f"ingest_sat_roi_{REGION}_{sat}_{product}_{roi}",
-                bash_command=(
-                    "influx write --bucket imars_bucket --url {{params.DATA_HOST}}/{{params.fpath}} "
-                    "  --header '#group,true,true,true,false,false,false' "
-                    "  --header '#datatype,string,string,dateTime:number,float,float,float' "
-                    "  --header '#constant measurement,{{params.sat}}_{{params.product}}' "
-                    "  --header '#constant tag,location,{{params.roi}}' "
-                ),
-                params={
-                    "sat": sat.lower(),
-                    "product": product,
-                    "roi": roi,
-                    "fpath": SAT_FPATH.format(**vars()),
-                    "DATA_HOST": DATA_HOST
-                }
+            # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
+            DATA_FNAME = "{REGION}dbv23_{product}_TS_{sat}_daily_{roi}.csv"
+            PythonOperator(
+                task_id=f"ingest_sat_{roi}_{sat}_{product}",
+                python_callable=csv2influx,
+                op_kwargs={
+                    'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
+                    'measurement': product,
+                    'fields': [
+                        ["mean", "mean"],
+                        ["climatology", "climatology"],
+                        ["anomaly", "anomaly"]
+                    ],
+                    'tags': [
+                        ['satellite', sat],
+                        ['location', roi]
+                    ],
+                    'timeCol': "time"
+                },
             )
+
             
     # ========================================================================
     # Bouy Ingest
