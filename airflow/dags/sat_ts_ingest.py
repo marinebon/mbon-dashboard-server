@@ -1,9 +1,12 @@
 """
-Ingests all timeseries .csv files into influxdb using mbon_data_uploader.
-The timeseries are ingested from a public github repo folder.
+Ingests all timeseries .csv.
 
-!!! NOTE how the dir separator (/) is replaced w/ -_- in the FPATH variables
-below.
+```mermaid
+imars_netcdfs 
+  -- "dotis matlab cron" --> "anom+clim csv files"
+  -- "dotis cron" --> gbucket
+  -- "airflow ingest_sat_ts" --> influxDB
+```
 """
 import os
 
