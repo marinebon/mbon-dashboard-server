@@ -1,5 +1,11 @@
 """
 Ingest of USGS discharge and guage height data.
+
+```mermaid
+usgs 
+  -- ??? --> gbucket 
+  -- "airflow ingest_USGS_guages" --> influxDB
+```
 """
 import os
 
@@ -11,7 +17,7 @@ from datetime import datetime, timedelta
 # These jobs run once to grab all the data.
 # TODO: modify to only grab latest data.
 with DAG(
-    'nerr_data_ingest',
+    'usgs_data_ingest',
     catchup=False,
     schedule_interval="0 0 * * *",
     max_active_runs=1,
