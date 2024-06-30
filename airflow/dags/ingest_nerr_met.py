@@ -15,7 +15,7 @@ from datetime import datetime, timedelta
 # These jobs run once to grab all the data.
 # TODO: modify to only grab latest data.
 with DAG(
-    'nerr_data_ingest',
+    'ingest_nerr_met',
     catchup=False,
     schedule_interval="0 0 * * *",
     max_active_runs=1,
