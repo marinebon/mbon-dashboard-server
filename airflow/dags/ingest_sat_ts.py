@@ -24,7 +24,7 @@ REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string
 # === DAG defines the task exec order
 # ============================================================================
 with DAG(
-    'sat_ts_ingest',
+    'ingest_sat_ts',
     catchup=False,  # latest only
     schedule_interval="0 0 * * *",
     max_active_runs=1,
