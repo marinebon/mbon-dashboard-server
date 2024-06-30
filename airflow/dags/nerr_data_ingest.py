@@ -1,5 +1,9 @@
 """
-Ingest bouy data 
+Ingest NERRS met data.
+
+```mermaid
+"NERRS CDMO" 
+  -- "airflow ingest_nerr_met" --> influxDB 
 """
 import os
 
