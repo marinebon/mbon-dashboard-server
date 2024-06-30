@@ -17,7 +17,7 @@ from datetime import datetime, timedelta
 # These jobs run once to grab all the data.
 # TODO: modify to only grab latest data.
 with DAG(
-    'usgs_data_ingest',
+    'ingest_usgs_gauges',
     catchup=False,
     schedule_interval="0 0 * * *",
     max_active_runs=1,
