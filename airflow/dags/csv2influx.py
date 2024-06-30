@@ -1,4 +1,4 @@
-def csv2influx(data_url, measurement, tags=[], field=["value", "Sal"], timeCol='DateTimeStamp'):
+def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], timeCol='DateTimeStamp'):
     """
     fetch data from IMaRS gcloud bucket
     """
@@ -27,15 +27,15 @@ def csv2influx(data_url, measurement, tags=[], field=["value", "Sal"], timeCol='
     # write each point in the df to influxDB
     points = []
     for index, row in data.iterrows():
-        print(f"{row['Sal']} @ {row['DateTimeStamp']}")
+        #print(f"{row}")
         point = (
             Point(measurement)
             .time(row[timeCol])  # not utc_timestamp ?
         )
-        for key, val in fields:
-            point = point.field(key, row[val])
-        for key, val in tags:
-            point = point.tag(key, val)
+        for field in fields:
+            point = point.field(field[1], row[field[0]])
+        for tag in tags:
+            point = point.tag(tag[0], tag[1])
         points.append(point)
         
     # Batch write points
