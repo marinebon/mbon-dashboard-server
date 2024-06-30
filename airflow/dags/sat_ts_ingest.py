@@ -48,7 +48,7 @@ with DAG(
     for roi in SAT_ROI_LIST:
         for sat, product in SAT_FILE_DETAIL_LIST:
             # example path: `GOMdbv2_ABI_TS_MODA_daily_Alderice.csv`
-            DATA_FNAME = "{REGION}dbv23_{product}_TS_{sat}_daily_{roi}.csv"
+            DATA_FNAME = f"{REGION}dbv23_{product}_TS_{sat}_daily_{roi}.csv"
             PythonOperator(
                 task_id=f"ingest_sat_{roi}_{sat}_{product}",
                 python_callable=csv2influx,
@@ -64,7 +64,7 @@ with DAG(
                         ['satellite', sat],
                         ['location', roi]
                     ],
-                    'timeCol': "time"
+                    'timeCol': "Time"
                 },
             )
 
