@@ -29,11 +29,11 @@ with DAG(
     },
 ) as dag:
     SAL_BOUYS = [
-        ["Little_Rabbit_Key", "WTMP_SAL"],
-        ["Peterson_Key", "WTMP_SAL"],
-        ["Whipray_Basin", "WTMP_SAL"],
-        ["Butternut_Key", "WTMP_SAL"],
-        ["Bob_Allen_Key", "WTMP_SAL"]
+        "Little_Rabbit_Key",
+        "Peterson_Key",
+        "Whipray_Basin",
+        "Butternut_Key",
+        "Bob_Allen_Key"
     ]
 
     for bouy_name in SAL_BOUYS:
@@ -58,9 +58,9 @@ with DAG(
 
 
     MET_BOUYS = [
-        ["Grays_Reef", "STDMET"],
-        ["Fernandina_Reef", "STDMET"],
-        ["Charleston", "STDMET"]
+        "Grays_Reef",
+        "Fernandina_Reef",
+        "Charleston"
     ]
 
 
