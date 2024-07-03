@@ -1,10 +1,10 @@
 """
-Ingests NERR BOUY timeseries .csv.
+Ingests NERR BUOY timeseries .csv.
 
 ```mermaid
 NERRS --> ERDDAP
   -- "dotis bash cronjob" --> "imars gbucket"
-  -- "airflow ingest_nerrs_bouys" --> influxDB
+  -- "airflow ingest_nerrs_buoys" --> influxDB
 ```
 """
 import os
@@ -20,7 +20,7 @@ GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
 # === DAG defines the task exec order
 # ============================================================================
 with DAG(
-    'ingest_nerrs_bouys',
+    'ingest_nerrs_buoys',
     catchup=False,  # latest only
     schedule_interval="0 0 * * *",
     max_active_runs=1,
@@ -28,7 +28,7 @@ with DAG(
         "start_date": datetime(2020, 1, 1)
     },
 ) as dag:
-    SAL_BOUYS = [
+    SAL_BUOYS = [
         "Little_Rabbit_Key",
         "Peterson_Key",
         "Whipray_Basin",
@@ -36,11 +36,11 @@ with DAG(
         "Bob_Allen_Key"
     ]
 
-    for bouy_name in SAL_BOUYS:
+    for buoy_name in SAL_BUOYS:
         # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv
-        DATA_FNAME = f"{bouy_name}_Bouy_WTMP_SAL.csv"
+        DATA_FNAME = f"{buoy_name}_Buoy_WTMP_SAL.csv"
         PythonOperator(
-            task_id=f"ingest_sal_{bouy_name}",
+            task_id=f"ingest_sal_{buoy_name}",
             python_callable=csv2influx,
             op_kwargs={
                 'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
@@ -50,25 +50,25 @@ with DAG(
                     ["sea_water_practical_salinity", "sea_water_practical_salinity"]
                 ],
                 'tags': [
-                    ['location', bouy_name]
+                    ['location', buoy_name]
                 ],
                 'timeCol': "time"
             },
         )
 
 
-    MET_BOUYS = [
+    MET_BUOYS = [
         "Grays_Reef",
         "Fernandina_Reef",
         "Charleston"
     ]
 
 
-    for bouy_name in MET_BOUYS:
+    for buoy_name in MET_BUOYS:
         # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv                                                                      
-        DATA_FNAME = f"{bouy_name}_Bouy_STDMET.csv"
+        DATA_FNAME = f"{buoy_name}_Buoy_STDMET.csv"
         PythonOperator(
-            task_id=f"ingest_stdmet_{bouy_name}",
+            task_id=f"ingest_stdmet_{buoy_name}",
             python_callable=csv2influx,
             op_kwargs={
                 'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
@@ -77,7 +77,7 @@ with DAG(
                     ["TODO", "TODO"]
                 ],
                 'tags': [
-                    ['location', bouy_name]
+                    ['location', buoy_name]
                 ],
                 'timeCol': "time"
             },
