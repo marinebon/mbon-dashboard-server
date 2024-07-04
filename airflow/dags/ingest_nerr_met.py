@@ -16,11 +16,11 @@ from datetime import datetime, timedelta
 # TODO: modify to only grab latest data.
 with DAG(
     'ingest_nerr_met',
-    catchup=False,
+    catchup=True,
     schedule_interval="0 0 * * *",
     max_active_runs=1,
     default_args={
-        "start_date": datetime(2023, 6, 20),
+        "start_date": datetime(2020, 1, 1),
         #'retries': 3,
         #'retry_delay': timedelta(days=1),
     },
@@ -31,8 +31,9 @@ with DAG(
         """
         import nerrs_data
         import pandas as pd
-        try: 
-            param_data = nerrs_data.getData(station_code, product)
+        try:
+            RECORDS_PER_DAY = 96 # 24hrs * 60min/hr * 1sample/15min
+            param_data = nerrs_data.getData(station_code, product, n_records=RECORDS_PER_DAY)
             print(f"loaded data cols: {param_data.columns}")
             print(f"1st few rows:\n {param_data.head()}")
         except Exception as e:
