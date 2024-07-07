@@ -90,6 +90,31 @@ with DAG(
         ]
     }
 
+    #NAME_ABBREV_MAP = {
+    #    'HuntDock': 'saphd',
+    #    'LowerDuplin': 'sapld',
+    #    'CabCr': 'sapca'
+    #    'DeanCr': 'sapdc'
+    #}
+    # 
+    #STATION_PARAMS = {
+    #    'HuntDock': [
+    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
+    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
+    #    ],
+    #    'LowerDuplin': [
+    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb'
+    #    ],
+    #    'CabCr': [
+    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
+    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
+    #    ],
+    #    'DeanCr': [
+    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
+    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
+    #    ]
+    #}
+    
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{station_name}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
     for nerr_abbrev, stations in NERR_ROI_LIST.items():
