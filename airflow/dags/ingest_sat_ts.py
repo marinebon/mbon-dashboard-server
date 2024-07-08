@@ -2,7 +2,8 @@
 Ingests all timeseries .csv.
 
 ```mermaid
-imars_netcdfs 
+NASA subscription
+  -- "dotis cron" --> imars_netcdfs 
   -- "dotis matlab cron" --> "anom+clim csv files"
   -- "dotis cron" --> gbucket
   -- "airflow ingest_sat_ts" --> influxDB
