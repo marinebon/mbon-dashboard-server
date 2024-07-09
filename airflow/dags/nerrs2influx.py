@@ -1,12 +1,17 @@
+import pandas as pd
+
+import nerrs_data
+import influxdb_client, os, time
+from influxdb_client import InfluxDBClient, Point, WritePrecision
+from influxdb_client.client.write_api import SYNCHRONOUS
+
 def nerrs2influx(station_name, station_code, suite, product):
     """
     fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
     """
-    import nerrs_data
-    import pandas as pd
     try:
         RECORDS_PER_DAY = 96 # 24hrs * 60min/hr * 1sample/15min
-        param_data = nerrs_data.getData(station_code, product, n_records=RECORDS_PER_DAY)
+        param_data = nerrs_data.exportSingleParameter(station_code, product, n_records=RECORDS_PER_DAY)
         print(f"loaded data cols: {param_data.columns}")
         print(f"1st few rows:\n {param_data.head()}")
     except Exception as e:
@@ -15,9 +20,6 @@ def nerrs2influx(station_name, station_code, suite, product):
         
     # === upload the data
     # influx connection setup
-    import influxdb_client, os, time
-    from influxdb_client import InfluxDBClient, Point, WritePrecision
-    from influxdb_client.client.write_api import SYNCHRONOUS
         
     token = os.environ.get("INFLUXDB_TOKEN")
     org = "imars"
