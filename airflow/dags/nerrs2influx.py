@@ -1,0 +1,48 @@
+def nerrs2influx(station_name, station_code, suite, product):
+    """
+    fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
+    """
+    import nerrs_data
+    import pandas as pd
+    try:
+        RECORDS_PER_DAY = 96 # 24hrs * 60min/hr * 1sample/15min
+        param_data = nerrs_data.getData(station_code, product, n_records=RECORDS_PER_DAY)
+        print(f"loaded data cols: {param_data.columns}")
+        print(f"1st few rows:\n {param_data.head()}")
+    except Exception as e:
+        print(f"failed to `getData({station_code}, {product})`...\n", e)
+        raise e
+        
+    # === upload the data
+    # influx connection setup
+    import influxdb_client, os, time
+    from influxdb_client import InfluxDBClient, Point, WritePrecision
+    from influxdb_client.client.write_api import SYNCHRONOUS
+        
+    token = os.environ.get("INFLUXDB_TOKEN")
+    org = "imars"
+    url = os.environ.get("INFLUXDB_HOSTNAME")
+        
+    client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
+    bucket="imars_bucket"
+        
+    # write each point in the df to influxDB
+    points = []
+    for index, row in param_data.iterrows():
+        print(f"{row['Sal']} @ {row['DateTimeStamp']}")
+        point = (
+            Point(f"{suite}_{product}")
+            .tag("station_code", station_code)
+            .tag("location", station_name)
+            .tag("sensor", suite)
+            .field("value", row["Sal"])  # not row[product] ?
+            .time(row['DateTimeStamp'])  # not utc_timestamp ?
+        )
+        points.append(point)
+
+    # Batch write points
+    results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)  
+    # Manually close the client to ensure no batching issues
+    client.__del__()
+    print("influxdb API response:")
+    print(results)  

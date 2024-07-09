@@ -2,7 +2,7 @@
 Ingests NERR BUOY timeseries .csv.
 
 ```mermaid
-NERRS --> ERDDAP
+NDBC --> SECOORA ERDDAP
   -- "dotis bash cronjob" --> "imars gbucket"
   -- "airflow ingest_nerrs_buoys" --> influxDB
 ```
@@ -20,10 +20,10 @@ GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
 # === DAG defines the task exec order
 # ============================================================================
 with DAG(
-    'ingest_nerrs_buoys',
+    'ingest_ndbc_buoys',
     catchup=False,  # latest only
     schedule_interval="0 0 * * *",
-    max_active_runs=1,
+    max_active_runs=2,
     default_args={
         "start_date": datetime(2020, 1, 1)
     },
