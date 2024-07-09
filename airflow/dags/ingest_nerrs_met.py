@@ -1,5 +1,6 @@
 """
 Ingest NERRS met data.
+Instrumented records (continuous, but only from one location at each NERR)
 
 ```mermaid
 "NERRS CDMO" 
@@ -12,10 +13,12 @@ from airflow.operators.python_operator import PythonOperator
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
+from nerrs2influx import nerrs2influx
+
 # These jobs run once to grab all the data.
 # TODO: modify to only grab latest data.
 with DAG(
-    'ingest_nerr_met',
+    'ingest_nerrs_met',
     catchup=True,
     schedule_interval="0 0 * * *",
     max_active_runs=1,
@@ -25,59 +28,11 @@ with DAG(
         #'retry_delay': timedelta(days=1),
     },
 ) as dag:
-    def nerrs2influx(station_name, station_code, suite, product):
-        """
-        fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
-        """
-        import nerrs_data
-        import pandas as pd
-        try:
-            RECORDS_PER_DAY = 96 # 24hrs * 60min/hr * 1sample/15min
-            param_data = nerrs_data.getData(station_code, product, n_records=RECORDS_PER_DAY)
-            print(f"loaded data cols: {param_data.columns}")
-            print(f"1st few rows:\n {param_data.head()}")
-        except Exception as e:
-            print(f"failed to `getData({station_code}, {product})`...\n", e)
-            raise e
-        
-        # === upload the data
-        # influx connection setup
-        import influxdb_client, os, time
-        from influxdb_client import InfluxDBClient, Point, WritePrecision
-        from influxdb_client.client.write_api import SYNCHRONOUS
-        
-        token = os.environ.get("INFLUXDB_TOKEN")
-        org = "imars"
-        url = os.environ.get("INFLUXDB_HOSTNAME")
-        
-        client = influxdb_client.InfluxDBClient(url=url, token=token, org=org)
-        bucket="imars_bucket"
-        
-        # write each point in the df to influxDB
-        points = []
-        for index, row in param_data.iterrows():
-            print(f"{row['Sal']} @ {row['DateTimeStamp']}")
-            point = (
-                Point(f"{suite}_{product}")
-                .tag("station_code", station_code)
-                .tag("location", station_name)
-                .tag("sensor", suite)
-                .field("value", row["Sal"])  # not row[product] ?
-                .time(row['DateTimeStamp'])  # not utc_timestamp ?
-            )
-            points.append(point)
-        
-        # Batch write points
-        results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)  
-        # Manually close the client to ensure no batching issues
-        client.__del__()
-        print("influxdb API response:")
-        print(results)
     # TODO: do this for each in:
     NERR_PRODUCTS = {
-        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
+#        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
         "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp'],
-        "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
+#        "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
     }
         
     # TODO: also the get the quality flags for each (eg `Sal_F`)?
@@ -125,7 +80,7 @@ with DAG(
                 for product in product_list:
                     station_code = f"{nerr_abbrev}{station_abbrev}{suite}"
                     PythonOperator(
-                        task_id=f"ingest_nerr_{suite}_{product}_{station_name}",
+                        task_id=f"ingest_nerrs_{suite}_{product}_{station_name}",
                         python_callable=nerrs2influx,
                         op_kwargs={
                             'station_name': station_name,

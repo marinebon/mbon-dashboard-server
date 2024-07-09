@@ -20,7 +20,7 @@ with DAG(
     'ingest_usgs_gauges',
     catchup=False,
     schedule_interval="0 0 * * *",
-    max_active_runs=1,
+    max_active_runs=2,
     default_args={
         "start_date": datetime(2023, 6, 20),
         #'retries': 3,

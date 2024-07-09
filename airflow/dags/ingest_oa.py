@@ -18,7 +18,7 @@ with DAG(
     'ingest_oa',
     catchup=False,  # latest only
     schedule_interval="@once",  # run only once (unless triggered manually)
-    max_active_runs=1,
+    max_active_runs=2,
     default_args={
         "start_date": datetime(2023, 1, 1)
     },
