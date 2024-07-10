@@ -32,7 +32,7 @@ with DAG(
     GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
     FILE_LIST = {
         'gh': [
-            'SavannahRv_SEUSdb','HudsonCr_SEUSdb_SEUSdb','AltamahaRv_SEUSdb','SatillaRv_SEUSdb',
+            'SavannahRv_SEUSdb','HudsonCr_SEUSdb','AltamahaRv_SEUSdb','SatillaRv_SEUSdb',
             'StJohnsRv_SEUSdb','OgeecheeRv_SEUSdb','BrunswickRv_SEUSdb','StMarysRv_SEUSdb'
         ],
         'disch': [
