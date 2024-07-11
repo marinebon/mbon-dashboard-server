@@ -11,11 +11,11 @@ def nerrs2influx(station_name, station_code, suite, product):
     """
     try:
         RECORDS_PER_DAY = 96 # 24hrs * 60min/hr * 1sample/15min
-        param_data = nerrs_data.exportSingleParameter(station_code, product, n_records=RECORDS_PER_DAY)
+        param_data = nerrs_data.exportSingleParam(station_code, product, n_records=RECORDS_PER_DAY)
         print(f"loaded data cols: {param_data.columns}")
         print(f"1st few rows:\n {param_data.head()}")
     except Exception as e:
-        print(f"failed to `getData({station_code}, {product})`...\n", e)
+        print(f"failed `exportSingleParam({station_code}, {product})`\n", e)
         raise e
         
     # === upload the data
@@ -31,14 +31,14 @@ def nerrs2influx(station_name, station_code, suite, product):
     # write each point in the df to influxDB
     points = []
     for index, row in param_data.iterrows():
-        print(f"{row['Sal']} @ {row['DateTimeStamp']}")
+        #print(f"{row[product]} @ {row['DateTimeStamp']}")
         point = (
             Point(f"{suite}_{product}")
             .tag("station_code", station_code)
             .tag("location", station_name)
             .tag("sensor", suite)
-            .field("value", row["Sal"])  # not row[product] ?
-            .time(row['DateTimeStamp'])  # not utc_timestamp ?
+            .field(product, row[product])
+            .time(row['DateTimeStamp'])
         )
         points.append(point)
 
