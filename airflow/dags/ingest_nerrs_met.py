@@ -46,7 +46,7 @@ with DAG(
                 python_callable=nerrs2influx,
                 op_kwargs={
                     'station_name': station_name,
-                    'station_code': station['NERR_SITE_ID'],  # "acespwq"  # ace sp wq               
+                    'station_code': station['Station_Code'],  # "acespwq"  # ace sp wq               
                     'suite': SUITE,
                     'product': param # "Sal"                                                
                 },
