@@ -15,8 +15,20 @@ from datetime import datetime, timedelta
 
 from nerrs2influx import nerrs2influx
 
-# These jobs run once to grab all the data.
-# TODO: modify to only grab latest data.
+suite = 'met'
+# station list from                                                                               
+#    python3 -c 'from nerrs_data.exportStationCodes import exportStationCodesDictFor; exportStationCodesDictFor("sap")'                                                                                
+stations = [
+    {"NERR_SITE_ID":"sap","Station_Code":"sapmlmet","Station_Name":"Marsh Landing","status":"Active"\
+,"active_dates":"Sep 2002-","state":"ga","reserve_name":"Sapelo Island","params_reported":["ATemp","R\
+H","BP","WSpd","MaxWSpd","MaxWSpdT","Wdir","SDWDir","TotPrcp","TotPAR","CumPrcp","TotSoRad"],"Real_ti\
+me":"R"} ,
+]
+
+
+# TODO: set start_date using station['active_dates']
+# TODO: specify frequency of data?
+# TODO: modify nerrs2influx to use dates
 with DAG(
     'ingest_nerrs_met',
     catchup=True,
@@ -28,65 +40,20 @@ with DAG(
         #'retry_delay': timedelta(days=1),
     },
 ) as dag:
-    # TODO: do this for each in:
-    NERR_PRODUCTS = {
-#        "wq": ['Temp','Sal','DO_mgl','pH','Turb','ChlFluor'],
-        "met": ['ATemp','RH','BP','WSpd','Wdir','TotPAR','TotPrcp'],
-#        "nut": ['PO4F','NH4F','NO2F','NO3F','NO23F','CHLA_N'],
-    }
-        
-    # TODO: also the get the quality flags for each (eg `Sal_F`)?
-    NERR_ROI_LIST = {  # all of these are Sapelo (sap)
-        "sap": [
-            ["hd", 'HuntDock'], 
-            ["ld", 'LowerDuplin'], 
-            ["ca", 'CabCr'], 
-            ["dc", 'DeanCr']
-        ]
-    }
-
-    #NAME_ABBREV_MAP = {
-    #    'HuntDock': 'saphd',
-    #    'LowerDuplin': 'sapld',
-    #    'CabCr': 'sapca'
-    #    'DeanCr': 'sapdc'
-    #}
-    # 
-    #STATION_PARAMS = {
-    #    'HuntDock': [
-    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
-    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
-    #    ],
-    #    'LowerDuplin': [
-    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb'
-    #    ],
-    #    'CabCr': [
-    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
-    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
-    #    ],
-    #    'DeanCr': [
-    #        'wq_Temp', 'wq_Sal', 'wq_DO', 'wq_pH', 'wq_Turb',
-    #        'nut_PO4F', 'nut_NH4F', 'nut_NO2F', 'nut_NO23F'
-    #    ]
-    #}
-    
     # example path: `SAP_CabCr_Sal_NERR_WQ_HIST_SEUSdb.csv`
     NERR_FPATH = "SAP_{station_name}_{product}_NERR_{suite}_HIST_SEUSdb.csv"
-    for nerr_abbrev, stations in NERR_ROI_LIST.items():
-        for station in stations:
-            station_abbrev = station[0]
-            station_name = station[1]
-            for suite, product_list in NERR_PRODUCTS.items():
-                for product in product_list:
-                    station_code = f"{nerr_abbrev}{station_abbrev}{suite}"
-                    PythonOperator(
-                        task_id=f"ingest_nerrs_{suite}_{product}_{station_name}",
-                        python_callable=nerrs2influx,
-                        op_kwargs={
-                            'station_name': station_name,
-                            'station_code': station_code,  # "acespwq"  # ace sp wq
-                            'suite': suite,
-                            'product': product # "Sal"
-                        },
-                    )
+    for station in stations:
+        for param in station['parameters_reported']:
+            PythonOperator(
+                task_id=f"ingest_nerrs_{suite}_{product}_{station_name}",
+                python_callable=nerrs2influx,
+                op_kwargs={
+                    'station_name': station['Station_Name'],
+                    'station_code': station['NERR_SITE_ID'],  # "acespwq"  # ace sp wq                   
+                    'suite': ,
+                    'product': product # "Sal"                                                
+                },
+            )
+            
+
 
