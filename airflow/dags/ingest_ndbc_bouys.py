@@ -52,7 +52,8 @@ with DAG(
                 'tags': [
                     ['location', buoy_name]
                 ],
-                'timeCol': "time"
+                'timeCol': "time",
+                'skiprows': [1]  # skip 2nd header row
             },
         )
 
