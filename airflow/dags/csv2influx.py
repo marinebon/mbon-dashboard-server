@@ -1,10 +1,10 @@
-def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], timeCol='DateTimeStamp'):
+def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], timeCol='DateTimeStamp', skiprows=None):
     """
     fetch data from IMaRS gcloud bucket
     """
     import pandas as pd
     try: 
-        data = pd.read_csv(data_url)
+        data = pd.read_csv(data_url, skiprows=skiprows)
         print(f"loaded data cols: {data.columns}")
         print(f"1st few rows:\n {data.head()}")
     except Exception as e:
