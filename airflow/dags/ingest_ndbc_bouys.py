@@ -1,5 +1,5 @@
 """
-Ingests NERR BUOY timeseries .csv.
+Ingests NDBC timeseries .csv.
 
 ```mermaid
 NDBC --> SECOORA ERDDAP
