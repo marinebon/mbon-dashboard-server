@@ -21,8 +21,9 @@ SUITE = 'met'
 STATIONS = [
     {"NERR_SITE_ID":"sap","Station_Code":"sapmlmet","Station_Name":"Marsh Landing","status":"Active"\
 ,"active_dates":"Sep 2002-","state":"ga","reserve_name":"Sapelo Island","params_reported":["ATemp","R\
-H","BP","WSpd","MaxWSpd","MaxWSpdT","Wdir","SDWDir","TotPrcp","TotPAR","CumPrcp","TotSoRad"],"Real_ti\
+H","BP","WSpd","MaxWSpd","Wdir","SDWDir","TotPrcp","TotPAR","CumPrcp","TotSoRad"],"Real_ti\
 me":"R"} ,
+    # NOTE: MaxWSpdT intentionally excluded
 ]
 
 
