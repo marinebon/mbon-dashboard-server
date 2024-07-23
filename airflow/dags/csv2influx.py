@@ -20,8 +20,8 @@ def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], time
     token = os.environ.get("INFLUXDB_TOKEN")
     org = "imars"
     url = os.environ.get("INFLUXDB_HOSTNAME")
-    
-    client = influxdb_client.InfluxDBClient(url=url, token=token, org=org, timeout=(10*60*1000))
+    timeout = 600000  # 10min
+    client = influxdb_client.InfluxDBClient(url=url, token=token, org=org, timeout=timeout)
     bucket="imars_bucket"
         
     # write each point in the df to influxDB
