@@ -60,7 +60,7 @@ with DAG(
 
     MET_BUOYS = [
         "Grays_Reef",
-        "Fernandina_Reef",
+        "Fernandina",
         "Charleston"
     ]
 
