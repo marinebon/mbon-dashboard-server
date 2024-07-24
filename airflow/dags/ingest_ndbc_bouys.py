@@ -64,9 +64,18 @@ with DAG(
         "Charleston"
     ]
 
+    MET_PARAMS = [
+        'air_pressure_at_mean_sea_level', 'air_temperature',
+        'sea_surface_temperature', 'wind_speed',
+        'wind_from_direction','wind_speed_of_gust',
+        'sea_surface_wave_significant_height',
+        'sea_surface_wave_mean_period',
+        'sea_surface_wave_from_direction',
+        'sea_surface_wave_period_at_variance_spectral_density_maximum'
+    ]
 
     for buoy_name in MET_BUOYS:
-        # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv                                                                      
+        # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv 
         DATA_FNAME = f"{buoy_name}_Buoy_STDMET.csv"
         PythonOperator(
             task_id=f"ingest_stdmet_{buoy_name}",
@@ -75,11 +84,12 @@ with DAG(
                 'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
                 'measurement': "value",
                 'fields': [
-                    ["TODO", "TODO"]
+                    [pname,pname] for pname in MET_PARAMS
                 ],
                 'tags': [
                     ['location', buoy_name]
                 ],
-                'timeCol': "time"
+                'timeCol': "time",
+                'skiprows': [1]  # skip 2nd header row
             },
         )
