@@ -30,15 +30,14 @@ with DAG(
         'WpCo2': 'pco2_in_sea_water',
         'pH': 'sea_water_ph_reported_on_total_scale',
     }
-    FPATH = "gov_ornl_cdiac_graysrf_{param_name}.csv "
     for param_name, param_col_name in PARAM_LIST.items():
-
+        FPATH = f"gov_ornl_cdiac_graysrf_{param_name}.csv"
         PythonOperator(
             task_id=f"ingest_oa_{param_name}",
             python_callable=csv2influx,
             op_kwargs={
-                'data_url': f"{{DATA_HOST}}/{{FPATH}}",
-                'measurment': 'oa_params',
+                'data_url': f"{DATA_HOST}/{FPATH}",
+                'measurement': 'oa_params',
                 'fields': [
                     [param_name, param_col_name]
                 ],
