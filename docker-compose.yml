@@ -109,6 +109,7 @@ services:
             - ./influxdb/initdb:/docker-entrypoint-initdb.d
             # docker data volume:
             - influx-data-volume:/var/lib/influxdb
+	restart: always
         environment:
             - INFLUXDB_DB=fwc_coral_disease
             - INFLUXDB_GRAPHITE_ENABLED=true
