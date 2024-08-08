@@ -19,7 +19,7 @@ from datetime import datetime, timedelta
 with DAG(
     'ingest_usgs_gauges',
     catchup=False,
-    schedule_interval="0 0 * * *",
+    schedule_interval="0 12 * * *",
     max_active_runs=2,
     default_args={
         "start_date": datetime(2023, 6, 20),
