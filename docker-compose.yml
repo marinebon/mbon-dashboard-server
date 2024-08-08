@@ -39,7 +39,7 @@ x-airflow-common:
 #        - .env
   volumes:
     - ./airflow/dags:/opt/airflow/dags
-    - ./airflow/logs:/opt/airflow/logs
+    - airflow-logs-volume:/opt/airflow/logs
     - ./airflow/plugins:/opt/airflow/plugins
 #     - /srv/imars-objects:/srv/imars-objects:ro,slave
 #     - ./airflow/requirements.txt:/requirements.txt
@@ -223,3 +223,4 @@ volumes:
   postgres-db-volume:
   influx-data-volume:
   grafana-storage:
+  airflow-logs-volume:
