@@ -22,7 +22,7 @@ GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
 with DAG(
     'ingest_ndbc_buoys',
     catchup=False,  # latest only
-    schedule_interval="0 0 * * *",
+    schedule_interval="0 12 * * *",
     max_active_runs=2,
     default_args={
         "start_date": datetime(2020, 1, 1)
