@@ -21,7 +21,7 @@ def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=
         #print(f"loaded data cols: {param_data.columns}")
         print(f"1st few rows:\n {param_data.head()}")
     except Exception as e:
-        print(f"failed `exportSingleParam({station_code}, {product})`\n", e)
+        print(f"failed `exportSingleParam({station_code})`\n", e)
         raise e
         
     # === upload the data
