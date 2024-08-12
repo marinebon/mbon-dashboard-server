@@ -20,7 +20,7 @@
   "links": [],
   "panels": [
     {
-      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGBdb_map_2021.png)",
+      "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGB_DBv24_map.png)",
       "datasource": null,
       "gridPos": {
         "h": 14,
