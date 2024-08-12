@@ -28,15 +28,19 @@ def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], time
     points = []
     for index, row in data.iterrows():
         #print(f"{row}")
-        point = (
-            Point(measurement)
-            .time(row[timeCol])  # not utc_timestamp ?
-        )
-        for field in fields:
-            point = point.field(field[1], row[field[0]])
-        for tag in tags:
-            point = point.tag(tag[0], tag[1])
-        points.append(point)
+        try: 
+            point = (
+                Point(measurement)
+                .time(row[timeCol])  # not utc_timestamp ?
+            )
+            for field in fields:
+                point = point.field(field[1], row[field[0]])
+            for tag in tags:
+                point = point.tag(tag[0], tag[1])
+            points.append(point)
+        except KeyError as e:
+            print(f"'field[0]' not in csv file'")
+            pass
         
     # Batch write points
     results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)  
