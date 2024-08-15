@@ -63,6 +63,7 @@ with DAG(
                 'station_name': station_name,
                 'station_code': station['Station_Code'],  # "acespwq"  # ace sp wq 
                 'execution_date_str': '{{ ds }}',  # Pass the execution_date directly
+                'active_dates': station['active_dates'],
                 'exclude_params': ['MaxWSpdT']  # don't load this param
             }
         )

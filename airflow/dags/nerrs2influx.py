@@ -1,12 +1,54 @@
 from datetime import datetime, timedelta
 import pandas as pd
+import pendulum # for date parsing
 
+from airflow.exceptions import AirflowSkipException
 import nerrs_data
 import influxdb_client, os, time
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=[]):
+
+def parse_date(date_str):
+    try:
+        # Try to parse with a more lenient setting
+        parsed_date = pendulum.parse(date_str.strip(), strict=False)
+        return parsed_date
+    except pendulum.parsing.exceptions.ParserError:
+        # Handle partial dates like "Aug 2004" by adding the first day of the month
+        try:
+            return pendulum.from_format(date_str.strip(), 'MMM YYYY')
+        except pendulum.parsing.exceptions.ParserError:
+            print(f"Failed to parse date: {date_str}. Please check the format.")
+            return None
+
+        
+def is_ds_within_active_dates(active_dates, ds):
+    # check if the datetime of the dag is within the active dates
+    ds_date = pendulum.parse(ds)
+
+    for period in active_dates.split(';'):
+        start_str, end_str = period.split('-')
+
+        start_date = parse_date(start_str)
+        if start_date is None:
+            continue
+
+        # If the end date is not provided, assume it to be today or a future date
+        if end_str.strip():
+            end_date = parse_date(end_str)
+            if end_date is None:
+                continue
+        else:
+            end_date = pendulum.now()
+
+        if start_date <= ds_date <= end_date:
+            return True
+    else:
+        return False
+
+    
+def nerrs2influx(station_name, station_code, execution_date_str, active_dates, exclude_params=[]):
     """
     fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
     """
@@ -15,6 +57,9 @@ def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=
     execution_date = datetime.strptime(execution_date_str, '%Y-%m-%d')
     #print(f'dt: {execution_date}')
     end_date_str = (execution_date + timedelta(days=7)).strftime('%Y-%m-%d')
+    if(not is_ds_within_active_dates(active_dates, execution_date_str)):
+        raise AirflowSkipException(f"Date range ouside of active dates {active_dates}")
+    print(f'Active dates {active_dates} cover this date range.')
     print(f'loading {execution_date_str} / {end_date_str}...') 
     try:
         param_data = nerrs_data.exportAllParamsDateRange(station_code, execution_date_str, end_date_str)
@@ -47,7 +92,7 @@ def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=
             print(colName)
             points = []
             for index, row in param_data.iterrows():
-                print(f"{row[colName]} @ {row['DateTimeStamp']}")
+                #print(f"{row[colName]} @ {row['DateTimeStamp']}")
                 point = (
                     Point(colName)
                     .tag("station_code", station_code)
