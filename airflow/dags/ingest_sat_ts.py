@@ -70,7 +70,8 @@ with DAG(
                     ],
                     'tags': [
                         ['satellite', sat],
-                        ['location', roi]
+                        ['location', roi],
+                        ['source', "USF_IMaRS"]
                     ],
                     'timeCol': "Time"
                 },

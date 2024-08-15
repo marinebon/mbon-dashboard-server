@@ -35,7 +35,6 @@ with DAG(
         "Butternut_Key",
         "Bob_Allen_Key"
     ]
-
     for buoy_name in SAL_BUOYS:
         # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv
         DATA_FNAME = f"{buoy_name}_Buoy_WTMP_SAL.csv"
@@ -44,13 +43,14 @@ with DAG(
             python_callable=csv2influx,
             op_kwargs={
                 'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
-                'measurement': "value",
+                'measurement': "salinity",
                 'fields': [
                     ["sea_water_temperature", "sea_water_temperature"],
                     ["sea_water_practical_salinity", "sea_water_practical_salinity"]
                 ],
                 'tags': [
-                    ['location', buoy_name]
+                    ['location', buoy_name],
+                    ['source', 'NDBC']
                 ],
                 'timeCol': "time",
                 'skiprows': [1]  # skip 2nd header row
@@ -82,7 +82,7 @@ with DAG(
             python_callable=csv2influx,
             op_kwargs={
                 'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
-                'measurement': "value",
+                'measurement': "meteorology",
                 'fields': [
                     [pname,pname] for pname in MET_PARAMS
                 ],

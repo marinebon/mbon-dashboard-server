@@ -58,7 +58,8 @@ with DAG(
                     ],
                     'tags': [
                         ['parameter', param],
-                        ['location', location]
+                        ['location', location],
+                        ['source', 'USGS']
                     ],
                     'timeCol': "time"
                 },

@@ -41,7 +41,7 @@ with DAG(
                 'fields': [
                     [param_name, param_col_name]
                 ],
-                'tags': [],
+                'tags': ["source", "ORNL_OA"],
                 'timeCol':'time'
             }
         )

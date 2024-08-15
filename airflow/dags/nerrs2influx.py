@@ -97,6 +97,7 @@ def nerrs2influx(station_name, station_code, execution_date_str, active_dates, e
                     Point(colName)
                     .tag("station_code", station_code)
                     .tag("location", station_name)
+                    .tag("source", "NERRS_CDMO")
                     .field(colName, row[colName])
                     .time(row['DateTimeStamp'])
                 )
