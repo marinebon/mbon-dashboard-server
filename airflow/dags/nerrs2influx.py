@@ -6,7 +6,7 @@ import influxdb_client, os, time
 from influxdb_client import InfluxDBClient, Point, WritePrecision
 from influxdb_client.client.write_api import SYNCHRONOUS
 
-def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=[]):
+def nerrs2influx(station_name, station_code, execution_date_str, active_dates, exclude_params=[]):
     """
     fetch met data based on docs from https://cdmo.baruch.sc.edu/webservices.cfm
     """
@@ -15,6 +15,7 @@ def nerrs2influx(station_name, station_code, execution_date_str, exclude_params=
     execution_date = datetime.strptime(execution_date_str, '%Y-%m-%d')
     #print(f'dt: {execution_date}')
     end_date_str = (execution_date + timedelta(days=7)).strftime('%Y-%m-%d')
+    print(f'Active dates {active_dates} cover this date range.')
     print(f'loading {execution_date_str} / {end_date_str}...') 
     try:
         param_data = nerrs_data.exportAllParamsDateRange(station_code, execution_date_str, end_date_str)
