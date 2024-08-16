@@ -566,8 +566,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -702,8 +701,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -838,8 +836,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -974,8 +971,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3911,24 +3907,24 @@
         "current": {
           "selected": true,
           "text": [
-            "01"
+            "None"
           ],
           "value": [
-            "01"
+            ""
           ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM chlor_a WITH KEY=location",
+        "definition": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'satellite'",
         "hide": 0,
         "includeAll": false,
         "label": "Satellite Time Series Extraction Locations",
         "multi": true,
         "name": "Locations",
         "options": [],
-        "query": "SHOW TAG VALUES FROM chlor_a WITH KEY=location",
+        "query": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'satellite'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3971,22 +3967,23 @@
       },
       {
         "current": {
+          "isNone": true,
           "selected": false,
-          "text": "AltamahaRv_SEUSdb",
-          "value": "AltamahaRv_SEUSdb"
+          "text": "None",
+          "value": ""
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM gh WITH KEY=location",
+        "definition": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'usgs'",
         "hide": 0,
         "includeAll": false,
         "label": "USGS River Gauge Location",
         "multi": false,
         "name": "gauge_location",
         "options": [],
-        "query": "SHOW TAG VALUES FROM gh WITH KEY=location",
+        "query": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'usgs'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -4000,24 +3997,24 @@
         "current": {
           "selected": true,
           "text": [
-            "Marsh_Landing"
+            "None"
           ],
           "value": [
-            "Marsh_Landing"
+            ""
           ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM ATemp WITH KEY=location",
+        "definition": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'nerrs'",
         "hide": 0,
         "includeAll": false,
         "label": "NERR_Locations",
         "multi": true,
         "name": "NERR_Locations",
         "options": [],
-        "query": "SHOW TAG VALUES FROM ATemp WITH KEY=location",
+        "query": "SHOW TAG VALUES WITH KEY = \"location\" WHERE \"source\" = 'nerrs'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
