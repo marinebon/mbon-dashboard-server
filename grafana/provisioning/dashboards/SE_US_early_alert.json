@@ -566,8 +566,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -702,8 +701,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -838,8 +836,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -974,8 +971,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1195,6 +1191,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
@@ -1215,7 +1212,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Temp\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT ATemp as ATemp FROM \"nerrs\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND $timeFilter \nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1343,7 +1340,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_DO_mgl\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT DO_mgl FROM \"nerrs\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND $timeFilter \nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1471,7 +1468,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Turb\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT Turb FROM \"nerrs\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND $timeFilter \nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1599,7 +1596,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_pH\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT pH FROM \"nerrs\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND $timeFilter \nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1727,7 +1724,7 @@
               ],
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"wq_Sal\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND value!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT Sal FROM \"nerrs\"\nWHERE (\"location\" =~ /^$NERR_Locations$/) AND $timeFilter \nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1861,8 +1858,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1996,8 +1992,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2131,8 +2126,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2266,8 +2260,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2414,8 +2407,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2550,8 +2542,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3424,8 +3415,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3622,7 +3612,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "01"
           ],
@@ -3653,7 +3643,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "anomaly"
           ],
@@ -3713,9 +3703,17 @@
         "current": {
           "selected": true,
           "text": [
+            "Cabretta_Creek",
+            "Dean_Creek",
+            "Hunt_Dock",
+            "Lower_Duplin",
             "Marsh_Landing"
           ],
           "value": [
+            "Cabretta_Creek",
+            "Dean_Creek",
+            "Hunt_Dock",
+            "Lower_Duplin",
             "Marsh_Landing"
           ]
         },
@@ -3723,14 +3721,14 @@
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM ATemp WITH KEY=location",
+        "definition": "SHOW TAG VALUES FROM nerrs WITH KEY=location",
         "hide": 0,
         "includeAll": false,
         "label": "NERR_Locations",
         "multi": true,
         "name": "NERR_Locations",
         "options": [],
-        "query": "SHOW TAG VALUES FROM ATemp WITH KEY=location",
+        "query": "SHOW TAG VALUES FROM nerrs WITH KEY=location",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3758,6 +3756,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gk",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
