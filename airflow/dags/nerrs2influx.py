@@ -64,6 +64,7 @@ def nerrs2influx(station_name, station_code, execution_date_str, active_dates, e
     try:
         param_data = nerrs_data.exportAllParamsDateRange(station_code, execution_date_str, end_date_str)
         #print(f"loaded data cols: {param_data.columns}")
+        pd.set_option('display.max_columns', None)  # Show all columns
         print(f"1st few rows:\n {param_data.head()}")
     except Exception as e:
         print(f"failed `exportSingleParam({station_code})`\n", e)
@@ -86,26 +87,31 @@ def nerrs2influx(station_name, station_code, execution_date_str, active_dates, e
         'utcStamp'
     ] + exclude_params
     #print(f'loading {param_data.columns} minus {skipColumns}')
-    for colName in param_data.columns:
-        # TODO: skip if startswith('EC_') ?
-        if colName not in skipColumns:
-            print(colName)
-            points = []
-            for index, row in param_data.iterrows():
-                #print(f"{row[colName]} @ {row['DateTimeStamp']}")
-                point = (
-                    Point(colName)
-                    .tag("station_code", station_code)
-                    .tag("location", station_name)
-                    .tag("source", "NERRS_CDMO")
-                    .field(colName, row[colName])
-                    .time(row['DateTimeStamp'])
-                )
-                points.append(point)
-            # Batch write points
-            results = client.write_api(write_options=SYNCHRONOUS).write(
-                bucket=bucket, org=org, record=points
-            )  
+
+    points = []
+    for index, row in param_data.iterrows():
+        point = (
+            Point("nerrs")
+            .tag("station_code", station_code)
+            .tag("location", station_name)
+            .tag("source", "NERRS_CDMO")
+            .time(row['DateTimeStamp'])
+        )
+        for colName in param_data.columns:
+            if colName not in skipColumns:
+                try:
+                    point = point.field(colName, float(row[colName]))
+                except TypeError as err:  # catch NoneType values
+                    print(f"{colName} value is not float: {row[colName]}", end="|")
+                except ValueError as err:  # catch string values
+                    print(f"{colName} value is non-coerceable string: {row[colName]}", end="|")
+        points.append(point)
+    print("\n")
+    # batch write points
+    results = client.write_api(write_options=SYNCHRONOUS).write(
+        bucket=bucket, org=org, record=points
+    )
+    print(f"{len(points)} points submitted")
     # Manually close the client to ensure no batching issues
     client.__del__()
     print("influxdb API response:")

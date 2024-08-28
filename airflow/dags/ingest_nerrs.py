@@ -4,7 +4,7 @@ Instrumented records (continuous, but only from one location at each NERR)
 
 ```mermaid
 "NERRS CDMO" 
-  -- "airflow ingest_nerr_met" --> influxDB 
+  -- "airflow ingest_nerrs" --> influxDB 
 """
 import os
 
@@ -45,7 +45,7 @@ me":"R"} ,
 
 # TODO: set start_date using station['active_dates']?
 with DAG(
-    'ingest_nerrs_met',
+    'ingest_nerrs',
     catchup=True,
     schedule_interval="0 0 * * 1",  # weekly
     max_active_runs=1,
