@@ -7,6 +7,7 @@ Instrumented records (continuous, but only from one location at each NERR)
   -- "airflow ingest_nerrs" --> influxDB 
 """
 import os
+from datetime import datetime, timedelta
 
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
@@ -50,7 +51,10 @@ with DAG(
     schedule_interval="0 0 * * 1",  # weekly
     max_active_runs=1,
     default_args={
-        "start_date": datetime(2020, 1, 1)
+        "start_date": datetime(2020, 1, 1),
+        "retries": 5,
+        "retry_delay": timedelta(days=60),
+        "retry_exponential_backoff": True
     },
 ) as dag:
     for station in STATIONS:
