@@ -22,7 +22,7 @@ USER airflow
 ADD requirements.txt . 
 RUN pip install --upgrade pip
 RUN pip install --upgrade apache-airflow==${AIRFLOW_VERSION} 
-RUN pip install --upgrade --force-reinstall -r requirements.txt
+RUN pip install --upgrade --force-reinstall --no-cache-dir -r requirements.txt
 
 # === influxDB CLI setup
 RUN influx config create --config-name imars_config \
