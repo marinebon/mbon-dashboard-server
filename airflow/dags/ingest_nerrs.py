@@ -58,7 +58,7 @@ with DAG(
     },
 ) as dag:
     for station in STATIONS:
-        station_name = station['Station_Name'].replace(' ', '_')
+        station_name = f"{station['reserve_name']}_{station['Station_Name']}".replace(' ', '_')
         # TODO: check if {{ds}} within the active_dates
         PythonOperator(
             task_id=f"ingest_nerrs_{station_name}_{station['Station_Code']}",
