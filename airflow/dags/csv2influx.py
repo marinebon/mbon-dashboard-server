@@ -39,11 +39,17 @@ def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]], time
                 point = point.tag(tag[0], tag[1])
             points.append(point)
         except KeyError as e:
-            print(f"'field[0]' not in csv file'")
+            print(f"'{field[0]}' not in csv file'")
             pass
-        
+
     # Batch write points
-    results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)  
+    results = client.write_api(write_options=SYNCHRONOUS).write(bucket=bucket, org=org, record=points)
+    
+    if len(points) < 1:
+        raise AssertionError("no points uploaded")
+    else:
+        print(f"{len(points)} points written to db")
+
     # Manually close the client to ensure no batching issues
     client.__del__()
     print("influxdb API response:")
