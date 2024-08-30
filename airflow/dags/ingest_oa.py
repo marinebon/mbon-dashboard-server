@@ -39,8 +39,9 @@ with DAG(
                 'data_url': f"{DATA_HOST}/{FPATH}",
                 'measurement': 'oa_params',
                 'fields': [
-                    [param_name, param_col_name]
+                    [param_col_name, param_name]
                 ],
+                'skiprows': [1],  # skip 2nd header row
                 'tags': ["source", "ORNL_OA"],
                 'timeCol':'time'
             }
