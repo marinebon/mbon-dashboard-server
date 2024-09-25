@@ -2,7 +2,6 @@
 # airflow's docs here:
 # https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml
 ---
-version: '3.3'
 
 # ============================================================================
 # === config shared between containers =======================================
