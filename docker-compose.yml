@@ -94,8 +94,8 @@ services:
           GF_SECURITY_ADMIN_USER: imars_grafana_user
           GF_SECURITY_ADMIN_PASSWORD: ${GF_SECURITY_ADMIN_PASSWORD}
           GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /grafana_provisioning/dashboards/home_dashboard.json
-          - INFLUXDB_HOSTNAME=http://35.211.107.224:8086
-          - INFLUXDB_GRAPHITE_HOSTNAME=http://35.211.107.224:2003
+          INFLUXDB_HOSTNAME: http://35.211.75.134:8086
+          INFLUXDB_GRAPHITE: HOSTNAME=http://35.211.75.134:2003
 
       volumes:
           - ./grafana/provisioning:/grafana_provisioning
@@ -137,15 +137,6 @@ services:
             # - INFLUXDB_READ_USER=grafana
             # - INFLUXDB_WRITE_USER=telegraf
   # ==========================================================================
-  mbon_data_uploader:
-      container_name: mbon_data_uploader
-      build: ./mbon_data_uploader
-      ports:
-          - 5000:5000
-      environment:
-          - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
-          - INFLUXDB_HOSTNAME=35.211.75.134:8086
-
   # ==========================================================================
   # === airflow job orchestration services
   # ==========================================================================
