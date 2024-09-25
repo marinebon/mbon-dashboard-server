@@ -8,6 +8,7 @@ INFLUXDB_READ_USER_PASSWORD="grafana_user_pw"
 INFLUXDB_WRITE_USER_PASSWORD="telegraf_user_pw"
 INFLUX_PASSWORD="influx_pw"
 INFLUXDB_TOKEN=X4sLjbUroTQE9MTA61tpo260vLUUvZToRA98L38OyKBMLsUCc-Raz0McafI3v8tXN7uY5uoECM0d80kCDFOKtQ==
+INFLUX_ADMIN_TOKEN=$INFLUXDB_TOKEN
 
 # ==========================================================================
 
