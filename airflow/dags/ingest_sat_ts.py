@@ -37,42 +37,53 @@ with DAG(
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
-    SAT_ROI_LIST = [
-        '01', '02', '03', '04', '05', '06', '07', '08', '09',
-        '10', '11', '12', '13', '14', '15', '16', '17','grnms'
-    ]
-    SAT_FILE_DETAIL_LIST = [
-        # sat    | product
-        ['VSNPP', 'Kd_490'],
-        ['VSNPP', 'Rrs_671'],
-        ['VSNPP', 'chlor_a'],
-        ['VSNPP', 'sstn'],
-        #["MODA", "chlor_a"],
-        #["MODA", "Rrs_667"],
-        #["MODA", "Kd_490"],
-        #["MODA", "sst4"],
-        #["MODA",  "ABI"],
-    ]
-    for roi in SAT_ROI_LIST:
-        for sat, product in SAT_FILE_DETAIL_LIST:
-            # example path: `SEUS_Kd_490_TS_VSNPP_daily_01.csv`
-            DATA_FNAME = f"{REGION}_{product}_TS_{sat}_daily_{roi}.csv"
-            PythonOperator(
-                task_id=f"ingest_sat_{roi}_{sat}_{product}",
-                python_callable=csv2influx,
-                op_kwargs={
-                    'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
-                    'measurement': product,
-                    'fields': [
-                        ["mean", "mean"],
-                        ["climatology", "climatology"],
-                        ["anomaly", "anomaly"]
-                    ],
-                    'tags': [
-                        ['satellite', sat],
-                        ['location', roi],
-                        ['source', "USF_IMaRS"]
-                    ],
-                    'timeCol': "Time"
-                },
-            )
+
+
+    SAT_DB_FILES = {
+        'SEUS': {
+            'stations': [
+                '01', '02', '03', '04', '05', '06', '07', '08',
+                '09', '10', '11', '12', '13', '14', '15', '16', '17', 'grnms'
+            ],
+            'variables': {
+                'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
+            }
+        },
+        'GOM': {
+            'stations': [
+                'BIS', 'UK', 'MUK', 'MK', 'LK', 'DT', 'MQ',
+                'FKNMS', 'SR', 'WFS', 'EFB', 'WFB'
+            ],
+            'variables': {
+                'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
+            }
+        }
+    }
+    
+    for region, data in SAT_DB_FILES.items():
+        # Loop through each station in the region
+        for roi in data['stations']:
+            # Loop through each satellite and variable in the region
+            for sat, variables in data['variables'].items():
+                for variable in variables:
+                    # example path: `SEUS_Kd_490_TS_VSNPP_daily_01.csv`
+                    DATA_FNAME = f"{region}_{variable}_TS_{sat}_daily_{roi}.csv"
+                    PythonOperator(
+                        task_id=f"ingest_sat_{roi}_{sat}_{variable}",
+                        python_callable=csv2influx,
+                        op_kwargs={
+                            'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
+                            'measurement': variable,
+                            'fields': [
+                                ["mean", "mean"],
+                                ["climatology", "climatology"],
+                                ["anomaly", "anomaly"]
+                            ],
+                            'tags': [
+                                ['satellite', sat],
+                                ['location', roi],
+                                ['source', "USF_IMaRS"]
+                            ],
+                            'timeCol': "Time"
+                        },
+                    )
