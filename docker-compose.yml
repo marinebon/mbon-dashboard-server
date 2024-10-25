@@ -61,6 +61,8 @@ services:
     container_name: nginx
     build: ./nginx
     restart: unless-stopped
+    environment:
+      SERVER_IP: 35.209.0.142
     ports:
       - 80:80
     volumes:
