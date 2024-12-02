@@ -80,6 +80,19 @@ To do this simply comment out the relevant sections of docker-compose.yml.
     4. **OPTIONAL**: load data into InfluxDB - see `./influxdb/README.md`
     5. **OPTIONAL:** modify grafana dashboards - see `./grafana/README.md`
 
+#### SSL Certs
+SSL Certs set up using certbot & letsEncrypt.
+Must be done once for each server.
+
+```
+sudo certbot certonly --standalone
+
+sudo cp /etc/letsencrypt/live/mbon-dashboards.marine.usf.edu/fullchain.pem certs/.
+sudo cp /etc/letsencrypt/live/mbon-dashboards.marine.usf.edu/privkey.pem certs/.
+
+
+```
+
 ### debugging on the grafana interface
 * `502: bad gateway` error: this means that grafana can't connect to the timeseries database (influxDB).
     * check {URL}:8086/health to ensure InfluxDB okay
