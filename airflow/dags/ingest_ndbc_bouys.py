@@ -28,37 +28,38 @@ with DAG(
         "start_date": datetime(2020, 1, 1)
     },
 ) as dag:
-  # TODO: these go on the FKNMS, not SEUS
-    # SAL_BUOYS = [
-    #     "Little_Rabbit_Key",
-    #     "Peterson_Key",
-    #     "Whipray_Basin",
-    #     "Butternut_Key",
-    #     "Bob_Allen_Key"
-    # ]
-    # for buoy_name in SAL_BUOYS:
-    #     # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv
-    #     DATA_FNAME = f"{buoy_name}_Buoy_WTMP_SAL.csv"
-    #     PythonOperator(
-    #         task_id=f"ingest_sal_{buoy_name}",
-    #         python_callable=csv2influx,
-    #         op_kwargs={
-    #             'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
-    #             'measurement': "salinity",
-    #             'fields': [
-    #                 ["sea_water_temperature", "sea_water_temperature"],
-    #                 ["sea_water_practical_salinity", "sea_water_practical_salinity"]
-    #             ],
-    #             'tags': [
-    #                 ['location', buoy_name],
-    #                 ['source', 'NDBC']
-    #             ],
-    #             'timeCol': "time",
-    #             'skiprows': [1]  # skip 2nd header row
-    #         },
-    #     )
+    # FOR FKNMS
+    SAL_BUOYS = [
+        "Little_Rabbit_Key",
+        "Peterson_Key",
+        "Whipray_Basin",
+        "Butternut_Key",
+        "Bob_Allen_Key"
+    ]
+    for buoy_name in SAL_BUOYS:
+        # example path: Little_Rabbit_Key_Buoy_WTMP_SAL.csv
+        DATA_FNAME = f"{buoy_name}_Buoy_WTMP_SAL.csv"
+        PythonOperator(
+            task_id=f"ingest_sal_{buoy_name}",
+            python_callable=csv2influx,
+            op_kwargs={
+                'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
+                'measurement': "salinity",
+                'fields': [
+                    ["sea_water_temperature", "sea_water_temperature"],
+                    ["sea_water_practical_salinity", "sea_water_practical_salinity"]
+                ],
+                'tags': [
+                    ['location', buoy_name],
+                    ['source', 'NDBC']
+                ],
+                'timeCol': "time",
+                'skiprows': [1]  # skip 2nd header row
+            },
+        )
 
 
+    # FOR SEUS:
     MET_BUOYS = [
         "Grays_Reef",
         "Fernandina",

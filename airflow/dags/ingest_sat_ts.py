@@ -49,6 +49,17 @@ with DAG(
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
+        'FKNMS': {
+            'stations': [
+                'BIS', 'UK', 'MUK', 'MK', 'LK', 'DT', 'MQ',
+                'FKNMS', 'SR', 'WFS','EFB', 'WFB',
+            ],
+            'variables': {
+                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'sst4', 'ABI']
+            }
+        },
+        
+        # NOTE: which dash are these for?:
         'GOM': {
             'stations': [
                 'BIS', 'UK', 'MUK', 'MK', 'LK', 'DT', 'MQ',
