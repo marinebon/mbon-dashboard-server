@@ -1,4 +1,4 @@
-FROM apache/airflow:2.9.0
+FROM apache/airflow:latest
 
 ARG INFLUXDB_HOSTNAME
 ARG INFLUXDB_TOKEN
