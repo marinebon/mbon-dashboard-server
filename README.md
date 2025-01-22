@@ -2,6 +2,8 @@
 
 Docker software stack for MBON server serving early-alert dashboards.
 
+![teaser](https://github.com/marinebon/mbon-dashboard-server/blob/unify-subdomain/static_files/mbon-dashboards-teaser.png)
+
 For more detailed documentation please see `./documentation/`.
 
 ## Examples
