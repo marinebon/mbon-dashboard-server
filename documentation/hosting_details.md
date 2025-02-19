@@ -3,8 +3,12 @@ The SE-US MBON runs the MBON-Dashboard-Server application on Google Cloud Platfo
 As of 2025, all supported regional dashboards are being integrated into a single instance under the branch `unify-subdomain`.
 For the ~4 client organizations the following configuration is being used:
 
-* E2-standard-16 instance
-* region US-east1 (South Carolina)
+* Machine Config
+  * E2-standard-16 instance
+  * region US-east1 (South Carolina)
+* OS & Storage
+  * Ubuntu 24.04 LTS x86/64
+  * SSD persistent disk 100GB
 
 -------------------------------
 
