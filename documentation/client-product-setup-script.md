@@ -1,3 +1,29 @@
+# 2025-02
+```bash
+# === install docker & git
+sudo apt install git
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+sudo usermod -aG docker $USER
+
+# === get & set up the code
+git clone https://github.com/marinebon/mbon-dashboard-server.git -b unify-subdomain
+
+cd mbon-dashboard-server
+cp documentation/example_env_file .env
+# open and edit the .env file to secure server
+
+# === start it up
+docker compose up --build -d
+```
+
+Don't forget the manual steps at the bottom of this doc!
+
+---------------------------
+
+# Older docs
 The steps below are everything you need to do to stand up one of the `client-*` product branches on a fresh machine.
 
 # Ubuntu 22.04
