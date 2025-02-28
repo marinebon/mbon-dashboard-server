@@ -80,8 +80,8 @@ services:
           - 3000:3000
       environment:
           <<: *global-common-env
-          GF_INSTALL_PLUGINS: "alexandra-trackmap-panel,pierosavi-imageit-panel,fatcloud-windrose-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/1.0.0/grafana-erddap.zip;grafana-erddap"
-          GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: "erddap-panel"
+          GF_INSTALL_PLUGINS: "alexandra-trackmap-panel,pierosavi-imageit-panel,fatcloud-windrose-panel,https://github.com/USF-IMARS/grafana-erddap/releases/download/v2.0.5/imars-grafanaerddap-panel-2.0.5.zip;imars-grafanaerddap-panel"
+          GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: "imars-grafanaerddap-panel"
           GF_PATHS_PROVISIONING: /grafana_provisioning
           GF_AUTH_ANONYMOUS_ENABLED: true
           GF_SECURITY_ADMIN_USER: imars_grafana_user
