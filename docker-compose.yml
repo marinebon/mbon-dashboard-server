@@ -63,6 +63,9 @@ services:
     ports:
       - 80:80
       - 443:443
+      - 8080:8080
+      - 8086:8086
+      - 5555:5555
     volumes:
       - ./static_files:/usr/share/nginx/html:ro
       - ./certs:/etc/nginx/certs
@@ -100,8 +103,7 @@ services:
         container_name: influxdb
         image: influxdb:2.7.6
         ports:
-            - 8086:8086  # HTTP API
-            - 2003:2003  # graphite API
+            - 2003:2003  # graphite API  TODO: rm this or mv it to nginx like others
         volumes:
             # init the db by putting .sh or .iql files in /docker-entrypoint-initdb.d
             # this should inlcude adding a read-only user for grafana
@@ -180,8 +182,6 @@ services:
   airflow-webserver:
     <<: *airflow-common
     command: webserver
-    ports:
-      - 8888:8080
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 10s
@@ -222,8 +222,6 @@ services:
   flower:
     <<: *airflow-common
     command: celery flower
-    ports:
-      - 5555:5555
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:5555/"]
       interval: 10s
