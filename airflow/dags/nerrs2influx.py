@@ -1,3 +1,7 @@
+# ingest from NERRS CDMO.
+# NOTE: data access requires registration.
+#       See details https://cdmo.baruch.sc.edu/webservices.cfm
+
 from datetime import datetime, timedelta
 import pandas as pd
 import pendulum # for date parsing

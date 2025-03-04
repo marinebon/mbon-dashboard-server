@@ -2,6 +2,9 @@
 Ingest NERRS met data.
 Instrumented records (continuous, but only from one location at each NERR)
 
+NOTE: data access requires registration.                                                               
+      See details https://cdmo.baruch.sc.edu/webservices.cfm                                           
+
 ```mermaid
 "NERRS CDMO" 
   -- "airflow ingest_nerrs" --> influxDB 
