@@ -80,7 +80,7 @@ with DAG(
                     # example path: `SEUS_Kd_490_TS_VSNPP_daily_01.csv`
                     DATA_FNAME = f"{region}_{variable}_TS_{sat}_daily_{roi}.csv"
                     PythonOperator(
-                        task_id=f"ingest_sat_{roi}_{sat}_{variable}",
+                        task_id=f"{region}_{roi}_{sat}_{variable}",
                         python_callable=csv2influx,
                         op_kwargs={
                             'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
