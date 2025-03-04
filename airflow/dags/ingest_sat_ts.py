@@ -17,10 +17,6 @@ from datetime import datetime
 
 from csv2influx import csv2influx
 
-REGION = 'SEUS'
-DATA_HOST = "https://storage.googleapis.com/dashboards_csvs"
-
-REGION_UPPERCASE = REGION.upper()  # bc cannot do REGION.upper() inside f string.
 # ============================================================================
 # === DAG defines the task exec order
 # ============================================================================
@@ -33,12 +29,9 @@ with DAG(
         "start_date": datetime(2020, 1, 1)
     },
 ) as dag:
-    GBUCKET_URL_PREFIX = "https://storage.googleapis.com/dashboards_csvs"
     # ========================================================================
     # Satellite RoI Extractions
     # ========================================================================
-
-
     SAT_DB_FILES = {
         'SEUS': {
             'stations': [
@@ -72,6 +65,7 @@ with DAG(
     }
     
     for region, data in SAT_DB_FILES.items():
+        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
         # Loop through each station in the region
         for roi in data['stations']:
             # Loop through each satellite and variable in the region
