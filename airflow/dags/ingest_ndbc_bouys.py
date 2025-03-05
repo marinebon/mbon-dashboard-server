@@ -27,7 +27,7 @@ MET_PARAMS = [
 
 # Define a data structure similar to the satellite ingestion file.
 NDBC_DB_FILES = {
-    'FKNMS': {
+    'GOM': {
         'stations': [
             "Little_Rabbit_Key",
             "Peterson_Key",
@@ -88,7 +88,7 @@ with DAG(
             for dataset_name, ds in data['datasets'].items():
                 # Build the filename from the template.
                 DATA_FNAME = ds['filename_template'].format(station=station)
-                task_id = f"ingest_{dataset_name}_{station}"
+                task_id = f"{region}_{dataset_name}_{station}"
                 # Add the dynamic tag for location.
                 tags = ds.get('tags', []) + [['location', station]]
                 PythonOperator(
