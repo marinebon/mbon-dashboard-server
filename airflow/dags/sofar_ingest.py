@@ -11,39 +11,51 @@ from csv2influx import csv2influx
 # =================================================================
 # === custom function for submitting headers for SOFAR
 # =================================================================
-import subprocess
+import pycurl
 import tempfile
+import certifi
 
 def fetch_csv_with_headers(url):
     # Create a temporary file to store the CSV data.
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".csv") as temp_file:
-        temp_file_path = temp_file.name
+    temp_file = tempfile.NamedTemporaryFile(delete=False, suffix=".csv")
+    temp_file_path = temp_file.name
+    temp_file.close()  # We'll let pycurl write to the file.
 
-    # Build the curl command as a single string, wrapping each argument with single quotes.
-    curl_command = (
-        f" curl '{url}' "
-        " -X GET "
-        " -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0' "
-        " -H 'Accept: application/json, text/plain, */*' "
-        " -H 'Accept-Language: en-US,en;q=0.5' "
-        " -H 'Content-Type: application/x-www-form-urlencoded' "
-        " -H 'view_token: 1bc9848d3e524c34a1eb220e121d9a9e' "
-        " -H 'Sec-Fetch-Dest: empty' "
-        " -H 'Sec-Fetch-Mode: cors' "
-        " -H 'Sec-Fetch-Site: same-site' "
-        " -H 'Pragma: no-cache' "
-        " -H 'Cache-Control: no-cache' "
-        " -H 'referrer: https://spotters.sofarocean.com/' "
-        " -H 'credentials: omit' "
-        " -H 'mode: cors' "
-        f" > {temp_file_path}"
-    )
+    # List of headers matching the original working curl command.
+    headers = [
+        "User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0",
+        "Accept: application/json, text/plain, */*",
+        "Accept-Language: en-US,en;q=0.5",
+        "Content-Type: application/x-www-form-urlencoded",
+        "view_token: 1bc9848d3e524c34a1eb220e121d9a9e",
+        "Sec-Fetch-Dest: empty",
+        "Sec-Fetch-Mode: cors",
+        "Sec-Fetch-Site: same-site",
+        "Pragma: no-cache",
+        "Cache-Control: no-cache",
+        "referrer: https://spotters.sofarocean.com/",
+        "credentials: omit",
+        "mode: cors",
+        "Origin: https://spotters.sofarocean.com"
+    ]
 
-    result = subprocess.run(curl_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    if result.returncode != 0:
-        error_msg = result.stderr.decode('utf-8')
-        raise Exception(f"Curl command failed with error: {error_msg}")
-
+    # Initialize a pycurl object.
+    c = pycurl.Curl()
+    c.setopt(c.URL, url)
+    c.setopt(c.HTTPHEADER, headers)
+    # Ensure that certificate verification works.
+    c.setopt(c.CAINFO, certifi.where())
+    # Write the output to our temporary file.
+    with open(temp_file_path, 'wb') as f:
+        c.setopt(c.WRITEDATA, f)
+        c.perform()
+    # Check HTTP response code.
+    http_code = c.getinfo(c.RESPONSE_CODE)
+    c.close()
+    
+    if http_code not in (200, 304):
+        raise Exception(f"HTTP request failed with status code {http_code}")
+    
     return temp_file_path
 # =================================================================
 with DAG(

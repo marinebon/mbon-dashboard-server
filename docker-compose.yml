@@ -137,16 +137,15 @@ services:
         env_file:
             - .env
   # ==========================================================================
-# DEPRECATED
-#  mbon_data_uploader:
-#      container_name: mbon_data_uploader
-#      build: ./mbon_data_uploader
-#      ports:
-#          - 5000:5000
-#      environment:
-#          - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
-#          - INFLUXDB_HOSTNAME=influxdb:8086
-
+  # NOTE: uploader used for SOFAR data, but please don't use it for anything else.
+  mbon_data_uploader:
+      container_name: mbon_data_uploader
+      build: ./mbon_data_uploader
+      ports:
+          - 5000:5000
+      environment:
+          - FLASK_APP=mbon_data_uploader  # TODO: this can be deleted?
+          - INFLUXDB_HOSTNAME=influxdb:8086
   # ==========================================================================
   # === airflow job orchestration services
   # ==========================================================================
