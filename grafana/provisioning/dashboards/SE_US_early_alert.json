@@ -137,7 +137,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 33
+            "y": 41
           },
           "id": 97,
           "options": {
@@ -190,16 +190,10 @@
       "id": 29,
       "panels": [
         {
-          "base_url": "http://131.247.136.200:8080/erddap",
-          "bg_color": "0xffccccff",
-          "color_bar_str": "BlueWhiteRed|||-2.0|2.0|",
-          "colorbar_display": "individual",
           "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "delta": 10526400000,
-          "delta_unit": "ms",
           "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
           "gridPos": {
             "h": 9,
@@ -207,61 +201,27 @@
             "x": 0,
             "y": 34
           },
-          "id": 14,
-          "lat_max": 33,
-          "lat_min": 29.1,
-          "lon_max": -78,
-          "lon_min": -82,
-          "n_images": 6,
-          "product_id": "vsnpp_oc_7d_seus",
-          "show_request_dates": false,
+          "id": 98,
+          "options": {
+            "base_url": "http://131.247.136.200:8080/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "chlor_a_anom"
+          },
           "title": "Weekly chlorophyll anomalies (mg/m^3)",
-          "type": "erddap-panel",
-          "urls": [
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2022-09-26T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2022-09-26T18:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "26th Sep 2022"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2023-01-26T14:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2023-01-26T14:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "26th Jan 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2023-05-28T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2023-05-28T10:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "28th May 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2023-09-27T06:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2023-09-27T06:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th Sep 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2024-01-27T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2024-01-27T02:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th Jan 2024"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?chlor_a_anom[(2024-05-27T22:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?chlor_a_anom[(2024-05-27T22:05:00Z)][(29.1):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Cchlor_a_anom&.colorBar=BlueWhiteRed%7C%7C%7C-2.0%7C2.0%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th May 2024"
-            }
-          ],
-          "variable_id": "chlor_a_anom"
+          "type": "imars-grafanaerddap-panel"
         },
         {
-          "base_url": "http://131.247.136.200:8080/erddap",
-          "bg_color": "0xffccccff",
-          "color_bar_str": "|||||",
-          "colorbar_display": "individual",
           "datasource": {
             "type": "datasource",
             "uid": "grafana"
           },
-          "delta": 10526400000,
-          "delta_unit": "ms",
           "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
           "gridPos": {
             "h": 9,
@@ -269,61 +229,28 @@
             "x": 0,
             "y": 43
           },
-          "id": 10,
-          "lat_max": 33,
-          "lat_min": 29.01,
-          "lon_max": -78,
-          "lon_min": -82,
-          "n_images": 6,
-          "product_id": "vsnpp_sstn_7d_seus",
-          "show_request_dates": false,
+          "id": 99,
+          "options": {
+            "base_url": "http://131.247.136.200:8080/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Rainbow|C|Linear|0|30|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_sstn_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "sstn_anom"
+          },
           "title": "Weekly nighttime SST anomalies (DegC)",
-          "type": "erddap-panel",
-          "urls": [
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2022-09-26T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2022-09-26T18:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "26th Sep 2022"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2023-01-26T14:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2023-01-26T14:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "26th Jan 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2023-05-28T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2023-05-28T10:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "28th May 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2023-09-27T06:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2023-09-27T06:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th Sep 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2024-01-27T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2024-01-27T02:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th Jan 2024"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.png?sstn_anom[(2024-05-27T22:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=170700%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_sstn_7d_seus.largePng?sstn_anom[(2024-05-27T22:05:00Z)][(29.01):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7Csstn_anom&.colorBar=%7C%7C%7C%7C%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "27th May 2024"
-            }
-          ],
-          "variable_id": "sstn_anom"
+          "type": "imars-grafanaerddap-panel"
         },
         {
-          "base_url": "http://131.247.136.200:8080/erddap",
-          "bg_color": "0xffccccff",
-          "color_bar_str": "BlueWhiteRed|||-0.005|0.005|",
-          "colorbar_display": "individual",
           "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
+            "type": "datasource",
+            "uid": "grafana"
           },
-          "delta": 10526400000,
-          "delta_unit": "ms",
           "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
           "gridPos": {
             "h": 9,
@@ -331,169 +258,51 @@
             "x": 0,
             "y": 52
           },
-          "id": 16,
-          "lat_max": 33,
-          "lat_min": 29.05,
-          "lon_max": -78,
-          "lon_min": -82,
-          "n_images": 6,
-          "product_id": "vsnpp_oc_7d_seus",
-          "show_request_dates": false,
+          "id": 100,
+          "options": {
+            "base_url": "http://131.247.136.200:8080/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Rainbow|C|Linear|0|30|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "Rrs_671_anom"
+          },
           "title": "Weekly red reflectance (suspended sediment proxy) anomalies (sr^-1)",
-          "type": "erddap-panel",
-          "urls": [
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Sep 2022"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "14th May 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Sep 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2024"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.png?Rrs_671_anom[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/vsnpp_oc_7d_seus.largePng?Rrs_671_anom[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CRrs_671_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.005%7C0.005%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th May 2024"
-            }
-          ],
-          "variable_id": "Rrs_671_anom"
+          "type": "imars-grafanaerddap-panel"
         },
         {
-          "base_url": "http://131.247.136.200:8080/erddap",
-          "bg_color": "0xffccccff",
-          "color_bar_str": "BlueWhiteRed|||-0.15|0.15|",
-          "colorbar_display": "individual",
-          "delta": 10526400000,
-          "delta_unit": "ms",
-          "description": "MODIS-Aqua 1km Algal Bloom Index (W/m^2/um/sr) binned to 7-day intervals. Algal Bloom Index (ABI) is based on normalized fluorescence line height and can be used to identify algal blooms.\nAnomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "Dynamic seascapes are classified using multivariate  data and describe basin and gyre scale features and seasonal boundary shifts.  A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).",
           "gridPos": {
             "h": 9,
             "w": 24,
             "x": 0,
             "y": 61
           },
-          "id": 15,
-          "lat_max": 33,
-          "lat_min": 29.05,
-          "lon_max": -78,
-          "lon_min": -82,
-          "n_images": 6,
-          "product_id": "moda_oc_7d_seus",
-          "show_request_dates": false,
-          "title": "Weekly Algal Bloom Index anomalies (W/m^2/um/sr)",
-          "type": "erddap-panel",
-          "urls": [
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Sep 2022"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "14th May 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Sep 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2024"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.png?ABI_anom[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/moda_oc_7d_seus.largePng?ABI_anom[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CABI_anom&.colorBar=BlueWhiteRed%7C%7C%7C-0.15%7C0.15%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th May 2024"
-            }
-          ],
-          "variable_id": "ABI_anom"
-        },
-        {
-          "base_url": "http://131.247.136.200:8080/erddap",
-          "bg_color": "0xffccccff",
-          "color_bar_str": "Seascapes|||0|33|",
-          "colorbar_display": "individual",
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
+          "id": 101,
+          "options": {
+            "base_url": "http://131.247.136.200:8080/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Rainbow|C|Linear|0|30|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "noaa_aoml_seascapes_8day",
+            "show_request_dates": false,
+            "variable_id": "CLASS"
           },
-          "delta": 10526400000,
-          "delta_unit": "ms",
-          "description": "Dynamic seascapes are classified using multivariate  data and describe basin and gyre scale features and seasonal boundary shifts.  A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).",
-          "gridPos": {
-            "h": 9,
-            "w": 24,
-            "x": 0,
-            "y": 70
-          },
-          "id": 55,
-          "lat_max": 33,
-          "lat_min": 29.05,
-          "lon_max": -78,
-          "lon_min": -82,
-          "n_images": 6,
-          "product_id": "noaa_aoml_seascapes_8day",
-          "show_request_dates": false,
           "title": "8-Day Biogeographic seascape classes",
-          "type": "erddap-panel",
-          "urls": [
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2022-09-12T15:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Sep 2022"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-01-12T11:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-05-14T07:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "14th May 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2023-09-13T03:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th Sep 2023"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2024-01-12T23:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "12th Jan 2024"
-            },
-            {
-              "display": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.png?CLASS[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=192000%7C",
-              "link": "http://131.247.136.200:8080/erddap/griddap/noaa_aoml_seascapes_8day.largePng?CLASS[(2024-05-13T19:38:00Z)][(29.05):(33)][(-82):(-78)]&.draw=surface&.vars=longitude%7Clatitude%7CCLASS&.colorBar=Seascapes%7C%7C%7C0%7C33%7C&.bgColor=0xffccccff&.trim=1&.legend=Bottom&.size=%7C",
-              "request_time": "13th May 2024"
-            }
-          ],
-          "variable_id": "CLASS"
+          "type": "imars-grafanaerddap-panel"
         }
       ],
       "targets": [
@@ -586,7 +395,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 35
+            "y": 43
           },
           "id": 2,
           "interval": "",
@@ -721,7 +530,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 35
+            "y": 43
           },
           "id": 12,
           "interval": "",
@@ -856,7 +665,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 43
+            "y": 51
           },
           "id": 13,
           "interval": "",
@@ -991,7 +800,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 43
+            "y": 51
           },
           "id": 11,
           "interval": "",
@@ -1094,7 +903,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 44
           },
           "id": 87,
           "options": {
@@ -1175,7 +984,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 49
+            "y": 57
           },
           "id": 85,
           "interval": "",
@@ -1303,7 +1112,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 49
+            "y": 57
           },
           "id": 91,
           "interval": "",
@@ -1430,7 +1239,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 65
           },
           "id": 92,
           "interval": "",
@@ -1557,7 +1366,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 65
           },
           "id": 93,
           "interval": "",
@@ -1684,7 +1493,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 73
           },
           "id": 94,
           "interval": "",
@@ -1784,7 +1593,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 37
+            "y": 45
           },
           "id": 70,
           "options": {
@@ -1873,7 +1682,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 54
           },
           "id": 57,
           "interval": "",
@@ -2007,7 +1816,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 54
           },
           "id": 63,
           "interval": "",
@@ -2141,7 +1950,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 62
           },
           "id": 62,
           "interval": "",
@@ -2275,7 +2084,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 62
           },
           "id": 65,
           "interval": "",
@@ -2422,7 +2231,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 62
+            "y": 70
           },
           "id": 66,
           "interval": "",
@@ -2557,7 +2366,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 62
+            "y": 70
           },
           "id": 67,
           "interval": "",
@@ -2663,7 +2472,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 38
+            "y": 46
           },
           "id": 74,
           "options": {
@@ -2785,7 +2594,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 46
+            "y": 54
           },
           "id": 81,
           "options": {
@@ -2912,7 +2721,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 46
+            "y": 54
           },
           "id": 79,
           "options": {
@@ -3039,7 +2848,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 54
+            "y": 62
           },
           "id": 80,
           "options": {
@@ -3166,7 +2975,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 54
+            "y": 62
           },
           "id": 77,
           "options": {
@@ -3293,7 +3102,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 62
+            "y": 70
           },
           "id": 78,
           "options": {
@@ -3447,7 +3256,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 39
+            "y": 47
           },
           "id": 35,
           "interval": "",
@@ -3548,7 +3357,7 @@
             "h": 8,
             "w": 24,
             "x": 0,
-            "y": 40
+            "y": 48
           },
           "id": 20,
           "options": {
@@ -3582,7 +3391,7 @@
             "h": 11,
             "w": 24,
             "x": 0,
-            "y": 48
+            "y": 56
           },
           "id": 21,
           "options": {
@@ -3628,12 +3437,12 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
-            "01"
+            "None"
           ],
           "value": [
-            "01"
+            ""
           ]
         },
         "datasource": {
@@ -3659,12 +3468,12 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
-            "anomaly"
+            "None"
           ],
           "value": [
-            "anomaly"
+            ""
           ]
         },
         "datasource": {
@@ -3717,20 +3526,12 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
-            "Sapelo_Island_Cabretta_Creek",
-            "Sapelo_Island_Dean_Creek",
-            "Sapelo_Island_Hunt_Dock",
-            "Sapelo_Island_Marsh_Landing",
-            "Sapelo_Island_Lower_Duplin"
+            "None"
           ],
           "value": [
-            "Sapelo_Island_Cabretta_Creek",
-            "Sapelo_Island_Dean_Creek",
-            "Sapelo_Island_Hunt_Dock",
-            "Sapelo_Island_Marsh_Landing",
-            "Sapelo_Island_Lower_Duplin"
+            ""
           ]
         },
         "datasource": {
@@ -3772,6 +3573,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gi",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
