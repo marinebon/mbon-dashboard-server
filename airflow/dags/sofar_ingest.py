@@ -30,7 +30,11 @@ with DAG(
     BashOperator(
         task_id=f"sofar_ingest",
         bash_command=(
-            "curl 'https://api.sofarocean.com/fetch/download-sensor-data/?spotterId=SPOT-30987C&startDate={{ prev_ds }}T00:00Z&endDate={{ ds }}T00:00Z&processingSources=all' "
+            "curl 'https://api.sofarocean.com/fetch/download-sensor-data/"
+            "?spotterId=SPOT-30987C"
+            "&startDate={{ prev_ds }}T00:00Z"
+            "&endDate={{ ds }}T00:00Z"
+            "&processingSources=all' "
             "  -X GET "
             "  -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0' "
             "  -H 'Accept: application/json, text/plain, */*' "
@@ -47,16 +51,16 @@ with DAG(
             "  -H 'mode: cors' "
             "  > datafile.csv "
             " && head datafile.csv "
-            " && curl --location --fail-with-body "
-            "    --form measurement=sofar_bouy "
-            "    --form tag_set=spotter_id=SPOT30987C "
-            "    --form fields=value,sensor_position "
-            "    --form time_column=utc_timestamp "
-            "    --form should_convert_time=True "
-            "    --form file=@./datafile.csv "
-            "    {{params.uploader_route}} "
+            " && python /opt/airflow/dags/nerrs2influx.py "
+            "    sofar_bouy "
+            " --tag_set "
+            " spotter_id=SPOT30987C "
+            " --fields value,sensor_position "
+            " --time_column utc_timestamp "
+            " --should_convert_time "
+            " --file "
+            " @./datafile.csv "
         ),
         params={
-            'uploader_route': UPLOADER_ROUTE,
         }
     )
