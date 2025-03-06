@@ -3628,7 +3628,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "01"
           ],
@@ -3659,7 +3659,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "anomaly"
           ],
@@ -3691,21 +3691,21 @@
       {
         "current": {
           "selected": false,
-          "text": "AltamahaRv_SEUSdb",
-          "value": "AltamahaRv_SEUSdb"
+          "text": "AltamahaRv",
+          "value": "AltamahaRv"
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM gh WITH KEY=location",
+        "definition": "SHOW TAG VALUES FROM gh WITH KEY=location WHERE \"region\"='SEUS'",
         "hide": 0,
         "includeAll": false,
         "label": "USGS River Gauge Location",
         "multi": false,
         "name": "gauge_location",
         "options": [],
-        "query": "SHOW TAG VALUES FROM gh WITH KEY=location",
+        "query": "SHOW TAG VALUES FROM gh WITH KEY=location WHERE \"region\"='SEUS'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -3717,12 +3717,20 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
-            "None"
+            "Sapelo_Island_Cabretta_Creek",
+            "Sapelo_Island_Dean_Creek",
+            "Sapelo_Island_Hunt_Dock",
+            "Sapelo_Island_Marsh_Landing",
+            "Sapelo_Island_Lower_Duplin"
           ],
           "value": [
-            ""
+            "Sapelo_Island_Cabretta_Creek",
+            "Sapelo_Island_Dean_Creek",
+            "Sapelo_Island_Hunt_Dock",
+            "Sapelo_Island_Marsh_Landing",
+            "Sapelo_Island_Lower_Duplin"
           ]
         },
         "datasource": {
