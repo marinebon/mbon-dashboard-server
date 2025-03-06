@@ -15,54 +15,73 @@ from datetime import datetime, timedelta
 
 from csv2influx import csv2influx
 
+discharge_metadata = {
+    'filename_template': "USGS_disch_{REGION}db_{location}.csv",
+    'measurement': "disch",
+    'fields': [
+        ["mean", "mean"],
+        ["climatology", "climatology"],
+        ["anomaly", "anomaly"]
+    ],
+    'tags': [
+        ['parameter', 'disch'],
+        ['source', 'USGS']
+    ],
+    'timeCol': "time"
+}
+gh_metadata = {
+    'filename_template': "USGS_gh_{location}_{REGION}db.csv",
+    'measurement': "gh",
+    'fields': [
+        ["mean", "mean"],
+        ["climatology", "climatology"],
+        ["anomaly", "anomaly"]
+    ],
+    'tags': [
+        ['parameter', 'gh'],
+        ['source', 'USGS']
+    ],
+    'timeCol': "time"
+}
+
 USGS_DB_FILES = {
     'SEUS': {
         'locations': [
-            'SavannahRv_SEUSdb', 'HudsonCr_SEUSdb', 'AltamahaRv_SEUSdb', 'SatillaRv_SEUSdb',
-            'StJohnsRv_SEUSdb', 'OgeecheeRv_SEUSdb', 'BrunswickRv_SEUSdb', 'StMarysRv_SEUSdb'
+            'SavannahRv', 'HudsonCr', 'AltamahaRv', 'SatillaRv',
+            'StJohnsRv', 'OgeecheeRv', 'BrunswickRv', 'StMarysRv'
         ],
         'datasets': {
-            'gh': {
-                'filename_template': "USGS_gh_{location}.csv",
-                'measurement': "gh",
-                'fields': [
-                    ["mean", "mean"],
-                    ["climatology", "climatology"],
-                    ["anomaly", "anomaly"]
-                ],
-                'tags': [
-                    ['parameter', 'gh'],
-                    ['source', 'USGS']
-                ],
-                'timeCol': "time"
-            }
+            'gh': gh_metadata
+        }
+    },
+    'FWC': {
+        'locations': [
+          'EFL', 'STL'
+        ],
+        'datasets': {
+            'disch': discharge_metadata
+        }
+    },
+    'FK': {
+        'locations': [
+          ''  # NOTE: this location has no name?
+        ],
+        'datasets': {
+            'disch': discharge_metadata
         }
     },
     'FGB': {
         'locations': [
-            'FGBdb_MS', 'FGBdb_TX', 'FKdb', 'FWCdb_EFL', 'FWCdb_STL'
+            'MS', 'TX', 
         ],
         'datasets': {
-            'disch': {
-                'filename_template': "USGS_disch_{location}.csv",
-                'measurement': "disch",
-                'fields': [
-                    ["mean", "mean"],
-                    ["climatology", "climatology"],
-                    ["anomaly", "anomaly"]
-                ],
-                'tags': [
-                    ['parameter', 'disch'],
-                    ['source', 'USGS']
-                ],
-                'timeCol': "time"
-            }
+            'disch': discharge_metadata
         }
     }
 }
 
 with DAG(
-    'ingest_usgs_gauges',
+    'usgs_gauges_ingest',
     catchup=False,
     schedule_interval="0 12 * * *",
     max_active_runs=2,
@@ -77,9 +96,15 @@ with DAG(
         GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
         for dataset_name, ds in region_data['datasets'].items():
             for location in region_data['locations']:
-                DATA_FNAME = ds['filename_template'].format(location=location)
+                DATA_FNAME = ds['filename_template'].format(
+                  location=location,
+                  REGION=region
+                )
                 task_id = f"{region}_{dataset_name}_{location}"
-                tags = ds.get('tags', []) + [['location', location]]
+                tags = ds.get('tags', []) + [
+                    ['location', location],
+                    ['region', region]
+                ]
                 PythonOperator(
                     task_id=task_id,
                     python_callable=csv2influx,
