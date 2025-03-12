@@ -1417,10 +1417,14 @@
         "current": {
           "selected": true,
           "text": [
-            "BIS"
+            "LK",
+            "MK",
+            "UK"
           ],
           "value": [
-            "BIS"
+            "LK",
+            "MK",
+            "UK"
           ]
         },
         "datasource": {
@@ -1447,8 +1451,8 @@
       {
         "current": {
           "selected": true,
-          "text": "anomaly",
-          "value": "anomaly"
+          "text": "mean",
+          "value": "mean"
         },
         "datasource": {
           "type": "influxdb",
@@ -1505,8 +1509,8 @@
     ]
   },
   "time": {
-    "from": "2022-03-12T04:11:46.684Z",
-    "to": "2026-03-13T04:11:46.684Z"
+    "from": "now-3y",
+    "to": "now"
   },
   "timepicker": {
     "hidden": false,
@@ -1520,6 +1524,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
