@@ -111,7 +111,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 2
+            "y": 23
           },
           "id": 60,
           "options": {
@@ -139,7 +139,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 8
+            "y": 29
           },
           "id": 61,
           "options": {
@@ -167,7 +167,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 14
+            "y": 35
           },
           "id": 62,
           "options": {
@@ -196,7 +196,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 20
+            "y": 41
           },
           "id": 63,
           "options": {
@@ -225,7 +225,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 26
+            "y": 47
           },
           "id": 64,
           "options": {
@@ -272,41 +272,65 @@
       "id": 58,
       "panels": [
         {
-          "content": "These plots show the advance of SCTLD based on the model of Muller et al. (2020) alongside the field observations from FWC's CREMP and SECREMP programs.\n\n\n",
           "gridPos": {
             "h": 22,
             "w": 5,
             "x": 0,
-            "y": 32
+            "y": 24
           },
           "id": 46,
-          "mode": "markdown",
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "These plots show the advance of SCTLD based on the model of Muller et al. (2020) alongside the field observations from FWC's CREMP and SECREMP programs.\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
           "title": "SCTLD Progression",
           "type": "text"
         },
         {
-          "content": "![FK_SCTLD_advance_plot.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_plot.gif)\n\n\n\n",
           "gridPos": {
             "h": 22,
             "w": 7,
             "x": 5,
-            "y": 32
+            "y": 24
           },
           "id": 42,
-          "mode": "markdown",
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "![FK_SCTLD_advance_plot.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_plot.gif)\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
           "title": "Plot of the advance of SCTLD",
           "type": "text"
         },
         {
-          "content": "\n![FK_SCTLD_advance_images.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_images.gif)\n\n\n\n",
           "gridPos": {
             "h": 22,
             "w": 11,
             "x": 12,
-            "y": 32
+            "y": 24
           },
           "id": 44,
-          "mode": "markdown",
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "\n![FK_SCTLD_advance_images.gif](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fwc/static_files/FK_SCTLD_advance_images.gif)\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
           "title": "Advanced of SCTLD animated map",
           "type": "text"
         },
@@ -316,7 +340,7 @@
             "h": 20,
             "w": 24,
             "x": 0,
-            "y": 54
+            "y": 46
           },
           "id": 27,
           "mode": "html",
@@ -1625,7 +1649,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "BIS"
           ],
@@ -1652,9 +1676,13 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "Bob_Allen_Key",
-          "value": "Bob_Allen_Key"
+          "selected": true,
+          "text": [
+            "Bob_Allen_Key"
+          ],
+          "value": [
+            "Bob_Allen_Key"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -1675,7 +1703,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "climatology",
             "mean"
@@ -1723,6 +1751,6 @@
   "timezone": "",
   "title": "Biscayne Bay and Southeast Florida Drilldown",
   "uid": "RRa51qeGz",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
