@@ -109,7 +109,8 @@ with DAG(
                 )
                 # handle special case of missing location (FK)
                 if location == '':
-                  DATA_FNAME = DATA_FNAME[:-1]  # drop the last char (assumed to be `_`)
+                  # drop the _ before .csv
+                  DATA_FNAME = DATA_FNAME[:-5] + '.csv' 
                 task_id = f"{region}_{dataset_name}_{location}"
                 tags = ds.get('tags', []) + [
                     ['location', location],
