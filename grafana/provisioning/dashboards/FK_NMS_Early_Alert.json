@@ -817,256 +817,200 @@
       "id": 54,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "influxdb",
             "uid": "P3C6603E967DC8568"
           },
           "fieldConfig": {
             "defaults": {
-              "links": []
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 6,
             "w": 24,
             "x": 0,
             "y": 17
           },
-          "hiddenSeries": false,
           "id": 35,
           "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
           },
-          "percentage": false,
           "pluginVersion": "10.4.4",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
               },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
               "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS mean FROM \"river_discharge\"\nWHERE (\"location\" = 'FKdb') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT /^$metric$/ FROM disch\nWHERE (location = 'fk' AND $timeFilter )\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
+              "resultFormat": "time_series"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "USGS River Discharge from rivers draining to Everglades (sum of discharge from green dots on map - m^3/sec)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:265",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:266",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "influxdb",
             "uid": "P3C6603E967DC8568"
           },
           "fieldConfig": {
             "defaults": {
-              "links": []
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 6,
             "w": 24,
             "x": 0,
             "y": 23
           },
-          "hiddenSeries": false,
           "id": 32,
           "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
           },
-          "percentage": false,
           "pluginVersion": "10.4.4",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
               },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
               "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS mean FROM \"river_discharge\"\nWHERE (\"location\" = 'FWCdb_EFL') AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT /^$metric$/ FROM disch\nWHERE (location = 'EFL' AND $timeFilter )\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
+              "resultFormat": "time_series"
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "USGS Gage Height from Tamiami Canal draining into Biscayne Bay (red circle on map - meters)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         }
       ],
       "targets": [
@@ -1096,55 +1040,87 @@
       "id": 52,
       "panels": [
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "influxdb",
             "uid": "P3C6603E967DC8568"
           },
           "fieldConfig": {
             "defaults": {
-              "links": []
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 24,
             "x": 0,
             "y": 18
           },
-          "hiddenSeries": false,
           "id": 34,
           "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
           },
-          "percentage": false,
           "pluginVersion": "10.4.4",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
@@ -1169,7 +1145,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"bouy_temp\"\nWHERE (\"location\" =~ /^$Bouys$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT sea_water_temperature as sea_water_temperature FROM \"salinity\"\nWHERE (\"location\" =~ /^$Bouys$/) AND $timeFilter AND sea_water_temperature > -999\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1190,43 +1166,10 @@
               "tags": []
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "In-situ temperature at ~1m depth (psu) from selected buoy(s)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "$$hashKey": "object:177",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "$$hashKey": "object:178",
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         },
         {
-          "aliasColors": {},
-          "bars": false,
-          "dashLength": 10,
-          "dashes": false,
           "datasource": {
             "type": "influxdb",
             "uid": "P3C6603E967DC8568"
@@ -1234,45 +1177,81 @@
           "description": "",
           "fieldConfig": {
             "defaults": {
-              "links": []
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
             },
             "overrides": []
           },
-          "fill": 1,
-          "fillGradient": 0,
           "gridPos": {
             "h": 7,
             "w": 24,
             "x": 0,
             "y": 25
           },
-          "hiddenSeries": false,
           "id": 33,
           "interval": "",
-          "legend": {
-            "avg": false,
-            "current": false,
-            "max": false,
-            "min": false,
-            "show": true,
-            "total": false,
-            "values": false
-          },
-          "lines": true,
-          "linewidth": 1,
-          "nullPointMode": "connected",
           "options": {
-            "alertThreshold": true
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
           },
-          "percentage": false,
           "pluginVersion": "10.4.4",
-          "pointradius": 2,
-          "points": false,
-          "renderer": "flot",
-          "seriesOverrides": [],
-          "spaceLength": 10,
-          "stack": false,
-          "steppedLine": false,
           "targets": [
             {
               "datasource": {
@@ -1297,7 +1276,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"bouy_sal\"\nWHERE (\"location\" =~ /^$Bouys$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT sea_water_practical_salinity as sea_water_practical_salinity FROM \"salinity\"\nWHERE (\"location\" =~ /^$Bouys$/) AND $timeFilter AND sea_water_practical_salinity > -999\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1318,35 +1297,8 @@
               "tags": []
             }
           ],
-          "thresholds": [],
-          "timeRegions": [],
           "title": "In-situ salinity (psu) at ~1m depth from selected buoy(s)",
-          "tooltip": {
-            "shared": true,
-            "sort": 0,
-            "value_type": "individual"
-          },
-          "type": "graph",
-          "xaxis": {
-            "mode": "time",
-            "show": true,
-            "values": []
-          },
-          "yaxes": [
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            },
-            {
-              "format": "short",
-              "logBase": 1,
-              "show": true
-            }
-          ],
-          "yaxis": {
-            "align": false
-          }
+          "type": "timeseries"
         }
       ],
       "targets": [
@@ -1456,7 +1408,7 @@
       "type": "text"
     }
   ],
-  "refresh": false,
+  "refresh": "",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -1465,10 +1417,10 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "BIS"
           ],
           "value": [
-            ""
+            "BIS"
           ]
         },
         "datasource": {
@@ -1494,10 +1446,9 @@
       },
       {
         "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
+          "selected": true,
+          "text": "anomaly",
+          "value": "anomaly"
         },
         "datasource": {
           "type": "influxdb",
@@ -1524,24 +1475,24 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "Bob_Allen_Key"
           ],
           "value": [
-            ""
+            "Bob_Allen_Key"
           ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM bouy_temp WITH KEY=location",
+        "definition": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
         "hide": 0,
         "includeAll": false,
         "label": "Bouy Locations",
         "multi": true,
         "name": "Bouys",
         "options": [],
-        "query": "SHOW TAG VALUES FROM bouy_temp WITH KEY=location",
+        "query": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1550,37 +1501,12 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
-      },
-      {
-        "current": {
-          "isNone": true,
-          "selected": false,
-          "text": "None",
-          "value": ""
-        },
-        "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
-        },
-        "definition": "SHOW TAG VALUES FROM gh WITH KEY=location WHERE \"region\"='GOM'",
-        "hide": 0,
-        "includeAll": false,
-        "label": "USGS River Gauge Location",
-        "multi": false,
-        "name": "gauge_location",
-        "options": [],
-        "query": "SHOW TAG VALUES FROM gh WITH KEY=location WHERE \"region\"='GOM'",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
       }
     ]
   },
   "time": {
-    "from": "now-2y",
-    "to": "now"
+    "from": "2022-03-12T04:11:46.684Z",
+    "to": "2026-03-13T04:11:46.684Z"
   },
   "timepicker": {
     "hidden": false,
@@ -1594,6 +1520,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
