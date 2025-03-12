@@ -92,6 +92,13 @@ with DAG(
     },
 ) as dag:
     for region, region_data in USGS_DB_FILES.items():
+        # set region for URL 
+        if region in ['FK', 'FWC', 'FGB']:
+            gbucket_region = 'GOM'
+        elif region == "SEUS":
+            gbucket_region = 'SEUS'
+        else:
+            raise ValueError(f"unexpected region: '{region}'")
         # Use the region in the URL generation.
         GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
         for dataset_name, ds in region_data['datasets'].items():
