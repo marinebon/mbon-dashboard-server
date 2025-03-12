@@ -100,7 +100,7 @@ with DAG(
         else:
             raise ValueError(f"unexpected region: '{region}'")
         # Use the region in the URL generation.
-        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
+        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{gbucket_region.lower()}_csv"
         for dataset_name, ds in region_data['datasets'].items():
             for location in region_data['locations']:
                 DATA_FNAME = ds['filename_template'].format(
