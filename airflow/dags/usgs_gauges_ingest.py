@@ -107,6 +107,9 @@ with DAG(
                   location=location,
                   REGION=region
                 )
+                # handle special case of missing location (FK)
+                if location == '':
+                  DATA_FNAME = DATA_FNAME[:-1]  # drop the last char (assumed to be `_`)
                 task_id = f"{region}_{dataset_name}_{location}"
                 tags = ds.get('tags', []) + [
                     ['location', location],
