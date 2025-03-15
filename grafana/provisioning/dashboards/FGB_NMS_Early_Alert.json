@@ -116,9 +116,8 @@
           },
           "id": 38,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -145,9 +144,8 @@
           },
           "id": 39,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -174,9 +172,8 @@
           },
           "id": 40,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -203,9 +200,8 @@
           },
           "id": 41,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -294,8 +290,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -430,8 +425,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -567,8 +561,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -704,8 +697,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -867,8 +859,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -965,8 +956,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1062,7 +1052,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": {
         "type": "datasource",
         "uid": "grafana"
@@ -1074,7 +1064,136 @@
         "y": 17
       },
       "id": 37,
-      "panels": [],
+      "panels": [
+        {
+          "aliasColors": {},
+          "bars": false,
+          "dashLength": 10,
+          "dashes": false,
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "links": []
+            },
+            "overrides": []
+          },
+          "fill": 1,
+          "fillGradient": 0,
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 18
+          },
+          "hiddenSeries": false,
+          "id": 33,
+          "interval": "",
+          "legend": {
+            "avg": false,
+            "current": false,
+            "max": false,
+            "min": false,
+            "show": false,
+            "total": false,
+            "values": false
+          },
+          "lines": true,
+          "linewidth": 1,
+          "nullPointMode": "connected",
+          "options": {
+            "alertThreshold": true
+          },
+          "percentage": false,
+          "pluginVersion": "10.4.4",
+          "pointradius": 2,
+          "points": false,
+          "renderer": "flot",
+          "seriesOverrides": [],
+          "spaceLength": 10,
+          "stack": false,
+          "steppedLine": false,
+          "targets": [
+            {
+              "alias": "$bouy",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                }
+              ],
+              "hide": false,
+              "measurement": "river_discharge",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT value  FROM \"sofar_bouy\"\nGROUP BY \"spotter_id\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "$metric"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "location",
+                  "operator": "=",
+                  "value": "FGBdb_MS"
+                }
+              ]
+            }
+          ],
+          "thresholds": [],
+          "timeRegions": [],
+          "title": "Bouys",
+          "tooltip": {
+            "shared": true,
+            "sort": 0,
+            "value_type": "individual"
+          },
+          "type": "graph",
+          "xaxis": {
+            "mode": "time",
+            "show": true,
+            "values": []
+          },
+          "yaxes": [
+            {
+              "$$hashKey": "object:568",
+              "format": "short",
+              "logBase": 1,
+              "show": true
+            },
+            {
+              "$$hashKey": "object:569",
+              "format": "short",
+              "logBase": 1,
+              "show": false
+            }
+          ],
+          "yaxis": {
+            "align": false
+          }
+        }
+      ],
       "targets": [
         {
           "datasource": {
@@ -1088,134 +1207,6 @@
       "type": "row"
     },
     {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "links": []
-        },
-        "overrides": []
-      },
-      "fill": 1,
-      "fillGradient": 0,
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 18
-      },
-      "hiddenSeries": false,
-      "id": 33,
-      "interval": "",
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": false,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "nullPointMode": "connected",
-      "options": {
-        "alertThreshold": true
-      },
-      "percentage": false,
-      "pluginVersion": "10.4.4",
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
-        {
-          "alias": "$bouy",
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            }
-          ],
-          "hide": false,
-          "measurement": "river_discharge",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "query": "SELECT value  FROM \"sofar_bouy\"\nGROUP BY \"spotter_id\" fill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "$metric"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "location",
-              "operator": "=",
-              "value": "FGBdb_MS"
-            }
-          ]
-        }
-      ],
-      "thresholds": [],
-      "timeRegions": [],
-      "title": "Bouys",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "mode": "time",
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "$$hashKey": "object:568",
-          "format": "short",
-          "logBase": 1,
-          "show": true
-        },
-        {
-          "$$hashKey": "object:569",
-          "format": "short",
-          "logBase": 1,
-          "show": false
-        }
-      ],
-      "yaxis": {
-        "align": false
-      }
-    },
-    {
       "collapsed": false,
       "datasource": {
         "type": "datasource",
@@ -1225,7 +1216,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 18
       },
       "id": 23,
       "panels": [],
@@ -1250,7 +1241,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 19
       },
       "id": 20,
       "options": {
@@ -1284,7 +1275,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 27
       },
       "id": 21,
       "options": {
@@ -1426,6 +1417,6 @@
   "timezone": "",
   "title": "FGB NMS Early Alert",
   "uid": "qhXdKw7Gk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
