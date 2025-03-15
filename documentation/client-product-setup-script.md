@@ -121,6 +121,6 @@ Now for the manual steps:
 ## set up cron jobs
 run `crontab -e` to edit the crontabs and set up the following cronjobs:
 ```
-0 *  *   *   *   cd /home/tylarmurray/mbon-dashboard-server && /bin/git pull
-0 11 *   *   *   cd /home/tylarmurray/mbon-dashboard-server && docker compose up -d
+0 *  *   *   *   cd /home/murray_tylar/mbon-dashboard-server && /bin/git pull
+0 11 *   *   *   cd /home/murray_tylar/mbon-dashboard-server && docker compose up -d
 ```
