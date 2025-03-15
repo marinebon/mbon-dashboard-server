@@ -116,9 +116,8 @@
           },
           "id": 56,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -145,9 +144,8 @@
           },
           "id": 57,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -174,9 +172,8 @@
           },
           "id": 58,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -203,9 +200,8 @@
           },
           "id": 59,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -293,8 +289,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -429,8 +424,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -565,8 +559,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -701,8 +694,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -864,8 +856,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -962,8 +953,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1087,8 +1077,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1218,8 +1207,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1450,7 +1438,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "mean",
           "value": "mean"
         },
@@ -1524,6 +1512,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
