@@ -142,9 +142,8 @@
           },
           "id": 60,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -171,9 +170,8 @@
           },
           "id": 61,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -200,9 +198,8 @@
           },
           "id": 62,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -229,9 +226,8 @@
           },
           "id": 63,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -401,8 +397,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -539,8 +534,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -676,8 +670,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -813,8 +806,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -977,8 +969,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1107,8 +1098,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1237,8 +1227,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1395,8 +1384,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1525,8 +1513,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1722,7 +1709,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": "DT",
           "value": "DT"
         },
@@ -1814,6 +1801,6 @@
   "timezone": "",
   "title": "FWC Coral Disease Dash",
   "uid": "-f4J8V4Mk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
