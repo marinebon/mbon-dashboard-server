@@ -203,7 +203,7 @@
           },
           "id": 98,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "lat_max": 40.5,
             "lat_min": 29.1,
@@ -231,9 +231,8 @@
           },
           "id": 99,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 40.5,
             "lat_min": 29.1,
             "lon_max": -73.1,
@@ -260,9 +259,8 @@
           },
           "id": 100,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 40.5,
             "lat_min": 29.1,
             "lon_max": -73.1,
@@ -289,9 +287,8 @@
           },
           "id": 101,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 40.5,
             "lat_min": 29.1,
             "lon_max": -73.1,
@@ -3439,10 +3436,10 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "01"
           ],
           "value": [
-            ""
+            "01"
           ]
         },
         "datasource": {
@@ -3470,10 +3467,10 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "anomaly"
           ],
           "value": [
-            ""
+            "anomaly"
           ]
         },
         "datasource": {
@@ -3528,10 +3525,10 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "Sapelo_Island_Cabretta_Creek"
           ],
           "value": [
-            ""
+            "Sapelo_Island_Cabretta_Creek"
           ]
         },
         "datasource": {
@@ -3573,6 +3570,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gi",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
