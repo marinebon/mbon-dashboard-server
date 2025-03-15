@@ -117,7 +117,8 @@
           },
           "id": 60,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -144,9 +145,8 @@
           },
           "id": 61,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -173,9 +173,8 @@
           },
           "id": 62,
           "options": {
-            "base_url": "http://131.247.136.200:8080/erddap",
+            "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -366,8 +365,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -503,8 +501,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -640,8 +637,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -936,8 +932,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1066,8 +1061,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1196,8 +1190,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1354,8 +1347,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1484,8 +1476,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1783,6 +1774,6 @@
   "timezone": "",
   "title": "Keys Reef Tract Drilldown",
   "uid": "k7kraqeMk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
