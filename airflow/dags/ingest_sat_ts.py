@@ -42,6 +42,8 @@ with DAG(
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
+
+        # GoM = FKNMS + FGBNMS + FWC
         'FKNMS': {
             'stations': [
                 'BIS', 'UK', 'MUK', 'MK', 'LK', 'DT', 'MQ',
@@ -52,20 +54,33 @@ with DAG(
             }
         },
         
-        # NOTE: which dash are these for?:
-        'GOM': {
+        # GoM = FKNMS:
+        'FGBNMS': {
             'stations': [
-                'BIS', 'UK', 'MUK', 'MK', 'LK', 'DT', 'MQ',
-                'FKNMS', 'SR', 'WFS', 'EFB', 'WFB'
+              'STET', 'WFG', 'EFG',
+              'COAST1', 'COAST2', 'COAST3', 'COAST4', 
+              'SS1', 'SS2', 'SS3', 'SS4', 'SS5', 'SS6', 'SS7', 'SS8'
             ],
             'variables': {
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
-        }
+        },
+        'FWC': {
+          'stations': [
+              'SLI', 'PBI', 'PEV', 'MIA', 'MOL', 'SOM', 'SUG', 'KW'
+            ],
+            'variables': {
+                'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
+            }
+
     }
     
     for region, data in SAT_DB_FILES.items():
-        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
+        if region in ['FWC', 'FKNMS', 'FGBNMS']:
+            gbucket_region = 'GOM'
+        else:
+            gbucket_region = region
+        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{gbucket_region.lower()}_csv"
         # Loop through each station in the region
         for roi in data['stations']:
             # Loop through each satellite and variable in the region
