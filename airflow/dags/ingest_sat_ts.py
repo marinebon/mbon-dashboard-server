@@ -72,7 +72,7 @@ with DAG(
             'variables': {
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
-
+        }
     }
     
     for region, data in SAT_DB_FILES.items():
@@ -87,7 +87,7 @@ with DAG(
             for sat, variables in data['variables'].items():
                 for variable in variables:
                     # example path: `SEUS_Kd_490_TS_VSNPP_daily_01.csv`
-                    DATA_FNAME = f"{region}_{variable}_TS_{sat}_daily_{roi}.csv"
+                    DATA_FNAME = f"{gbucket_region}_{variable}_TS_{sat}_daily_{roi}.csv"
                     PythonOperator(
                         task_id=f"{region}_{roi}_{sat}_{variable}",
                         python_callable=csv2influx,
