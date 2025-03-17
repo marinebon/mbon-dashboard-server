@@ -397,7 +397,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -534,7 +535,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1384,7 +1386,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1441,7 +1444,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT sea_water_practical_salinity as sea_water_practical_salinity FROM \"salinity\"\nWHERE (\"location\" =~ /^$Bouys$/) AND $timeFilter AND sea_water_practical_salinity > -999\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT sea_water_practical_salinity as sea_water_practical_salinity FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoys$/) AND $timeFilter AND sea_water_practical_salinity > -999\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1513,7 +1516,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1570,7 +1574,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT sea_water_temperature as sea_water_temperature FROM \"salinity\"\nWHERE (\"location\" =~ /^$Bouys$/) AND $timeFilter AND sea_water_temperature > -999\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT sea_water_temperature as sea_water_temperature FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoys$/) AND $timeFilter AND sea_water_temperature > -999\nGROUP BY \"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -1709,21 +1713,27 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "DT",
-          "value": "DT"
+          "selected": true,
+          "text": [
+            "KW",
+            "MIA"
+          ],
+          "value": [
+            "KW",
+            "MIA"
+          ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'GOM'",
+        "definition": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'FWC'",
         "hide": 0,
         "includeAll": false,
         "multi": true,
         "name": "Locations",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'GOM'",
+        "query": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'FWC'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1732,9 +1742,15 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "Bob_Allen_Key",
-          "value": "Bob_Allen_Key"
+          "selected": true,
+          "text": [
+            "Bob_Allen_Key",
+            "Butternut_Key"
+          ],
+          "value": [
+            "Bob_Allen_Key",
+            "Butternut_Key"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -1744,7 +1760,7 @@
         "hide": 0,
         "includeAll": false,
         "multi": true,
-        "name": "Bouys",
+        "name": "Buoys",
         "options": [],
         "query": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
         "refresh": 1,
@@ -1801,6 +1817,6 @@
   "timezone": "",
   "title": "FWC Coral Disease Dash",
   "uid": "-f4J8V4Mk",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
