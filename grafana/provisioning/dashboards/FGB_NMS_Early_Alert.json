@@ -39,7 +39,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fgbnms/static_files/FGB_DBv24_map.png)",
+        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/refs/heads/unify-subdomain/static_files/FGB_DBv24_map_2025.png)",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -1283,7 +1283,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "* Satellite data (Chlorophyll-a, SST and Rrs_667) is from the Visible Infrared Imaging Spectrometer Suite (VIIRS-SNPP) sensor and is obtained from the Ocean Biology Processing Group at NASA's Goddard Space Flight Center.\n\n* Rrs_667 represents reflectance at 667nm and is a proxy for suspended sediments.\n\n* Algal Bloom Index (ABI) comes from the Moderate Resolution Spectroradiometer (MODIS-Aqua) and can be used to identify algal blooms. It is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Colorado, Brazos, Trinity, Neches and Sabine Rivers (green circles on map above) are summed for discharge into the northwest Gulf of Mexico and plotted above. Discharge data from the Mississippi River (yellow circle on map above) is also plotted.\n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
+        "content": "* Satellite data (Chlorophyll-a, SST and Rrs_667) is from the Visible Infrared Imaging Spectrometer Suite (VIIRS-SNPP) sensor and is obtained from the [Ocean Biology Processing Group](https://oceancolor.gsfc.nasa.gov/) at NASA's Goddard Space Flight Center.\n\n* Rrs_667 represents reflectance at 667nm and is a proxy for suspended sediments.\n\n* Algal Bloom Index (ABI) comes from the Moderate Resolution Spectroradiometer (MODIS-Aqua) sensor and can be used to identify algal blooms. It is calculated using the method of Hu and Feng (2016; doi: 10.1117/1.JRS.11.012003) \n\n* River discharge data is obtained from the [USGS National Water Information System](https://waterdata.usgs.gov/nwis). Discharge values from the Colorado, Brazos, Trinity, Neches and Sabine Rivers (green circles on map above) are summed for discharge into the northwest Gulf of Mexico and plotted above. Discharge data from the Mississippi River (red circle on map above) is also plotted.\n\n* Dynamic seascapes are classified using multivariate satellite data and describe basin and gyre scale features and seasonal boundary shifts. They are obtained from [NOAA's Coastwatch](https://cwcgom.aoml.noaa.gov/erddap/griddap/noaa_aoml_seascapes_8day.graph). A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).\n\nPlease feel free to contact us with questions or to sign up for email alerts:\n\nDr. Daniel Otis - [dotis@usf.edu](mailto:dotis@usf.edu)\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -1343,10 +1343,10 @@
         "current": {
           "selected": true,
           "text": [
-            "COAST1"
+            "STET"
           ],
           "value": [
-            "COAST1"
+            "STET"
           ]
         },
         "datasource": {
@@ -1450,6 +1450,6 @@
   "timezone": "",
   "title": "FGB NMS Early Alert",
   "uid": "qhXdKw7Gk",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
