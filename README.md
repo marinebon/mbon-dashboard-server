@@ -10,10 +10,10 @@ Each "product" instance is built on a git branch in this repository, based off o
 
 Name                        | git branch   | status | URL                                      | Description
 --------------------------- | ------------ | ------ | -----------------------------------------| ------------
-SEUS Monitoring Dash        | `client-seus` | :heavy_check_mark: up | http://seus-dashboard.marine.usf.edu:3000 | Cram in tons of data from MBON, NERRS, & GR NMS.
-FGB NMS Sentinel Sites Dash | `client-fgb` | :heavy_check_mark: up     | http://fgbnms-dashboard.marine.usf.edu:3000 | Monitoring a ring of sites around the Flower Garden Banks National Marine Sanctuary where anomalously high values of chlorophyll-a concentration, for example, can be detected from satellite imagery before reaching the reefs.
-FK NMS                      | `client-fk`  | :heavy_check_mark: up | http://fknms-dashboard.marine.usf.edu:3000 | Monitoring of satellite, bouy, & river discharge data around the Florida Keys National Marine Sanctuary.
-FWRI SCTLD Dashboard        | `client-fwc` | :x: project ended | http://fwc-dashboard.marine.usf.edu:3000 | Monitoring the spread of stony coral tissue loss disease in the Florida Keys.
+SEUS Monitoring Dash        | `client-seus` | :heavy_check_mark: up | https://mbon-dashboards.marine.usf.edu/grnms | Cram in tons of data from MBON, NERRS, & GR NMS.
+FGB NMS Sentinel Sites Dash | `client-fgb` | :heavy_check_mark: up     | https://mbon-dashboards.marine.usf.edu/fgbnms | Monitoring a ring of sites around the Flower Garden Banks National Marine Sanctuary where anomalously high values of chlorophyll-a concentration, for example, can be detected from satellite imagery before reaching the reefs.
+FK NMS                      | `client-fk`  | :heavy_check_mark: up | https://mbon-dashboards.marine.usf.edu/fknms | Monitoring of satellite, bouy, & river discharge data around the Florida Keys National Marine Sanctuary.
+FWRI SCTLD Dashboard        | `client-fwc` | :heavy_check_mark: up| https://mbon-dashboards.marine.usf.edu/fwc | Monitoring the spread of stony coral tissue loss disease in the Florida Keys.
 
 
 ## Repository "framework" & "product" organization
