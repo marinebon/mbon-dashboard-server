@@ -323,7 +323,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -339,7 +340,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 44
+            "y": 16
           },
           "id": 2,
           "interval": "",
@@ -458,7 +459,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -474,7 +476,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 44
+            "y": 16
           },
           "id": 12,
           "interval": "",
@@ -593,7 +595,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -609,7 +612,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 52
+            "y": 24
           },
           "id": 13,
           "interval": "",
@@ -728,7 +731,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -744,7 +748,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 52
+            "y": 24
           },
           "id": 11,
           "interval": "",
@@ -1112,8 +1116,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1243,8 +1246,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1472,9 +1474,9 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "mean",
-          "value": "mean"
+          "selected": true,
+          "text": "anomaly",
+          "value": "anomaly"
         },
         "datasource": {
           "type": "influxdb",
@@ -1485,7 +1487,7 @@
         "includeAll": false,
         "label": "Time Series Metric",
         "multi": false,
-        "name": "Metric",
+        "name": "metric",
         "options": [],
         "query": "SHOW FIELD KEYS from chlor_a",
         "refresh": 1,
@@ -1546,6 +1548,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
