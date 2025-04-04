@@ -50,11 +50,11 @@ with DAG(
                 'FKNMS', 'SR', 'WFS','EFB', 'WFB',
             ],
             'variables': {
-                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI']
+                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI'],
+                'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
         
-        # GoM = FKNMS:
         'FGBNMS': {
             'stations': [
               'STET', 'WFG', 'EFG',
