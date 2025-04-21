@@ -234,7 +234,7 @@
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
-            "color_bar_str": "Rainbow|C|Linear|0|30|",
+            "color_bar_str": "Seascapes|||||",
             "lat_max": 25.5,
             "lat_min": 24.4,
             "lon_max": -80.1,
@@ -1119,7 +1119,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 48
+            "y": 18
           },
           "hiddenSeries": false,
           "id": 33,
@@ -1450,6 +1450,6 @@
   "timezone": "",
   "title": "FGB NMS Early Alert",
   "uid": "qhXdKw7Gk",
-  "version": 5,
+  "version": 1,
   "weekStart": ""
 }
