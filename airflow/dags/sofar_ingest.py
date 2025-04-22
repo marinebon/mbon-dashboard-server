@@ -1,61 +1,103 @@
-"""
-Ingest SOFAR bouy data. 
-"""
 import os
-
-from airflow import DAG
-from airflow.operators.bash_operator import BashOperator
+import requests
+import pandas as pd
+from io import StringIO
 from datetime import datetime, timedelta
 
-# NOTE: This is not working.
-#       Data is ingested but cannot be subset by sensor_position.
-#       Need to modify so that sensor_position column can be used as a
-#       tag.
+from airflow import DAG
+from airflow.operators.python import PythonOperator
+
+# InfluxDB client imports
+from influxdb_client import InfluxDBClient, Point
+from influxdb_client.client.write_api import SYNCHRONOUS
+
+default_args = {
+    'owner': 'airflow',
+    'depends_on_past': False,
+    'retries': 1,
+    'retry_delay': timedelta(minutes=5),
+}
+
 with DAG(
-    'sofar_ingest',
+    dag_id='sofar_ingest_dag',
+    default_args=default_args,
+    schedule_interval='@daily',
+    start_date=datetime(2025, 1, 1),
     catchup=True,
-    schedule_interval="0 0 * * *",
-    max_active_runs=4,
-    default_args={
-        "start_date": datetime(2023, 6, 20),
-        'retries': 3,
-        'retry_delay': timedelta(days=1),
-    },
-) as dag:    
-    BashOperator(
-        task_id=f"sofar_ingest",
-        bash_command=(
-            "curl 'https://api.sofarocean.com/fetch/download-sensor-data/"
-            "?spotterId=SPOT-30987C"
-            "&startDate={{ prev_ds }}T00:00Z"
-            "&endDate={{ ds }}T00:00Z"
-            "&processingSources=all' "
-            "  -X GET "
-            "  -H 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/113.0' "
-            "  -H 'Accept: application/json, text/plain, */*' "
-            "  -H 'Accept-Language: en-US,en;q=0.5' "
-            "  -H 'Content-Type: application/x-www-form-urlencoded' "
-            "  -H 'view_token: 1bc9848d3e524c34a1eb220e121d9a9e' "
-            "  -H 'Sec-Fetch-Dest: empty' "
-            "  -H 'Sec-Fetch-Mode: cors' "
-            "  -H 'Sec-Fetch-Site: same-site' "
-            "  -H 'Pragma: no-cache' "
-            "  -H 'Cache-Control: no-cache' "
-            "  -H 'referrer: https://spotters.sofarocean.com/' "
-            "  -H 'credentials: omit' "
-            "  -H 'mode: cors' "
-            "  > datafile.csv "
-            " && head datafile.csv "
-            " && python /opt/airflow/dags/csv2influx.py "
-            "    sofar_bouy "
-            " --tag_set "
-            " spotter_id=SPOT30987C,sensor_position=999 "  # TODO: how to get sensor_position from file here
-            " --fields value,sofar_temperature "
-            " --time_column utc_timestamp "
-            " --should_convert_time "
-            " --file "
-            " @./datafile.csv "
-        ),
-        params={
+    tags=['sofar'],
+) as dag:
+
+    def sofar_ingest(ds, prev_ds, **kwargs):
+        raw_url = (
+            "https://api.sofarocean.com/fetch/download-sensor-data/"
+            f"?spotterId=SPOT-30987C"
+            f"&startDate={prev_ds}T00:00Z"
+            f"&endDate={ds}T00:00Z"
+            f"&processingSources=all"
+        )
+        headers = {
+            "User-Agent":      "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0)"
+                               " Gecko/20100101 Firefox/113.0",
+            "Accept":          "application/json, text/plain, */*",
+            "Accept-Language": "en-US,en;q=0.5",
+            "Content-Type":    "application/x-www-form-urlencoded",
+            "view_token":      "1bc9848d3e524c34a1eb220e121d9a9e",
+            "Sec-Fetch-Dest":  "empty",
+            "Sec-Fetch-Mode":  "cors",
+            "Sec-Fetch-Site":  "same-site",
+            "Pragma":          "no-cache",
+            "Cache-Control":   "no-cache",
+            "referrer":        "https://spotters.sofarocean.com/",  # lowercase key
+            "credentials":     "omit",
+            "mode":            "cors",
+            # Note: no Accept-Encoding override here
         }
+
+        resp = requests.get(raw_url, headers=headers, timeout=60)
+        print("▶ Request URL:     ", resp.url)
+        print("▶ Request headers:", resp.request.headers)
+        print("▶ Resp status:    ", resp.status_code)
+        print("▶ Resp headers:   ", resp.headers)
+        print("▶ Content length: ", len(resp.content))
+        print("▶ Preview bytes:  ", resp.content[:200])
+        resp.raise_for_status()
+        # --- Step 2: Load into pandas DataFrame ---
+        df = pd.read_csv(StringIO(resp.text))
+        print(df.head())
+
+        # Derive sensor_position if present
+        sensor_position = int(df['sensor_position'].iloc[0]) if 'sensor_position' in df.columns else 999
+
+        # Ensure timestamp column is datetime
+        df['utc_timestamp'] = pd.to_datetime(df['utc_timestamp'])
+
+        # --- Step 3: Write directly to InfluxDB ---
+        token = os.environ["INFLUXDB_TOKEN"]
+        url   = os.environ["INFLUXDB_HOSTNAME"]
+        org   = "imars"
+        bucket = "imars_bucket"
+
+        client = InfluxDBClient(url=url, token=token, org=org)
+        write_api = client.write_api(write_options=SYNCHRONOUS)
+
+        points = []
+        for _, row in df.iterrows():
+            p = (
+                Point("sofar_bouy")
+                .tag("spotter_id",      "SPOT-30987C")
+                .tag("sensor_position", str(sensor_position))
+                .time(row["utc_timestamp"])
+                # assume data_type column is sofar_temperature for all rows
+                .field("sofar_temperature", float(row["value"]))
+            )
+            points.append(p)
+
+        write_api.write(bucket=bucket, org=org, record=points)
+        print(f"{len(points)} points written to InfluxDB")
+
+        client.__del__()  # ensure clean shutdown
+
+    ingest_task = PythonOperator(
+        task_id='sofar_ingest',
+        python_callable=sofar_ingest,
     )
