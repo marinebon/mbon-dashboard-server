@@ -65,9 +65,6 @@ with DAG(
         df = pd.read_csv(StringIO(resp.text))
         print(df.head())
 
-        # Derive sensor_position if present
-        sensor_position = int(df['sensor_position'].iloc[0]) if 'sensor_position' in df.columns else 999
-
         # Ensure timestamp column is datetime
         df['utc_timestamp'] = pd.to_datetime(df['utc_timestamp'])
 
@@ -83,9 +80,9 @@ with DAG(
         points = []
         for _, row in df.iterrows():
             p = (
-                Point("sofar_bouy")
+                Point("sofar_buoy")
                 .tag("spotter_id",      "SPOT-30987C")
-                .tag("sensor_position", str(sensor_position))
+                .tag("sensor_position", str(row['sensor_position']))
                 .time(row["utc_timestamp"])
                 # assume data_type column is sofar_temperature for all rows
                 .field("sofar_temperature", float(row["value"]))
