@@ -52,8 +52,8 @@ with DAG(
             " && python /opt/airflow/dags/csv2influx.py "
             "    sofar_bouy "
             " --tag_set "
-            " spotter_id=SPOT30987C "
-            " --fields value,sensor_position "
+            " spotter_id=SPOT30987C,sensor_position=999 "  # TODO: how to get sensor_position from file here
+            " --fields value,sofar_temperature "
             " --time_column utc_timestamp "
             " --should_convert_time "
             " --file "
