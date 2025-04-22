@@ -7,8 +7,6 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
-DATA_HOST = "https://raw.githubusercontent.com/7yl4r/extracted_sat_ts_gom_csv_data/main/data"
-
 # ============================================================================
 # === DAG defines the task exec order
 # ============================================================================
@@ -51,7 +49,7 @@ with DAG(
             "  -H 'mode: cors' "
             "  > datafile.csv "
             " && head datafile.csv "
-            " && python /opt/airflow/dags/nerrs2influx.py "
+            " && python /opt/airflow/dags/csv2influx.py "
             "    sofar_bouy "
             " --tag_set "
             " spotter_id=SPOT30987C "
