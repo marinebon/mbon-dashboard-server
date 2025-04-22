@@ -1,5 +1,5 @@
 """
-Ingest bouy data 
+Ingest SOFAR bouy data. 
 """
 import os
 
@@ -7,9 +7,10 @@ from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
-# ============================================================================
-# === DAG defines the task exec order
-# ============================================================================
+# NOTE: This is not working.
+#       Data is ingested but cannot be subset by sensor_position.
+#       Need to modify so that sensor_position column can be used as a
+#       tag.
 with DAG(
     'sofar_ingest',
     catchup=True,
