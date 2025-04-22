@@ -20,11 +20,7 @@ with DAG(
         'retries': 3,
         'retry_delay': timedelta(days=1),
     },
-) as dag:
-    UPLOADER_HOSTNAME = os.environ["UPLOADER_HOSTNAME"]
-    if UPLOADER_HOSTNAME.endswith('/'):  # rm possible trailing /
-        UPLOADER_HOSTNAME = UPLOADER_HOSTNAME[:-1]
-    UPLOADER_ROUTE = UPLOADER_HOSTNAME + "/submit/sat_image_extraction"
+) as dag:    
     BashOperator(
         task_id=f"sofar_ingest",
         bash_command=(
