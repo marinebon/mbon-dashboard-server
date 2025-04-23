@@ -22,7 +22,7 @@
   "links": [],
   "panels": [
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": {
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
@@ -34,7 +34,75 @@
         "y": 0
       },
       "id": 90,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "gridPos": {
+            "h": 20,
+            "w": 20,
+            "x": 0,
+            "y": 1
+          },
+          "id": 6,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "refId": "A"
+            }
+          ],
+          "type": "text"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "gridPos": {
+            "h": 11,
+            "w": 24,
+            "x": 0,
+            "y": 21
+          },
+          "id": 8,
+          "options": {
+            "code": {
+              "language": "plaintext",
+              "showLineNumbers": false,
+              "showMiniMap": false
+            },
+            "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - \"12 nm\" and \"24 nm\" lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone Maritime Boundaries. Data is from <a href=\"https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html\" target=\"_blank\">NOAA's Office of Coast Survey</a>.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
+            "mode": "markdown"
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "refId": "A"
+            }
+          ],
+          "title": "Welcome to the Gray's Reef NMS data dashboard",
+          "type": "text"
+        }
+      ],
       "targets": [
         {
           "datasource": {
@@ -48,73 +116,6 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "gridPos": {
-        "h": 20,
-        "w": 20,
-        "x": 0,
-        "y": 1
-      },
-      "id": 6,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-seus/static_files/SEUS_map_v4_wInset.png)",
-        "mode": "markdown"
-      },
-      "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "refId": "A"
-        }
-      ],
-      "type": "text"
-    },
-    {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 21
-      },
-      "id": 8,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "### On the map above:\n\n - Black hatched circles indicate areas where satellite data is extracted. Select locations using the \"Satellite Time Series Extraction Locations\" dropdown at top left.\n \n - Green polygons (left) indicate NERRS locations, where nutrients and meteorological parameters are measured.\n\n - Red rectangle indicates the Gray's Reef National Marine Sanctuary boundary. \n \n - The black dot inside the sanctuary boundary indicates the location of NDBC Mooring 41008 where meteorological and ocean acidification parameters are measured.\n \n - \"12 nm\" and \"24 nm\" lines indicate the 12 nautical mile Territorial Sea and 24 nautical mile Contiguous Zone Maritime Boundaries. Data is from <a href=\"https://nauticalcharts.noaa.gov/data/us-maritime-limits-and-boundaries.html\" target=\"_blank\">NOAA's Office of Coast Survey</a>.\n\n### Directions for site navigation: \nClick the panel titles below to expand data panels.\n\nTo look at satellite time series, select location(s) using the the location number in the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nGauge height from the USGS is available from six locations (green dots on the map). Select river(s) to display using the \"USGS River Gauge Location\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\n\n\n\n\n\n",
-        "mode": "markdown"
-      },
-      "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "refId": "A"
-        }
-      ],
-      "title": "Welcome to the Gray's Reef NMS data dashboard",
-      "type": "text"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -124,7 +125,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 1
       },
       "id": 96,
       "panels": [
@@ -185,7 +186,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 2
       },
       "id": 29,
       "panels": [
@@ -199,7 +200,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 34
+            "y": 3
           },
           "id": 98,
           "options": {
@@ -227,7 +228,7 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 43
+            "y": 12
           },
           "id": 99,
           "options": {
@@ -255,12 +256,13 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 52
+            "y": 21
           },
           "id": 100,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "BlueWhiteRed|C|Linear|-0.001|0.001|",
             "lat_max": 40.5,
             "lat_min": 29.1,
             "lon_max": -73.1,
@@ -283,12 +285,13 @@
             "h": 9,
             "w": 24,
             "x": 0,
-            "y": 61
+            "y": 30
           },
           "id": 101,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Seascapes|D||||",
             "lat_max": 40.5,
             "lat_min": 29.1,
             "lon_max": -73.1,
@@ -324,7 +327,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 3
       },
       "id": 27,
       "panels": [
@@ -891,7 +894,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 4
       },
       "id": 83,
       "panels": [
@@ -900,7 +903,7 @@
             "h": 13,
             "w": 24,
             "x": 0,
-            "y": 44
+            "y": 5
           },
           "id": 87,
           "options": {
@@ -965,7 +968,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -981,7 +985,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 57
+            "y": 18
           },
           "id": 85,
           "interval": "",
@@ -1093,7 +1097,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1109,7 +1114,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 57
+            "y": 18
           },
           "id": 91,
           "interval": "",
@@ -1220,7 +1225,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1236,7 +1242,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 65
+            "y": 26
           },
           "id": 92,
           "interval": "",
@@ -1347,7 +1353,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1363,7 +1370,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 65
+            "y": 26
           },
           "id": 93,
           "interval": "",
@@ -1474,7 +1481,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1490,7 +1498,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 73
+            "y": 34
           },
           "id": 94,
           "interval": "",
@@ -1576,7 +1584,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 5
       },
       "id": 59,
       "panels": [
@@ -2456,7 +2464,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 6
       },
       "id": 72,
       "panels": [
@@ -3185,7 +3193,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 38
+        "y": 7
       },
       "id": 54,
       "panels": [
@@ -3341,7 +3349,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 8
       },
       "id": 23,
       "panels": [
