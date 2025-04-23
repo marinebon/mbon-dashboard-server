@@ -22,7 +22,7 @@ with DAG(
     dag_id='sofar_ingest_dag',
     default_args=default_args,
     schedule_interval='@daily',
-    start_date=datetime(2025, 1, 1),
+    start_date=datetime(2024, 1, 1),
     catchup=True,
     tags=['sofar'],
 ) as dag:
