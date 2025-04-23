@@ -79,6 +79,8 @@ with DAG(
 
         points = []
         for _, row in df.iterrows():
+
+            # TODO: map sensor_position 1,2 to surface,bottom (or is it bottom,surface?)
             p = (
                 Point("sofar_buoy")
                 .tag("spotter_id",      "SPOT-30987C")
