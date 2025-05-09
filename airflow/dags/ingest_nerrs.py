@@ -52,12 +52,12 @@ with DAG(
     'ingest_nerrs',
     catchup=True,
     schedule_interval="0 0 * * 1",  # weekly
-    max_active_runs=1,
+    max_active_runs=10,
     default_args={
         "start_date": datetime(2020, 1, 1),
-        "retries": 5,
-        "retry_delay": timedelta(days=60),
-        "retry_exponential_backoff": True
+        # "retries": 3,
+        # "retry_delay": timedelta(days=30),
+        # "retry_exponential_backoff": True
     },
 ) as dag:
     for station in STATIONS:
