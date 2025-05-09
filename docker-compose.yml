@@ -31,6 +31,20 @@ x-airflow-common:
     AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: 'false'
     AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
     AIRFLOW__CORE__PARALLELISM: '50'
+    AIRFLOW__SCHEDULER__MAX_THREADS: '8'
+    # per-DAG max concurrent tasks (core.dag_concurrency)
+    AIRFLOW__CORE__DAG_CONCURRENCY: '20'
+      
+    # per-DAG max active tasks (core.max_active_tasks_per_dag)
+    AIRFLOW__CORE__MAX_ACTIVE_TASKS_PER_DAG: '20'
+
+    # per-DAG max active runs (core.max_active_runs_per_dag)
+    AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG: '5'  
+
+    # how many tasks a Celery worker will execute in parallel
+    AIRFLOW__CELERY__WORKER_CONCURRENCY : '16'
+
+    # TODO: uploader hostname no longer used? rm?
     UPLOADER_HOSTNAME: http://mbon_data_uploader:5000
     SQLALCHEMY_WARN_20: 0  # set to 1 verbose logging about sqlAlchemy deprecations
     AIRFLOW__LOGGING__LOGGING_LEVEL: INFO  # DEBUG
@@ -172,6 +186,8 @@ services:
   airflow-webserver:
     <<: *airflow-common
     command: webserver
+    environment:
+      <<: *airflow-common-env
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 10s
@@ -185,6 +201,8 @@ services:
       
   airflow-scheduler:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env
     command: scheduler
     restart: always
     env_file:
@@ -192,6 +210,9 @@ services:
       
   airflow-worker:
     <<: *airflow-common
+    environment:
+      <<: *airflow-common-env
+      AIRFLOW__CORE__PARALLELISM: '50'
     command: celery worker
     restart: always
     env_file:
