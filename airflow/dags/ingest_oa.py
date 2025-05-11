@@ -9,6 +9,8 @@ import os
 from airflow import DAG
 from airflow.operators.python_operator import PythonOperator
 from datetime import datetime
+import requests, gzip, io
+import pandas as pd
 
 from dataframe_to_influx import dataframe_to_influx
 
@@ -20,7 +22,6 @@ def ndbc_to_influx(ds, **op_kwargs):
     parses it into a DataFrame with a datetime column, and then calls csv_to_influx().
     Requires provide_context=True on the PythonOperator so that `ds` is injected.
     """
-
     # 1) year = params.ds - 1yr
     #    ds comes in as 'YYYY-MM-DD'
     year = int(ds.split('-')[0]) - 1
@@ -42,22 +43,40 @@ def ndbc_to_influx(ds, **op_kwargs):
             gz,
             delim_whitespace=True,
             skiprows=[1],      # drop the units line
-            comment='#'        # skip any other comment lines
+            #comment='#'        # skip any other comment lines
         )
+        # first column (YY) gets read in with # prepended (#YY)
+        df['YY'] = df['#YY']
 
+    pandas.set_option('display.max_columns', None)
+    print('df.head:', df.head())
     # 5) add 'datetime' column using YY, MM, DD, hh, mm
     #    First build a 4-digit year column
-    df['datetime'] = pd.to_datetime(
-        df[['YY', 'MM', 'DD', 'hh', 'mm']],
-        format="%Y %m %d %H %M"
-    )
+    df['datetime'] = pd.to_datetime({
+        'year':   df['YY'],
+        'month':  df['MM'],
+        'day':    df['DD'],
+        'hour':   df['hh'],
+        'minute': df['mm']
+    })
 
     # override the time column name for csv_to_influx
     op_kwargs['dataframe'] = df
     op_kwargs['timeCol'] = 'datetime'
 
+
+    print('kwargs:', op_kwargs)
+    #    def dataframe_to_influx(dataframe, measurement, tags=[[]], fields=[["value", "Sal"]],
+    #               timeCol='DateTimeStamp', should_convert_time=False):
     # finally hand off to your generic CSV→Influx helper
-    dataframe_to_influx(op_kwargs)
+    dataframe_to_influx(
+        df,
+        op_kwargs['measurement'],
+        op_kwargs['tags'],
+        op_kwargs['fields'],
+        op_kwargs['timeCol'],
+        #op_kwargs['should_convert_time']
+    )
 
 
 
@@ -73,6 +92,8 @@ with DAG(
         "start_date": datetime(2020, 2, 1)  # 1 month delay for NDBC to publish last year's data
     },
 ) as dag:
+
+    #YY  MM DD hh mm WDIR WSPD GST  WVHT   DPD   APD MWD   PRES  ATMP  WTMP  DEWP  VIS  TIDE
     PARAM_LIST = {
         'ApCo2': 'pco2_in_air',
         'Sal': 'sea_water_practical_salinity',

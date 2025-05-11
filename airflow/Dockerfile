@@ -1,4 +1,4 @@
-FROM apache/airflow:latest
+FROM apache/airflow:2.10.5-python3.9
 
 ARG INFLUXDB_HOSTNAME
 ARG INFLUXDB_TOKEN
@@ -31,4 +31,5 @@ RUN influx config create --config-name imars_config \
     --token "${INFLUXDB_TOKEN}" \
     --active
 
-
+# === install postgres driver
+RUN pip install psycopg2-binary

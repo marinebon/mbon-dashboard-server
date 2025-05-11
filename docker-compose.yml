@@ -65,6 +65,8 @@ x-airflow-common:
     AIRFLOW__WEBSERVER__PROXY_FIX_X_HOST:
     AIRFLOW__WEBSERVER__PROXY_FIX_X_PORT:
     AIRFLOW__WEBSERVER__PROXY_FIX_X_PREFIX: 1
+    AIRFLOW__WEBSERVER__WEB_SERVER_HOST: 0.0.0.0
+    AIRFLOW__WEBSERVER__WEB_SERVER_PORT: 8080
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - airflow-logs-volume:/opt/airflow/logs
@@ -201,7 +203,7 @@ services:
       
   airflow-webserver:
     <<: *airflow-common
-    command: api-server
+    command: webserver
     environment:
       <<: *airflow-common-env
     healthcheck:
@@ -239,7 +241,7 @@ services:
     command: version
     environment:
       <<: *airflow-common-env
-      _AIRFLOW_DB_UPGRADE: 'true'
+      _AIRFLOW_DB_MIGRATE: 'true'
       _AIRFLOW_WWW_USER_CREATE: 'true'
     env_file:
       - .env
