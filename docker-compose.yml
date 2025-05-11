@@ -42,13 +42,29 @@ x-airflow-common:
     AIRFLOW__CORE__MAX_ACTIVE_RUNS_PER_DAG: '5'  
 
     # how many tasks a Celery worker will execute in parallel
-    AIRFLOW__CELERY__WORKER_CONCURRENCY : '16'
+    AIRFLOW__CELERY__WORKER_CONCURRENCY: '16'
 
     # TODO: uploader hostname no longer used? rm?
     UPLOADER_HOSTNAME: http://mbon_data_uploader:5000
     SQLALCHEMY_WARN_20: 0  # set to 1 verbose logging about sqlAlchemy deprecations
     AIRFLOW__LOGGING__LOGGING_LEVEL: INFO  # DEBUG
     AIRFLOW_HOME: /opt/airflow/
+    _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}  # un for admin login
+    _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}  # pw for admin login
+    # metadata for that user
+    _AIRFLOW_WWW_USER_FIRSTNAME: Tylar
+    _AIRFLOW_WWW_USER_LASTNAME: Murray
+    _AIRFLOW_WWW_USER_ROLE: Admin
+    _AIRFLOW_WWW_USER_EMAIL: muray.tylar@gmail.com
+    AIRFLOW__WEBSERVER__BASE_URL: https://mbon-dashboards.marine.usf.edu:8080
+    AIRFLOW__WEBSERVER__ENABLE_PROXY_FIX: "True"
+    FORWARDED_ALLOW_IPS: "*"
+    # <-- tell ProxyFix how many X-Forwarded-* values to trust
+    AIRFLOW__WEBSERVER__PROXY_FIX_X_FOR:
+    AIRFLOW__WEBSERVER__PROXY_FIX_X_PROTO:
+    AIRFLOW__WEBSERVER__PROXY_FIX_X_HOST:
+    AIRFLOW__WEBSERVER__PROXY_FIX_X_PORT:
+    AIRFLOW__WEBSERVER__PROXY_FIX_X_PREFIX: 1
   volumes:
     - ./airflow/dags:/opt/airflow/dags
     - airflow-logs-volume:/opt/airflow/logs
@@ -185,7 +201,7 @@ services:
       
   airflow-webserver:
     <<: *airflow-common
-    command: webserver
+    command: api-server
     environment:
       <<: *airflow-common-env
     healthcheck:
@@ -225,8 +241,6 @@ services:
       <<: *airflow-common-env
       _AIRFLOW_DB_UPGRADE: 'true'
       _AIRFLOW_WWW_USER_CREATE: 'true'
-      _AIRFLOW_WWW_USER_USERNAME: ${_AIRFLOW_WWW_USER_USERNAME:-airflow}  # un for admin login
-      _AIRFLOW_WWW_USER_PASSWORD: ${_AIRFLOW_WWW_USER_PASSWORD:-airflow}  # pw for admin login
     env_file:
       - .env
       
