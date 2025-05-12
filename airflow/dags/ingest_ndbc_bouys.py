@@ -1,5 +1,9 @@
 # ingest_ndbc.py
 """
+NOTE: This uses .csv files from gcloud.
+      The data can be grabbed directly using methods in airflow/dags/ndbc_to_influx.py
+
+
 Ingests NDBC timeseries .csv.
 
 mermaid diagram:
