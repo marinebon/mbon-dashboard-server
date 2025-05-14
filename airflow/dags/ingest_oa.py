@@ -28,7 +28,7 @@ from datetime import datetime
 import requests, gzip, io
 import pandas as pd
 
-from dataframe_to_influx import dataframe_to_influx
+from csv2influx import csv2influx
 
 
 # ============================================================================
@@ -43,8 +43,9 @@ with DAG(
         "start_date": datetime(2020, 2, 1)  # 1 month delay for NDBC to publish last year's data
     },
 ) as dag:
-
-    #YY  MM DD hh mm WDIR WSPD GST  WVHT   DPD   APD MWD   PRES  ATMP  WTMP  DEWP  VIS  TIDE
+    DATA_LINK = "https://erddap.secoora.org/erddap/tabledap/gov_ornl_cdiac_graysrf_81w_31n.csv?time%2Cz%2Cpco2_in_air%2Cpco2_in_sea_water%2Csea_water_practical_salinity%2Csea_water_temperature%2Csea_water_ph_reported_on_total_scale"
+    # col headers:
+    # time,z,pco2_in_air,pco2_in_sea_water,sea_water_practical_salinity,sea_water_temperature,sea_water_ph_reported_on_total_scale
     PARAM_LIST = {
         'ApCo2': 'pco2_in_air',
         'Sal': 'sea_water_practical_salinity',
@@ -53,12 +54,12 @@ with DAG(
         'pH': 'sea_water_ph_reported_on_total_scale',
     }
     for param_name, param_col_name in PARAM_LIST.items():
-        FPATH = f"gov_ornl_cdiac_graysrf_{param_name}.csv"
         PythonOperator(
             task_id=f"ingest_oa_{param_name}",
-            python_callable=ndbc_to_influx,
+            python_callable=csv2influx,
             provide_context=True,
             op_kwargs={
+                'data_url': DATA_LINK,
                 'buoy_id': '41008h',
                 'measurement': 'oa_params',
                 'fields': [
