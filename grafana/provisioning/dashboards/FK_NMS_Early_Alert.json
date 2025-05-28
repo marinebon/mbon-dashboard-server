@@ -894,7 +894,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -910,7 +911,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 45
+            "y": 17
           },
           "id": 35,
           "interval": "",
@@ -991,7 +992,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1007,7 +1009,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 51
+            "y": 23
           },
           "id": 32,
           "interval": "",
@@ -1116,7 +1118,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1246,7 +1249,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1475,8 +1479,14 @@
       {
         "current": {
           "selected": true,
-          "text": "anomaly",
-          "value": "anomaly"
+          "text": [
+            "anomaly",
+            "mean"
+          ],
+          "value": [
+            "anomaly",
+            "mean"
+          ]
         },
         "datasource": {
           "type": "influxdb",
@@ -1486,7 +1496,7 @@
         "hide": 0,
         "includeAll": false,
         "label": "Time Series Metric",
-        "multi": false,
+        "multi": true,
         "name": "metric",
         "options": [],
         "query": "SHOW FIELD KEYS from chlor_a",
@@ -1548,6 +1558,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }
