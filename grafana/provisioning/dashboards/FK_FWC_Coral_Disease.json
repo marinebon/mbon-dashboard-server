@@ -115,7 +115,7 @@
       "type": "text"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": {
         "type": "datasource",
         "uid": "grafana"
@@ -127,120 +127,7 @@
         "y": 17
       },
       "id": 4,
-      "panels": [
-        {
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
-          "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 18
-          },
-          "id": 60,
-          "options": {
-            "base_url": "https://erddap.marine.usf.edu/erddap",
-            "bg_color": "0xFFFFFFFF",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
-            "n_images": 6,
-            "product_id": "vsnpp_oc_7d_gom",
-            "show_request_dates": false,
-            "variable_id": "chlor_a_anom"
-          },
-          "title": "VIIRS-SNPP CHLa 7-Day anomaly images (mg/m^3)",
-          "type": "imars-grafanaerddap-panel"
-        },
-        {
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
-          "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 24
-          },
-          "id": 61,
-          "options": {
-            "base_url": "https://erddap.marine.usf.edu/erddap",
-            "bg_color": "0xFFFFFFFF",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
-            "n_images": 6,
-            "product_id": "vsnpp_sstn_7d_gom",
-            "show_request_dates": false,
-            "variable_id": "sstn_anom"
-          },
-          "title": "VIIRS-SNPP 7-Day nighttime SST anomaly images (DegC)",
-          "type": "imars-grafanaerddap-panel"
-        },
-        {
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
-          "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 30
-          },
-          "id": 62,
-          "options": {
-            "base_url": "https://erddap.marine.usf.edu/erddap",
-            "bg_color": "0xFFFFFFFF",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
-            "n_images": 6,
-            "product_id": "vsnpp_oc_7d_gom",
-            "show_request_dates": false,
-            "variable_id": "Rrs_671_anom"
-          },
-          "title": "VIIRS-SNPP remote sensing reflectance at 671nm 7-Day anomaly images (sr^-1)",
-          "type": "imars-grafanaerddap-panel"
-        },
-        {
-          "datasource": {
-            "type": "datasource",
-            "uid": "grafana"
-          },
-          "description": "",
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 36
-          },
-          "id": 63,
-          "options": {
-            "base_url": "https://erddap.marine.usf.edu/erddap",
-            "bg_color": "0xFFFFFFFF",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
-            "n_images": 6,
-            "product_id": "vsnpp_oc_7d_gom",
-            "show_request_dates": false,
-            "variable_id": "Kd_490_anom"
-          },
-          "title": "VIIRS Diffuse Attenuation Coefficient at 490nm (Kd490) 7-day Anomaly Images (water clarity proxy)",
-          "type": "imars-grafanaerddap-panel"
-        }
-      ],
+      "panels": [],
       "targets": [
         {
           "datasource": {
@@ -254,6 +141,122 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 60,
+      "options": {
+        "base_url": "https://erddap.marine.usf.edu/erddap",
+        "bg_color": "0xFFFFFFFF",
+        "color_bar_str": "Blue|White|Red|-3|3|",
+        "lat_max": 25.5,
+        "lat_min": 24.4,
+        "lon_max": -80.1,
+        "lon_min": -82.2,
+        "n_images": 6,
+        "product_id": "vsnpp_oc_7d_gom",
+        "show_request_dates": false,
+        "variable_id": "chlor_a_anom"
+      },
+      "title": "VIIRS-SNPP CHLa 7-Day anomaly images (mg/m^3)",
+      "type": "imars-grafanaerddap-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 61,
+      "options": {
+        "base_url": "https://erddap.marine.usf.edu/erddap",
+        "bg_color": "0xFFFFFFFF",
+        "color_bar_str": "Blue|White|Red|-4|4|",
+        "lat_max": 25.5,
+        "lat_min": 24.4,
+        "lon_max": -80.1,
+        "lon_min": -82.2,
+        "n_images": 6,
+        "product_id": "vsnpp_sstn_7d_gom",
+        "show_request_dates": false,
+        "variable_id": "sstn_anom"
+      },
+      "title": "VIIRS-SNPP 7-Day nighttime SST anomaly images (DegC)",
+      "type": "imars-grafanaerddap-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 30
+      },
+      "id": 62,
+      "options": {
+        "base_url": "https://erddap.marine.usf.edu/erddap",
+        "bg_color": "0xFFFFFFFF",
+        "color_bar_str": "Blue|White|Red|-0.01|0.01|",
+        "lat_max": 25.5,
+        "lat_min": 24.4,
+        "lon_max": -80.1,
+        "lon_min": -82.2,
+        "n_images": 6,
+        "product_id": "vsnpp_oc_7d_gom",
+        "show_request_dates": false,
+        "variable_id": "Rrs_671_anom"
+      },
+      "title": "VIIRS-SNPP remote sensing reflectance at 671nm 7-Day anomaly images (sr^-1)",
+      "type": "imars-grafanaerddap-panel"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 6,
+        "w": 24,
+        "x": 0,
+        "y": 36
+      },
+      "id": 63,
+      "options": {
+        "base_url": "https://erddap.marine.usf.edu/erddap",
+        "bg_color": "0xFFFFFFFF",
+        "color_bar_str": "Blue|White|Red|-0.2|0.2|",
+        "lat_max": 25.5,
+        "lat_min": 24.4,
+        "lon_max": -80.1,
+        "lon_min": -82.2,
+        "n_images": 6,
+        "product_id": "vsnpp_oc_7d_gom",
+        "show_request_dates": false,
+        "variable_id": "Kd_490_anom"
+      },
+      "title": "VIIRS Diffuse Attenuation Coefficient at 490nm (Kd490) 7-day Anomaly Images (water clarity proxy)",
+      "type": "imars-grafanaerddap-panel"
+    },
+    {
       "collapsed": true,
       "datasource": {
         "type": "datasource",
@@ -263,7 +266,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 42
       },
       "id": 58,
       "panels": [
@@ -345,7 +348,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 43
       },
       "id": 56,
       "panels": [
@@ -397,8 +400,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -535,8 +537,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -919,7 +920,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 44
       },
       "id": 54,
       "panels": [
@@ -1333,7 +1334,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 45
       },
       "id": 52,
       "panels": [
@@ -1386,8 +1387,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1516,8 +1516,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1621,7 +1620,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 46
       },
       "id": 50,
       "panels": [],
@@ -1646,7 +1645,7 @@
         "h": 9,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 47
       },
       "id": 39,
       "options": {
@@ -1680,7 +1679,7 @@
         "h": 10,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 56
       },
       "id": 20,
       "options": {
@@ -1713,7 +1712,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "KW",
             "MIA"
@@ -1742,14 +1741,12 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
-            "Bob_Allen_Key",
-            "Butternut_Key"
+            "Peterson_Key"
           ],
           "value": [
-            "Bob_Allen_Key",
-            "Butternut_Key"
+            "Peterson_Key"
           ]
         },
         "datasource": {
@@ -1771,7 +1768,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "anomaly"
           ],
@@ -1817,6 +1814,6 @@
   "timezone": "",
   "title": "FWC Coral Disease Dash",
   "uid": "-f4J8V4Mk",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
