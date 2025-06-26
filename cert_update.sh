@@ -18,4 +18,6 @@ docker run --rm \
     --no-eff-email \
     --non-interactive
 
+cp certs/live/mbon-dashboards.marine.usf.edu/*pem certs/.
+
 docker compose up --build -d nginx
