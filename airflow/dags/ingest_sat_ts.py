@@ -39,6 +39,7 @@ with DAG(
                 '09', '10', '11', '12', '13', '14', '15', '16', '17', 'grnms'
             ],
             'variables': {
+                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI'],
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
@@ -62,6 +63,7 @@ with DAG(
               'SS1', 'SS2', 'SS3', 'SS4', 'SS5', 'SS6', 'SS7', 'SS8'
             ],
             'variables': {
+                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI'],
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
@@ -70,6 +72,7 @@ with DAG(
               'SLI', 'PBI', 'PEV', 'MIA', 'MOL', 'SOM', 'SUG', 'KW'
             ],
             'variables': {
+                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI'],
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         }
