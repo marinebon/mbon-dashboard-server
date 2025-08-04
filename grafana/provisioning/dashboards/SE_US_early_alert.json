@@ -53,8 +53,8 @@
         "uid": "P3C6603E967DC8568"
       },
       "gridPos": {
-        "h": 20,
-        "w": 20,
+        "h": 19,
+        "w": 15,
         "x": 0,
         "y": 1
       },
@@ -86,10 +86,10 @@
         "uid": "P3C6603E967DC8568"
       },
       "gridPos": {
-        "h": 11,
-        "w": 24,
-        "x": 0,
-        "y": 21
+        "h": 19,
+        "w": 9,
+        "x": 15,
+        "y": 1
       },
       "id": 8,
       "options": {
@@ -124,7 +124,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 20
       },
       "id": 96,
       "panels": [
@@ -176,7 +176,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": {
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
@@ -185,10 +185,127 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 21
       },
       "id": 29,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 10,
+            "w": 24,
+            "x": 0,
+            "y": 34
+          },
+          "id": 98,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "BlueWhiteRed|-3|3|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "chlor_a_anom"
+          },
+          "title": "Weekly chlorophyll anomalies (mg/m^3)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 44
+          },
+          "id": 99,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "BlueWhiteRed|-4|4|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_sstn_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "sstn_anom"
+          },
+          "title": "Weekly nighttime SST anomalies (DegC)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 53
+          },
+          "id": 100,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "BlueWhiteRed|C|Linear|-0.001|0.001|",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_seus",
+            "show_request_dates": false,
+            "variable_id": "Rrs_671_anom"
+          },
+          "title": "Weekly red reflectance (suspended sediment proxy) anomalies (sr^-1)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "Dynamic seascapes are classified using multivariate  data and describe basin and gyre scale features and seasonal boundary shifts.  A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).",
+          "gridPos": {
+            "h": 9,
+            "w": 24,
+            "x": 0,
+            "y": 62
+          },
+          "id": 101,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Seascapes|D||||",
+            "lat_max": 40.5,
+            "lat_min": 29.1,
+            "lon_max": -73.1,
+            "lon_min": -82,
+            "n_images": 6,
+            "product_id": "noaa_aoml_seascapes_8day",
+            "show_request_dates": false,
+            "variable_id": "CLASS"
+          },
+          "title": "8-Day Biogeographic seascape classes",
+          "type": "imars-grafanaerddap-panel"
+        }
+      ],
       "targets": [
         {
           "datasource": {
@@ -202,122 +319,6 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 10,
-        "w": 24,
-        "x": 0,
-        "y": 34
-      },
-      "id": 98,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "BlueWhiteRed|-3|3|",
-        "lat_max": 40.5,
-        "lat_min": 29.1,
-        "lon_max": -73.1,
-        "lon_min": -82,
-        "n_images": 6,
-        "product_id": "vsnpp_oc_7d_seus",
-        "show_request_dates": false,
-        "variable_id": "chlor_a_anom"
-      },
-      "title": "Weekly chlorophyll anomalies (mg/m^3)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 44
-      },
-      "id": 99,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "BlueWhiteRed|-4|4|",
-        "lat_max": 40.5,
-        "lat_min": 29.1,
-        "lon_max": -73.1,
-        "lon_min": -82,
-        "n_images": 6,
-        "product_id": "vsnpp_sstn_7d_seus",
-        "show_request_dates": false,
-        "variable_id": "sstn_anom"
-      },
-      "title": "Weekly nighttime SST anomalies (DegC)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface.\nAnomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 53
-      },
-      "id": 100,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "BlueWhiteRed|C|Linear|-0.001|0.001|",
-        "lat_max": 40.5,
-        "lat_min": 29.1,
-        "lon_max": -73.1,
-        "lon_min": -82,
-        "n_images": 6,
-        "product_id": "vsnpp_oc_7d_seus",
-        "show_request_dates": false,
-        "variable_id": "Rrs_671_anom"
-      },
-      "title": "Weekly red reflectance (suspended sediment proxy) anomalies (sr^-1)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "Dynamic seascapes are classified using multivariate  data and describe basin and gyre scale features and seasonal boundary shifts.  A description of seascape classes can be found [HERE](https://shiny.marinebon.app/seascapes/classes.html).",
-      "gridPos": {
-        "h": 9,
-        "w": 24,
-        "x": 0,
-        "y": 62
-      },
-      "id": 101,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Seascapes|D||||",
-        "lat_max": 40.5,
-        "lat_min": 29.1,
-        "lon_max": -73.1,
-        "lon_min": -82,
-        "n_images": 6,
-        "product_id": "noaa_aoml_seascapes_8day",
-        "show_request_dates": false,
-        "variable_id": "CLASS"
-      },
-      "title": "8-Day Biogeographic seascape classes",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -327,7 +328,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 71
+        "y": 22
       },
       "id": 27,
       "panels": [
@@ -379,7 +380,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -392,10 +394,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 8,
-            "w": 12,
+            "h": 6,
+            "w": 24,
             "x": 0,
-            "y": 43
+            "y": 35
           },
           "id": 2,
           "interval": "",
@@ -436,7 +438,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) as metric FROM \"chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/)  AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -464,141 +466,6 @@
             }
           ],
           "title": "VIIRS Chlorophyll-a $metric @ location $Locations",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "DegC",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 4,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "always",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 43
-          },
-          "id": 12,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "VIIRS Nighttime SST $metric @ location $Locations",
           "type": "timeseries"
         },
         {
@@ -649,7 +516,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -662,10 +530,10 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 8,
-            "w": 12,
+            "h": 5,
+            "w": 24,
             "x": 0,
-            "y": 51
+            "y": 41
           },
           "id": 13,
           "interval": "",
@@ -706,7 +574,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/)  AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -734,6 +602,142 @@
             }
           ],
           "title": "VIIRS Rrs 671 $metric @ location $Locations",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "DegC",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 4,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 5,
+            "w": 24,
+            "x": 0,
+            "y": 46
+          },
+          "id": 12,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "modis_abi",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"sstn\"\nWHERE (\"location\" =~ /^$Locations$/)  AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "anomaly"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "location",
+                  "operator": "=~",
+                  "value": "/^$Locations$/"
+                }
+              ]
+            }
+          ],
+          "title": "VIIRS Nighttime SST $metric @ location $Locations",
           "type": "timeseries"
         },
         {
@@ -784,7 +788,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -797,9 +802,9 @@
             "overrides": []
           },
           "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
+            "h": 6,
+            "w": 24,
+            "x": 0,
             "y": 51
           },
           "id": 11,
@@ -841,7 +846,7 @@
               "measurement": "modis_abi",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Kd_490\"\nWHERE (\"location\" =~ /^$Locations$/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Kd_490\"\nWHERE (\"location\" =~ /^$Locations$/)  AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -870,6 +875,143 @@
           ],
           "title": "VIIRS Kd_490 $metric @ location $Locations",
           "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "W/m^2/um/sr",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 4,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "always",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 57
+          },
+          "id": 102,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "alias": "",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "measurement": "modis_abi",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"ABI\"\nWHERE (\"location\" =~ /^$Locations$/)  AND (\"satellite\" =~ /MODA/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "anomaly"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "location",
+                  "operator": "=~",
+                  "value": "/^$Locations$/"
+                }
+              ]
+            }
+          ],
+          "title": "MODIS ABI $metric @ location $Locations",
+          "type": "timeseries"
         }
       ],
       "targets": [
@@ -894,7 +1036,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 72
+        "y": 23
       },
       "id": 83,
       "panels": [
@@ -968,8 +1110,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1097,8 +1238,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1225,8 +1365,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1353,8 +1492,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1481,8 +1619,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1584,7 +1721,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 73
+        "y": 24
       },
       "id": 59,
       "panels": [
@@ -1671,8 +1808,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1806,8 +1942,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1941,8 +2076,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2076,8 +2210,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2224,8 +2357,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2360,8 +2492,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2470,7 +2601,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 74
+        "y": 25
       },
       "id": 72,
       "panels": [
@@ -2589,8 +2720,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2717,8 +2847,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3201,7 +3330,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 75
+        "y": 26
       },
       "id": 54,
       "panels": [
@@ -3253,8 +3382,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3358,7 +3486,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 76
+        "y": 27
       },
       "id": 23,
       "panels": [
@@ -3453,10 +3581,10 @@
         "current": {
           "selected": true,
           "text": [
-            "01"
+            "08"
           ],
           "value": [
-            "01"
+            "08"
           ]
         },
         "datasource": {
@@ -3484,10 +3612,12 @@
         "current": {
           "selected": true,
           "text": [
-            "anomaly"
+            "anomaly",
+            "climatology"
           ],
           "value": [
-            "anomaly"
+            "anomaly",
+            "climatology"
           ]
         },
         "datasource": {
@@ -3540,7 +3670,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "Sapelo_Island_Cabretta_Creek"
           ],
@@ -3587,6 +3717,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gi",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
