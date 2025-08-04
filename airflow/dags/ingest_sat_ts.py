@@ -39,7 +39,7 @@ with DAG(
                 '09', '10', '11', '12', '13', '14', '15', '16', '17', 'grnms'
             ],
             'variables': {
-                'MODA': ['chlor_a', 'Rrs_667', 'Kd_490', 'ABI'],
+                'MODA': ['ABI'],
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
