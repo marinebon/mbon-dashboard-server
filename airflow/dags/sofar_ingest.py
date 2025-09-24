@@ -72,6 +72,10 @@ with DAG(
         # Ensure timestamp column is datetime
         df['utc_timestamp'] = pd.to_datetime(df['utc_timestamp'])
 
+
+        # TODO: pivot wide by data_type column
+        
+
         # --- Step 3: Write directly to InfluxDB ---
         token = os.environ["INFLUXDB_TOKEN"]
         url   = os.environ["INFLUXDB_HOSTNAME"]
