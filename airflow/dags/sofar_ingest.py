@@ -1,3 +1,7 @@
+"""
+Buoy data browsable at https://spotters.sofarocean.com
+"""
+
 import os
 import requests
 import pandas as pd
