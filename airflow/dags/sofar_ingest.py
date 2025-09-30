@@ -31,10 +31,10 @@ with DAG(
     tags=['sofar'],
 ) as dag:
 
-    def sofar_ingest(ds, prev_ds, **kwargs):
+    def sofar_ingest(ds, prev_ds, spotterId, **kwargs):
         raw_url = (
             "https://api.sofarocean.com/fetch/download-sensor-data/"
-            f"?spotterId=SPOT-30987C"
+            f"?spotterId={spotterId}"
             f"&startDate={prev_ds}T00:00Z"
             f"&endDate={ds}T00:00Z"
             f"&processingSources=all"
@@ -72,10 +72,6 @@ with DAG(
         # Ensure timestamp column is datetime
         df['utc_timestamp'] = pd.to_datetime(df['utc_timestamp'])
 
-
-        # TODO: pivot wide by data_type column
-        
-
         # --- Step 3: Write directly to InfluxDB ---
         token = os.environ["INFLUXDB_TOKEN"]
         url   = os.environ["INFLUXDB_HOSTNAME"]
@@ -87,15 +83,12 @@ with DAG(
 
         points = []
         for _, row in df.iterrows():
-
-            # TODO: map sensor_position 1,2 to surface,bottom (or is it bottom,surface?)
             p = (
                 Point("sofar_buoy")
-                .tag("spotter_id",      "SPOT-30987C")
+                .tag("spotter_id",      spotterId)
                 .tag("sensor_position", str(row['sensor_position']))
                 .time(row["utc_timestamp"])
-                # assume data_type column is sofar_temperature for all rows
-                .field("sofar_temperature", float(row["value"]))
+                .field(row["data_type"], float(row["value"]))
             )
             points.append(p)
 
@@ -104,7 +97,19 @@ with DAG(
 
         client.__del__()  # ensure clean shutdown
 
-    ingest_task = PythonOperator(
-        task_id='sofar_ingest',
+    olderBuoyTask = PythonOperator(
+        task_id="SPOT-30987C",
         python_callable=sofar_ingest,
+        op_kwargs={
+            "spotterId":"SPOT-30987C"
+        }
     )
+    newerBuoyTask = PythonOperator(
+        task_id="SPOT-32580C",
+        python_callable=sofar_ingest,
+        op_kwargs={
+            "spotterId":"SPOT-32580C"
+        }
+    )
+
+    
