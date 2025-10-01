@@ -1357,7 +1357,7 @@
               ]
             }
           ],
-          "title": "SOFAR Buoy SPOT-30987C",
+          "title": "SOFAR Buoy EAST (SPOT-30987C)",
           "type": "timeseries"
         },
         {
@@ -1469,7 +1469,7 @@
                 [
                   {
                     "params": [
-                      "*"
+                      "bm_do_mg_per_l_mean"
                     ],
                     "type": "field"
                   }
@@ -1484,7 +1484,7 @@
               ]
             }
           ],
-          "title": "SOFAR Buoy SPOT-32580C",
+          "title": "SOFAR Buoy WEST (SPOT-32580C)",
           "type": "timeseries"
         }
       ],
