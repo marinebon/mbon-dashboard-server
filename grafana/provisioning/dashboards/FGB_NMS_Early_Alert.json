@@ -323,8 +323,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -459,8 +458,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -596,8 +594,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -733,8 +730,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -870,8 +866,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1287,7 +1282,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1346,16 +1342,149 @@
                 [
                   {
                     "params": [
-                      "sofar_temperature"
+                      "*"
                     ],
                     "type": "field"
                   }
                 ]
               ],
-              "tags": []
+              "tags": [
+                {
+                  "key": "spotter_id::tag",
+                  "operator": "=",
+                  "value": "SPOT-30987C"
+                }
+              ]
             }
           ],
           "title": "SOFAR Buoy SPOT-30987C",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 24
+          },
+          "id": 44,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": false
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "sensor_position::tag"
+                  ],
+                  "type": "tag"
+                }
+              ],
+              "hide": false,
+              "measurement": "sofar_buoy",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT mean(\"$metric\") FROM \"measurement\" WHERE $timeFilter GROUP BY time($__interval)",
+              "rawQuery": false,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "*"
+                    ],
+                    "type": "field"
+                  }
+                ]
+              ],
+              "tags": [
+                {
+                  "key": "spotter_id::tag",
+                  "operator": "=",
+                  "value": "SPOT-32580C"
+                }
+              ]
+            }
+          ],
+          "title": "SOFAR Buoy SPOT-32580C",
           "type": "timeseries"
         }
       ],
@@ -1538,7 +1667,7 @@
     ]
   },
   "time": {
-    "from": "now-3y",
+    "from": "now-2y",
     "to": "now"
   },
   "timepicker": {
@@ -1553,6 +1682,6 @@
   "timezone": "",
   "title": "FGB NMS Early Alert",
   "uid": "qhXdKw7Gk",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
