@@ -103,7 +103,10 @@ services:
       - ./certs:/etc/nginx/certs
     env_file:
       - .env
-      
+    depends_on:
+      grafana:
+        condition: service_healthy
+
   # ==========================================================================
   # === grafana dashboard services
   # ==========================================================================
