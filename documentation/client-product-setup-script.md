@@ -11,7 +11,7 @@ sudo usermod -aG docker $USER
 # !!! MANUALLY LOG OUT & LOG IN to reload groups
 
 # === get & set up the code
-git clone https://github.com/marinebon/mbon-dashboard-server.git -b unify-subdomain
+git clone https://github.com/marinebon/mbon-dashboard-server.git
 # NOTE: alternatively you can set up ssh + gh auth for push access:
 #       ssh-keygen -t ed25519 -C "email@tylar.info"
 #       # manually add key to github ` cat ~/.ssh/id_ed25519.pub `
