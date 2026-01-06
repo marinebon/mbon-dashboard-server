@@ -204,10 +204,10 @@ services:
             - INFLUXD_STORAGE_SERIES_ID_SET_CACHE_SIZE=512MiB
 
             # Query concurrency (avoid stampedes)
-            - INFLUXD_QUERY_CONCURRENCY="4"
+            - INFLUXD_QUERY_CONCURRENCY=4
             # If exposed in your build, these further cap query spikes (safe defaults shown):
             - INFLUXD_QUERY_MAX_MEMORY_BYTES=2147483648   # 2 GiB
-            - INFLUXD_QUERY_QUEUE_SIZE="128"
+            - INFLUXD_QUERY_QUEUE_SIZE=128
 
             # Reasonable server timeouts (optional)
             - INFLUXD_HTTP_READ_TIMEOUT=30s
