@@ -19,7 +19,7 @@
   "links": [],
   "panels": [
     {
-      "content": "\n![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/master/static_files/home_dash_logo.png)",
+      "content": "\n![logo image](https://mbon-dashboards.marine.usf.edu/static_files/home_dash_logo.png)",
       "datasource": null,
       "gridPos": {
         "h": 6,
