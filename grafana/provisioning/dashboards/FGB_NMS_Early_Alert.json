@@ -39,7 +39,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/refs/heads/unify-subdomain/static_files/FGB_DBv24_map_2025.png)",
+        "content": "![map of sub-regions](https://mbon-dashboards.marine.usf.edu/static_files/FGB_DBv24_map_2025.png)",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -72,7 +72,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/refs/heads/unify-subdomain/static_files/FGBNMS_DBv24_Logo_Panel.png)\n\n### NEW: A real-time Sofar Buoy is now installed at East Flower Garden Bank. Please click [HERE](https://spotters.sofarocean.com/?spotter-filter=SPOT-30987C) to access data.\n\n&nbsp;\n\n\n#### Directions for site navigation:\n\nSelect location(s) for satellite time series extraction using the \"Satellite Time Series Extraction Locations\" menu at left.\n\nSelect display mean, climatology, or anomalies of extracted satellite data using the \"Time Series Metric\" menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all image and time series data panels.\nTo show or hide a panel, simply click on the panel title.\n\n#### Locations of extracted data:\n* A: Stetson Bank\n* B: West Flower Garden Bank\n* C: Horseshoe Bank\n* D: East Flower Garden Bank\n* E: MacNeil Bank\n* F: Rankin/28 Fathom Bank\n* G: Bright Bank\n* H: Geyer Bank\n* I: Elvers Bank\n* J: McGrail Bank\n* K: Bouma Bank\n* L: Rezak Bank\n* M: Sidner Bank\n* N: Parker Bank\n* O: Alderice Bank\n* P: Sonnier Bank\n* COAST 1-4: Coastal Regions of Interest\n* SS 1-8: Sentinel Sites\n \n\n\n\n",
+        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FGBNMS_DBv24_Logo_Panel.png)\n\n### NEW: A real-time Sofar Buoy is now installed at East Flower Garden Bank. Please click [HERE](https://spotters.sofarocean.com/?spotter-filter=SPOT-30987C) to access data.\n\n&nbsp;\n\n\n#### Directions for site navigation:\n\nSelect location(s) for satellite time series extraction using the \"Satellite Time Series Extraction Locations\" menu at left.\n\nSelect display mean, climatology, or anomalies of extracted satellite data using the \"Time Series Metric\" menu at left.\n\nThe range of the displayed time period can be adjusted at top right.\n\nScroll down to see all image and time series data panels.\nTo show or hide a panel, simply click on the panel title.\n\n#### Locations of extracted data:\n* A: Stetson Bank\n* B: West Flower Garden Bank\n* C: Horseshoe Bank\n* D: East Flower Garden Bank\n* E: MacNeil Bank\n* F: Rankin/28 Fathom Bank\n* G: Bright Bank\n* H: Geyer Bank\n* I: Elvers Bank\n* J: McGrail Bank\n* K: Bouma Bank\n* L: Rezak Bank\n* M: Sidner Bank\n* N: Parker Bank\n* O: Alderice Bank\n* P: Sonnier Bank\n* COAST 1-4: Coastal Regions of Interest\n* SS 1-8: Sentinel Sites\n \n\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -1578,7 +1578,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/refs/heads/unify-subdomain/static_files/FGBNMS_DBv24_Logo_Panel.png)",
+        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FGBNMS_DBv24_Logo_Panel.png)",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
