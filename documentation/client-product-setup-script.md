@@ -1,3 +1,49 @@
+# 2026-01
+```bash
+# === install docker & git
+sudo apt install git
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+
+sudo usermod -aG docker $USER
+
+# !!! MANUALLY LOG OUT & LOG IN to reload groups
+
+# === get & set up the code
+git clone https://github.com/marinebon/mbon-dashboard-server.git -b unify-subdomain
+# NOTE: alternatively you can set up ssh + gh auth for push access:
+#       ssh-keygen -t ed25519 -C "email@tylar.info"
+#       # manually add key to github ` cat ~/.ssh/id_ed25519.pub `
+#       git clone git@github.com:marinebon/mbon-dashboard-server.git
+
+cd mbon-dashboard-server
+cp documentation/example_env_file .env
+# open and edit the .env file to secure server
+
+# install https certs
+sudo sh ./cert_update.sh
+
+# === start it up
+docker compose up --build -d
+```
+
+Don't forget the manual steps at the bottom of this doc!
+
+# MANUAL STEPS 
+## set up cron jobs
+run `crontab -e` to edit the crontabs and set up the following cronjobs:
+```
+0 *  *   *   *   cd /home/tylarmurray/mbon-dashboard-server && /bin/git pull
+0 11 *   *   *   cd /home/tylarmurray/mbon-dashboard-server && docker compose up -d
+```
+
+
+---------------------------------------------
+
+
+
+# Older docs
 The steps below are everything you need to do to stand up one of the `client-*` product branches on a fresh machine.
 
 # Ubuntu 22.04
@@ -51,7 +97,7 @@ sudo chmod -R 777 grafana/grafana-storage
 docker-compose up --build -d
 ```
 
-Don't forget the manual steps at the bottom of this doc!
+Don't forget the manual steps !
 
 # CentOS 8
 ```bash
@@ -105,22 +151,4 @@ docker-compose up --build -d
 sudo chmod -R 777 grafana/grafana-storage
 docker-compose up --build -d
 ```
-Don't forget the manual steps at the bottom of this doc!
-
-# set grafana "home dashboard"
-Now for the manual steps:
-
-## set grafana home dashboard
-1. open grafana (http://35.209.104.85:3000) & bottom left click "sign in"
-2. sign in with `imars_grafana_user` and pw from `.env` (`grafana_admin_pw`)
-3. now @ grafana home in top left click "home" > "home dashboard"
-4. top right(ish) click star to "star" the dashboard
-5. left side click the cog > "preferences" 
-6. now in org config set "home dashboard" to "Home Dashboard" & click save 
-
-## set up cron jobs
-run `crontab -e` to edit the crontabs and set up the following cronjobs:
-```
-0 *  *   *   *   cd /home/murray_tylar/mbon-dashboard-server && /bin/git pull
-0 11 *   *   *   cd /home/murray_tylar/mbon-dashboard-server && docker compose up -d
-```
+Don't forget the manual steps !
