@@ -150,7 +150,7 @@ services:
             # this should inlcude adding a read-only user for grafana
             - ./influxdb/initdb:/docker-entrypoint-initdb.d
             # docker data volume:
-            - influx-data-volume:/var/lib/influxdb
+            - influx-data-volume:/var/lib/influxdb2
         restart: always
         # --- Memory guardrails for rare spikes ---
         mem_reservation: 16g       # soft threshold
