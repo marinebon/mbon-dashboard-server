@@ -134,6 +134,12 @@ services:
           - grafana-storage:/var/lib/grafana
       env_file:
           - .env
+      healthcheck:
+        test: ["CMD", "wget", "--spider", "-q", "http://localhost:3000/api/health"]
+        interval: 10s
+        timeout: 5s
+        retries: 12
+      
   influxdb:
         container_name: influxdb
         image: influxdb:2.7.6
