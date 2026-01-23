@@ -10,8 +10,8 @@ For more detailed documentation please see `./documentation/`.
 Below is a list of "product" instances that are built with this framework.
 Each "product" instance is built on a git branch in this repository, based off of the master branch.
 
-Name                        | status | URL                                      | Description
---------------------------- | ------------ | ------ | -----------------------------------------| ------------
+Name                        | status                | URL                                         | Description
+--------------------------- | --------------------- | --------------------------------------------| ------------
 SEUS Monitoring Dash        | :heavy_check_mark: up | https://mbon-dashboards.marine.usf.edu/seus | Cram in tons of data from MBON, NERRS, & GR NMS.
 FGB NMS Sentinel Sites Dash | :heavy_check_mark: up     | https://mbon-dashboards.marine.usf.edu/fgnms | Monitoring a ring of sites around the Flower Garden Banks National Marine Sanctuary where anomalously high values of chlorophyll-a concentration, for example, can be detected from satellite imagery before reaching the reefs.
 FK NMS                      | :heavy_check_mark: up | https://mbon-dashboards.marine.usf.edu/fknms | Monitoring of satellite, bouy, & river discharge data around the Florida Keys National Marine Sanctuary.
