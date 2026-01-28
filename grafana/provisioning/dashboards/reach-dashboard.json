@@ -56,8 +56,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 12,
+        "w": 13,
         "x": 0,
         "y": 0
       },
@@ -77,53 +77,6 @@
           "showZoom": true
         },
         "layers": [
-          {
-            "config": {
-              "showLegend": true,
-              "style": {
-                "color": {
-                  "fixed": "blue"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "filterData": {
-              "id": "byRefId",
-              "options": "B"
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "buoys",
-            "tooltip": true,
-            "type": "markers"
-          },
           {
             "config": {
               "showLegend": true,
@@ -151,23 +104,80 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
                   "fontSize": 12,
-                  "offsetX": 0,
+                  "offsetX": -7,
                   "offsetY": 0,
-                  "textAlign": "center",
+                  "textAlign": "right",
                   "textBaseline": "middle"
                 }
               }
             },
             "filterData": {
               "id": "byRefId",
-              "options": "A"
+              "options": "station_locations"
             },
             "location": {
               "mode": "auto"
             },
-            "name": "extraction locations",
+            "name": "Sampling Stations",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "yellow"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 7,
+                  "offsetY": 0,
+                  "textAlign": "left",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "buoys"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Surface Buoys",
             "tooltip": true,
             "type": "markers"
           }
@@ -191,16 +201,16 @@
             "type": "yesoreyeram-infinity-datasource",
             "uid": "ffbhdsb119w5cb"
           },
-          "filterExpression": "name == \"${Locations:pipe:or}\"",
+          "filterExpression": "",
           "filters": [],
           "format": "table",
           "global_query_id": "",
           "parser": "backend",
-          "refId": "extraction_locations",
+          "refId": "station_locations",
           "root_selector": "",
           "source": "url",
           "type": "csv",
-          "url": "mbon-dashboards.marine.usf.edu/static_files/locations_reach.csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_station_locations_vDB.csv",
           "url_options": {
             "body_content_type": "text/plain",
             "body_type": "raw",
@@ -214,7 +224,6 @@
             "type": "yesoreyeram-infinity-datasource",
             "uid": "ffbhdsb119w5cb"
           },
-          "filterExpression": "name == \"${Buoy:pipe:or}\"",
           "filters": [],
           "format": "table",
           "global_query_id": "",
@@ -224,7 +233,7 @@
           "root_selector": "",
           "source": "url",
           "type": "csv",
-          "url": "mbon-dashboards.marine.usf.edu/static_files/locations_reach.csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_buoy_locations_vDB.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -278,7 +287,7 @@
         "h": 14,
         "w": 13,
         "x": 0,
-        "y": 8
+        "y": 12
       },
       "id": 6,
       "options": {
@@ -312,7 +321,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 22
+        "y": 26
       },
       "id": 29,
       "panels": [
@@ -326,7 +335,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 23
+            "y": 31
           },
           "id": 56,
           "options": {
@@ -355,7 +364,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 30
+            "y": 38
           },
           "id": 57,
           "options": {
@@ -384,7 +393,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 37
+            "y": 45
           },
           "id": 58,
           "options": {
@@ -413,7 +422,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 44
+            "y": 52
           },
           "id": 60,
           "options": {
@@ -442,7 +451,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 51
+            "y": 59
           },
           "id": 59,
           "options": {
@@ -484,7 +493,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 23
+        "y": 27
       },
       "id": 27,
       "panels": [
@@ -552,7 +561,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 32
           },
           "id": 2,
           "interval": "",
@@ -687,7 +696,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 32
           },
           "id": 12,
           "interval": "",
@@ -822,7 +831,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 40
           },
           "id": 13,
           "interval": "",
@@ -957,7 +966,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 32
+            "y": 40
           },
           "id": 11,
           "interval": "",
@@ -1093,7 +1102,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 40
+            "y": 48
           },
           "id": 61,
           "interval": "",
@@ -1187,7 +1196,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 28
       },
       "id": 54,
       "panels": [
@@ -1239,7 +1248,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1336,7 +1346,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1408,7 +1419,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 25
+        "y": 29
       },
       "id": 52,
       "panels": [
@@ -1461,7 +1472,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1591,7 +1603,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1695,7 +1708,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 30
       },
       "id": 23,
       "panels": [],
@@ -1721,7 +1734,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 31
       },
       "id": 20,
       "options": {
@@ -1755,7 +1768,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 39
       },
       "id": 21,
       "options": {
@@ -1790,26 +1803,24 @@
         "current": {
           "selected": true,
           "text": [
-            "MK",
-            "BIS"
+            "None"
           ],
           "value": [
-            "MK",
-            "BIS"
+            ""
           ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'FKNMS'",
+        "definition": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'REACH'",
         "hide": 0,
         "includeAll": false,
         "label": "Satellite Time Series Extraction Locations",
         "multi": true,
         "name": "Locations",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'FKNMS'",
+        "query": "SHOW TAG VALUES FROM \"chlor_a\" WITH KEY = \"location\" WHERE \"region\" = 'REACH'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1821,7 +1832,7 @@
       },
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "anomaly",
             "climatology"
@@ -1856,10 +1867,12 @@
         "current": {
           "selected": true,
           "text": [
-            "Bob_Allen_Key"
+            "Bob_Allen_Key",
+            "Butternut_Key"
           ],
           "value": [
-            "Bob_Allen_Key"
+            "Bob_Allen_Key",
+            "Butternut_Key"
           ]
         },
         "datasource": {
@@ -1886,8 +1899,8 @@
     ]
   },
   "time": {
-    "from": "now-3y",
-    "to": "now"
+    "from": "2012-07-28T16:29:11.013Z",
+    "to": "2036-07-30T16:29:11.013Z"
   },
   "timepicker": {
     "hidden": false,
@@ -1901,6 +1914,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
