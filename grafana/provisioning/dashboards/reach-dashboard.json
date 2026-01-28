@@ -64,9 +64,11 @@
       "id": 62,
       "options": {
         "basemap": {
-          "config": {},
+          "config": {
+            "server": "ocean"
+          },
           "name": "Layer 0",
-          "type": "default"
+          "type": "esri-xyz"
         },
         "controls": {
           "mouseWheelZoom": true,
@@ -79,10 +81,57 @@
         "layers": [
           {
             "config": {
-              "showLegend": true,
+              "showLegend": false,
               "style": {
                 "color": {
                   "fixed": "dark-green"
+                },
+                "opacity": 0.5,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Subsurface Moorings"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Subsurface Moorings",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-yellow"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -105,27 +154,27 @@
                   "vertical": "center"
                 },
                 "text": {
-                  "field": "Name",
+                  "field": "Sampling Locations Name",
                   "fixed": "",
                   "mode": "field"
                 },
                 "textConfig": {
                   "fontSize": 12,
-                  "offsetX": -7,
+                  "offsetX": 0,
                   "offsetY": 0,
-                  "textAlign": "right",
+                  "textAlign": "center",
                   "textBaseline": "middle"
                 }
               }
             },
             "filterData": {
               "id": "byRefId",
-              "options": "station_locations"
+              "options": "Surface Buoys"
             },
             "location": {
               "mode": "auto"
             },
-            "name": "Sampling Stations",
+            "name": "Layer 3",
             "tooltip": true,
             "type": "markers"
           },
@@ -134,7 +183,7 @@
               "showLegend": true,
               "style": {
                 "color": {
-                  "fixed": "yellow"
+                  "fixed": "dark-red"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -156,28 +205,20 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
-                "text": {
-                  "field": "Name",
-                  "fixed": "",
-                  "mode": "field"
-                },
                 "textConfig": {
                   "fontSize": 12,
-                  "offsetX": 7,
+                  "offsetX": 0,
                   "offsetY": 0,
-                  "textAlign": "left",
+                  "textAlign": "center",
                   "textBaseline": "middle"
                 }
               }
             },
             "filterData": {
               "id": "byRefId",
-              "options": "buoys"
+              "options": "Sampling Locations"
             },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Surface Buoys",
+            "name": "Sampling Stations",
             "tooltip": true,
             "type": "markers"
           }
@@ -187,10 +228,10 @@
         },
         "view": {
           "allLayers": true,
-          "id": "zero",
-          "lat": 0,
-          "lon": 0,
-          "zoom": 1
+          "id": "coords",
+          "lat": 28.818601,
+          "lon": -85.621538,
+          "zoom": 6.21
         }
       },
       "pluginVersion": "10.4.4",
@@ -206,7 +247,7 @@
           "format": "table",
           "global_query_id": "",
           "parser": "backend",
-          "refId": "station_locations",
+          "refId": "Sampling Locations",
           "root_selector": "",
           "source": "url",
           "type": "csv",
@@ -229,11 +270,32 @@
           "global_query_id": "",
           "hide": false,
           "parser": "backend",
-          "refId": "buoys",
+          "refId": "Surface Buoys",
           "root_selector": "",
           "source": "url",
           "type": "csv",
-          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_buoy_locations_vDB.csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_surface_buoy_locations_vDB.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "Subsurface Moorings",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_bottom_mount_locations_vDB.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -279,39 +341,6 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "gridPos": {
-        "h": 14,
-        "w": 13,
-        "x": 0,
-        "y": 12
-      },
-      "id": 6,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
-        "mode": "markdown"
-      },
-      "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "refId": "A"
-        }
-      ],
-      "type": "text"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -321,7 +350,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 26
+        "y": 14
       },
       "id": 29,
       "panels": [
@@ -493,7 +522,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 15
       },
       "id": 27,
       "panels": [
@@ -1196,7 +1225,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 16
       },
       "id": 54,
       "panels": [
@@ -1248,8 +1277,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1346,8 +1374,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1419,7 +1446,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 17
       },
       "id": 52,
       "panels": [
@@ -1472,8 +1499,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1603,8 +1629,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1708,7 +1733,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 18
       },
       "id": 23,
       "panels": [],
@@ -1734,7 +1759,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 19
       },
       "id": 20,
       "options": {
@@ -1768,7 +1793,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 27
       },
       "id": 21,
       "options": {
@@ -1832,7 +1857,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "anomaly",
             "climatology"
@@ -1914,6 +1939,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 4,
+  "version": 5,
   "weekStart": ""
 }
