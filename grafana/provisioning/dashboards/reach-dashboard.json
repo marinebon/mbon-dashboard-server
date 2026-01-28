@@ -63,6 +63,11 @@
       },
       "id": 62,
       "options": {
+        "basemap": {
+          "config": {},
+          "name": "Layer 0",
+          "type": "default"
+        },
         "controls": {
           "mouseWheelZoom": true,
           "showAttribution": true,
@@ -72,6 +77,53 @@
           "showZoom": true
         },
         "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "blue"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "B"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "buoys",
+            "tooltip": true,
+            "type": "markers"
+          },
           {
             "config": {
               "showLegend": true,
@@ -108,10 +160,14 @@
                 }
               }
             },
+            "filterData": {
+              "id": "byRefId",
+              "options": "A"
+            },
             "location": {
               "mode": "auto"
             },
-            "name": "Layer 1",
+            "name": "extraction locations",
             "tooltip": true,
             "type": "markers"
           }
@@ -135,11 +191,12 @@
             "type": "yesoreyeram-infinity-datasource",
             "uid": "ffbhdsb119w5cb"
           },
+          "filterExpression": "name == \"${Locations:pipe:or}\"",
           "filters": [],
           "format": "table",
           "global_query_id": "",
           "parser": "backend",
-          "refId": "A",
+          "refId": "extraction_locations",
           "root_selector": "",
           "source": "url",
           "type": "csv",
@@ -147,6 +204,28 @@
           "url_options": {
             "body_content_type": "text/plain",
             "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filterExpression": "name == \"${Buoy:pipe:or}\"",
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "buoys",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/locations_reach.csv",
+          "url_options": {
             "data": "",
             "method": "GET"
           }
@@ -1711,10 +1790,12 @@
         "current": {
           "selected": true,
           "text": [
-            "MK"
+            "MK",
+            "BIS"
           ],
           "value": [
-            "MK"
+            "MK",
+            "BIS"
           ]
         },
         "datasource": {
@@ -1820,6 +1901,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
