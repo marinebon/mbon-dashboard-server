@@ -23,36 +23,137 @@
   "panels": [
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "ffbhdsb119w5cb"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
       },
       "gridPos": {
-        "h": 14,
-        "w": 13,
+        "h": 8,
+        "w": 12,
         "x": 0,
         "y": 0
       },
-      "id": 6,
+      "id": 62,
       "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": false,
+          "showScale": false,
+          "showZoom": true
         },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
-        "mode": "markdown"
+        "layers": [
+          {
+            "config": {
+              "showLegend": true,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Layer 1",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "zero",
+          "lat": 0,
+          "lon": 0,
+          "zoom": 1
+        }
       },
       "pluginVersion": "10.4.4",
       "targets": [
         {
+          "columns": [],
           "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
           },
-          "refId": "A"
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "A",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/locations_reach.csv",
+          "url_options": {
+            "body_content_type": "text/plain",
+            "body_type": "raw",
+            "data": "",
+            "method": "GET"
+          }
         }
       ],
-      "type": "text"
+      "title": "Panel Title",
+      "type": "geomap"
     },
     {
       "datasource": {
@@ -90,6 +191,39 @@
       "type": "text"
     },
     {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 13,
+        "x": 0,
+        "y": 8
+      },
+      "id": 6,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
+      "type": "text"
+    },
+    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -99,7 +233,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 22
       },
       "id": 29,
       "panels": [
@@ -113,7 +247,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 15
+            "y": 23
           },
           "id": 56,
           "options": {
@@ -142,7 +276,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 22
+            "y": 30
           },
           "id": 57,
           "options": {
@@ -171,7 +305,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 29
+            "y": 37
           },
           "id": 58,
           "options": {
@@ -200,7 +334,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 44
           },
           "id": 60,
           "options": {
@@ -229,7 +363,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 43
+            "y": 51
           },
           "id": 59,
           "options": {
@@ -271,7 +405,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 23
       },
       "id": 27,
       "panels": [
@@ -339,7 +473,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 16
+            "y": 24
           },
           "id": 2,
           "interval": "",
@@ -474,7 +608,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 16
+            "y": 24
           },
           "id": 12,
           "interval": "",
@@ -609,7 +743,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 32
           },
           "id": 13,
           "interval": "",
@@ -744,7 +878,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 32
           },
           "id": 11,
           "interval": "",
@@ -880,7 +1014,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 40
           },
           "id": 61,
           "interval": "",
@@ -974,7 +1108,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 24
       },
       "id": 54,
       "panels": [
@@ -1042,7 +1176,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 17
+            "y": 25
           },
           "id": 35,
           "interval": "",
@@ -1139,7 +1273,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 23
+            "y": 31
           },
           "id": 32,
           "interval": "",
@@ -1195,7 +1329,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 25
       },
       "id": 52,
       "panels": [
@@ -1264,7 +1398,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 18
+            "y": 26
           },
           "id": 34,
           "interval": "",
@@ -1394,7 +1528,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 33
           },
           "id": 33,
           "interval": "",
@@ -1482,7 +1616,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 26
       },
       "id": 23,
       "panels": [],
@@ -1508,7 +1642,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 27
       },
       "id": 20,
       "options": {
@@ -1542,7 +1676,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 35
       },
       "id": 21,
       "options": {
@@ -1686,6 +1820,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
