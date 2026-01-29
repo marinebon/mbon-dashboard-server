@@ -56,8 +56,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 12,
-        "w": 13,
+        "h": 13,
+        "w": 11,
         "x": 0,
         "y": 0
       },
@@ -74,8 +74,8 @@
           "mouseWheelZoom": true,
           "showAttribution": true,
           "showDebug": false,
-          "showMeasure": false,
-          "showScale": false,
+          "showMeasure": true,
+          "showScale": true,
           "showZoom": true
         },
         "layers": [
@@ -85,53 +85,6 @@
               "style": {
                 "color": {
                   "fixed": "dark-green"
-                },
-                "opacity": 0.5,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "filterData": {
-              "id": "byRefId",
-              "options": "Subsurface Moorings"
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Subsurface Moorings",
-            "tooltip": true,
-            "type": "markers"
-          },
-          {
-            "config": {
-              "showLegend": false,
-              "style": {
-                "color": {
-                  "fixed": "dark-yellow"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -154,36 +107,36 @@
                   "vertical": "center"
                 },
                 "text": {
-                  "field": "Sampling Locations Name",
+                  "field": "Name",
                   "fixed": "",
                   "mode": "field"
                 },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
+                  "fontSize": 16,
+                  "offsetX": 7,
+                  "offsetY": 4,
+                  "textAlign": "left",
                   "textBaseline": "middle"
                 }
               }
             },
             "filterData": {
               "id": "byRefId",
-              "options": "Surface Buoys"
+              "options": "Sampling Locations"
             },
             "location": {
               "mode": "auto"
             },
-            "name": "Layer 3",
+            "name": "Sampling Locations",
             "tooltip": true,
             "type": "markers"
           },
           {
             "config": {
-              "showLegend": true,
+              "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "dark-red"
+                  "fixed": "dark-blue"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -205,10 +158,15 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
+                  "fontSize": 16,
+                  "offsetX": -22,
+                  "offsetY": -10,
                   "textAlign": "center",
                   "textBaseline": "middle"
                 }
@@ -216,9 +174,64 @@
             },
             "filterData": {
               "id": "byRefId",
-              "options": "Sampling Locations"
+              "options": "Surface Buoys"
             },
-            "name": "Sampling Stations",
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Surface Buoys",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-red"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/square.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 16,
+                  "offsetX": -22,
+                  "offsetY": -8,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Subsurface Moorings"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Subsurface Moorings",
             "tooltip": true,
             "type": "markers"
           }
@@ -229,9 +242,9 @@
         "view": {
           "allLayers": true,
           "id": "coords",
-          "lat": 28.818601,
-          "lon": -85.621538,
-          "zoom": 6.21
+          "lat": 28.742471,
+          "lon": -85.041798,
+          "zoom": 6.83
         }
       },
       "pluginVersion": "10.4.4",
@@ -295,7 +308,7 @@
           "root_selector": "",
           "source": "url",
           "type": "csv",
-          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_bottom_mount_locations_vDB.csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_buoy_locations_vDB.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -310,11 +323,11 @@
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
       },
-      "description": "",
+      "description": "This dashboard displays satellite data (as both images and time series) along with environmental data (river discharge).",
       "gridPos": {
-        "h": 14,
-        "w": 11,
-        "x": 13,
+        "h": 13,
+        "w": 13,
+        "x": 11,
         "y": 0
       },
       "id": 8,
@@ -324,7 +337,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FKNMS_DBv24_Logo_Panel.png)\n\n\n### Directions for site navigation \n\nLocations where satellite data are extracted are shown on the map as black hatched areas.\n\nSelect a specific location using the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nBuoy locations (red dots on map) can also be selected using the \"Buoy Locations\" dropdown. Scroll down to see a list of buoy locations.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery Time Series Extractions\")\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n### Buoy locations:\n* 1: Whipray Basin\n* 2: Butternut Key\n* 3: Peterson Key\n* 4: Bob Allen Key\n* 5: Little Rabbit Key\n\n\n\n\n",
+        "content": "### Directions for site navigation \n\nFIO-REACH sampling locations are shown on the map at left as green circles.\n\nRed squares = OCG Subsurface Moorings\n\nYellow circles = OCG Surface Buoys\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery Time Series Extractions\")\n\n\n\n\n\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -337,7 +350,7 @@
           "refId": "A"
         }
       ],
-      "title": "Welcome to the Florida Keys data dashboard",
+      "title": "Welcome to the FIO-REACH Project data dashboard",
       "type": "text"
     },
     {
@@ -350,7 +363,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 13
       },
       "id": 29,
       "panels": [
@@ -364,17 +377,17 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 31
+            "y": 15
           },
           "id": 56,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "color_bar_str": "Red|White|Blue|-4|4|",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
             "n_images": 6,
             "product_id": "vsnpp_oc_7d_gom",
             "show_request_dates": false,
@@ -393,17 +406,17 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 38
+            "y": 22
           },
           "id": 57,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "color_bar_str": "Red|White|Blue|-4|4|",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
             "n_images": 6,
             "product_id": "vsnpp_sstn_7d_gom",
             "show_request_dates": false,
@@ -422,17 +435,17 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 45
+            "y": 29
           },
           "id": 58,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "color_bar_str": "Red|White|Blue|-0.01|0.01|",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
             "n_images": 6,
             "product_id": "vsnpp_oc_7d_gom",
             "show_request_dates": false,
@@ -451,17 +464,17 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 52
+            "y": 36
           },
           "id": 60,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "color_bar_str": "Red|White|Blue|-0.1|0.1|",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
             "n_images": 6,
             "product_id": "moda_oc_7d_gom",
             "show_request_dates": false,
@@ -480,17 +493,17 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 59
+            "y": 43
           },
           "id": 59,
           "options": {
             "base_url": "https://erddap.marine.usf.edu/erddap",
             "bg_color": "0xFFFFFFFF",
             "color_bar_str": "Rainbow|C|Linear|0|30|",
-            "lat_max": 25.5,
-            "lat_min": 24.4,
-            "lon_max": -80.1,
-            "lon_min": -82.2,
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
             "n_images": 6,
             "product_id": "noaa_aoml_seascapes_8day",
             "show_request_dates": false,
@@ -513,7 +526,7 @@
       "type": "row"
     },
     {
-      "collapsed": true,
+      "collapsed": false,
       "datasource": {
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
@@ -522,687 +535,10 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 14
       },
       "id": 27,
-      "panels": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 32
-          },
-          "id": 2,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) as metric FROM \"chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "VSNPP Chlorophyll-a $metric @ $Locations",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 32
-          },
-          "id": 12,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "VSNPP Nighttime SST $metric @ $Locations",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 40
-          },
-          "id": 13,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "VIIRS Rrs 671 $metric @ $Locations",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 12,
-            "y": 40
-          },
-          "id": 11,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Kd_490\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "VIIRS Kd_490 $metric @ $Locations",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 8,
-            "w": 12,
-            "x": 0,
-            "y": 48
-          },
-          "id": 61,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "alias": "",
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "measurement": "modis_abi",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /MODA/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "anomaly"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": [
-                {
-                  "key": "location",
-                  "operator": "=~",
-                  "value": "/^$Locations$/"
-                }
-              ]
-            }
-          ],
-          "title": "MODIS ABI $metric @ $Locations",
-          "type": "timeseries"
-        }
-      ],
+      "panels": [],
       "targets": [
         {
           "datasource": {
@@ -1216,6 +552,687 @@
       "type": "row"
     },
     {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 15
+      },
+      "id": 2,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) as metric FROM \"chlor_a\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "title": "VSNPP Chlorophyll-a $metric @ $Locations",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 15
+      },
+      "id": 12,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"sstn\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "title": "VSNPP Nighttime SST $metric @ $Locations",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 23
+      },
+      "id": 13,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Rrs_671\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "title": "VIIRS Rrs 671 $metric @ $Locations",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 23
+      },
+      "id": 11,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"Kd_490\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /VSNPP/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "title": "VIIRS Kd_490 $metric @ $Locations",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "links": [],
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "short"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 31
+      },
+      "id": 61,
+      "interval": "",
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": true
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "alias": "",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "modis_abi",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "query": "SELECT mean(/^$metric$/) AS anomaly FROM \"ABI\"\nWHERE (\"location\" =~ /^$Locations$/) AND (\"satellite\" =~ /MODA/) AND anomaly!=-999 AND $timeFilter \nGROUP BY time($__interval),\"location\" fill(null)",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "anomaly"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "location",
+              "operator": "=~",
+              "value": "/^$Locations$/"
+            }
+          ]
+        }
+      ],
+      "title": "MODIS ABI $metric @ $Locations",
+      "type": "timeseries"
+    },
+    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -1225,7 +1242,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 39
       },
       "id": 54,
       "panels": [
@@ -1446,7 +1463,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 40
       },
       "id": 52,
       "panels": [
@@ -1499,7 +1516,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1515,7 +1533,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 26
+            "y": 41
           },
           "id": 34,
           "interval": "",
@@ -1629,7 +1647,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1645,7 +1664,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 33
+            "y": 48
           },
           "id": 33,
           "interval": "",
@@ -1733,7 +1752,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 41
       },
       "id": 23,
       "panels": [],
@@ -1759,7 +1778,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 42
       },
       "id": 20,
       "options": {
@@ -1793,7 +1812,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 50
       },
       "id": 21,
       "options": {
@@ -1802,7 +1821,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FKNMS_DBv24_Logo_Panel.png)",
+        "content": "",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -1815,7 +1834,7 @@
           "refId": "A"
         }
       ],
-      "title": "This work supported by",
+      "title": "More information",
       "type": "text"
     }
   ],
@@ -1828,10 +1847,10 @@
         "current": {
           "selected": true,
           "text": [
-            "None"
+            "REACH_S01"
           ],
           "value": [
-            ""
+            "REACH_S01"
           ]
         },
         "datasource": {
@@ -1859,12 +1878,12 @@
         "current": {
           "selected": true,
           "text": [
-            "anomaly",
-            "climatology"
+            "climatology",
+            "mean"
           ],
           "value": [
-            "anomaly",
-            "climatology"
+            "climatology",
+            "mean"
           ]
         },
         "datasource": {
@@ -1924,8 +1943,8 @@
     ]
   },
   "time": {
-    "from": "2012-07-28T16:29:11.013Z",
-    "to": "2036-07-30T16:29:11.013Z"
+    "from": "now-5y",
+    "to": "now"
   },
   "timepicker": {
     "hidden": false,
@@ -1939,6 +1958,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
