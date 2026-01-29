@@ -55,7 +55,6 @@ with DAG(
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
-        
         'FGBNMS': {
             'stations': [
               'STET', 'WFG', 'EFG',
@@ -76,18 +75,19 @@ with DAG(
                 'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
             }
         },
-      'REACH': {
-          'stations': [
-              'REACH_S01', 'REACH_S02', 'REACH_S03', 'REACH_S04', 'REACH_S05',
-              'REACH_S06', 'REACH_S07', 'REACH_S08', 'REACH_S09', 'REACH_S10',
-              'REACH_S11', 'REACH_S12', 'REACH_S13', 'REACH_S14', 'REACH_S15',
-              'REACH_S16', 'REACH_S17', 'REACH_S18', 'REACH_S19', 'REACH_S20',
-              'REACH_S21', 'REACH_S22', 'REACH_S23'
-          ],
-          'variables': {
-              'MODA': ['ABI'],
-              'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
-          }
+        'REACH': {
+            'stations': [
+                'REACH_S01', 'REACH_S02', 'REACH_S03', 'REACH_S04', 'REACH_S05',
+                'REACH_S06', 'REACH_S07', 'REACH_S08', 'REACH_S09', 'REACH_S10',
+                'REACH_S11', 'REACH_S12', 'REACH_S13', 'REACH_S14', 'REACH_S15',
+                'REACH_S16', 'REACH_S17', 'REACH_S18', 'REACH_S19', 'REACH_S20',
+                'REACH_S21', 'REACH_S22', 'REACH_S23'
+            ],
+            'variables': {
+                'MODA': ['ABI'],
+                'VSNPP': ['Kd_490', 'Rrs_671', 'chlor_a', 'sstn']
+            }
+        }
     }
     
     for region, data in SAT_DB_FILES.items():
