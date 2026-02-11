@@ -77,6 +77,15 @@ USGS_DB_FILES = {
         'datasets': {
             'disch': discharge_metadata
         }
+    },
+    'REACH': {
+        'locations': [
+            'AlabamaRv','ApalachicolaRv','ChoctawRv','EscambiaRv',
+            'PascagoulaRv','PearlRv','SuwanneeRv','TombigbeeRv'
+        ],
+        'datasets': {
+            'disch': discharge_metadata
+        }
     }
 }
 
@@ -93,14 +102,14 @@ with DAG(
 ) as dag:
     for region, region_data in USGS_DB_FILES.items():
         # set region for URL 
-        if region in ['FK', 'FWC', 'FGB']:
-            gbucket_region = 'GOM'
+        if region in ['FK', 'FWC', 'FGB', 'REACH']:
+            gbucket_name = 'GOM'
         elif region == "SEUS":
-            gbucket_region = 'SEUS'
+            gbucket_name = 'SEUS'
         else:
             raise ValueError(f"unexpected region: '{region}'")
         # Use the region in the URL generation.
-        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{gbucket_region.lower()}_csv"
+        GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{gbucket_name.lower()}_csv"
         for dataset_name, ds in region_data['datasets'].items():
             for location in region_data['locations']:
                 DATA_FNAME = ds['filename_template'].format(
