@@ -132,6 +132,7 @@ services:
       volumes:
           - ./grafana/provisioning:/grafana_provisioning
           - grafana-storage:/var/lib/grafana
+          - ./grafana/public/maps:/usr/share/grafana/public/maps
       env_file:
           - .env
       healthcheck:
