@@ -242,7 +242,7 @@
               "src": "public/maps/Rice_habitat.geojson",
               "style": {
                 "color": {
-                  "fixed": "dark-green"
+                  "fixed": "#E02F44"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -281,6 +281,300 @@
               "mode": "auto"
             },
             "name": "Rice's whale habitat",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_100m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "100m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_50m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "50m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_200m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "200m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_300m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "300m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_400m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "400m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_500m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "500m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_1000m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "1000m Isobath",
             "opacity": 0.4,
             "tooltip": true,
             "type": "geojson"
@@ -408,7 +702,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "### Directions for site navigation \n\nFIO-REACH sampling locations are shown on map at left\n\nGreen circles = REACH Biological Sampling\n\nRed squares = OCG Subsurface Moorings\n\nYellow stars = OCG Surface Buoys\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery\" or \"Satellite Time Series Extractions\")\n\n\n\n\n\n\n\n",
+        "content": "### Directions for site navigation \n\nFIO-REACH sampling locations are shown on map at left\n\nGreen circles = REACH Biological Sampling\n\nRed squares = OCG Subsurface Moorings\n\nYellow stars = OCG Surface Buoys\n\nRice's whale core habitat is represented by red polygon\n\nGray lines represent depth contours\n\nHover mouse over features on the map to see description\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery\" or \"Satellite Time Series Extractions\")\n\n\n\n\n\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -425,7 +719,7 @@
       "type": "text"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": {
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
@@ -437,7 +731,153 @@
         "y": 13
       },
       "id": 29,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 14
+          },
+          "id": 56,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Red|White|Blue|-4|4|",
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_gom",
+            "show_request_dates": false,
+            "variable_id": "chlor_a_anom"
+          },
+          "title": "VIIRS-SNPP CHLa 7-Day anomaly images (mg/m^3)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 21
+          },
+          "id": 57,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Red|White|Blue|-4|4|",
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
+            "n_images": 6,
+            "product_id": "vsnpp_sstn_7d_gom",
+            "show_request_dates": false,
+            "variable_id": "sstn_anom"
+          },
+          "title": "VIIRS-SNPP 7-Day nighttime SST anomaly images (DegC)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 28
+          },
+          "id": 58,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Red|White|Blue|-0.01|0.01|",
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
+            "n_images": 6,
+            "product_id": "vsnpp_oc_7d_gom",
+            "show_request_dates": false,
+            "variable_id": "Rrs_671_anom"
+          },
+          "title": "VIIRS-SNPP remote sensing reflectance at 671nm 7-Day anomaly images (sr^-1)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "MODIS-Aqua 1-km Algal Bloom Index (mW cm^-2 um^-1 sr^-1) binned to 7-day intervals. This product can be used to identify algal blooms. Anomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 35
+          },
+          "id": 60,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Red|White|Blue|-0.1|0.1|",
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
+            "n_images": 6,
+            "product_id": "moda_oc_7d_gom",
+            "show_request_dates": false,
+            "variable_id": "ABI_anom"
+          },
+          "title": "MODIS-Aqua Algal Bloom Index (ABI) 7-Day anomaly images (mW cm^-2 um^-1 sr^-1)",
+          "type": "imars-grafanaerddap-panel"
+        },
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "description": "Dynamic seascapes are classified using multivariate data and describe basin and gyre scale features and seasonal boundary shifts. A description of seascape classes can be found HERE.",
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 42
+          },
+          "id": 59,
+          "options": {
+            "base_url": "https://erddap.marine.usf.edu/erddap",
+            "bg_color": "0xFFFFFFFF",
+            "color_bar_str": "Rainbow|C|Linear|0|30|",
+            "lat_max": 30.75,
+            "lat_min": 25,
+            "lon_max": -82,
+            "lon_min": -91,
+            "n_images": 6,
+            "product_id": "noaa_aoml_seascapes_8day",
+            "show_request_dates": false,
+            "variable_id": "CLASS"
+          },
+          "title": "Dynamic biogeographic seascapes (class)",
+          "type": "imars-grafanaerddap-panel"
+        }
+      ],
       "targets": [
         {
           "datasource": {
@@ -451,151 +891,6 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m chlorophyll-a concentration (mg/m^3) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 14
-      },
-      "id": 56,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Red|White|Blue|-4|4|",
-        "lat_max": 30.75,
-        "lat_min": 25,
-        "lon_max": -82,
-        "lon_min": -91,
-        "n_images": 6,
-        "product_id": "vsnpp_oc_7d_gom",
-        "show_request_dates": false,
-        "variable_id": "chlor_a_anom"
-      },
-      "title": "VIIRS-SNPP CHLa 7-Day anomaly images (mg/m^3)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m nighttime sea-surface temperature (DegC) binned to 7-day intervals. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 21
-      },
-      "id": 57,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Red|White|Blue|-4|4|",
-        "lat_max": 30.75,
-        "lat_min": 25,
-        "lon_max": -82,
-        "lon_min": -91,
-        "n_images": 6,
-        "product_id": "vsnpp_sstn_7d_gom",
-        "show_request_dates": false,
-        "variable_id": "sstn_anom"
-      },
-      "title": "VIIRS-SNPP 7-Day nighttime SST anomaly images (DegC)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "VIIRS-SNPP 750-m remote sensing reflectance (sr^-1) at 671nm binned to 7-day intervals. This is a proxy for suspended sediments at the surface. Anomaly images are created by subtracting a 7-day climatology using data from 2013-2019.",
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 28
-      },
-      "id": 58,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Red|White|Blue|-0.01|0.01|",
-        "lat_max": 30.75,
-        "lat_min": 25,
-        "lon_max": -82,
-        "lon_min": -91,
-        "n_images": 6,
-        "product_id": "vsnpp_oc_7d_gom",
-        "show_request_dates": false,
-        "variable_id": "Rrs_671_anom"
-      },
-      "title": "VIIRS-SNPP remote sensing reflectance at 671nm 7-Day anomaly images (sr^-1)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "MODIS-Aqua 1-km Algal Bloom Index (mW cm^-2 um^-1 sr^-1) binned to 7-day intervals. This product can be used to identify algal blooms. Anomaly images are created by subtracting a 7-day climatology using data from 2003-2019.",
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 35
-      },
-      "id": 60,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Red|White|Blue|-0.1|0.1|",
-        "lat_max": 30.75,
-        "lat_min": 25,
-        "lon_max": -82,
-        "lon_min": -91,
-        "n_images": 6,
-        "product_id": "moda_oc_7d_gom",
-        "show_request_dates": false,
-        "variable_id": "ABI_anom"
-      },
-      "title": "MODIS-Aqua Algal Bloom Index (ABI) 7-Day anomaly images (mW cm^-2 um^-1 sr^-1)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
-      "datasource": {
-        "type": "datasource",
-        "uid": "grafana"
-      },
-      "description": "Dynamic seascapes are classified using multivariate data and describe basin and gyre scale features and seasonal boundary shifts. A description of seascape classes can be found HERE.",
-      "gridPos": {
-        "h": 7,
-        "w": 24,
-        "x": 0,
-        "y": 42
-      },
-      "id": 59,
-      "options": {
-        "base_url": "https://erddap.marine.usf.edu/erddap",
-        "bg_color": "0xFFFFFFFF",
-        "color_bar_str": "Rainbow|C|Linear|0|30|",
-        "lat_max": 30.75,
-        "lat_min": 25,
-        "lon_max": -82,
-        "lon_min": -91,
-        "n_images": 6,
-        "product_id": "noaa_aoml_seascapes_8day",
-        "show_request_dates": false,
-        "variable_id": "CLASS"
-      },
-      "title": "Dynamic biogeographic seascapes (class)",
-      "type": "imars-grafanaerddap-panel"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -605,7 +900,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 49
+        "y": 14
       },
       "id": 27,
       "panels": [
@@ -1308,7 +1603,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 50
+        "y": 15
       },
       "id": 54,
       "panels": [
@@ -1529,7 +1824,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 51
+        "y": 16
       },
       "id": 52,
       "panels": [
@@ -1816,7 +2111,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 52
+        "y": 17
       },
       "id": 23,
       "panels": [],
@@ -1842,7 +2137,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 53
+        "y": 18
       },
       "id": 20,
       "options": {
@@ -1876,7 +2171,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 61
+        "y": 26
       },
       "id": 21,
       "options": {
@@ -2022,6 +2317,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 9,
+  "version": 10,
   "weekStart": ""
 }
