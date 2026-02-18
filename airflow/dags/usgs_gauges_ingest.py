@@ -81,7 +81,7 @@ USGS_DB_FILES = {
     'REACH': {
         'locations': [
             'AlabamaRv','ApalachicolaRv','ChoctawRv','EscambiaRv',
-            'PascagoulaRv','PearlRv','SuwanneeRv','TombigbeeRv'
+            'PascagoulaRv','PearlRv','SuwanneeRv','TombigbeeRv', 'MissRv'
         ],
         'datasets': {
             'disch': discharge_metadata
