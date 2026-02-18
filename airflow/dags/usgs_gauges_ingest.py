@@ -30,7 +30,7 @@ discharge_metadata = {
     'timeCol': "time"
 }
 gh_metadata = {
-    'filename_template': "USGS_gh_{location}_{REGION}db.csv",
+    'filename_template': "USGS_gh_{REGION}db_{location}.csv",
     'measurement': "gh",
     'fields': [
         ["mean", "mean"],
@@ -47,19 +47,19 @@ gh_metadata = {
 USGS_DB_FILES = {
     'SEUS': {
         'locations': [
-            'SavannahRv', 'HudsonCr', 'AltamahaRv', 'SatillaRv',
-            'StJohnsRv', 'OgeecheeRv', 'BrunswickRv', 'StMarysRv'
+            'SavannahRv', 'AltamahaRv', 'SatillaRv',
+            'StJohnsRv', 'StMarysRv'
         ],
         'datasets': {
-            'gh': gh_metadata
+            'disch': disch_metadata
         }
     },
     'FWC': {
         'locations': [
-          'EFL', 'STL'
+            'STL', 'EFL'
         ],
         'datasets': {
-            'disch': discharge_metadata
+            'gh': gh_metadata
         }
     },
     'FK': {
