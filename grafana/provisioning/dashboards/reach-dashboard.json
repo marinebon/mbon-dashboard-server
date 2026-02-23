@@ -82,6 +82,300 @@
           {
             "config": {
               "rules": [],
+              "src": "public/maps/MiamiCn.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Miami Canal",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/NewNorthRvCn.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "New North River Canal",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/WPBCn.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "West Palm Beach Canal",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/EscambiaRv.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Escambia River",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/SuwanneeRv.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Suwannee River",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/ApalachicolaRv.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Apalachicola River",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/ChoctawhatcheeRv.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Choctawhatchee River",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
               "src": "public/maps/Rice_habitat.geojson",
               "style": {
                 "color": {
@@ -2337,6 +2631,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 13,
+  "version": 14,
   "weekStart": ""
 }
