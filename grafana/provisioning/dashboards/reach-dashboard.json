@@ -81,163 +81,6 @@
         "layers": [
           {
             "config": {
-              "showLegend": false,
-              "style": {
-                "color": {
-                  "fixed": "dark-green"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "text": {
-                  "field": "Name",
-                  "fixed": "",
-                  "mode": "field"
-                },
-                "textConfig": {
-                  "fontSize": 16,
-                  "offsetX": 7,
-                  "offsetY": 4,
-                  "textAlign": "left",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "filterData": {
-              "id": "byRefId",
-              "options": "Sampling Locations"
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Sampling Locations",
-            "tooltip": true,
-            "type": "markers"
-          },
-          {
-            "config": {
-              "showLegend": false,
-              "style": {
-                "color": {
-                  "fixed": "super-light-yellow"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "field": "",
-                  "fixed": "img/icons/marker/star.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "text": {
-                  "field": "Name",
-                  "fixed": "",
-                  "mode": "field"
-                },
-                "textConfig": {
-                  "fontSize": 16,
-                  "offsetX": -8,
-                  "offsetY": -12,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "filterData": {
-              "id": "byRefId",
-              "options": "Surface Buoys"
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Surface Buoys",
-            "tooltip": true,
-            "type": "markers"
-          },
-          {
-            "config": {
-              "showLegend": false,
-              "style": {
-                "color": {
-                  "fixed": "dark-red"
-                },
-                "opacity": 0.2,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/square.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "text": {
-                  "field": "Name",
-                  "fixed": "",
-                  "mode": "field"
-                },
-                "textConfig": {
-                  "fontSize": 16,
-                  "offsetX": -8,
-                  "offsetY": -12,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "filterData": {
-              "id": "byRefId",
-              "options": "Subsurface Moorings"
-            },
-            "location": {
-              "mode": "auto"
-            },
-            "name": "Subsurface Moorings",
-            "tooltip": true,
-            "type": "markers"
-          },
-          {
-            "config": {
               "rules": [],
               "src": "public/maps/Rice_habitat.geojson",
               "style": {
@@ -281,6 +124,216 @@
               "mode": "auto"
             },
             "name": "Rice's whale habitat",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_1000m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "1000m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_500m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "500m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_400m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "400m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_300m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "300m Isobath",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_200m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "200m Isobath",
             "opacity": 0.4,
             "tooltip": true,
             "type": "geojson"
@@ -371,13 +424,12 @@
           },
           {
             "config": {
-              "rules": [],
-              "src": "public/maps/GoM_200m_isobath.geojson",
+              "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "#000000"
+                  "fixed": "dark-red"
                 },
-                "opacity": 0.4,
+                "opacity": 0.2,
                 "rotation": {
                   "fixed": 0,
                   "max": 360,
@@ -390,34 +442,44 @@
                   "min": 2
                 },
                 "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
+                  "fixed": "img/icons/marker/square.svg",
                   "mode": "fixed"
                 },
                 "symbolAlign": {
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
+                  "fontSize": 16,
+                  "offsetX": -8,
+                  "offsetY": -12,
                   "textAlign": "center",
                   "textBaseline": "middle"
                 }
               }
             },
-            "name": "200m Isobath",
-            "opacity": 0.4,
+            "filterData": {
+              "id": "byRefId",
+              "options": "Subsurface Moorings"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Subsurface Moorings",
             "tooltip": true,
-            "type": "geojson"
+            "type": "markers"
           },
           {
             "config": {
-              "rules": [],
-              "src": "public/maps/GoM_300m_isobath.geojson",
+              "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "#000000"
+                  "fixed": "super-light-yellow"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -432,34 +494,45 @@
                   "min": 2
                 },
                 "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
+                  "field": "",
+                  "fixed": "img/icons/marker/star.svg",
                   "mode": "fixed"
                 },
                 "symbolAlign": {
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
+                  "fontSize": 16,
+                  "offsetX": -8,
+                  "offsetY": -12,
                   "textAlign": "center",
                   "textBaseline": "middle"
                 }
               }
             },
-            "name": "300m Isobath",
-            "opacity": 0.4,
+            "filterData": {
+              "id": "byRefId",
+              "options": "Surface Buoys"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Surface Buoys",
             "tooltip": true,
-            "type": "geojson"
+            "type": "markers"
           },
           {
             "config": {
-              "rules": [],
-              "src": "public/maps/GoM_400m_isobath.geojson",
+              "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "#000000"
+                  "fixed": "dark-green"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -481,103 +554,30 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "Name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
+                  "fontSize": 16,
+                  "offsetX": 7,
+                  "offsetY": 4,
+                  "textAlign": "left",
                   "textBaseline": "middle"
                 }
               }
             },
-            "name": "400m Isobath",
-            "opacity": 0.4,
-            "tooltip": true,
-            "type": "geojson"
-          },
-          {
-            "config": {
-              "rules": [],
-              "src": "public/maps/GoM_500m_isobath.geojson",
-              "style": {
-                "color": {
-                  "fixed": "#000000"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
+            "filterData": {
+              "id": "byRefId",
+              "options": "Sampling Locations"
             },
-            "name": "500m Isobath",
-            "opacity": 0.4,
-            "tooltip": true,
-            "type": "geojson"
-          },
-          {
-            "config": {
-              "rules": [],
-              "src": "public/maps/GoM_1000m_isobath.geojson",
-              "style": {
-                "color": {
-                  "fixed": "#000000"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
+            "location": {
+              "mode": "auto"
             },
-            "name": "1000m Isobath",
-            "opacity": 0.4,
+            "name": "Sampling Locations",
             "tooltip": true,
-            "type": "geojson"
+            "type": "markers"
           }
         ],
         "tooltip": {
@@ -2224,7 +2224,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "REACH_S01",
             "REACH_S11"
@@ -2257,7 +2257,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "mean"
           ],
@@ -2288,7 +2288,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "Bob_Allen_Key",
             "Butternut_Key"
@@ -2337,6 +2337,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 12,
+  "version": 13,
   "weekStart": ""
 }
