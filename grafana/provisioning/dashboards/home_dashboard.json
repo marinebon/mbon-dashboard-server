@@ -4,7 +4,10 @@
       {
         "$$hashKey": "object:218",
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -14,67 +17,115 @@
     ]
   },
   "editable": true,
-  "gnetId": null,
+  "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "links": [],
   "panels": [
     {
-      "content": "\n![logo image](https://mbon-dashboards.marine.usf.edu/static_files/home_dash_logo.png)",
-      "datasource": null,
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
       "gridPos": {
-        "h": 6,
-        "w": 24,
+        "h": 7,
+        "w": 18,
         "x": 0,
         "y": 0
       },
       "id": 4,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "\n![logo image](https://mbon-dashboards.marine.usf.edu/static_files/home_dash_logo.png)",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "refId": "A"
+        }
+      ],
       "type": "text"
     },
     {
-      "content": "Welcome! \n\nHere you will find dashboards built for the Flower Garden Banks National Marine Sanctuary.\nTo get started choose a dashboard from the list and begin exploring! \n",
-      "datasource": null,
-      "gridPos": {
-        "h": 8,
-        "w": 15,
-        "x": 0,
-        "y": 6
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
       },
-      "id": 8,
-      "mode": "markdown",
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "text"
-    },
-    {
-      "datasource": null,
-      "folderId": null,
       "gridPos": {
-        "h": 8,
-        "w": 9,
-        "x": 15,
-        "y": 6
+        "h": 18,
+        "w": 6,
+        "x": 18,
+        "y": 0
       },
-      "headings": false,
       "id": 2,
-      "limit": 10,
-      "query": "",
-      "recent": false,
-      "search": true,
-      "starred": false,
+      "options": {
+        "includeVars": false,
+        "keepTime": false,
+        "maxItems": 10,
+        "query": "",
+        "showHeadings": false,
+        "showRecentlyViewed": false,
+        "showSearch": true,
+        "showStarred": false,
+        "tags": []
+      },
+      "pluginVersion": "10.4.4",
       "tags": [],
-      "timeFrom": null,
-      "timeShift": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Dashboards",
       "type": "dashlist"
+    },
+    {
+      "datasource": {
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 10,
+        "x": 0,
+        "y": 7
+      },
+      "id": 8,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "This website is maintained by the University of South Florida Institute for Marine Remote Sensing (USF IMaRS). Please report any issues through the GitHub issue tracker [here](https://github.com/marinebon/mbon-dashboard-server/issues).",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "refId": "A"
+        }
+      ],
+      "type": "text"
     }
   ],
-  "schemaVersion": 22,
-  "style": "dark",
+  "schemaVersion": 39,
   "tags": [],
   "templating": {
     "list": []
@@ -100,8 +151,6 @@
   "timezone": "",
   "title": "Home Dashboard",
   "uid": "Eu4SuDnMk",
-  "variables": {
-    "list": []
-  },
-  "version": 1
+  "version": 1,
+  "weekStart": ""
 }
