@@ -380,8 +380,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -516,8 +515,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -652,8 +650,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -788,8 +785,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -925,8 +921,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -3382,7 +3377,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -3398,7 +3394,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 76
+            "y": 27
           },
           "id": 35,
           "interval": "",
@@ -3417,6 +3413,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
@@ -3670,7 +3667,7 @@
       },
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "Sapelo_Island_Cabretta_Creek"
           ],
@@ -3717,6 +3714,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard",
   "uid": "qhXdKw7Gi",
-  "version": 1,
+  "version": 3,
   "weekStart": ""
 }
