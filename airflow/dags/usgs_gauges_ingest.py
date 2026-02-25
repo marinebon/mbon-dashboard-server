@@ -51,7 +51,7 @@ USGS_DB_FILES = {
             'StJohnsRv', 'StMarysRv'
         ],
         'datasets': {
-            'disch': disch_metadata
+            'disch': discharge_metadata
         }
     },
     'FWC': {
