@@ -1958,7 +1958,7 @@
                 "spanNulls": true,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -1970,7 +1970,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2005,115 +2006,19 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
               },
               "hide": false,
-              "query": "SELECT /^$metric$/ FROM disch\nWHERE (location = 'fk' AND $timeFilter )\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT /^$metric$/ FROM disch\nWHERE (location =~ /^$gauge_location$/ AND $timeFilter)\nGROUP BY \"location\"\nfill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series"
             }
           ],
-          "title": "USGS River Discharge from rivers draining to Everglades (sum of discharge from green dots on map - m^3/sec)",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 6,
-            "w": 24,
-            "x": 0,
-            "y": 22
-          },
-          "id": 32,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "hide": false,
-              "query": "SELECT /^$metric$/ FROM disch\nWHERE (location = 'EFL' AND $timeFilter )\nGROUP BY \"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series"
-            }
-          ],
-          "title": "USGS Gage Height from Tamiami Canal draining into Biscayne Bay (red circle on map - meters)",
+          "title": "USGS River Discharge from rivers draining into northeastern Gulf [m^3/s]",
           "type": "timeseries"
         }
       ],
@@ -2126,7 +2031,7 @@
           "refId": "A"
         }
       ],
-      "title": "River Discharge (TODO: Update)",
+      "title": "River Discharge",
       "type": "row"
     },
     {
@@ -2512,6 +2417,7 @@
       "type": "text"
     }
   ],
+  "refresh": "",
   "schemaVersion": 39,
   "tags": [],
   "templating": {
@@ -2612,12 +2518,53 @@
         "tagsQuery": "",
         "type": "query",
         "useTags": false
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "ApalachicolaRv",
+            "AlabamaRv",
+            "ChoctawRv",
+            "EscambiaRv",
+            "PascagoulaRv",
+            "PearlRv",
+            "SuwanneeRv",
+            "TombigbeeRv"
+          ],
+          "value": [
+            "ApalachicolaRv",
+            "AlabamaRv",
+            "ChoctawRv",
+            "EscambiaRv",
+            "PascagoulaRv",
+            "PearlRv",
+            "SuwanneeRv",
+            "TombigbeeRv"
+          ]
+        },
+        "datasource": {
+          "type": "influxdb",
+          "uid": "P3C6603E967DC8568"
+        },
+        "definition": "SHOW TAG VALUES FROM disch WITH KEY=location WHERE \"region\"='REACH'",
+        "hide": 0,
+        "includeAll": false,
+        "multi": true,
+        "name": "gauge_location",
+        "options": [],
+        "query": "SHOW TAG VALUES FROM disch WITH KEY=location WHERE \"region\"='REACH'",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
       }
     ]
   },
   "time": {
     "from": "2024-08-24T06:36:52.712Z",
-    "to": "2025-04-14T13:45:48.882Z"
+    "to": "2024-12-27T13:11:00.457Z"
   },
   "timepicker": {
     "hidden": false,
@@ -2631,6 +2578,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 14,
+  "version": 15,
   "weekStart": ""
 }
