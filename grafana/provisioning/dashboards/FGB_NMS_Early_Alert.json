@@ -1028,7 +1028,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1044,7 +1045,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 47
+            "y": 17
           },
           "id": 17,
           "interval": "",
@@ -1063,6 +1064,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
@@ -1125,7 +1127,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1141,7 +1144,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 53
+            "y": 23
           },
           "id": 31,
           "interval": "",
@@ -1160,7 +1163,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
-              "alias": "TX $metric",
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
@@ -1282,8 +1285,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1409,8 +1411,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1682,6 +1683,6 @@
   "timezone": "",
   "title": "FGB NMS Early Alert",
   "uid": "qhXdKw7Gk",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
