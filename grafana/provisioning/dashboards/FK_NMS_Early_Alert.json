@@ -323,8 +323,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -459,8 +458,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -595,8 +593,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -731,8 +728,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -868,8 +864,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1031,7 +1026,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1066,6 +1062,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
@@ -1128,7 +1125,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1163,6 +1161,7 @@
           "pluginVersion": "10.4.4",
           "targets": [
             {
+              "alias": "$tag_location $col",
               "datasource": {
                 "type": "influxdb",
                 "uid": "P3C6603E967DC8568"
