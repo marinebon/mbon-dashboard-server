@@ -14,8 +14,14 @@ https://comps.marine.usf.edu:81/services/download.php?
     parameters[]=C23+Air+temperature&
     parameters[]=C24+Air+temperature&
     parameters[]=C24+Air+pressure
+
+
+https://comps.marine.usf.edu:81/services/download.php?time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&tz=utc&standard=true&output=csv&pretty=true&parameters[]=C23+Air+temperature&parameters[]=C24+Air+temperature&parameters[]=C24+Air+pressure&parameters[]=C24_INWATER+Water+Temperature+(1+m)
 ```
 """
+
+# TODO: update river discharge queries & buoys in grafana dashboard
+#       + dropdown for river discharge
 
 from datetime import datetime, timedelta
 from airflow import DAG
@@ -111,6 +117,11 @@ def ingest_comps_buoy_data(**context):
     print(f"Saved filtered CSV to: {tmp_file_path}")
     print(f"Head of filtered CSV: {filtered_lines[:5]}") # print first 5 lines for check
 
+    # Read column names in directly from the file
+    header_cols = [col.strip() for col in filtered_lines[0].split(',')]
+    time_col = 'Time (utc)'
+    dynamic_fields = [[col, col] for col in header_cols if col and col != time_col]
+
     try:
         # 4. Call the helper function with the temporary file
         csv2influx(
@@ -121,9 +132,7 @@ def ingest_comps_buoy_data(**context):
                 ['parameter', 'water_temperature'],
                 ['depth', '1m']
             ],
-            fields=[
-                ['C24_INWATER Water Temperature (1 m)', 'value']
-            ],
+            fields=dynamic_fields,
             timeCol='Time (utc)',
             should_convert_time=True
         )
