@@ -1970,7 +1970,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2027,7 +2028,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT sea_water_temperature as sea_water_temperature FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter AND sea_water_temperature > -999\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT \"C24_INWATER Water Temperature (deg C) (1 m)\"\nFROM \"water_temperature\"\nWHERE \"station\" = 'C24_INWATER' AND $timeFilter\n\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2048,137 +2049,7 @@
               "tags": []
             }
           ],
-          "title": "In-situ temperature at ~1m depth (psu) from $Buoy",
-          "type": "timeseries"
-        },
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "description": "",
-          "fieldConfig": {
-            "defaults": {
-              "color": {
-                "mode": "palette-classic"
-              },
-              "custom": {
-                "axisBorderShow": false,
-                "axisCenteredZero": false,
-                "axisColorMode": "text",
-                "axisLabel": "",
-                "axisPlacement": "auto",
-                "barAlignment": 0,
-                "drawStyle": "line",
-                "fillOpacity": 10,
-                "gradientMode": "none",
-                "hideFrom": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": false
-                },
-                "insertNulls": false,
-                "lineInterpolation": "linear",
-                "lineWidth": 1,
-                "pointSize": 5,
-                "scaleDistribution": {
-                  "type": "linear"
-                },
-                "showPoints": "never",
-                "spanNulls": true,
-                "stacking": {
-                  "group": "A",
-                  "mode": "none"
-                },
-                "thresholdsStyle": {
-                  "mode": "off"
-                }
-              },
-              "links": [],
-              "mappings": [],
-              "thresholds": {
-                "mode": "absolute",
-                "steps": [
-                  {
-                    "color": "green"
-                  },
-                  {
-                    "color": "red",
-                    "value": 80
-                  }
-                ]
-              },
-              "unit": "short"
-            },
-            "overrides": []
-          },
-          "gridPos": {
-            "h": 7,
-            "w": 24,
-            "x": 0,
-            "y": 24
-          },
-          "id": 33,
-          "interval": "",
-          "options": {
-            "legend": {
-              "calcs": [],
-              "displayMode": "list",
-              "placement": "bottom",
-              "showLegend": true
-            },
-            "tooltip": {
-              "mode": "multi",
-              "sort": "none"
-            }
-          },
-          "pluginVersion": "10.4.4",
-          "targets": [
-            {
-              "datasource": {
-                "type": "influxdb",
-                "uid": "P3C6603E967DC8568"
-              },
-              "groupBy": [
-                {
-                  "params": [
-                    "$__interval"
-                  ],
-                  "type": "time"
-                },
-                {
-                  "params": [
-                    "null"
-                  ],
-                  "type": "fill"
-                }
-              ],
-              "hide": false,
-              "measurement": "river_discharge",
-              "orderByTime": "ASC",
-              "policy": "default",
-              "query": "SELECT sea_water_practical_salinity as sea_water_practical_salinity FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter AND sea_water_practical_salinity > -999\nGROUP BY \"location\" fill(null)",
-              "rawQuery": true,
-              "refId": "A",
-              "resultFormat": "time_series",
-              "select": [
-                [
-                  {
-                    "params": [
-                      "value"
-                    ],
-                    "type": "field"
-                  },
-                  {
-                    "params": [],
-                    "type": "mean"
-                  }
-                ]
-              ],
-              "tags": []
-            }
-          ],
-          "title": "In-situ salinity (psu) at ~1m depth from $Buoy",
+          "title": "C24_INWATER Water Temperature (deg C) (1 m)",
           "type": "timeseries"
         }
       ],
@@ -2363,39 +2234,6 @@
         "current": {
           "selected": true,
           "text": [
-            "Bob_Allen_Key",
-            "Butternut_Key"
-          ],
-          "value": [
-            "Bob_Allen_Key",
-            "Butternut_Key"
-          ]
-        },
-        "datasource": {
-          "type": "influxdb",
-          "uid": "P3C6603E967DC8568"
-        },
-        "definition": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
-        "hide": 0,
-        "includeAll": false,
-        "label": "Buoy Locations",
-        "multi": true,
-        "name": "Buoy",
-        "options": [],
-        "query": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "tagValuesQuery": "",
-        "tagsQuery": "",
-        "type": "query",
-        "useTags": false
-      },
-      {
-        "current": {
-          "selected": true,
-          "text": [
             "AlabamaRv",
             "ApalachicolaRv",
             "ChoctawRv",
@@ -2436,8 +2274,8 @@
     ]
   },
   "time": {
-    "from": "2024-08-24T06:36:52.712Z",
-    "to": "2024-12-27T13:11:00.457Z"
+    "from": "now-90d",
+    "to": "now"
   },
   "timepicker": {
     "hidden": false,
@@ -2451,6 +2289,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 16,
+  "version": 17,
   "weekStart": ""
 }
