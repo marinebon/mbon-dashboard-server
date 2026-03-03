@@ -82,132 +82,6 @@
           {
             "config": {
               "rules": [],
-              "src": "public/maps/MiamiCn.geojson",
-              "style": {
-                "color": {
-                  "fixed": "#000000"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "name": "Miami Canal",
-            "opacity": 0.4,
-            "tooltip": true,
-            "type": "geojson"
-          },
-          {
-            "config": {
-              "rules": [],
-              "src": "public/maps/NewNorthRvCn.geojson",
-              "style": {
-                "color": {
-                  "fixed": "#000000"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "name": "New North River Canal",
-            "opacity": 0.4,
-            "tooltip": true,
-            "type": "geojson"
-          },
-          {
-            "config": {
-              "rules": [],
-              "src": "public/maps/WPBCn.geojson",
-              "style": {
-                "color": {
-                  "fixed": "#000000"
-                },
-                "opacity": 0.4,
-                "rotation": {
-                  "fixed": 0,
-                  "max": 360,
-                  "min": -360,
-                  "mode": "mod"
-                },
-                "size": {
-                  "fixed": 5,
-                  "max": 15,
-                  "min": 2
-                },
-                "symbol": {
-                  "fixed": "img/icons/marker/circle.svg",
-                  "mode": "fixed"
-                },
-                "symbolAlign": {
-                  "horizontal": "center",
-                  "vertical": "center"
-                },
-                "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
-                }
-              }
-            },
-            "name": "West Palm Beach Canal",
-            "opacity": 0.4,
-            "tooltip": true,
-            "type": "geojson"
-          },
-          {
-            "config": {
-              "rules": [],
               "src": "public/maps/EscambiaRv.geojson",
               "style": {
                 "color": {
@@ -1970,8 +1844,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2523,8 +2396,8 @@
         "current": {
           "selected": true,
           "text": [
-            "ApalachicolaRv",
             "AlabamaRv",
+            "ApalachicolaRv",
             "ChoctawRv",
             "EscambiaRv",
             "PascagoulaRv",
@@ -2533,8 +2406,8 @@
             "TombigbeeRv"
           ],
           "value": [
-            "ApalachicolaRv",
             "AlabamaRv",
+            "ApalachicolaRv",
             "ChoctawRv",
             "EscambiaRv",
             "PascagoulaRv",
@@ -2578,6 +2451,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 15,
+  "version": 16,
   "weekStart": ""
 }
