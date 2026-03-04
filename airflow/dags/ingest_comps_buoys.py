@@ -6,15 +6,18 @@ Runs daily at 6pm US Eastern Time
 Example URL
 ```
 https://comps.marine.usf.edu:81/services/download.php?
-    time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&
+    time=2025-10-09T00:00:00-04:00/2025-10-31T23:59:59-04:00&
     tz=utc&
     standard=true&
     output=csv&
     pretty=true&
     parameters[]=C23+Air+temperature&
+    parameters[]=C23_INWATER+Water+Temperature+(1+m)&
+    parameters[]=C23_INWATER+Salinity+(1+m)&
     parameters[]=C24+Air+temperature&
     parameters[]=C24+Air+pressure&
-    parameters[]=C24_INWATER+Water+Temperature+(1+m)
+    parameters[]=C24_INWATER+Water+Temperature+(1+m)&
+    parameters[]=C24_INWATER+Salinity+(1+m)
 ```
 
 
@@ -22,9 +25,6 @@ SELECT "C24_INWATER Water Temperature (deg C) (1 m)"
 FROM "water_temperature"
 WHERE "station" = 'C24_INWATER' AND $timeFilter
 """
-
-# TODO: update river discharge queries & buoys in grafana dashboard
-#       + dropdown for river discharge
 
 from datetime import datetime, timedelta
 from airflow import DAG
@@ -40,7 +40,7 @@ if dag_dir not in sys.path:
 
 from dataframe_to_influx import dataframe_to_influx
 
-
+INFLUX_MEASUREMENT_NAME = 'comps_buoy'
 INGEST_HOUR_UTC = 23  # 6pm EST
 
 # Marine data endpoint configuration
@@ -148,7 +148,7 @@ def ingest_comps_buoy_data(station, parameters, **context):
     # === Call the helper function with the temporary file
     dataframe_to_influx(
         dataframe=df,
-        measurement='comps_buoy',  # changed from water_temperature
+        measurement=INFLUX_MEASUREMENT_NAME,
         tags=[
             ['station', station]
         ],
@@ -181,10 +181,13 @@ with DAG(
         provide_context=True,
         op_kwargs={
             'station': 'C23',
-            'parameters': ['C23 Air temperature']
+            'parameters': [
+                'C23 Air temperature',
+                'C23_INWATER Water Temperature (1 m)',
+                'C23_INWATER Salinity (1 m)'
+            ]
         }
     )
-
     ingest_c24_task = PythonOperator(
         task_id='ingest_c24_data',
         python_callable=ingest_comps_buoy_data,
@@ -194,7 +197,8 @@ with DAG(
             'parameters': [
                 'C24 Air temperature',
                 'C24 Air pressure',
-                'C24_INWATER Water Temperature (1 m)'
+                'C24_INWATER Water Temperature (1 m)',
+                'C24_INWATER Salinity (1 m)'
             ]
         }
     )
