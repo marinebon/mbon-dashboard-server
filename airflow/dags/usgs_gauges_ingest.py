@@ -29,20 +29,20 @@ discharge_metadata = {
     ],
     'timeCol': "time"
 }
-gh_metadata = {
-    'filename_template': "USGS_gh_{REGION}db_{location}.csv",
-    'measurement': "gh",
-    'fields': [
-        ["mean", "mean"],
-        ["climatology", "climatology"],
-        ["anomaly", "anomaly"]
-    ],
-    'tags': [
-        ['parameter', 'gh'],
-        ['source', 'USGS']
-    ],
-    'timeCol': "time"
-}
+# gh_metadata = {
+#     'filename_template': "USGS_gh_{REGION}db_{location}.csv",
+#     'measurement': "gh",
+#     'fields': [
+#         ["mean", "mean"],
+#         ["climatology", "climatology"],
+#         ["anomaly", "anomaly"]
+#     ],
+#     'tags': [
+#         ['parameter', 'gh'],
+#         ['source', 'USGS']
+#     ],
+#     'timeCol': "time"
+# }
 
 USGS_DB_FILES = {
     'SEUS': {
@@ -56,15 +56,19 @@ USGS_DB_FILES = {
     },
     'FWC': {
         'locations': [
-            'STL', 'EFL'
+            'SharkRv','HarneyRv','BroadRv','LostmansRv','ChathamRv','EastRv','FakaRv',
+            'TroutCrRv','MudCrRv','EastCrRv','TaylorRv','LoxRv','StLucieCnlRv',
+            'SnapperCrRv','TamiamiCnlRv','Canal111Rv','HillsboroCnlRv'
         ],
         'datasets': {
-            'gh': gh_metadata
+            'disch': discharge_metadata
         }
     },
     'FK': {
         'locations': [
-          ''  # NOTE: this location has no name?
+            'SharkRv','HarneyRv','BroadRv','LostmansRv','ChathamRv','EastRv','FakaRv',
+            'TroutCrRv','MudCrRv','EastCrRv','TaylorRv','LoxRv','StLucieCnlRv',
+            'SnapperCrRv','TamiamiCnlRv','Canal111Rv','HillsboroCnlRv'
         ],
         'datasets': {
             'disch': discharge_metadata
@@ -116,11 +120,6 @@ with DAG(
                   location=location,
                   REGION=region
                 )
-                # handle special case of missing location (FK)
-                if location == '':
-                  # drop the _ before .csv
-                  DATA_FNAME = DATA_FNAME[:-5] + '.csv'
-                  location = 'fk'
                 task_id = f"{region}_{dataset_name}_{location}"
                 tags = ds.get('tags', []) + [
                     ['location', location],
