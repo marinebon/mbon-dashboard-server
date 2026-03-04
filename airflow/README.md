@@ -1,9 +1,10 @@
 Airflow is the orchestration framework which controls scheduling, running, and tracking job completion.
 
 # workflows
-## add a new DAG
-To add a new DAG:
-
-1. `crontab -e` & comment out the `git pull` line 
-1. create a new python file in `mbon-dashboard-server/airflow/dags/`
-2. 
+## Hard reset a DAG
+```
+DAG_ID='ingest_comps_buoys'
+docker exec -it mbon-dashboard-server-airflow-scheduler-1 airflow dags pause $DAG_ID
+docker exec -it mbon-dashboard-server-airflow-scheduler-1 airflow dags delete -y $DAG_ID
+docker exec -it mbon-dashboard-server-airflow-scheduler-1 airflow dags unpause $DAG_ID
+```
