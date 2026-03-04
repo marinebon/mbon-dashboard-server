@@ -5,17 +5,6 @@ Runs daily at 6pm US Eastern Time
 
 Example URL
 ```
-https://comps.marine.usf.edu:81/services/download.php?
-    time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&
-    tz=utc&
-    standard=true&
-    output=text&
-    pretty=true&
-    parameters[]=C23+Air+temperature&
-    parameters[]=C24+Air+temperature&
-    parameters[]=C24+Air+pressure
-
-
 https://comps.marine.usf.edu:81/services/download.php?time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&tz=utc&standard=true&output=csv&
 pretty=true&
 parameters[]=C23+Air+temperature&
@@ -23,6 +12,11 @@ parameters[]=C24+Air+temperature&
 parameters[]=C24+Air+pressure&
 parameters[]=C24_INWATER+Water+Temperature+(1+m)
 ```
+
+
+SELECT "C24_INWATER Water Temperature (deg C) (1 m)"
+FROM "water_temperature"
+WHERE "station" = 'C24_INWATER' AND $timeFilter
 """
 
 # TODO: update river discharge queries & buoys in grafana dashboard
@@ -56,7 +50,7 @@ default_args = {
 }
 
 
-def ingest_comps_buoy_data(**context):
+def ingest_comps_buoy_data(station, parameters, **context):
     """
     Fetch CSV data from the marine endpoint for the previous day and load to InfluxDB
     using the csv2influx helper.
@@ -84,19 +78,15 @@ def ingest_comps_buoy_data(**context):
         'standard': 'true',
         'output': 'csv',
         'pretty': 'true',
-        'parameters[]': [
-            'C23 Air temperature',  #TODO: split this out into its own ingestion
-            'C24 Air temperature',
-            'C24 Air pressure',
-            'C24_INWATER Water Temperature (1 m)'
-        ]
+        'parameters[]': parameters
     }
     
     # Use requests to build the query string correctly
     import requests
     import tempfile
     
-    # 1. Get raw content
+
+    # === Get raw content
     # requests.get params encoding might differ slightly but csv2influx takes a URL string or file path
     # We will construct a URL string with params encoded.
     
@@ -109,7 +99,8 @@ def ingest_comps_buoy_data(**context):
     response = requests.get(full_url)
     response.raise_for_status() # Check for HTTP errors
 
-    # 2. Filter out comments (lines starting with %)
+
+    # === Filter out comments (lines starting with %)
     # splitting by lines and filtering
     lines = response.text.splitlines()
     filtered_lines = [line for line in lines if not line.strip().startswith('%')]
@@ -117,7 +108,27 @@ def ingest_comps_buoy_data(**context):
     print(f"Original line count: {len(lines)}")
     print(f"Filtered line count: {len(filtered_lines)}")
 
-    # 3. Write to a temporary file
+
+    # === Read column names in directly from the file
+    header_cols = [col.strip() for col in filtered_lines[0].split(',')]
+    time_col = 'Time (utc)'
+    dynamic_fields = [[col, col] for col in header_cols if col and col != time_col and not col.endswith(' quality')]
+
+
+    # === Filter out data with quality != "good"
+    filtered_values = 0
+    for col in header_cols:
+        if col.endswith(' quality'):
+            col_to_filter = col.replace(' quality', '')
+            # set value to NaN if quality != "good"
+            for line in filtered_lines:
+                if line.split(',')[header_cols.index(col)] != 'good':
+                    filtered_values += 1
+                    line = line.replace(line.split(',')[header_cols.index(col)], 'NaN')
+    print(f'{filtered_values} values removed because quality != "good"')
+
+
+    # === Write to a temporary file
     # We use delete=False so we can close it and let csv2influx read it by name
     # We must remember to remove it afterwards
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.csv') as tmp_file:
@@ -127,30 +138,25 @@ def ingest_comps_buoy_data(**context):
     print(f"Saved filtered CSV to: {tmp_file_path}")
     print(f"Head of filtered CSV: {filtered_lines[:5]}") # print first 5 lines for check
 
-    # Read column names in directly from the file
-    header_cols = [col.strip() for col in filtered_lines[0].split(',')]
-    time_col = 'Time (utc)'
-    dynamic_fields = [[col, col] for col in header_cols if col and col != time_col and not col.endswith(' quality')]
-
     try:
-        # 4. Call the helper function with the temporary file
+        # === Call the helper function with the temporary file
         csv2influx(
             data_url=tmp_file_path,
             measurement='comps_buoy',  # changed from water_temperature
             tags=[
-                ['station', 'C24_INWATER']  # parameter & depth removed
+                ['station', station]
             ],
             fields=dynamic_fields,
             timeCol='Time (utc)',
             should_convert_time=True
         )
     finally:
-        # 5. Cleanup
+        # === Cleanup
         if os.path.exists(tmp_file_path):
             os.remove(tmp_file_path)
             print(f"Removed temporary file: {tmp_file_path}")
 
-# Define the DAG
+
 with DAG(
     'ingest_comps_buoys',
     default_args=default_args,
@@ -168,11 +174,26 @@ with DAG(
     and loads it into InfluxDB.
     """
     
-    ingest_task = PythonOperator(
-        task_id='ingest_data',
+    ingest_c23_task = PythonOperator(
+        task_id='ingest_c23_data',
         python_callable=ingest_comps_buoy_data,
         provide_context=True,
-        # pass station name and parameter list to ingest_comps_buoy_data
-        
+        op_kwargs={
+            'station': 'C23',
+            'parameters': ['C23 Air temperature']
+        }
     )
 
+    ingest_c24_task = PythonOperator(
+        task_id='ingest_c24_data',
+        python_callable=ingest_comps_buoy_data,
+        provide_context=True,
+        op_kwargs={
+            'station': 'C24',
+            'parameters': [
+                'C24 Air temperature',
+                'C24 Air pressure',
+                'C24_INWATER Water Temperature (1 m)'
+            ]
+        }
+    )
