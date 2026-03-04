@@ -2029,7 +2029,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT \"C24 Air temperature (deg C)\", \"C24_INWATER Water Temperature (deg C) (1m)\",\"C23 Air temperature (deg C)\"\nFROM \"comps_buoy\"\nWHERE \"station\" = 'C24' AND $timeFilter",
+              "query": "SELECT \"C24 Air temperature (deg C)\", \"C24_INWATER Water Temperature (deg C) (1 m)\", \"C23 Air temperature (deg C)\"\nFROM \"comps_buoy\"\nWHERE $timeFilter",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
