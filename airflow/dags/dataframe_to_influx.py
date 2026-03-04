@@ -12,6 +12,7 @@ def dataframe_to_influx(dataframe, measurement, tags=[[]], fields=[["value", "Sa
         skiprows (int or list, optional): Rows to skip when reading the CSV.
         should_convert_time (bool): Whether to convert the time column to datetime.
     """
+    print(f"loading fields {fields}")
     import pandas as pd
     data = dataframe
     
