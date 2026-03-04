@@ -163,7 +163,7 @@ with DAG(
     default_args=default_args,
     description='Ingest marine water temperature data into InfluxDB daily',
     schedule_interval=f'0 {INGEST_HOUR_UTC} * * *',
-    start_date=datetime(2026, 2, 1, tzinfo=None),
+    start_date=datetime(2025, 10, 27, tzinfo=None),  # first day of buoy data
     catchup=True,
     tags=['marine', 'influxdb', 'data-ingestion'],
 ) as dag:
