@@ -16,7 +16,12 @@ https://comps.marine.usf.edu:81/services/download.php?
     parameters[]=C24+Air+pressure
 
 
-https://comps.marine.usf.edu:81/services/download.php?time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&tz=utc&standard=true&output=csv&pretty=true&parameters[]=C23+Air+temperature&parameters[]=C24+Air+temperature&parameters[]=C24+Air+pressure&parameters[]=C24_INWATER+Water+Temperature+(1+m)
+https://comps.marine.usf.edu:81/services/download.php?time=2026-02-10T00:00:00-05:00/2026-02-17T23:59:59-05:00&tz=utc&standard=true&output=csv&
+pretty=true&
+parameters[]=C23+Air+temperature&
+parameters[]=C24+Air+temperature&
+parameters[]=C24+Air+pressure&
+parameters[]=C24_INWATER+Water+Temperature+(1+m)
 ```
 """
 
@@ -79,7 +84,12 @@ def ingest_comps_buoy_data(**context):
         'standard': 'true',
         'output': 'csv',
         'pretty': 'true',
-        'parameters[]': 'C24_INWATER Water Temperature (1 m)'
+        'parameters[]': [
+            'C23 Air temperature',  #TODO: split this out into its own ingestion
+            'C24 Air temperature',
+            'C24 Air pressure',
+            'C24_INWATER Water Temperature (1 m)'
+        ]
     }
     
     # Use requests to build the query string correctly
@@ -120,17 +130,15 @@ def ingest_comps_buoy_data(**context):
     # Read column names in directly from the file
     header_cols = [col.strip() for col in filtered_lines[0].split(',')]
     time_col = 'Time (utc)'
-    dynamic_fields = [[col, col] for col in header_cols if col and col != time_col]
+    dynamic_fields = [[col, col] for col in header_cols if col and col != time_col and not col.endswith(' quality')]
 
     try:
         # 4. Call the helper function with the temporary file
         csv2influx(
             data_url=tmp_file_path,
-            measurement='water_temperature',
+            measurement='comps_buoy',  # changed from water_temperature
             tags=[
-                ['station', 'C24_INWATER'],
-                ['parameter', 'water_temperature'],
-                ['depth', '1m']
+                ['station', 'C24_INWATER']  # parameter & depth removed
             ],
             fields=dynamic_fields,
             timeCol='Time (utc)',
@@ -157,17 +165,14 @@ with DAG(
     ## Marine Data Ingestion DAG
     
     This DAG fetches water temperature data from the COMPS marine data service
-    and loads it into InfluxDB for storage and analysis.
-    
-    **Schedule**: Daily at 6pm US Eastern Time
-    
-    **Tasks**:
-    1. `ingest_data`: Retrieves CSV data and loads to InfluxDB using `csv2influx` helper.
+    and loads it into InfluxDB.
     """
     
     ingest_task = PythonOperator(
         task_id='ingest_data',
         python_callable=ingest_comps_buoy_data,
         provide_context=True,
+        # pass station name and parameter list to ingest_comps_buoy_data
+        
     )
 
