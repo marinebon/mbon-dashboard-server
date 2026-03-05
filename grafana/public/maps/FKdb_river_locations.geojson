@@ -1,0 +1,187 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0366944,
+          25.3749722
+        ]
+      },
+      "properties": {
+        "name": "SharkRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0859583,
+          25.43055556
+        ]
+      },
+      "properties": {
+        "name": "HarneyRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.0769444,
+          25.50138889
+        ]
+      },
+      "properties": {
+        "name": "BroadRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.1647222,
+          25.55555556
+        ]
+      },
+      "properties": {
+        "name": "LostmansRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.4555,
+          25.8953889
+        ]
+      },
+      "properties": {
+        "name": "EastRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -81.5109,
+          25.9088
+        ]
+      },
+      "properties": {
+        "name": "FakaUnionRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.5335056,
+          25.2148972
+        ]
+      },
+      "properties": {
+        "name": "Trout Cr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.733589,
+          25.1681944
+        ]
+      },
+      "properties": {
+        "name": "MccormickCr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3280833,
+          25.7625
+        ]
+      },
+      "properties": {
+        "name": "Tamiami Can"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.2587833,
+          27.2048
+        ]
+      },
+      "properties": {
+        "name": "StLucieRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.3606111,
+          25.69905556
+        ]
+      },
+      "properties": {
+        "name": "Snapper Cr"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.17525,
+          26.93925
+        ]
+      },
+      "properties": {
+        "name": "LoxRv"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.446883,
+          26.47285
+        ]
+      },
+      "properties": {
+        "name": "Hillsboro Can"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.52483,
+          25.32722
+        ]
+      },
+      "properties": {
+        "name": "Canal111"
+      }
+    }
+  ]
+}
