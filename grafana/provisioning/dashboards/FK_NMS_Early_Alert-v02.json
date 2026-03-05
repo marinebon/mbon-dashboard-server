@@ -272,7 +272,7 @@
                   "mode": "mod"
                 },
                 "size": {
-                  "fixed": 5,
+                  "fixed": 3,
                   "max": 15,
                   "min": 2
                 },
@@ -284,12 +284,17 @@
                   "horizontal": "center",
                   "vertical": "center"
                 },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
+                },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
+                  "fontSize": 10,
+                  "offsetX": 5,
                   "offsetY": 0,
-                  "textAlign": "center",
-                  "textBaseline": "middle"
+                  "textAlign": "left",
+                  "textBaseline": "top"
                 }
               }
             },
@@ -311,9 +316,9 @@
         "view": {
           "allLayers": true,
           "id": "coords",
-          "lat": 25.8,
-          "lon": -81.192058,
-          "zoom": 8
+          "lat": 25.25,
+          "lon": -81.6,
+          "zoom": 8.6
         }
       },
       "pluginVersion": "10.4.4",
@@ -370,7 +375,7 @@
       },
       "description": "",
       "gridPos": {
-        "h": 14,
+        "h": 18,
         "w": 11,
         "x": 13,
         "y": 0
@@ -399,39 +404,6 @@
       "type": "text"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "gridPos": {
-        "h": 14,
-        "w": 13,
-        "x": 0,
-        "y": 18
-      },
-      "id": 6,
-      "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
-        },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
-        "mode": "markdown"
-      },
-      "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "refId": "A"
-        }
-      ],
-      "type": "text"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -441,7 +413,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 18
       },
       "id": 29,
       "panels": [
@@ -613,7 +585,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 19
       },
       "id": 27,
       "panels": [
@@ -1316,7 +1288,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 20
       },
       "id": 54,
       "panels": [
@@ -1539,7 +1511,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 21
       },
       "id": 52,
       "panels": [
@@ -1826,7 +1798,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 22
       },
       "id": 23,
       "panels": [],
@@ -1852,7 +1824,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 23
       },
       "id": 20,
       "options": {
@@ -1886,7 +1858,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 31
       },
       "id": 21,
       "options": {
@@ -2030,6 +2002,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
