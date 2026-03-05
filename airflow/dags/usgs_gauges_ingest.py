@@ -56,9 +56,9 @@ USGS_DB_FILES = {
     },
     'FWC': {
         'locations': [
-            'SharkRv','BroadRv','LostmansRv','ChathamRv','EastRv','FakaRv',
-            'TroutCrRv','MccormickCrRv','LoxRv','StLucieCnlRv',
-            'SnapperCrRv','TamiamiCnlRv','Canal111Rv','HillsboroCnlRv'
+            'SharkRv','HarneyRv','BroadRv','LostmansRv','EastRv','FakaRv',
+            'MccormickCrRv','TroutCrRv','Canal111Rv','SnapperCrRv','TamiamiCnlRv',
+            'HillsboroCnlRv','LoxRv','StLucieCnlRv'
         ],
         'datasets': {
             'disch': discharge_metadata
@@ -66,9 +66,9 @@ USGS_DB_FILES = {
     },
     'FK': {
         'locations': [
-            'SharkRv','BroadRv','LostmansRv','ChathamRv','EastRv','FakaRv',
-            'TroutCrRv','MccormickCrRv','LoxRv','StLucieCnlRv',
-            'SnapperCrRv','TamiamiCnlRv','Canal111Rv','HillsboroCnlRv'
+            'SharkRv','HarneyRv','BroadRv','LostmansRv','EastRv','FakaRv',
+            'MccormickCrRv','TroutCrRv','Canal111Rv','SnapperCrRv','TamiamiCnlRv',
+            'HillsboroCnlRv','LoxRv','StLucieCnlRv'
         ],
         'datasets': {
             'disch': discharge_metadata
