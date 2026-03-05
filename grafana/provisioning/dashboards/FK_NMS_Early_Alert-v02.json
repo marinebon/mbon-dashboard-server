@@ -220,6 +220,58 @@
                   "mode": "mod"
                 },
                 "size": {
+                  "fixed": 3,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 10,
+                  "offsetX": 1,
+                  "offsetY": -8,
+                  "textAlign": "left",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "River Gauges"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "River gauges",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-red"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
                   "fixed": 5,
                   "max": 15,
                   "min": 2
@@ -243,12 +295,12 @@
             },
             "filterData": {
               "id": "byRefId",
-              "options": "River Gauges"
+              "options": "Buoy locations"
             },
             "location": {
               "mode": "auto"
             },
-            "name": "River gauges",
+            "name": "Temp/Sal Buoys",
             "tooltip": true,
             "type": "markers"
           }
@@ -259,9 +311,9 @@
         "view": {
           "allLayers": true,
           "id": "coords",
-          "lat": 24.968284,
-          "lon": -81.970739,
-          "zoom": 8.08
+          "lat": 25.8,
+          "lon": -81.192058,
+          "zoom": 8
         }
       },
       "pluginVersion": "10.4.4",
@@ -281,6 +333,27 @@
           "source": "url",
           "type": "csv",
           "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_River_locs.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "Buoy locations",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_Buoy_locs.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -1957,6 +2030,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
