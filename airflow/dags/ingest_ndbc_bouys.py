@@ -37,7 +37,22 @@ NDBC_DB_FILES = {
             "Peterson_Key",
             "Whipray_Basin",
             "Butternut_Key",
-            "Bob_Allen_Key"
+            "Bob_Allen_Key",
+            "Murray_Key",
+            "Johnson_Key",
+            "Buoy_Key",
+            "Garfield_Bight",
+            "Terrapin_Bay",
+            "Little_Madeira_Bay",
+            "Joe_Bay",
+            "Duck_Key",
+            "Blackwater_Sound",
+            "Little_Blackwater_Sound",
+            "Long_Sound",
+            "Highway_Creek",  
+            "Manatee_Bay",
+            "Thursday_Point",
+            "Middle_Key"
         ],
         'datasets': {
             'salinity': {
