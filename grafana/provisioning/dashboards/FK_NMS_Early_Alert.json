@@ -1074,7 +1074,7 @@
               "resultFormat": "time_series"
             }
           ],
-          "title": "USGS River Discharge from rivers draining to Everglades (sum of discharge from green dots on map - m^3/sec)",
+          "title": "USGS River Discharge (green dots on map - m^3/sec)",
           "type": "timeseries"
         }
       ],
@@ -1480,7 +1480,7 @@
     "list": [
       {
         "current": {
-          "selected": true,
+          "selected": false,
           "text": [
             "MK"
           ],
@@ -1513,12 +1513,12 @@
         "current": {
           "selected": true,
           "text": [
-            "anomaly",
-            "climatology"
+            "climatology",
+            "mean"
           ],
           "value": [
-            "anomaly",
-            "climatology"
+            "climatology",
+            "mean"
           ]
         },
         "datasource": {
@@ -1546,10 +1546,10 @@
         "current": {
           "selected": true,
           "text": [
-            "Bob_Allen_Key"
+            "Peterson_Key"
           ],
           "value": [
-            "Bob_Allen_Key"
+            "Peterson_Key"
           ]
         },
         "datasource": {
@@ -1577,10 +1577,10 @@
         "current": {
           "selected": true,
           "text": [
-            "fk"
+            "SharkRv"
           ],
           "value": [
-            "fk"
+            "SharkRv"
           ]
         },
         "datasource": {
@@ -1604,7 +1604,7 @@
     ]
   },
   "time": {
-    "from": "now-3y",
+    "from": "now-2y",
     "to": "now"
   },
   "timepicker": {
@@ -1619,6 +1619,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 4,
+  "version": 6,
   "weekStart": ""
-}
+}z
