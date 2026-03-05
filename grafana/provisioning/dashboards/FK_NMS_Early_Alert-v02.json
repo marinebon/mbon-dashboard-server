@@ -23,36 +23,246 @@
   "panels": [
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
+        "type": "datasource",
+        "uid": "grafana"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
       },
       "gridPos": {
-        "h": 14,
+        "h": 18,
         "w": 13,
         "x": 0,
         "y": 0
       },
-      "id": 6,
+      "id": 62,
       "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
+        "basemap": {
+          "config": {
+            "server": "ocean"
+          },
+          "name": "Layer 0",
+          "type": "esri-xyz"
         },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
-        "mode": "markdown"
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": true,
+          "showScale": true,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "River gauges",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_50m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "50m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_100m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "100m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_500m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "500m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": 24.968284,
+          "lon": -81.970739,
+          "zoom": 8.08
+        }
       },
       "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "refId": "A"
-        }
-      ],
-      "type": "text"
+      "title": "Florida Keys Dashboard Map",
+      "type": "geomap"
     },
     {
       "datasource": {
@@ -90,6 +300,39 @@
       "type": "text"
     },
     {
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P3C6603E967DC8568"
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 13,
+        "x": 0,
+        "y": 18
+      },
+      "id": 6,
+      "options": {
+        "code": {
+          "language": "plaintext",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
+        "mode": "markdown"
+      },
+      "pluginVersion": "10.4.4",
+      "targets": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "refId": "A"
+        }
+      ],
+      "type": "text"
+    },
+    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -99,7 +342,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 32
       },
       "id": 29,
       "panels": [
@@ -113,7 +356,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 15
+            "y": 23
           },
           "id": 56,
           "options": {
@@ -142,7 +385,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 22
+            "y": 30
           },
           "id": 57,
           "options": {
@@ -171,7 +414,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 29
+            "y": 37
           },
           "id": 58,
           "options": {
@@ -200,7 +443,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 44
           },
           "id": 60,
           "options": {
@@ -229,7 +472,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 43
+            "y": 51
           },
           "id": 59,
           "options": {
@@ -271,7 +514,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 33
       },
       "id": 27,
       "panels": [
@@ -339,7 +582,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 16
+            "y": 24
           },
           "id": 2,
           "interval": "",
@@ -474,7 +717,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 16
+            "y": 24
           },
           "id": 12,
           "interval": "",
@@ -609,7 +852,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 32
           },
           "id": 13,
           "interval": "",
@@ -744,7 +987,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 32
           },
           "id": 11,
           "interval": "",
@@ -880,7 +1123,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 40
           },
           "id": 61,
           "interval": "",
@@ -974,7 +1217,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 34
       },
       "id": 54,
       "panels": [
@@ -1026,8 +1269,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1043,7 +1285,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 17
+            "y": 25
           },
           "id": 35,
           "interval": "",
@@ -1125,8 +1367,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -1142,7 +1383,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 23
+            "y": 31
           },
           "id": 32,
           "interval": "",
@@ -1199,7 +1440,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 35
       },
       "id": 52,
       "panels": [
@@ -1268,7 +1509,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 18
+            "y": 26
           },
           "id": 34,
           "interval": "",
@@ -1398,7 +1639,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 33
           },
           "id": 33,
           "interval": "",
@@ -1486,7 +1727,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 36
       },
       "id": 23,
       "panels": [],
@@ -1512,7 +1753,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 37
       },
       "id": 20,
       "options": {
@@ -1546,7 +1787,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 45
       },
       "id": 21,
       "options": {
@@ -1690,6 +1931,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 3,
+  "version": 1,
   "weekStart": ""
 }
