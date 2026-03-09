@@ -262,7 +262,7 @@
               "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "dark-red"
+                  "fixed": "dark-blue"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -396,7 +396,49 @@
           {
             "config": {
               "rules": [],
-              "src": "public/maps/countries.geojson",
+              "src": "public/maps/FKNMS_boundary.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#C4162A"
+                },
+                "opacity": 0.2,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "FKNMS Boundary",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/MUK_FKdb.geojson",
               "style": {
                 "color": {
                   "fixed": "dark-green"
@@ -430,7 +472,7 @@
                 }
               }
             },
-            "name": "FKNMS Boundary",
+            "name": "Biscayne AOI",
             "opacity": 0.4,
             "tooltip": true,
             "type": "geojson"
@@ -1577,8 +1619,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1703,8 +1744,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1834,8 +1874,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2019,7 +2058,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "MK"
           ],
@@ -2128,6 +2167,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 5,
+  "version": 6,
   "weekStart": ""
 }
