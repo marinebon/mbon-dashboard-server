@@ -1,1 +1,13 @@
-"{\"type\":\"FeatureCollection\",\"features\":{\"type\":\"Feature\",\"properties\":{},\"geometry\":{\"type\":\"Polygon\",\"coordinates\":[[-80.111,-80.081,-80.081,-80.111,-80.111,25.768,25.768,25.708000000000002,25.708000000000002,25.768]]}}}"
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {},
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-80.11100000, 25.76800000],[-80.08100000, 25.76800000],[-80.08100000, 25.70800000],[-80.11100000, 25.70800000],[-80.11100000, 25.76800000]]]
+      }
+    }
+  ]
+}
