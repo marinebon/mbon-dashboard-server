@@ -238,7 +238,7 @@
                   "mode": "field"
                 },
                 "textConfig": {
-                  "fontSize": 10,
+                  "fontSize": 12,
                   "offsetX": 1,
                   "offsetY": -8,
                   "textAlign": "left",
@@ -290,7 +290,7 @@
                   "mode": "field"
                 },
                 "textConfig": {
-                  "fontSize": 10,
+                  "fontSize": 12,
                   "offsetX": 5,
                   "offsetY": 0,
                   "textAlign": "left",
@@ -953,7 +953,7 @@
           }
         }
       ],
-      "title": "Florida Keys Dashboard Map",
+      "title": "Welcome to the Florida Keys Data Dashboard",
       "type": "geomap"
     },
     {
@@ -975,7 +975,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FKNMS_DBv24_Logo_Panel.png)\n\n\n### Directions for site navigation \n\nLocations where satellite data are extracted are shown on the map as black hatched areas.\n\nSelect a specific location using the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nBuoy locations (red dots on map) can also be selected using the \"Buoy Locations\" dropdown. Scroll down to see a list of buoy locations.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery Time Series Extractions\")\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n### Buoy locations:\n* 1: Whipray Basin\n* 2: Butternut Key\n* 3: Peterson Key\n* 4: Bob Allen Key\n* 5: Little Rabbit Key\n\n\n\n\n",
+        "content": "### Directions for site navigation \n\n\n#### Use mouse to zoom or pan map. Hover over features for more information.\n\n#### Time range displayed can be adjusted at top right.\n\n#### To view time series panels, simply click on the panel title below (e.g. \"Satellite Imagery\")\n\n#### Use dropdown menus above to select:\n - Areas of Interest (AOIs) where satellite data are extracted are shown (black polygons).\n - Time series metric to display (mean, climatology anomaly).\n - Temperature/salinity buoy locations (blue dots).\n - USGS river discharge gauges (green dots). \n\nFlorida Keys National Marine Sanctuary boundary is shown as a red polygon.\n\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -988,7 +988,6 @@
           "refId": "A"
         }
       ],
-      "title": "Welcome to the Florida Keys data dashboard",
       "type": "text"
     },
     {
@@ -1015,7 +1014,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 23
+            "y": 19
           },
           "id": 56,
           "options": {
@@ -1044,7 +1043,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 30
+            "y": 26
           },
           "id": 57,
           "options": {
@@ -1073,7 +1072,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 37
+            "y": 33
           },
           "id": 58,
           "options": {
@@ -1102,7 +1101,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 44
+            "y": 40
           },
           "id": 60,
           "options": {
@@ -1131,7 +1130,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 51
+            "y": 47
           },
           "id": 59,
           "options": {
