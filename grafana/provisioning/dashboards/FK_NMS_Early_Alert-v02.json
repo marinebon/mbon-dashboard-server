@@ -902,7 +902,7 @@
               "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "dark-green"
+                  "fixed": "#000000"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -912,17 +912,23 @@
                   "mode": "mod"
                 },
                 "size": {
-                  "fixed": 5,
+                  "fixed": 1,
                   "max": 15,
                   "min": 2
                 },
                 "symbol": {
+                  "field": "",
                   "fixed": "img/icons/marker/circle.svg",
                   "mode": "fixed"
                 },
                 "symbolAlign": {
                   "horizontal": "center",
                   "vertical": "center"
+                },
+                "text": {
+                  "field": "Satellite AOI labels name",
+                  "fixed": "",
+                  "mode": "field"
                 },
                 "textConfig": {
                   "fontSize": 12,
@@ -2589,6 +2595,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 10,
+  "version": 11,
   "weekStart": ""
 }
