@@ -112,13 +112,18 @@ with DAG(
             gbucket_name = 'SEUS'
         else:
             raise ValueError(f"unexpected region: '{region}'")
+        # handle special case of re-using FK files for FWC
+        if region == 'FWC':
+            filename_region = 'FK'
+        else:
+            filename_region = region
         # Use the region in the URL generation.
         GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{gbucket_name.lower()}_csv"
         for dataset_name, ds in region_data['datasets'].items():
             for location in region_data['locations']:
                 DATA_FNAME = ds['filename_template'].format(
                   location=location,
-                  REGION=region
+                  REGION=filename_region
                 )
                 task_id = f"{region}_{dataset_name}_{location}"
                 tags = ds.get('tags', []) + [
