@@ -896,6 +896,53 @@
             "opacity": 0.4,
             "tooltip": true,
             "type": "geojson"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Satellite AOI labels"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "AOI Labels",
+            "tooltip": true,
+            "type": "markers"
           }
         ],
         "tooltip": {
@@ -947,6 +994,27 @@
           "source": "url",
           "type": "csv",
           "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_Buoy_locs.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "Satellite AOI labels",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_AOI_labels.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -2475,14 +2543,14 @@
         "current": {
           "selected": true,
           "text": [
+            "Canal111Rv",
             "MccormickCrRv",
-            "TroutCrRv",
-            "Canal111Rv"
+            "TroutCrRv"
           ],
           "value": [
+            "Canal111Rv",
             "MccormickCrRv",
-            "TroutCrRv",
-            "Canal111Rv"
+            "TroutCrRv"
           ]
         },
         "datasource": {
@@ -2521,6 +2589,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 8,
+  "version": 10,
   "weekStart": ""
 }
