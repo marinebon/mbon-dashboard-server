@@ -917,7 +917,6 @@
                   "min": 2
                 },
                 "symbol": {
-                  "field": "",
                   "fixed": "img/icons/marker/circle.svg",
                   "mode": "fixed"
                 },
