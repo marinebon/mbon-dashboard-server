@@ -1097,7 +1097,7 @@
                 "spanNulls": true,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -1189,7 +1189,7 @@
               "tags": []
             }
           ],
-          "title": "USGS Gage Height from Tamiami Canal draining into Biscayne Bay (red circle on map - meters)",
+          "title": "USGS Gauge River Discharge",
           "type": "timeseries"
         }
       ],
@@ -1268,7 +1268,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1397,7 +1398,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -1649,12 +1651,10 @@
         "current": {
           "selected": true,
           "text": [
-            "anomaly",
-            "climatology"
+            "anomaly"
           ],
           "value": [
-            "anomaly",
-            "climatology"
+            "anomaly"
           ]
         },
         "datasource": {
@@ -1681,12 +1681,36 @@
         "current": {
           "selected": true,
           "text": [
-            "EFL",
-            "STL"
+            "BroadRv",
+            "Canal111Rv",
+            "EastRv",
+            "FakaRv",
+            "HarneyRv",
+            "HillsboroCnlRv",
+            "LostmansRv",
+            "LoxRv",
+            "MccormickCrRv",
+            "SharkRv",
+            "SnapperCrRv",
+            "StLucieCnlRv",
+            "TamiamiCnlRv",
+            "TroutCrRv"
           ],
           "value": [
-            "EFL",
-            "STL"
+            "BroadRv",
+            "Canal111Rv",
+            "EastRv",
+            "FakaRv",
+            "HarneyRv",
+            "HillsboroCnlRv",
+            "LostmansRv",
+            "LoxRv",
+            "MccormickCrRv",
+            "SharkRv",
+            "SnapperCrRv",
+            "StLucieCnlRv",
+            "TamiamiCnlRv",
+            "TroutCrRv"
           ]
         },
         "datasource": {
@@ -1725,6 +1749,6 @@
   "timezone": "",
   "title": "FWC Coral Disease Dash",
   "uid": "-f4J8V4Mk",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
