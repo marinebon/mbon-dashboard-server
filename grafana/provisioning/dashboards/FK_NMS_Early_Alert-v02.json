@@ -26,6 +26,7 @@
         "type": "yesoreyeram-infinity-datasource",
         "uid": "ffbhdsb119w5cb"
       },
+      "description": "This dashboard serves satellite and in-situ data from the Florida Keys National Marine Sanctuary and surrounding areas.",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -51,7 +52,8 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "lengthm"
         },
         "overrides": []
       },
@@ -925,15 +927,15 @@
                   "vertical": "center"
                 },
                 "text": {
-                  "field": "Satellite AOI labels name",
+                  "field": "name",
                   "fixed": "",
                   "mode": "field"
                 },
                 "textConfig": {
-                  "fontSize": 12,
-                  "offsetX": 0,
+                  "fontSize": 14,
+                  "offsetX": 5,
                   "offsetY": 0,
-                  "textAlign": "center",
+                  "textAlign": "left",
                   "textBaseline": "middle"
                 }
               }
@@ -1048,7 +1050,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "### Directions for site navigation \n\n\n#### Use mouse to zoom or pan map. Hover over features for more information.\n\n#### Time range displayed can be adjusted at top right.\n\n#### To view time series panels, simply click on the panel title below (e.g. \"Satellite Imagery\")\n\n#### Use dropdown menus above to select:\n - Areas of Interest (AOIs) where satellite data are extracted are shown (black polygons).\n - Time series metric to display (mean, climatology anomaly).\n - Temperature/salinity buoy locations (blue dots).\n - USGS river discharge gauges (green dots). \n\nFlorida Keys National Marine Sanctuary boundary is shown as a red polygon.\n\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n\n",
+        "content": "### Directions for site navigation \n\n\n#### Use mouse to zoom or pan map. Hover over features for more information.\n\n#### Time range displayed can be adjusted at top right.\n\n#### To view time series panels, simply click on the panel title below (e.g. \"Satellite Imagery\")\n\n#### Use dropdown menus above to select:\n - Areas of Interest (AOIs) where satellite data are extracted are shown (black polygons).\n - Time series metric to display (mean, climatology, anomaly).\n - NPS temperature/salinity buoys (blue).\n - USGS river discharge gauges (green). \n\nFlorida Keys National Marine Sanctuary boundary is shown as a red polygon.\n\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -1939,7 +1941,7 @@
       "type": "row"
     },
     {
-      "collapsed": false,
+      "collapsed": true,
       "datasource": {
         "type": "influxdb",
         "uid": "P3C6603E967DC8568"
@@ -1951,7 +1953,107 @@
         "y": 20
       },
       "id": 54,
-      "panels": [],
+      "panels": [
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "normal"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 6,
+            "w": 24,
+            "x": 0,
+            "y": 21
+          },
+          "id": 35,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "alias": "$tag_location $col",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "hide": false,
+              "query": "SELECT /^$metric$/  FROM disch\nWHERE (location =~ /^$gauge_locations$/)\nGROUP BY \"location\"\nfill(null)",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series"
+            }
+          ],
+          "title": "USGS River Discharge [ m^3/sec]",
+          "type": "timeseries"
+        }
+      ],
       "targets": [
         {
           "datasource": {
@@ -1965,105 +2067,6 @@
       "type": "row"
     },
     {
-      "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
-      },
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "custom": {
-            "axisBorderShow": false,
-            "axisCenteredZero": false,
-            "axisColorMode": "text",
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "legend": false,
-              "tooltip": false,
-              "viz": false
-            },
-            "insertNulls": false,
-            "lineInterpolation": "linear",
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true,
-            "stacking": {
-              "group": "A",
-              "mode": "normal"
-            },
-            "thresholdsStyle": {
-              "mode": "off"
-            }
-          },
-          "links": [],
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          },
-          "unit": "short"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 6,
-        "w": 24,
-        "x": 0,
-        "y": 21
-      },
-      "id": 35,
-      "interval": "",
-      "options": {
-        "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom",
-          "showLegend": true
-        },
-        "tooltip": {
-          "mode": "multi",
-          "sort": "none"
-        }
-      },
-      "pluginVersion": "10.4.4",
-      "targets": [
-        {
-          "alias": "$tag_location $col",
-          "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
-          },
-          "hide": false,
-          "query": "SELECT /^$metric$/  FROM disch\nWHERE (location =~ /^$gauge_locations$/)\nGROUP BY \"location\"\nfill(null)",
-          "rawQuery": true,
-          "refId": "A",
-          "resultFormat": "time_series"
-        }
-      ],
-      "title": "USGS River Discharge [ m^3/sec]",
-      "type": "timeseries"
-    },
-    {
       "collapsed": true,
       "datasource": {
         "type": "influxdb",
@@ -2073,7 +2076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 21
       },
       "id": 52,
       "panels": [
@@ -2360,7 +2363,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 22
       },
       "id": 23,
       "panels": [],
@@ -2386,7 +2389,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 23
       },
       "id": 20,
       "options": {
@@ -2420,7 +2423,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 37
+        "y": 31
       },
       "id": 21,
       "options": {
@@ -2548,14 +2551,16 @@
         "current": {
           "selected": true,
           "text": [
-            "Canal111Rv",
-            "MccormickCrRv",
-            "TroutCrRv"
+            "LostmansRv",
+            "HarneyRv",
+            "BroadRv",
+            "SharkRv"
           ],
           "value": [
-            "Canal111Rv",
-            "MccormickCrRv",
-            "TroutCrRv"
+            "LostmansRv",
+            "HarneyRv",
+            "BroadRv",
+            "SharkRv"
           ]
         },
         "datasource": {
@@ -2579,7 +2584,7 @@
     ]
   },
   "time": {
-    "from": "now-5y",
+    "from": "now-2y",
     "to": "now"
   },
   "timepicker": {
@@ -2594,6 +2599,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert v02",
   "uid": "qhXdjw5Gk",
-  "version": 11,
+  "version": 12,
   "weekStart": ""
 }
