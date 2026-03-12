@@ -52,7 +52,9 @@ NDBC_DB_FILES = {
             "Highway_Creek",  
             "Manatee_Bay",
             "Thursday_Point",
-            "Middle_Key"
+            "Middle_Key",
+            "Taylor_River",
+            "Trout_Cove"
         ],
         'datasets': {
             'salinity': {
