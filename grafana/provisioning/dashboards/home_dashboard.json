@@ -69,7 +69,7 @@
       "options": {
         "includeVars": false,
         "keepTime": false,
-        "maxItems": 10,
+        "maxItems": 0,
         "query": "",
         "showHeadings": false,
         "showRecentlyViewed": false,
