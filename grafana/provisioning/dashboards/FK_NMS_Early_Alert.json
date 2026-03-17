@@ -23,36 +23,1013 @@
   "panels": [
     {
       "datasource": {
-        "type": "influxdb",
-        "uid": "P3C6603E967DC8568"
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "ffbhdsb119w5cb"
+      },
+      "description": "This dashboard serves satellite and in-situ data from the Florida Keys National Marine Sanctuary and surrounding areas.",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "lengthm"
+        },
+        "overrides": []
       },
       "gridPos": {
-        "h": 14,
+        "h": 18,
         "w": 13,
         "x": 0,
         "y": 0
       },
-      "id": 6,
+      "id": 62,
       "options": {
-        "code": {
-          "language": "plaintext",
-          "showLineNumbers": false,
-          "showMiniMap": false
+        "basemap": {
+          "config": {
+            "server": "ocean"
+          },
+          "name": "Layer 0",
+          "type": "esri-xyz"
         },
-        "content": "![map of sub-regions](https://raw.githubusercontent.com/marinebon/mbon-dashboard-server/client-fknms/static_files/FK_DBv24_map.png)",
-        "mode": "markdown"
+        "controls": {
+          "mouseWheelZoom": true,
+          "showAttribution": true,
+          "showDebug": false,
+          "showMeasure": true,
+          "showScale": true,
+          "showZoom": true
+        },
+        "layers": [
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_50m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "50m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_100m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "100m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_500m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "500m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-green"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 3,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 1,
+                  "offsetY": -8,
+                  "textAlign": "left",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "River Gauges"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "River gauges",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "dark-blue"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 3,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 5,
+                  "offsetY": 0,
+                  "textAlign": "left",
+                  "textBaseline": "top"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Buoy locations"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "Temp/Sal Buoys",
+            "tooltip": true,
+            "type": "markers"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_10m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "10m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/GoM_20m_isobath.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "20m depth contour",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/FKNMS_boundary.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#C4162A"
+                },
+                "opacity": 0.2,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "FKNMS Boundary",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/BIS_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Biscayne AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/MUK_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Mid Upper Keys AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/UK_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Upper Keys AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/MK_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Middle Keys AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/LK_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Lower Keys AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/WFS_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "West Florida Shelf AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/SR_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Shark River AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/WFB_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "West Florida Bay AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/EFB_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "East Florida Bay AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/DT_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Dry Tortugas AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "rules": [],
+              "src": "public/maps/MQ_FKdb.geojson",
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 5,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "textConfig": {
+                  "fontSize": 12,
+                  "offsetX": 0,
+                  "offsetY": 0,
+                  "textAlign": "center",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "name": "Marquesas AOI",
+            "opacity": 0.4,
+            "tooltip": true,
+            "type": "geojson"
+          },
+          {
+            "config": {
+              "showLegend": false,
+              "style": {
+                "color": {
+                  "fixed": "#000000"
+                },
+                "opacity": 0.4,
+                "rotation": {
+                  "fixed": 0,
+                  "max": 360,
+                  "min": -360,
+                  "mode": "mod"
+                },
+                "size": {
+                  "fixed": 1,
+                  "max": 15,
+                  "min": 2
+                },
+                "symbol": {
+                  "fixed": "img/icons/marker/circle.svg",
+                  "mode": "fixed"
+                },
+                "symbolAlign": {
+                  "horizontal": "center",
+                  "vertical": "center"
+                },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
+                },
+                "textConfig": {
+                  "fontSize": 14,
+                  "offsetX": 5,
+                  "offsetY": 0,
+                  "textAlign": "left",
+                  "textBaseline": "middle"
+                }
+              }
+            },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Satellite AOI labels"
+            },
+            "location": {
+              "mode": "auto"
+            },
+            "name": "AOI Labels",
+            "tooltip": true,
+            "type": "markers"
+          }
+        ],
+        "tooltip": {
+          "mode": "details"
+        },
+        "view": {
+          "allLayers": true,
+          "id": "coords",
+          "lat": 25.25,
+          "lon": -81.6,
+          "zoom": 8.6
+        }
       },
       "pluginVersion": "10.4.4",
       "targets": [
         {
+          "columns": [],
           "datasource": {
-            "type": "influxdb",
-            "uid": "P3C6603E967DC8568"
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
           },
-          "refId": "A"
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "parser": "backend",
+          "refId": "River Gauges",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_River_locs.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "Buoy locations",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_Buoy_locs.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
+        },
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "ffbhdsb119w5cb"
+          },
+          "filters": [],
+          "format": "table",
+          "global_query_id": "",
+          "hide": false,
+          "parser": "backend",
+          "refId": "Satellite AOI labels",
+          "root_selector": "",
+          "source": "url",
+          "type": "csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/FKdb_AOI_labels.csv",
+          "url_options": {
+            "data": "",
+            "method": "GET"
+          }
         }
       ],
-      "type": "text"
+      "title": "Welcome to the Florida Keys Data Dashboard",
+      "type": "geomap"
     },
     {
       "datasource": {
@@ -61,7 +1038,7 @@
       },
       "description": "",
       "gridPos": {
-        "h": 14,
+        "h": 18,
         "w": 11,
         "x": 13,
         "y": 0
@@ -73,7 +1050,7 @@
           "showLineNumbers": false,
           "showMiniMap": false
         },
-        "content": "![logo image](https://mbon-dashboards.marine.usf.edu/static_files/FKNMS_DBv24_Logo_Panel.png)\n\n\n### Directions for site navigation \n\nLocations where satellite data are extracted are shown on the map as black hatched areas.\n\nSelect a specific location using the \"Satellite Time Series Extraction Locations\" dropdown menu at left.\n\nSelect mean, climatology or anomaly using the \"Time Series Metric\" dropdown menu.\n\nBuoy locations (red dots on map) can also be selected using the \"Buoy Locations\" dropdown. Scroll down to see a list of buoy locations.\n\nThe range of the displayed time period can be adjusted at top right.\n\nTo view time series panels, simply click on the panel title (e.g. \"Satellite Imagery Time Series Extractions\")\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n### Buoy locations:\n* 1: Whipray Basin\n* 2: Butternut Key\n* 3: Peterson Key\n* 4: Bob Allen Key\n* 5: Little Rabbit Key\n\n\n\n\n",
+        "content": "### Directions for site navigation \n\n\n#### Use mouse to zoom or pan map. Hover over features for more information.\n\n#### Time range displayed can be adjusted at top right.\n\n#### To view time series panels, simply click on the panel title below (e.g. \"Satellite Imagery\")\n\n#### Use dropdown menus above to select:\n - Areas of Interest (AOIs) where time series of satellite data are extracted (black polygons).\n - Time series metric to display (mean, climatology, anomaly).\n - NPS temperature/salinity buoys (blue circles).\n - USGS river discharge gauges (green circles). \n\nFlorida Keys National Marine Sanctuary boundary is shown as a red polygon.\n\nDepth contours are indicated by gray lines.\n\n### Locations of extracted satellite data:\n* BIS: Offshore Biscayne Bay\n* UK: Upper Keys\n* M/UK: Middle/Upper Keys\n* MK: Middle Keys\n* LK: Lower Keys\n* MQ: Marquesas\n* DT: Dry Tortugas\n* WFS: West Florida Shelf\n* SR: Shark River\n* WFB: West Florida Bay\n* EFB: East Florida Bay (SST only)\n\n\n",
         "mode": "markdown"
       },
       "pluginVersion": "10.4.4",
@@ -86,7 +1063,6 @@
           "refId": "A"
         }
       ],
-      "title": "Welcome to the Florida Keys data dashboard",
       "type": "text"
     },
     {
@@ -99,7 +1075,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 14
+        "y": 18
       },
       "id": 29,
       "panels": [
@@ -113,7 +1089,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 15
+            "y": 19
           },
           "id": 56,
           "options": {
@@ -142,7 +1118,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 22
+            "y": 26
           },
           "id": 57,
           "options": {
@@ -171,7 +1147,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 29
+            "y": 33
           },
           "id": 58,
           "options": {
@@ -200,7 +1176,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 36
+            "y": 40
           },
           "id": 60,
           "options": {
@@ -229,7 +1205,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 43
+            "y": 47
           },
           "id": 59,
           "options": {
@@ -271,7 +1247,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 15
+        "y": 19
       },
       "id": 27,
       "panels": [
@@ -339,7 +1315,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 16
+            "y": 24
           },
           "id": 2,
           "interval": "",
@@ -474,7 +1450,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 16
+            "y": 24
           },
           "id": 12,
           "interval": "",
@@ -609,7 +1585,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 24
+            "y": 32
           },
           "id": 13,
           "interval": "",
@@ -744,7 +1720,7 @@
             "h": 8,
             "w": 12,
             "x": 12,
-            "y": 24
+            "y": 32
           },
           "id": 11,
           "interval": "",
@@ -880,7 +1856,7 @@
             "h": 8,
             "w": 12,
             "x": 0,
-            "y": 32
+            "y": 40
           },
           "id": 61,
           "interval": "",
@@ -974,7 +1950,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 20
       },
       "id": 54,
       "panels": [
@@ -1014,7 +1990,7 @@
                 "spanNulls": true,
                 "stacking": {
                   "group": "A",
-                  "mode": "none"
+                  "mode": "normal"
                 },
                 "thresholdsStyle": {
                   "mode": "off"
@@ -1043,7 +2019,7 @@
             "h": 6,
             "w": 24,
             "x": 0,
-            "y": 17
+            "y": 21
           },
           "id": 35,
           "interval": "",
@@ -1068,13 +2044,13 @@
                 "uid": "P3C6603E967DC8568"
               },
               "hide": false,
-              "query": "SELECT /^$metric$/ FROM disch\nWHERE (\"location\" =~ /^$USGS_Gauges$/ AND $timeFilter)\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT /^$metric$/  FROM disch\nWHERE (location =~ /^$gauge_locations$/)\nGROUP BY \"location\"\nfill(null)",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series"
             }
           ],
-          "title": "USGS River Discharge (green dots on map - m^3/sec)",
+          "title": "USGS River Discharge [ m^3/sec]",
           "type": "timeseries"
         }
       ],
@@ -1100,7 +2076,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 21
       },
       "id": 52,
       "panels": [
@@ -1169,7 +2145,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 18
+            "y": 22
           },
           "id": 34,
           "interval": "",
@@ -1299,7 +2275,7 @@
             "h": 7,
             "w": 24,
             "x": 0,
-            "y": 25
+            "y": 29
           },
           "id": 33,
           "interval": "",
@@ -1387,7 +2363,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 18
+        "y": 22
       },
       "id": 23,
       "panels": [],
@@ -1413,7 +2389,7 @@
         "h": 8,
         "w": 24,
         "x": 0,
-        "y": 19
+        "y": 23
       },
       "id": 20,
       "options": {
@@ -1447,7 +2423,7 @@
         "h": 11,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 31
       },
       "id": 21,
       "options": {
@@ -1480,7 +2456,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": [
             "MK"
           ],
@@ -1513,11 +2489,9 @@
         "current": {
           "selected": true,
           "text": [
-            "climatology",
             "mean"
           ],
           "value": [
-            "climatology",
             "mean"
           ]
         },
@@ -1577,9 +2551,15 @@
         "current": {
           "selected": true,
           "text": [
+            "LostmansRv",
+            "HarneyRv",
+            "BroadRv",
             "SharkRv"
           ],
           "value": [
+            "LostmansRv",
+            "HarneyRv",
+            "BroadRv",
             "SharkRv"
           ]
         },
@@ -1590,9 +2570,9 @@
         "definition": "SHOW TAG VALUES FROM disch WITH KEY=location WHERE \"region\"='FK'",
         "hide": 0,
         "includeAll": false,
-        "label": "USGS Gauges",
+        "label": "Gauge Locations",
         "multi": true,
-        "name": "USGS_Gauges",
+        "name": "gauge_locations",
         "options": [],
         "query": "SHOW TAG VALUES FROM disch WITH KEY=location WHERE \"region\"='FK'",
         "refresh": 1,
@@ -1618,7 +2598,7 @@
   },
   "timezone": "",
   "title": "FK NMS Early Alert",
-  "uid": "qhXdKw5Gk",
-  "version": 6,
+  "uid": "qhXdjw5Gk",
+  "version": 12,
   "weekStart": ""
 }
