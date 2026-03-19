@@ -56,13 +56,20 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 12,
+        "h": 16,
+        "w": 10,
         "x": 0,
         "y": 0
       },
       "id": 103,
       "options": {
+        "basemap": {
+          "config": {
+            "server": "streets"
+          },
+          "name": "Layer 0",
+          "type": "esri-xyz"
+        },
         "controls": {
           "mouseWheelZoom": true,
           "showAttribution": true,
@@ -74,7 +81,7 @@
         "layers": [
           {
             "config": {
-              "showLegend": true,
+              "showLegend": false,
               "style": {
                 "color": {
                   "fixed": "dark-green"
@@ -108,6 +115,10 @@
                 }
               }
             },
+            "filterData": {
+              "id": "byRefId",
+              "options": "Precip Locations"
+            },
             "location": {
               "mode": "auto"
             },
@@ -121,10 +132,10 @@
         },
         "view": {
           "allLayers": true,
-          "id": "zero",
-          "lat": 0,
-          "lon": 0,
-          "zoom": 1
+          "id": "coords",
+          "lat": 26.290966,
+          "lon": -82.876181,
+          "zoom": 6
         }
       },
       "pluginVersion": "10.4.4",
@@ -139,11 +150,11 @@
           "format": "table",
           "global_query_id": "",
           "parser": "backend",
-          "refId": "A",
+          "refId": "Precip Locations",
           "root_selector": "",
           "source": "url",
           "type": "csv",
-          "url": "mbon-dashboards.marine.usf.edu/static_files/REACH_station_locations_vDB.csv",
+          "url": "mbon-dashboards.marine.usf.edu/static_files/Precip_gauge_locations.csv",
           "url_options": {
             "data": "",
             "method": "GET"
@@ -163,7 +174,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 8
+        "y": 16
       },
       "id": 90,
       "panels": [],
@@ -188,7 +199,7 @@
         "h": 19,
         "w": 15,
         "x": 0,
-        "y": 9
+        "y": 17
       },
       "id": 6,
       "options": {
@@ -221,7 +232,7 @@
         "h": 19,
         "w": 9,
         "x": 15,
-        "y": 9
+        "y": 17
       },
       "id": 8,
       "options": {
@@ -256,7 +267,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 36
       },
       "id": 96,
       "panels": [
@@ -317,7 +328,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 29
+        "y": 37
       },
       "id": 29,
       "panels": [
@@ -460,7 +471,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 38
       },
       "id": 27,
       "panels": [
@@ -1163,7 +1174,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 31
+        "y": 39
       },
       "id": 83,
       "panels": [
@@ -1848,7 +1859,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 32
+        "y": 40
       },
       "id": 59,
       "panels": [
@@ -2728,7 +2739,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 41
       },
       "id": 72,
       "panels": [
@@ -3457,7 +3468,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 34
+        "y": 42
       },
       "id": 54,
       "panels": [
@@ -3613,7 +3624,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 35
+        "y": 43
       },
       "id": 23,
       "panels": [
@@ -3771,8 +3782,8 @@
       {
         "current": {
           "selected": false,
-          "text": "AltamahaRv",
-          "value": "AltamahaRv"
+          "text": "BrunswickRv",
+          "value": "BrunswickRv"
         },
         "datasource": {
           "type": "influxdb",
