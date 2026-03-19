@@ -65,7 +65,7 @@
       "options": {
         "basemap": {
           "config": {
-            "server": "streets"
+            "server": "ocean"
           },
           "name": "Layer 0",
           "type": "esri-xyz"
@@ -84,7 +84,7 @@
               "showLegend": false,
               "style": {
                 "color": {
-                  "fixed": "dark-green"
+                  "fixed": "dark-red"
                 },
                 "opacity": 0.4,
                 "rotation": {
@@ -104,13 +104,18 @@
                 },
                 "symbolAlign": {
                   "horizontal": "center",
-                  "vertical": "center"
+                  "vertical": "top"
+                },
+                "text": {
+                  "field": "name",
+                  "fixed": "",
+                  "mode": "field"
                 },
                 "textConfig": {
-                  "fontSize": 12,
+                  "fontSize": 14,
                   "offsetX": 0,
-                  "offsetY": 0,
-                  "textAlign": "center",
+                  "offsetY": 8,
+                  "textAlign": "left",
                   "textBaseline": "middle"
                 }
               }
@@ -133,9 +138,9 @@
         "view": {
           "allLayers": true,
           "id": "coords",
-          "lat": 26.290966,
-          "lon": -82.876181,
-          "zoom": 6
+          "lat": 26.18666,
+          "lon": -80.399849,
+          "zoom": 7.51
         }
       },
       "pluginVersion": "10.4.4",
@@ -3855,6 +3860,6 @@
   "timezone": "",
   "title": "GRNMS Early Alert Dashboard (v2 prototype)",
   "uid": "qhXdK37Gi",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }
