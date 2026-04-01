@@ -88,7 +88,6 @@ with DAG(
         'pH': 'sea_water_ph_reported_on_total_scale',
     }
     for param_name, param_col_name in PARAM_LIST.items():
-        FPATH = f"gov_ornl_cdiac_graysrf_{param_name}.csv"
         PythonOperator(
             task_id=f"ingest_oa_{param_name}",
             python_callable=ndbc_to_influx,
