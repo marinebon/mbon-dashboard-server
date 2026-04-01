@@ -1,4 +1,24 @@
-#!/usr/bin/env python3
+'''
+Example Usage:
+
+PythonOperator(
+    task_id=f"{region}_{short_name}_{param}",
+    python_callable=csv2influx,
+    op_kwargs={
+        'data_url': url,
+        'measurement': 'ndbc_buoy',
+        'fields': [[param, param]],
+        'tags': [
+            ['location', location_tag],
+            ['source', 'NDBC'],
+            ['region', region],
+        ],
+        'timeCol': 'time',
+        'skiprows': [1]
+    },
+)
+
+'''
 import argparse
 
 from dataframe_to_influx import dataframe_to_influx
