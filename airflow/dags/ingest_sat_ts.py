@@ -23,7 +23,7 @@ from csv2influx import csv2influx
 with DAG(
     'ingest_sat_ts',
     catchup=False,  # latest only
-    schedule_interval="0 12 * * *",
+    schedule_interval="0 13 * * *",
     max_active_runs=1,
     default_args={
         "start_date": datetime(2020, 1, 1)
