@@ -24,6 +24,10 @@ cp documentation/example_env_file .env
 # install https certs
 sudo sh ./cert_update.sh
 
+# !!! manually set up cronjob to renew certs
+# run `sudo crontab -e` and add the following line:
+# 0 0 1 * * cd /home/murray_tylar/mbon-dashboard-server && /bin/bash ./cert_update.sh
+
 # === start it up
 docker compose up --build -d
 ```
