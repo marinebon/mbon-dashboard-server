@@ -1,5 +1,6 @@
 #!/bin/bash
-# NOTE: this works along with a cronjob similar to the following in order to update ssl certs automatically.
+# NOTE: This works along with a cronjob similar to the following in order to update ssl certs automatically.
+#       This cronjob must be run as root.
 #       example crontab entry:
 # 0   0,12 *   *   * cd /home/murray_tylar/mbon-dashboard-server && /bin/bash ./cert_update.sh
 cd /home/murray_tylar/mbon-dashboard-server
