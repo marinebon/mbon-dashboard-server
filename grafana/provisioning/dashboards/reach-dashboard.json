@@ -2029,7 +2029,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT \"C24 Air temperature (deg C)\", \"C24_INWATER Water Temperature (deg C) (1 m)\", \"C23 Air temperature (deg C)\"\nFROM \"comps_buoy\"\nWHERE $timeFilter",
+              "query": "SELECT \"C23 Air temperature (deg C)\",\"C24 Air temperature (deg C)\"\nFROM \"comps_buoy\"\nWHERE $timeFilter",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2050,7 +2050,7 @@
               "tags": []
             }
           ],
-          "title": "C24 & C23 Temperatures",
+          "title": "C24 & C23 Air Temperatures",
           "type": "timeseries"
         },
         {
@@ -2121,6 +2121,138 @@
             "x": 0,
             "y": 24
           },
+          "id": 65,
+          "interval": "",
+          "options": {
+            "legend": {
+              "calcs": [],
+              "displayMode": "list",
+              "placement": "bottom",
+              "showLegend": true
+            },
+            "tooltip": {
+              "mode": "multi",
+              "sort": "none"
+            }
+          },
+          "pluginVersion": "10.4.4",
+          "targets": [
+            {
+              "alias": "$col",
+              "datasource": {
+                "type": "influxdb",
+                "uid": "P3C6603E967DC8568"
+              },
+              "groupBy": [
+                {
+                  "params": [
+                    "$__interval"
+                  ],
+                  "type": "time"
+                },
+                {
+                  "params": [
+                    "null"
+                  ],
+                  "type": "fill"
+                }
+              ],
+              "hide": false,
+              "measurement": "river_discharge",
+              "orderByTime": "ASC",
+              "policy": "default",
+              "query": "SELECT \"C23_INWATER Water Temperature (deg C) (1 m)\", \"C24_INWATER Water Temperature (deg C) (1 m)\"\nFROM \"comps_buoy\"\nWHERE $timeFilter",
+              "rawQuery": true,
+              "refId": "A",
+              "resultFormat": "time_series",
+              "select": [
+                [
+                  {
+                    "params": [
+                      "value"
+                    ],
+                    "type": "field"
+                  },
+                  {
+                    "params": [],
+                    "type": "mean"
+                  }
+                ]
+              ],
+              "tags": []
+            }
+          ],
+          "title": "C24 & C23 Water Temperatures",
+          "type": "timeseries"
+        },
+        {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P3C6603E967DC8568"
+          },
+          "description": "",
+          "fieldConfig": {
+            "defaults": {
+              "color": {
+                "mode": "palette-classic"
+              },
+              "custom": {
+                "axisBorderShow": false,
+                "axisCenteredZero": false,
+                "axisColorMode": "text",
+                "axisLabel": "",
+                "axisPlacement": "auto",
+                "barAlignment": 0,
+                "drawStyle": "line",
+                "fillOpacity": 10,
+                "gradientMode": "none",
+                "hideFrom": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": false
+                },
+                "insertNulls": false,
+                "lineInterpolation": "linear",
+                "lineWidth": 1,
+                "pointSize": 5,
+                "scaleDistribution": {
+                  "type": "linear"
+                },
+                "showPoints": "never",
+                "spanNulls": true,
+                "stacking": {
+                  "group": "A",
+                  "mode": "none"
+                },
+                "thresholdsStyle": {
+                  "mode": "off"
+                }
+              },
+              "links": [],
+              "mappings": [],
+              "thresholds": {
+                "mode": "absolute",
+                "steps": [
+                  {
+                    "color": "green",
+                    "value": null
+                  },
+                  {
+                    "color": "red",
+                    "value": 80
+                  }
+                ]
+              },
+              "unit": "short"
+            },
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 24,
+            "x": 0,
+            "y": 31
+          },
           "id": 64,
           "interval": "",
           "options": {
@@ -2161,7 +2293,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT \"C24 Air pressure (mb)\"\nFROM \"comps_buoy\"\nWHERE \"station\" = 'C24' AND $timeFilter",
+              "query": "SELECT \"C23_INWATER Salinity (PSU) (1 m)\",\"C24_INWATER Salinity (PSU) (1 m)\"\nFROM \"comps_buoy\"\nWHERE $timeFilter",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2182,7 +2314,7 @@
               "tags": []
             }
           ],
-          "title": "C24 Air Pressure",
+          "title": "Buoy Salinity",
           "type": "timeseries"
         }
       ],
@@ -2422,6 +2554,6 @@
   "timezone": "",
   "title": "REACH Project Dashboard",
   "uid": "cfbh4puqacmpsb",
-  "version": 19,
+  "version": 20,
   "weekStart": ""
 }
