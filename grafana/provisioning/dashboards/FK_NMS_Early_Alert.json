@@ -2002,8 +2002,7 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green",
-                    "value": null
+                    "color": "green"
                   },
                   {
                     "color": "red",
@@ -2129,7 +2128,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2186,7 +2186,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT sea_water_temperature as sea_water_temperature FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter AND sea_water_temperature > -999\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT mean(\"sea_water_temperature\")\nFROM \"ndbc_buoy\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter\nGROUP BY time($__interval), \"location\" fill(null)\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2259,7 +2259,8 @@
                 "mode": "absolute",
                 "steps": [
                   {
-                    "color": "green"
+                    "color": "green",
+                    "value": null
                   },
                   {
                     "color": "red",
@@ -2316,7 +2317,7 @@
               "measurement": "river_discharge",
               "orderByTime": "ASC",
               "policy": "default",
-              "query": "SELECT sea_water_practical_salinity as sea_water_practical_salinity FROM \"salinity\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter AND sea_water_practical_salinity > -999\nGROUP BY \"location\" fill(null)",
+              "query": "SELECT mean(\"sea_water_practical_salinity\")\nFROM \"ndbc_buoy\"\nWHERE (\"location\" =~ /^$Buoy$/) AND $timeFilter\nGROUP BY time($__interval), \"location\" fill(null)\n",
               "rawQuery": true,
               "refId": "A",
               "resultFormat": "time_series",
@@ -2520,24 +2521,24 @@
         "current": {
           "selected": true,
           "text": [
-            "Peterson_Key"
+            "Buoy_Key (bky)"
           ],
           "value": [
-            "Peterson_Key"
+            "Buoy_Key (bky)"
           ]
         },
         "datasource": {
           "type": "influxdb",
           "uid": "P3C6603E967DC8568"
         },
-        "definition": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
+        "definition": "SHOW TAG VALUES FROM \"ndbc_buoy\" WITH KEY = \"location\"",
         "hide": 0,
         "includeAll": false,
         "label": "Buoy Locations",
         "multi": true,
         "name": "Buoy",
         "options": [],
-        "query": "SHOW TAG VALUES FROM \"salinity\" WITH KEY = \"location\"",
+        "query": "SHOW TAG VALUES FROM \"ndbc_buoy\" WITH KEY = \"location\"",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -2551,15 +2552,15 @@
         "current": {
           "selected": true,
           "text": [
-            "LostmansRv",
-            "HarneyRv",
             "BroadRv",
+            "HarneyRv",
+            "LostmansRv",
             "SharkRv"
           ],
           "value": [
-            "LostmansRv",
-            "HarneyRv",
             "BroadRv",
+            "HarneyRv",
+            "LostmansRv",
             "SharkRv"
           ]
         },
@@ -2599,6 +2600,6 @@
   "timezone": "",
   "title": "FK NMS Early Alert",
   "uid": "qhXdKw5Gk",
-  "version": 12,
+  "version": 8,
   "weekStart": ""
 }
