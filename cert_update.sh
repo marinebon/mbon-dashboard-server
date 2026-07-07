@@ -1,24 +1,66 @@
 #!/bin/bash
-# NOTE: This works along with a cronjob similar to the following in order to update ssl certs automatically.
-#       This cronjob must be run as root.
-#       example crontab entry:
-# 0   0,12 *   *   * cd /home/murray_tylar/mbon-dashboard-server && /bin/bash ./cert_update.sh
-cd /home/murray_tylar/mbon-dashboard-server
+# SSL certificate renewal script for mbon-dashboards.marine.usf.edu
+#
+# Uses Let's Encrypt (certbot) in standalone mode:
+#   - Temporarily stops nginx to free port 80 for the ACME HTTP-01 challenge
+#   - Runs certbot via Docker to renew the cert (skips if > 30 days remaining)
+#   - Copies the updated certs (dereferencing symlinks) to certs/ for nginx
+#   - Restarts nginx
+#
+# CRON SETUP (must run as root):
+#   Install with: sudo crontab -e
+#   Recommended schedule — twice daily at 00:17 and 12:17 (Let's Encrypt best practice):
+#
+#   17 0,12 * * * /bin/bash /home/murray_tylar/mbon-dashboard-server/cert_update.sh >> /var/log/cert_update.log 2>&1
+#
+# Logs are written to /var/log/cert_update.log
+# To check recent renewal activity: sudo tail -50 /var/log/cert_update.log
 
+set -e  # exit immediately on any error
+
+REPO_DIR="/home/murray_tylar/mbon-dashboard-server"
+DOMAIN="mbon-dashboards.marine.usf.edu"
+LOG_TAG="[cert_update $(date -u '+%Y-%m-%dT%H:%M:%SZ')]"
+
+echo "${LOG_TAG} Starting SSL certificate renewal check for ${DOMAIN}"
+
+cd "${REPO_DIR}"
+
+# Stop nginx to free port 80 for the ACME HTTP-01 challenge
+echo "${LOG_TAG} Stopping nginx..."
 docker stop nginx
 
+# Run certbot — it will skip renewal if cert has >30 days remaining.
+# Use --force-renewal only when the cert is already expired or nearly so;
+# for normal twice-daily runs the default behavior (renew when <30d remain) is correct.
+echo "${LOG_TAG} Running certbot..."
 docker run --rm \
-  -v ~/mbon-dashboard-server/certs:/etc/letsencrypt \
-  -v ~/mbon-dashboard-server/certs:/var/lib/letsencrypt \
+  -v "${REPO_DIR}/certs:/etc/letsencrypt" \
+  -v "${REPO_DIR}/certs:/var/lib/letsencrypt" \
   -p 80:80 \
   certbot/certbot certonly \
     --standalone \
-    -d mbon-dashboards.marine.usf.edu \
+    -d "${DOMAIN}" \
     --email tylarmurray@usf.edu \
     --agree-tos \
     --no-eff-email \
     --non-interactive
 
-cp certs/live/mbon-dashboards.marine.usf.edu/*pem certs/.
+# Copy the live certs (using -L to dereference symlinks into the archive/ dir)
+# so that nginx can read flat .pem files without needing access to the
+# root-owned live/ symlink directory.
+echo "${LOG_TAG} Copying updated certificates..."
+cp -L "${REPO_DIR}/certs/live/${DOMAIN}/fullchain.pem" "${REPO_DIR}/certs/fullchain.pem"
+cp -L "${REPO_DIR}/certs/live/${DOMAIN}/cert.pem"      "${REPO_DIR}/certs/cert.pem"
+cp -L "${REPO_DIR}/certs/live/${DOMAIN}/chain.pem"     "${REPO_DIR}/certs/chain.pem"
+cp -L "${REPO_DIR}/certs/live/${DOMAIN}/privkey.pem"   "${REPO_DIR}/certs/privkey.pem"
 
+# Show the new expiry date for confirmation in logs
+EXPIRY=$(openssl x509 -in "${REPO_DIR}/certs/fullchain.pem" -noout -enddate 2>/dev/null | cut -d= -f2)
+echo "${LOG_TAG} Certificate valid until: ${EXPIRY}"
+
+# Restart nginx with the new certificates
+echo "${LOG_TAG} Restarting nginx..."
 docker compose up --build -d nginx
+
+echo "${LOG_TAG} Done."

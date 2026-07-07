@@ -12,6 +12,53 @@ For the ~4 client organizations the following configuration is being used:
 
 -------------------------------
 
+## SSL Certificate Renewal
+
+TLS certificates for `mbon-dashboards.marine.usf.edu` are issued by **Let's Encrypt** and managed via `certbot/certbot` running in a Docker container.
+
+Certificates expire every **90 days**. Renewal is handled automatically by a root cron job that runs twice daily.
+
+### Automated Renewal (cron)
+
+The renewal is configured in **root's crontab** (`sudo crontab -e`):
+
+```
+17 0,12 * * * /bin/bash /home/murray_tylar/mbon-dashboard-server/cert_update.sh >> /var/log/cert_update.log 2>&1
+```
+
+- Runs at **00:17 and 12:17 UTC every day** (offset from the hour to reduce Let's Encrypt load)
+- Certbot only renews when the cert has **< 30 days remaining**, so the twice-daily schedule provides retry opportunities without spamming the CA
+- All output is logged to **`/var/log/cert_update.log`**
+
+### How `cert_update.sh` Works
+
+1. Stops the `nginx` container to free port 80
+2. Runs certbot standalone to complete the ACME HTTP-01 challenge
+3. Copies the renewed certs (using `-L` to dereference Let's Encrypt symlinks) from `certs/live/<domain>/` into the flat `certs/` directory that nginx reads
+4. Restarts nginx with `docker compose up --build -d nginx`
+
+### Checking Renewal Status
+
+```bash
+# View recent renewal log
+sudo tail -50 /var/log/cert_update.log
+
+# Check current cert expiry
+openssl x509 -in ~/mbon-dashboard-server/certs/fullchain.pem -noout -dates
+```
+
+### Manual Renewal (if cert is expired)
+
+If the cert has already expired, run the script manually as root:
+
+```bash
+sudo bash /home/murray_tylar/mbon-dashboard-server/cert_update.sh
+```
+
+> **Note:** If certbot reports the cert is not yet due for renewal but it is already expired or within the 30-day window, add `--force-renewal` to the `docker run` command inside `cert_update.sh` temporarily, run it, then remove the flag.
+
+-------------------------------
+
 # Old Documentation
 Below is old documentation that should probably be ignored.
 Someone should come back around and clean this up.
