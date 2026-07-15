@@ -133,15 +133,9 @@ with DAG(
             location_tag = f"{long_name} ({short_name[:-2]})"  # the -2 drops the f1 from the end of name
             
             for param in params:
-                # Build the data URL for the SECOORA ERDDAP.
-                # TODO: need to add time to URL
-                url = f"https://erddap.secoora.org/erddap/tabledap/gov-nps-ever-{short_name}.csv?time%2C{param}&time%3E={start_time}&time%3C={end_time}"
-                                                                                                
-                
-                # TODO: should we filter using qc?
-                #       Need to add qc columns to url.
-                #       {param}_qc_agg
-                #       {param}_qs_tests          
+                qc_col = f"{param}_qc_agg"
+                # Build the data URL for the SECOORA ERDDAP, including the QC column.
+                url = f"https://erddap.secoora.org/erddap/tabledap/gov-nps-ever-{short_name}.csv?time%2C{param}%2C{qc_col}&time%3E={start_time}&time%3C={end_time}"
 
                 PythonOperator(
                     task_id=f"{region}_{short_name}_{param}",
@@ -156,7 +150,8 @@ with DAG(
                             ['region', region],
                         ],
                         'timeCol': 'time',
-                        'skiprows': [1]
+                        'skiprows': [1],
+                        'qc_col': qc_col,
                     },
                 )
 

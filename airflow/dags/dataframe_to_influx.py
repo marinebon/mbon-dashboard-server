@@ -39,16 +39,25 @@ def dataframe_to_influx(dataframe, measurement, tags=[[]], fields=[["value", "Sa
     bucket = "imars_bucket"
         
     # Write each point in the dataframe to InfluxDB
+    import pandas as pd
     points = []
     for index, row in data.iterrows():
-        try: 
+        try:
             point = (
                 Point(measurement)
                 .time(row[timeCol])
             )
+            has_field = False
             for field in fields:
                 # field is a [csv_column, influx_field] pair
-                point = point.field(field[1], row[field[0]])
+                value = row[field[0]]
+                # Skip NaN/None/pd.NA — don't write null fields to InfluxDB
+                if value is None or (isinstance(value, float) and pd.isna(value)) or value is pd.NA:
+                    continue
+                point = point.field(field[1], value)
+                has_field = True
+            if not has_field:
+                continue  # skip points with no valid fields
             for tag in tags:
                 # tag is a [key, value] pair
                 point = point.tag(tag[0], tag[1])

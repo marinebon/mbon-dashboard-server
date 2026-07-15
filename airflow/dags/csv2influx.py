@@ -24,7 +24,8 @@ import argparse
 from dataframe_to_influx import dataframe_to_influx
 
 def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]],
-               timeCol='DateTimeStamp', skiprows=None, should_convert_time=False):
+               timeCol='DateTimeStamp', skiprows=None, should_convert_time=False,
+               qc_col=None):
     """
     Fetch data from an IMaRS gcloud bucket and upload it to InfluxDB.
 
@@ -36,6 +37,9 @@ def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]],
         timeCol (str): Name of the time column in the CSV.
         skiprows (int or list, optional): Rows to skip when reading the CSV.
         should_convert_time (bool): Whether to convert the time column to datetime.
+        qc_col (str, optional): Column name containing QC flags. When provided,
+            only rows with a QC value of 1 ("good data" per ERDDAP convention)
+            are written to InfluxDB.
     """
     import pandas as pd
     try: 
@@ -45,6 +49,13 @@ def csv2influx(data_url, measurement, tags=[[]], fields=[["value", "Sal"]],
     except Exception as e:
         print(f"failed to load data from {data_url}...\n", e)
         raise e
+
+    if qc_col is not None:
+        if qc_col not in data.columns:
+            raise ValueError(f"QC column '{qc_col}' not found in data. Available columns: {list(data.columns)}")
+        before = len(data)
+        data = data[data[qc_col] == 1].copy()
+        print(f"QC filter on '{qc_col}': kept {len(data)}/{before} rows with qc==1")
 
     dataframe_to_influx(data, measurement, tags, fields, timeCol, should_convert_time)
 

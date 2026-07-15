@@ -131,19 +131,22 @@ def ingest_comps_buoy_data(station, parameters, **context):
     ]
     print(f"dynamic fields: {dynamic_fields}")
 
-    # === Filter out data with quality != "good"
+    # === Filter out data with quality != "good" (per-parameter)
+    # Only the bad field is nulled — other fields at the same timestamp are still written.
     n_filtered_values = 0
     for col in df.columns:
         if col.endswith(' quality'):
             col_to_filter = col.replace(' quality', '')
-            # set value to NaN if quality != "good"
-            df.loc[df[col] != 'good', col_to_filter] = pd.NA
-            n_filtered_values += df[col].value_counts()['good']
-    
+            if col_to_filter in df.columns:
+                bad_mask = df[col] != 'good'
+                n_filtered_values += bad_mask.sum()
+                # Null only this field; other params in the same row are unaffected
+                df.loc[bad_mask, col_to_filter] = pd.NA
+
     # drop quality columns
     df = df.drop(columns=[col for col in df.columns if col.endswith(' quality')])
 
-    print(f'{n_filtered_values} values removed because quality != "good"')
+    print(f'{n_filtered_values} individual field values removed because quality != "good"')
 
     # === Call the helper function with the temporary file
     dataframe_to_influx(
