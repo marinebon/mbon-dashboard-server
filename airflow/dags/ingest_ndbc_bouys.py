@@ -1,9 +1,9 @@
 # ingest_ndbc.py
 """
 NDBC data ingested through SECOORA ERDDAP.
-Data could also be grabbed directly from NDBC using methods in airflow/dags/ndbc_to_influx.py.
+Data could also be grabbed from NDBC using methods in airflow/dags/ndbc_to_influx.py.
 
-NDBC data is published annually. 
+NDBC publishes data annually. 
 SECOORA publishes data in near-real-time.
 
 start_date for buoy data should be 2015.
@@ -114,7 +114,7 @@ NDBC_STATIONS = {
 
 with DAG(
     'ingest_ndbc_buoys',
-    catchup=False,  # latest only
+    catchup=True,
     schedule_interval="0 14 * * *",
     max_active_runs=2,
     concurrency=20,
@@ -124,7 +124,7 @@ with DAG(
 ) as dag:
     # Use Airflow Jinja macros to dynamically get times
     start_time = "{{ (execution_date - macros.timedelta(hours=25)).strftime('%Y-%m-%dT%H:%M:%SZ') }}"
-    end_time = "{{ execution_date.strftime('%Y-%m-%dT%H:%M:%SZ') }}"
+    end_time   = "{{ execution_date.strftime('%Y-%m-%dT%H:%M:%SZ') }}"
     for region, list_of_stations in NDBC_STATIONS.items():
         for station_data in list_of_stations:
             short_name = station_data['name']
@@ -154,102 +154,3 @@ with DAG(
                         'qc_col': qc_col,
                     },
                 )
-
-
-
-# # //////////////////////////////////////////////////////////////////////////
-# # DELETE BELOW HERE
-
-
-# MET_PARAMS = [  # parameters published by NDBC in stdmet files
-#     'air_pressure_at_mean_sea_level', 'air_temperature',
-#     'sea_surface_temperature', 'wind_speed',
-#     'wind_from_direction', 'wind_speed_of_gust',
-#     'sea_surface_wave_significant_height',
-#     'sea_surface_wave_mean_period',
-#     'sea_surface_wave_from_direction',
-#     'sea_surface_wave_period_at_variance_spectral_density_maximum'
-# ]
-
-# WATER_PARAMS = [  # parameters published by NDBC in water temp/salinity files
-#     "sea_water_temperature",
-#     "sea_water_practical_salinity"
-# ]
-
-# # Define a data structure similar to the satellite ingestion file.
-# NDBC_DB_FILES = {
-#     'GOM': {
-#         'stations': [
-#             "Trout_Cove"
-#         ],
-#         'datasets': {
-#             'salinity': {
-#                 'filename_template': "{station}_Buoy_WTMP_SAL.csv",
-#                 'measurement': "salinity",
-#                 'fields': [
-#                     ["sea_water_temperature", "sea_water_temperature"],
-#                     ["sea_water_practical_salinity", "sea_water_practical_salinity"]
-#                 ],
-#                 'tags': [
-#                     ['source', 'NDBC']
-#                 ],
-#                 'timeCol': "time",
-#                 'skiprows': [1]  # skip 2nd header row
-#             }
-#         }
-#     },
-#     'SEUS': {
-#         'stations': [
-#             "Grays_Reef",
-#             "Fernandina",
-#             "Charleston"
-#         ],
-#         'datasets': {
-#             'meteorology': {
-#                 'filename_template': "{station}_Buoy_STDMET.csv",
-#                 'measurement': "meteorology",
-#                 'fields': [
-#                     [param, param] for param in MET_PARAMS
-#                 ],
-#                 'tags': [],
-#                 'timeCol': "time",
-#                 'skiprows': [1]  # skip 2nd header row
-#             }
-#         }
-#     }
-# }
-
-
-
-
-# with DAG(
-#     'ingest_ndbc_buoys_old',
-#     catchup=False,  # latest only
-#     schedule_interval="0 15 * * *",
-#     max_active_runs=2,
-#     default_args={
-#         "start_date": datetime(2020, 1, 1)
-#     },
-# ) as dag:
-#     for region, data in NDBC_DB_FILES.items():
-#         # Set a region-specific bucket URL as in ingest_sat_ts.py.
-#         GBUCKET_URL_PREFIX = f"https://storage.googleapis.com/{region.lower()}_csv"
-#         for station in data['stations']:
-#             for dataset_name, ds in data['datasets'].items():
-#                 # Build the filename from the template.
-#                 DATA_FNAME = ds['filename_template'].format(station=station)
-#                 task_id = f"{region}_{dataset_name}_{station}"
-#                 # Add the dynamic tag for location.
-#                 tags = ds.get('tags', []) + [['location', station]]
-#                 PythonOperator(
-#                     task_id=task_id,
-#                     python_callable=csv2influx,
-#                     op_kwargs={
-#                         'data_url': f"{GBUCKET_URL_PREFIX}/{DATA_FNAME}",
-#                         'measurement': ds['measurement'],
-#                         'fields': ds['fields'],
-#                         'tags': tags,
-#                         'timeCol': ds['timeCol'],
-#                         'skiprows': ds.get('skiprows', [])
-#                     },
-#                 )
