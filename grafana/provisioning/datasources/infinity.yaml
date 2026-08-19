@@ -1,0 +1,9 @@
+apiVersion: 1
+
+datasources:
+  - name: Infinity
+    type: yesoreyeram-infinity-datasource
+    uid: ffbhdsb119w5cb
+    access: proxy
+    isDefault: false
+    editable: false
