@@ -1,4 +1,19 @@
 #!/bin/bash
+# ============================================================================
+# RETIRED 2026-09-07 — DO NOT RUN. DO NOT RE-ADD TO CRON.
+#
+# A CAA record on marine.usf.edu (`0 issue "emsign.com"`) now forbids Let's
+# Encrypt from issuing for this domain. This script did `docker stop nginx`
+# and then certbot failed the CAA check; `set -e` aborted before the nginx
+# restart, taking the site down for hours after each 00:17 / 12:17 cron run.
+#
+# The root crontab line has been commented out. Certificate issuance is moving
+# to eMSign (the CA the CAA record permits). See:
+#   documentation/hosting_details.md  ->  "## SSL Certificate Renewal"
+#   cert_install.sh                   ->  safe install of an eMSign-issued cert
+# ============================================================================
+#
+# --- original description (historical) ---
 # SSL certificate renewal script for mbon-dashboards.marine.usf.edu
 #
 # Uses Let's Encrypt (certbot) in standalone mode:

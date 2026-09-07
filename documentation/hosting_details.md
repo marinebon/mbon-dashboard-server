@@ -14,48 +14,133 @@ For the ~4 client organizations the following configuration is being used:
 
 ## SSL Certificate Renewal
 
-TLS certificates for `mbon-dashboards.marine.usf.edu` are issued by **Let's Encrypt** and managed via `certbot/certbot` running in a Docker container.
+### How nginx consumes the cert
 
-Certificates expire every **90 days**. Renewal is handled automatically by a root cron job that runs twice daily.
+nginx reads two flat files, bind-mounted read-write via `./certs:/etc/nginx/certs`:
 
-### Automated Renewal (cron)
+- `certs/fullchain.pem` — leaf cert + issuer chain (mode 644)
+- `certs/privkey.pem` — private key (mode 600; nginx's master process runs as
+  root so it can read it)
 
-The renewal is configured in **root's crontab** (`sudo crontab -e`):
-
-```
-17 0,12 * * * /bin/bash /home/murray_tylar/mbon-dashboard-server/cert_update.sh >> /var/log/cert_update.log 2>&1
-```
-
-- Runs at **00:17 and 12:17 UTC every day** (offset from the hour to reduce Let's Encrypt load)
-- Certbot only renews when the cert has **< 30 days remaining**, so the twice-daily schedule provides retry opportunities without spamming the CA
-- All output is logged to **`/var/log/cert_update.log`**
-
-### How `cert_update.sh` Works
-
-1. Stops the `nginx` container to free port 80
-2. Runs certbot standalone to complete the ACME HTTP-01 challenge
-3. Copies the renewed certs (using `-L` to dereference Let's Encrypt symlinks) from `certs/live/<domain>/` into the flat `certs/` directory that nginx reads
-4. Restarts nginx with `docker compose up --build -d nginx`
-
-### Checking Renewal Status
+All four server blocks (443 Grafana, 8080 Airflow, 8086 InfluxDB, 5555 Flower)
+point at the same two files. After the files are replaced, apply them with **zero
+downtime**:
 
 ```bash
-# View recent renewal log
-sudo tail -50 /var/log/cert_update.log
-
-# Check current cert expiry
-openssl x509 -in ~/mbon-dashboard-server/certs/fullchain.pem -noout -dates
+docker exec nginx nginx -t && docker exec nginx nginx -s reload
 ```
 
-### Manual Renewal (if cert is expired)
+Never `docker stop nginx` to change certs — that is what caused the Sept 2026
+outages.
 
-If the cert has already expired, run the script manually as root:
+### Issuance: Let's Encrypt -> eMSign, manual delivery (decided 2026-09-07)
+
+A CAA record on the parent zone pins issuance to eMSign:
+
+```
+$ dig +short CAA marine.usf.edu
+0 issue "emsign.com"
+```
+
+**Let's Encrypt can no longer issue for this domain.** History and decision:
+
+- The old automation (`cert_update.sh` + root cron `17 0,12 * * *`) is **retired**
+  as of 2026-09-07. The cron line is commented out in root's crontab (backup at
+  `/root/crontab.backup-20260907`); the script is renamed
+  `cert_update.sh.retired-20260907`. It failed the CAA check on every run and,
+  because it stopped nginx first and used `set -e`, left the site down for hours
+  after each 00:17 / 12:17 UTC run.
+- The **last Let's Encrypt cert expires `Oct 5 2026 17:53 UTC`.**
+- **Decision:** no self-service ACME. **USF IT issues the eMSign cert and
+  delivers it to us** as the cert expiry approaches. There is no renewal cron —
+  renewal is a manual, IT-driven event a few times per year. We only need a safe
+  *install* procedure (below) and an expiry reminder so we chase IT in time.
+
+#### When USF IT delivers a new cert
+
+You will receive some combination of: the leaf certificate, the eMSign
+intermediate chain, and (unless we did a CSR) the private key. Assemble two files:
+
+- `fullchain.pem` — leaf certificate **first**, then the eMSign intermediate(s)
+- `privkey.pem` — the matching private key
+
+Install them (run from the repo dir, `~/mbon-dashboard-server`):
 
 ```bash
-sudo bash /home/murray_tylar/mbon-dashboard-server/cert_update.sh
+# 0. Put the delivered files somewhere safe, e.g. certs/incoming/
+mkdir -p certs/incoming
+# ...copy fullchain.pem and privkey.pem into certs/incoming/...
+
+# 1. VALIDATE before touching anything live -------------------------------
+D=mbon-dashboards.marine.usf.edu
+# key matches cert (the two hashes must be identical):
+sudo openssl x509 -noout -pubkey -in certs/incoming/fullchain.pem | sha256sum
+sudo openssl pkey  -noout -pubout -in certs/incoming/privkey.pem  | sha256sum
+# not expired, right hostname:
+sudo openssl x509 -noout -dates -subject -ext subjectAltName -in certs/incoming/fullchain.pem
+sudo openssl x509 -noout -checkend 0 -in certs/incoming/fullchain.pem && echo "not expired"
+# chain builds to a trusted (emSign) root:
+sudo openssl verify -untrusted certs/incoming/fullchain.pem certs/incoming/fullchain.pem
+
+# 2. BACK UP the current cert -------------------------------------------
+TS=$(date -u +%Y%m%dT%H%M%SZ)
+sudo mkdir -p "certs/backup/$TS"
+sudo cp -p certs/fullchain.pem certs/privkey.pem certs/cert.pem certs/chain.pem "certs/backup/$TS/" 2>/dev/null
+
+# 3. INSTALL -----------------------------------------------------------
+sudo cp certs/incoming/fullchain.pem certs/fullchain.pem
+sudo cp certs/incoming/privkey.pem   certs/privkey.pem
+sudo chown root:root certs/fullchain.pem certs/privkey.pem
+sudo chmod 644 certs/fullchain.pem
+sudo chmod 600 certs/privkey.pem
+
+# 4. APPLY with zero downtime ----------------------------------------
+docker exec nginx nginx -t && docker exec nginx nginx -s reload
+
+# 5. VERIFY ----------------------------------------------------------
+echo | openssl s_client -connect "$D:443" -servername "$D" 2>/dev/null \
+  | openssl x509 -noout -issuer -subject -dates      # issuer should now be emSign
+# repeat for :8080 :8086 :5555 — same cert file, all update on the one reload
+
+# 6. Clean up
+sudo rm -rf certs/incoming
 ```
 
-> **Note:** If certbot reports the cert is not yet due for renewal but it is already expired or within the 30-day window, add `--force-renewal` to the `docker run` command inside `cert_update.sh` temporarily, run it, then remove the flag.
+If `nginx -t` fails at step 4, restore from `certs/backup/$TS/` and reload again —
+nginx keeps serving the old cert until a reload succeeds, so a bad file does not
+cause an outage as long as you never `docker stop` it.
+
+> A `cert_install.sh` wrapper that runs steps 1–5 with hard validation gates can
+> be added if these renewals prove frequent enough to be worth it.
+
+#### Note on the private key
+
+If USF IT emails the private key, treat that channel as compromised for key
+purposes: ask them to deliver the key out-of-band (e.g. their secure file
+transfer), or generate a CSR here so the key never leaves this host:
+
+```bash
+openssl req -new -newkey rsa:3072 -nodes \
+  -keyout certs/incoming/privkey.pem \
+  -out    certs/incoming/mbon-dashboards.csr \
+  -subj   "/CN=mbon-dashboards.marine.usf.edu"
+# hand the .csr to USF IT; they return the signed cert + chain
+```
+
+Private key material and `certs/` contents are **not** tracked in git
+(`certs/.gitignore` is `*`) and must never be committed.
+
+### Checking current cert
+
+```bash
+# On-disk file
+openssl x509 -in ~/mbon-dashboard-server/certs/fullchain.pem -noout -issuer -subject -dates
+
+# What nginx is actually serving
+echo | openssl s_client -connect mbon-dashboards.marine.usf.edu:443 \
+  -servername mbon-dashboards.marine.usf.edu 2>/dev/null \
+  | openssl x509 -noout -issuer -subject -dates
+```
 
 -------------------------------
 
