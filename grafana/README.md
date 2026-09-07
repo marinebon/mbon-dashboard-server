@@ -14,9 +14,8 @@ Similarly datasources can be added by modifying the contents of `./grafana/provi
     - a message should pop up "Cannot save provisioned dashboard"
     - if the message does not pop up go to settings -> JSON model
 3. copy all of the json data
-4. go to [mbon-dashboard-server/grafana/provisioning/dashboards/](https://github.com/marinebon/mbon-dashboard-server/tree/master/grafana/provisioning/dashboards)
-5. select the git branch of your dashboard (top right, default is "master")
-    - your branch is probably called something like client-fwc, client-fknms, or client-fgbnms
+4. go to [mbon-dashboard-server/grafana/provisioning/dashboards/](https://github.com/marinebon/mbon-dashboard-server/tree/main/grafana/provisioning/dashboards)
+5. make sure you are on the `main` branch (branch dropdown, top-left)
 6. click on the dashboard definition you wish to edit
 7. edit the file (pencil button, top right)
 8. delete all of the content and replace it with the json you copied from grafana

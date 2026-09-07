@@ -14,9 +14,8 @@ To do this you must have:
 3. make your changes
 4. click the save icon (top right)
 5. copy the JSON
-6. navigate to your `client-*` branch (topish left dropdown box that says "master")
-7. navigate to the relevant dashboard json file on github
-    * it will be in `/grafana/provisioning/dashboards` on your branch
+6. on GitHub, make sure you are on the `main` branch (branch dropdown, top-left of the file list)
+7. open the relevant dashboard JSON file under `grafana/provisioning/dashboards/`
 8. click the edit icon
 9. select all, delete, & paste in your new JSON
 10. scroll down, enter commit message (description of your changes), and click commit button

@@ -1,3 +1,10 @@
+# Legacy: creating a new client stack (DEPRECATED)
+
+> **Deprecated.** Dashboards are no longer deployed as separate `client-*`
+> branches/instances. All dashboards run from one unified stack on `main`, routed
+> by URL path in `nginx/nginx.conf`. See `documentation/server_setup.md`. Kept for
+> historical reference.
+
 This document outlines how to create a new dashboard stack branching off from the master.
 If you view a graph of the various branches of this repository (see the github network graph [here](https://github.com/marinebon/mbon-dashboard-server/network)) you should see that there are many `client-*` branches forking off from the "master" branch.
 This document will explain how to create a new `client-*` branch for a new project.

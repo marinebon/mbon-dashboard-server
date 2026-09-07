@@ -1,7 +1,10 @@
 # Hosting Details
 The SE-US MBON runs the MBON-Dashboard-Server application on Google Cloud Platform.
-As of 2025, all supported regional dashboards are being integrated into a single instance under the branch `unify-subdomain`.
-For the ~4 client organizations the following configuration is being used:
+All supported regional dashboards are served from this single instance (running
+the `main` branch), routed by URL path in `nginx/nginx.conf`. The earlier
+per-client branch/instance model is retired.
+
+Current configuration:
 
 * Machine Config
   * E2-standard-16 instance
