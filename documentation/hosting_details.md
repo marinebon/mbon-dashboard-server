@@ -36,7 +36,7 @@ docker exec nginx nginx -t && docker exec nginx nginx -s reload
 Never `docker stop nginx` to change certs — that is what caused the Sept 2026
 outages.
 
-### Issuance: Let's Encrypt -> eMSign, manual delivery (decided 2026-09-07)
+### Issuance: Let's Encrypt -> eMSign / InCommon, manual delivery (decided 2026-09-07)
 
 A CAA record on the parent zone pins issuance to eMSign:
 
@@ -59,62 +59,82 @@ $ dig +short CAA marine.usf.edu
   renewal is a manual, IT-driven event a few times per year. We only need a safe
   *install* procedure (below) and an expiry reminder so we chase IT in time.
 
+#### What USF IT delivers
+
+IT sends a zip containing (at minimum):
+
+| Filename pattern | Contents |
+|-----------------|----------|
+| `*_cert.cer` | Leaf certificate (PEM) |
+| `*_interm.cer` | InCommon intermediate certificate (PEM) |
+| `*.key` | Private key (PKCS#8 PEM, `-----BEGIN PRIVATE KEY-----`) |
+| `*.csr` | CSR used for issuance (reference only, not needed for install) |
+| `*.cnf` | OpenSSL config used for CSR (reference only) |
+
+You must assemble `fullchain.pem` from the two `.cer` files yourself (see step 1 below).
+The private key file will be named after the domain, not `privkey.pem`.
+
 #### When USF IT delivers a new cert
 
-You will receive some combination of: the leaf certificate, the eMSign
-intermediate chain, and (unless we did a CSR) the private key. Assemble two files:
-
-- `fullchain.pem` — leaf certificate **first**, then the eMSign intermediate(s)
-- `privkey.pem` — the matching private key
-
-Install them (run from the repo dir, `~/mbon-dashboard-server`):
+See `certs/README.md` for the quick-reference version. Full procedure:
 
 ```bash
-# 0. Put the delivered files somewhere safe, e.g. certs/incoming/
-mkdir -p certs/incoming
-# ...copy fullchain.pem and privkey.pem into certs/incoming/...
+cd ~/mbon-dashboard-server
 
-# 1. VALIDATE before touching anything live -------------------------------
+# File variables — adjust to match the actual filenames IT sent:
+CERT=certs/incoming/mbon-dashboards_marine_usf_edu_cert.cer
+INTERM=certs/incoming/mbon-dashboards_marine_usf_edu_interm.cer
+KEY=certs/incoming/mbon-dashboards_marine_usf_edu.key
 D=mbon-dashboards.marine.usf.edu
-# key matches cert (the two hashes must be identical):
-sudo openssl x509 -noout -pubkey -in certs/incoming/fullchain.pem | sha256sum
-sudo openssl pkey  -noout -pubout -in certs/incoming/privkey.pem  | sha256sum
-# not expired, right hostname:
-sudo openssl x509 -noout -dates -subject -ext subjectAltName -in certs/incoming/fullchain.pem
-sudo openssl x509 -noout -checkend 0 -in certs/incoming/fullchain.pem && echo "not expired"
-# chain builds to a trusted (emSign) root:
-sudo openssl verify -untrusted certs/incoming/fullchain.pem certs/incoming/fullchain.pem
 
-# 2. BACK UP the current cert -------------------------------------------
+# 0. Put the delivered files in the staging area
+mkdir -p certs/incoming
+# ...copy the IT-delivered files into certs/incoming/ ...
+
+# 1. ASSEMBLE fullchain.pem (leaf first, then intermediate) ---------------
+cat "$CERT" "$INTERM" > certs/incoming/fullchain.pem
+echo "Certs in fullchain: $(grep -c 'BEGIN CERTIFICATE' certs/incoming/fullchain.pem)"
+# Should print: Certs in fullchain: 2
+
+# 2. VALIDATE before touching anything live -------------------------------
+# Key matches cert — modulus hashes must be identical.
+# Use 'openssl rsa', NOT 'openssl pkey', for PKCS#8 PEM keys from InCommon:
+echo "cert:"; openssl x509 -noout -modulus -in "$CERT" | sha256sum
+echo "key: "; openssl rsa   -noout -modulus -in "$KEY"  | sha256sum
+# Correct hostname & not expired:
+openssl x509 -noout -dates -subject -ext subjectAltName -in "$CERT"
+openssl x509 -noout -checkend 0 -in "$CERT" && echo "not expired"
+# Note: 'openssl verify' will print error 20 ("unable to get local issuer
+# certificate") because the emSign root is NOT in Ubuntu's trust store.
+# This is expected — browsers trust it because they ship the emSign root.
+
+# 3. BACK UP the current cert -------------------------------------------
 TS=$(date -u +%Y%m%dT%H%M%SZ)
-sudo mkdir -p "certs/backup/$TS"
-sudo cp -p certs/fullchain.pem certs/privkey.pem certs/cert.pem certs/chain.pem "certs/backup/$TS/" 2>/dev/null
+mkdir -p "certs/backup/$TS"
+cp -p certs/fullchain.pem certs/privkey.pem "certs/backup/$TS/" 2>/dev/null || true
 
-# 3. INSTALL -----------------------------------------------------------
-sudo cp certs/incoming/fullchain.pem certs/fullchain.pem
-sudo cp certs/incoming/privkey.pem   certs/privkey.pem
+# 4. INSTALL -----------------------------------------------------------
+cp certs/incoming/fullchain.pem certs/fullchain.pem
+cp "$KEY" certs/privkey.pem   # privkey.pem is the name nginx expects
 sudo chown root:root certs/fullchain.pem certs/privkey.pem
 sudo chmod 644 certs/fullchain.pem
 sudo chmod 600 certs/privkey.pem
 
-# 4. APPLY with zero downtime ----------------------------------------
+# 5. APPLY with zero downtime ----------------------------------------
 docker exec nginx nginx -t && docker exec nginx nginx -s reload
 
-# 5. VERIFY ----------------------------------------------------------
+# 6. VERIFY ----------------------------------------------------------
 echo | openssl s_client -connect "$D:443" -servername "$D" 2>/dev/null \
-  | openssl x509 -noout -issuer -subject -dates      # issuer should now be emSign
+  | openssl x509 -noout -issuer -subject -dates
 # repeat for :8080 :8086 :5555 — same cert file, all update on the one reload
 
-# 6. Clean up
-sudo rm -rf certs/incoming
+# 7. Clean up
+rm -rf certs/incoming
 ```
 
-If `nginx -t` fails at step 4, restore from `certs/backup/$TS/` and reload again —
+If `nginx -t` fails at step 5, restore from `certs/backup/$TS/` and reload again —
 nginx keeps serving the old cert until a reload succeeds, so a bad file does not
 cause an outage as long as you never `docker stop` it.
-
-> A `cert_install.sh` wrapper that runs steps 1–5 with hard validation gates can
-> be added if these renewals prove frequent enough to be worth it.
 
 #### Note on the private key
 

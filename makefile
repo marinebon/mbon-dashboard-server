@@ -1,7 +1,17 @@
-.PHONY: rebuild backup-influxdb restore-influxdb
+.PHONY: rebuild cert-update backup-influxdb restore-influxdb
 
 rebuild:
 	docker compose down --rmi all -v && docker compose build --no-cache && docker compose up -d
+
+# ---------------------------------------------------------------------------
+# cert-update
+#   Install a new TLS certificate delivered by USF IT.
+#   Place the IT-delivered files (*.key, *_cert.cer, *_interm.cer) in
+#   certs/incoming/ before running.
+#   Usage: make cert-update
+# ---------------------------------------------------------------------------
+cert-update:
+	bash cert_install.sh
 
 # Docker Compose project name → volume prefix (override if your project name differs)
 COMPOSE_PROJECT ?= mbon-dashboard-server
